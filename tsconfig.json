@@ -3,10 +3,23 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
-    "paths": { "@/*": ["./*"] },
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
     "moduleResolution": "Bundler",
-    "moduleSuffixes": [".native", ".web", ""],
+    "moduleSuffixes": [
+      ".native",
+      ".web",
+      ""
+    ],
     "skipLibCheck": true
   },
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }

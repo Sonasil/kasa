@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { View, Text } from "react-native";
-import { db } from "../src/firebase.web"; // şimdilik web dosyasını doğrudan import et
+import { View, Text, StyleSheet } from "react-native";
 import { doc, setDoc, getDoc } from "firebase/firestore";
+// Şimdilik web'den çalıştığın için direkt web dosyasını çağır
+import { db } from "../src/firebase.web";
 
 export default function TestFirebaseScreen() {
-  const [result, setResult] = useState("Bağlantı test ediliyor...");
+  const [result, setResult] = useState("⏳ Firestore bağlantısı test ediliyor...");
 
   useEffect(() => {
     const runTest = async () => {
@@ -13,17 +14,17 @@ export default function TestFirebaseScreen() {
         const ref = doc(db, "z_dev_check", "ping");
         await setDoc(ref, { ping: "pong", at: Date.now() }, { merge: true });
 
-        // Sonra oku
+        // Dokümanı geri oku
         const snap = await getDoc(ref);
         if (snap.exists()) {
-          console.log("🔥 Firebase bağlantısı başarılı:", snap.data());
-          setResult("🔥 Bağlantı başarılı: " + JSON.stringify(snap.data()));
+          console.log("🔥 Firestore bağlantısı başarılı:", snap.data());
+          setResult("🔥 Bağlantı başarılı → " + JSON.stringify(snap.data()));
         } else {
           setResult("❌ Doküman bulunamadı");
         }
       } catch (err: any) {
-        console.error("⚠️ Firebase hatası:", err);
-        setResult("⚠️ Firebase hatası: " + err.message);
+        console.error("⚠️ Firestore hatası:", err);
+        setResult("⚠️ Firestore hatası: " + err.message);
       }
     };
 
@@ -31,8 +32,21 @@ export default function TestFirebaseScreen() {
   }, []);
 
   return (
-    <View style={{ padding: 20 }}>
-      <Text>{result}</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>{result}</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 20,
+  },
+  text: {
+    fontSize: 16,
+    textAlign: "center",
+  },
+});

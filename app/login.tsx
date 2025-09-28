@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { router } from 'expo-router';
-import { Wallet } from 'lucide-react-native';
+import { Wallet } from "lucide-react-native";
+
 import { Input } from '@/components/Input';
 import { Button } from '@/components/Button';
 
@@ -19,7 +20,8 @@ export default function LoginScreen() {
       <View style={styles.content}>
         <View style={styles.logoContainer}>
           <View style={styles.logo}>
-            <Wallet color="#10B981" size={32} />
+          <Wallet {...({ size: 32, color: "#10B981" } as { size: number; color: string })} />
+
           </View>
           <Text style={styles.title}>Kasa</Text>
           <Text style={styles.subtitle}>Grup harcamalarını kolayca takip et</Text>
