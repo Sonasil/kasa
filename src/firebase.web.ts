@@ -1,6 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-
+import { getAuth } from "firebase/auth";
 // Senin Firebase Console'dan aldığın config:
 const firebaseConfig = {
   apiKey: "AIzaSyAD26IMDbKuAKB2mrTI-H0m8IJR7pIHuD8",
@@ -17,3 +17,4 @@ const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
 // Firestore referansını export et
 export const db = getFirestore(app);
+export const auth = getAuth(app);
