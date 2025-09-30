@@ -31,24 +31,32 @@ export default function RegisterScreen() {
     try {
       setLoading(true);
 
+      // 0) E-postayı normalize et (iyi pratik): küçük harf, trim
+      const emailNorm = email.trim().toLowerCase();
+
       // 1) Firebase'de kullanıcı oluştur
-      const cred = await createUserWithEmailAndPassword(auth, email.trim(), password);
+      const cred = await createUserWithEmailAndPassword(auth, emailNorm, password);
 
       // 2) Profiline ad-soyad yaz (displayName)
       if (name.trim()) {
         await updateProfile(cred.user, { displayName: name.trim() });
       }
 
-    
+      // 3) Firestore'da users/{uid} dokümanı oluştur
       await setDoc(doc(db, "users", cred.user.uid), {
-      displayName: name.trim(),
-      email: cred.user.email,
-      createdAt: serverTimestamp(),
+        uid: cred.user.uid, // iyi pratik: verinin içinde de uid olsun
+        displayName: name.trim(),
+        // Bazı durumlarda cred.user.email anında dolmayabilir; garanti için fallback kullan
+        email: (cred.user.email ?? emailNorm).toLowerCase(),
+        createdAt: serverTimestamp(),
       });
 
       // 4) Başarılı → tabs'e yönlendir
       router.replace("/(tabs)");
     } catch (err: any) {
+      // geliştirici log'u: gerçek hata kodu ve mesajı
+      console.error("register error:", err?.code, err?.message);
+
       let msg = "Kayıt başarısız.";
       // yaygın hata kodlarını kullanıcı dostu çevir
       if (err.code === "auth/email-already-in-use") msg = "Bu e-posta zaten kayıtlı.";
