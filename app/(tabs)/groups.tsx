@@ -1,28 +1,98 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
-import { Users, Plus, UserPlus } from 'lucide-react-native';
+import { Users } from 'lucide-react-native';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
+import { db, auth } from '@/src/firebase.web';
+import { collection, onSnapshot, query, where } from 'firebase/firestore';
 
-const mockGroups = [
-  { id: '1', name: 'Hafta Sonu Gezisi', balance: 120, members: 4 },
-  { id: '2', name: 'Ev Arkadaşları', balance: -45, members: 3 },
-  { id: '3', name: 'Proje Grubu', balance: 0, members: 5 },
-  { id: '4', name: 'Çalışma Grubu', balance: 25, members: 6 },
-];
+// Ekranda göstereceğimiz minimal tip
+type UIGroup = {
+  id: string;
+  name: string;
+  balance: number;
+  members: number;
+};
 
 export default function GroupsScreen() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Gruplarım</Text>
-        <Text style={styles.subtitle}>Katıldığın grupları yönet</Text>
-      </View>
+  const [groups, setGroups] = useState<UIGroup[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const uid = auth.currentUser?.uid;
+    console.log('[LIST] uid check =>', uid);
+    if (!uid) {
+      setGroups([]);
+      setLoading(false);
+      return;
+    }
+
+    // Üye olduğun grupları real-time dinle
+    const q = query(collection(db, 'groups'), where('memberIds', 'array-contains', uid));
+    const unsub = onSnapshot(
+      q,
+      (snap) => {
+        const list: UIGroup[] = snap.docs.map((d) => {
+          const data: any = d.data();
+          const memberIds: string[] = Array.isArray(data?.memberIds) ? data.memberIds : [];
+          const balanceByUser = data?.balances?.[uid] ?? 0;
+          return {
+            id: d.id,
+            name: data?.name ?? 'Adsız Grup',
+            balance: Number(balanceByUser) || 0,
+            members: memberIds.length,
+          };
+        });
+        setGroups(list);
+        setLoading(false);
+      },
+      (err) => {
+        console.error('groups listen error', err);
+        setLoading(false);
+      }
+    );
+
+    return () => unsub();
+  }, []);
+
+  const isEmpty = !loading && groups.length === 0;
+
+  const renderContent = () => {
+    if (loading) {
+      return (
+        <View style={styles.centerBox}>
+          <ActivityIndicator />
+          <Text style={styles.centerText}>Gruplar yükleniyor…</Text>
+        </View>
+      );
+    }
+
+    if (!groups.length) {
+      return (
+        <View style={styles.emptyState}>
+          <Text style={styles.emptyTitle}>Henüz bir grubun yok</Text>
+          <Text style={styles.emptyText}>Bir grup oluşturabilir veya davet kodu ile bir gruba katılabilirsin.</Text>
+          <Button
+            title="Grup Oluştur"
+            onPress={() => router.push('/group/create-group')}
+            variant="primary"
+            style={{ marginTop: 12, width: '100%' }}
+          />
+          <Button
+            title="Gruba Katıl"
+            onPress={() => router.push('/join-group')}
+            variant="outline"
+            style={{ marginTop: 8, width: '100%' }}
+          />
+        </View>
+      );
+    }
+
+    return (
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-        {mockGroups.map((group) => (
-          <TouchableOpacity 
+        {groups.map((group) => (
+          <TouchableOpacity
             key={group.id}
             onPress={() => router.push(`/group/${group.id}`)}
             activeOpacity={0.7}
@@ -32,7 +102,7 @@ export default function GroupsScreen() {
                 <View style={styles.groupInfo}>
                   <View style={styles.groupHeader}>
                     <View style={styles.groupIcon}>
-                      <Users color="#10B981" size={20} />
+                      <Users size={20} />
                     </View>
                     <View>
                       <Text style={styles.groupName}>{group.name}</Text>
@@ -40,43 +110,62 @@ export default function GroupsScreen() {
                     </View>
                   </View>
                 </View>
-                
+
                 <View style={styles.balanceContainer}>
-                  <Text style={[
-                    styles.balance,
-                    group.balance > 0 ? styles.positiveBalance : 
-                    group.balance < 0 ? styles.negativeBalance : styles.neutralBalance
-                  ]}>
-                    {group.balance > 0 ? `+₺${group.balance}` : 
-                     group.balance < 0 ? `₺${group.balance}` : '₺0'}
+                  <Text
+                    style={[
+                      styles.balance,
+                      group.balance > 0
+                        ? styles.positiveBalance
+                        : group.balance < 0
+                        ? styles.negativeBalance
+                        : styles.neutralBalance,
+                    ]}
+                  >
+                    {group.balance > 0
+                      ? `+₺${group.balance}`
+                      : group.balance < 0
+                      ? `₺${group.balance}`
+                      : '₺0'}
                   </Text>
                   <Text style={styles.balanceLabel}>
-                    {group.balance > 0 ? 'alacağın var' : 
-                     group.balance < 0 ? 'borcun var' : 'eşit'}
+                    {group.balance > 0 ? 'alacağın var' : group.balance < 0 ? 'borcun var' : 'eşit'}
                   </Text>
                 </View>
               </View>
             </Card>
           </TouchableOpacity>
         ))}
-        
         <View style={styles.bottomPadding} />
       </ScrollView>
+    );
+  };
 
-      <View style={styles.bottomButtons}>
-        <Button
-          title="Grup Oluştur"
-          onPress={() => router.push('/create-group')}
-          variant="primary"
-          style={styles.actionButton}
-        />
-        <Button
-          title="Gruba Katıl"
-          onPress={() => {}}
-          variant="outline"
-          style={styles.actionButton}
-        />
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Gruplarım</Text>
+        <Text style={styles.subtitle}>Katıldığın grupları yönet</Text>
       </View>
+
+      {renderContent()}
+
+      {!isEmpty && (
+        <View style={styles.bottomButtons}>
+          <Button
+            title="Grup Oluştur"
+            onPress={() => router.push('/group/create-group')}
+            variant="primary"
+            style={styles.actionButton}
+          />
+          <Button
+            title="Gruba Katıl"
+            onPress={() => router.push('/join-group')}
+            variant="outline"
+            style={styles.actionButton}
+          />
+        </View>
+      )}
     </SafeAreaView>
   );
 }
@@ -129,6 +218,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: 12,
+    color: '#10B981',
   },
   groupName: {
     fontSize: 16,
@@ -174,5 +264,29 @@ const styles = StyleSheet.create({
   },
   actionButton: {
     width: '100%',
+  },
+  // Eklenen yardımcı stiller (frontend'i bozmaz)
+  centerBox: {
+    padding: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  centerText: {
+    marginTop: 8,
+    color: '#6B7280',
+  },
+  emptyState: {
+    paddingHorizontal: 24,
+    paddingTop: 20,
+  },
+  emptyTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#111827',
+    marginBottom: 6,
+  },
+  emptyText: {
+    fontSize: 14,
+    color: '#6B7280',
   },
 });
