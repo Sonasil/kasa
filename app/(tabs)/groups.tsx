@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, SafeAreaView, TouchableOpacity, ActivityIndicator, Alert, RefreshControl } from 'react-native';
 import { router } from 'expo-router';
 import { Users } from 'lucide-react-native';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
 import { db, auth } from '@/src/firebase.web';
-import { collection, onSnapshot, query, where } from 'firebase/firestore';
+import { collection, onSnapshot, query, where, deleteDoc, doc } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
 
 // Ekranda göstereceğimiz minimal tip
 type UIGroup = {
@@ -18,15 +19,26 @@ type UIGroup = {
 export default function GroupsScreen() {
   const [groups, setGroups] = useState<UIGroup[]>([]);
   const [loading, setLoading] = useState(true);
+  const [uid, setUid] = useState<string | null>(auth.currentUser?.uid ?? null);
+  const [refreshing, setRefreshing] = useState(false);
+  const formatCurrency = (n: number) =>
+    new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY', maximumFractionDigits: 0 }).format(n);
 
   useEffect(() => {
-    const uid = auth.currentUser?.uid;
-    console.log('[LIST] uid check =>', uid);
+    const unsubAuth = onAuthStateChanged(auth, (u) => {
+      setUid(u?.uid ?? null);
+    });
+    return () => unsubAuth();
+  }, []);
+
+  useEffect(() => {
     if (!uid) {
       setGroups([]);
       setLoading(false);
       return;
     }
+    setLoading(true);
+    console.log('[LIST] uid check =>', uid);
 
     // Üye olduğun grupları real-time dinle
     const q = query(collection(db, 'groups'), where('memberIds', 'array-contains', uid));
@@ -54,9 +66,40 @@ export default function GroupsScreen() {
     );
 
     return () => unsub();
-  }, []);
+  }, [uid]);
+
+  const confirmDelete = (groupId: string, groupName: string) => {
+    Alert.alert(
+      'Grubu Sil',
+      `"${groupName}" grubunu silmek istediğine emin misin?`,
+      [
+        { text: 'İptal', style: 'cancel' },
+        {
+          text: 'Sil',
+          style: 'destructive',
+          onPress: () => handleDelete(groupId),
+        },
+      ]
+    );
+  };
+
+  const handleDelete = async (groupId: string) => {
+    try {
+      await deleteDoc(doc(db, 'groups', groupId));
+    } catch (e) {
+      console.error('delete group error', e);
+      Alert.alert('Silinemedi', 'Bu grubu silerken bir sorun oluştu.');
+    }
+  };
 
   const isEmpty = !loading && groups.length === 0;
+
+  const onRefresh = () => {
+    if (loading) return;
+    setRefreshing(true);
+    // we already have a live listener; just show a brief refresh state
+    setTimeout(() => setRefreshing(false), 500);
+  };
 
   const renderContent = () => {
     if (loading) {
@@ -90,11 +133,19 @@ export default function GroupsScreen() {
     }
 
     return (
-      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        style={styles.content}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          // @ts-ignore React Native types in web/Expo may differ; this is safe in app
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         {groups.map((group) => (
           <TouchableOpacity
             key={group.id}
             onPress={() => router.push(`/group/${group.id}`)}
+            onLongPress={() => confirmDelete(group.id, group.name)}
             activeOpacity={0.7}
           >
             <Card>
@@ -122,11 +173,7 @@ export default function GroupsScreen() {
                         : styles.neutralBalance,
                     ]}
                   >
-                    {group.balance > 0
-                      ? `+₺${group.balance}`
-                      : group.balance < 0
-                      ? `₺${group.balance}`
-                      : '₺0'}
+                    {formatCurrency(group.balance)}
                   </Text>
                   <Text style={styles.balanceLabel}>
                     {group.balance > 0 ? 'alacağın var' : group.balance < 0 ? 'borcun var' : 'eşit'}

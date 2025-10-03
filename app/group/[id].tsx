@@ -1,37 +1,236 @@
-import { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Modal, Pressable } from 'react-native';
+import { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Modal, Pressable, ActivityIndicator, Alert, Platform } from 'react-native';
 import { ChevronLeft, Plus, Info, Users, Send, X, TrendingUp, ArrowUpRight, ArrowDownRight } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter, useLocalSearchParams } from 'expo-router';
+import { db, auth } from '@/src/firebase.web';
+import { doc, onSnapshot, getDoc, updateDoc, arrayRemove, deleteDoc } from 'firebase/firestore';
 
 type ModalType = 'expense' | 'status' | 'members' | null;
 
+type GroupDoc = {
+  name?: string;
+  memberIds?: string[];
+  totalAmount?: number; // optional; if yoksa 0 gösteririz
+  createdBy?: string;   // owner uid
+};
+
 export default function GroupDetail() {
+  const router = useRouter();
+  const { id } = useLocalSearchParams<{ id?: string }>();
+  const groupId = id ? String(id) : undefined;
+
   const [activeModal, setActiveModal] = useState<ModalType>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [group, setGroup] = useState<GroupDoc | null>(null);
+  const [leaving, setLeaving] = useState(false);
+
+  // Subscribe to Firestore group doc
+  useEffect(() => {
+    if (!groupId) {
+      setLoading(false);
+      setError('Geçersiz grup.');
+      return;
+    }
+    const ref = doc(db, 'groups', groupId);
+    const unsub = onSnapshot(
+      ref,
+      (snap) => {
+        if (snap.exists()) {
+          setGroup((snap.data() as GroupDoc) || null);
+          setError(null);
+        } else {
+          setGroup(null);
+          setError('Grup bulunamadı.');
+        }
+        setLoading(false);
+      },
+      (e) => {
+        setError(e?.message || 'Bir hata oluştu');
+        setLoading(false);
+      }
+    );
+    return () => unsub();
+  }, [groupId]);
+
+  // Derived values for UI (frontend yapısını değiştirmeden)
+  const groupName = group?.name || 'Grup Detayı';
+  const memberCount = Array.isArray(group?.memberIds) ? group!.memberIds!.length : 0;
+  const totalAmount = typeof group?.totalAmount === 'number' ? group!.totalAmount! : 0;
+  const memberIds = Array.isArray(group?.memberIds) ? group!.memberIds! : [];
+
+  const uid = auth.currentUser?.uid || null;
+  const isOwner = !!uid && !!group?.createdBy && group.createdBy === uid;
+
+  // uid -> { displayName?: string }
+  const [userMap, setUserMap] = useState<Record<string, { displayName?: string }>>({});
+
+  // Load users/{uid} docs to show displayName in Members modal
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      if (!memberIds || memberIds.length === 0) {
+        setUserMap({});
+        return;
+      }
+      try {
+        const snaps = await Promise.all(
+          memberIds.map((muid) => getDoc(doc(db, 'users', muid)))
+        );
+        const map: Record<string, { displayName?: string }> = {};
+        snaps.forEach((s) => {
+          if (s.exists()) {
+            const d = s.data() as any;
+            map[s.id] = { displayName: d?.displayName || d?.name };
+          }
+        });
+        if (!cancelled) setUserMap(map);
+      } catch (e) {
+        if (!cancelled) setUserMap({});
+      }
+    };
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [memberIds.join('|')]);
+
+  // Loading / Error (görsel düzeni bozmadan basit merkezlenmiş durumlar)
+  if (loading) {
+    return (
+      <View style={[styles.container, { alignItems: 'center', justifyContent: 'center' }]}> 
+        <ActivityIndicator />
+        <Text style={{ marginTop: 8, color: '#666' }}>Yükleniyor…</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={[styles.container, { alignItems: 'center', justifyContent: 'center' }]}> 
+        <Text style={{ color: '#EF4444', fontWeight: '600' }}>{error}</Text>
+        <TouchableOpacity style={{ marginTop: 12 }} onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/groups'))}>
+          <Text style={{ color: '#4A90E2', fontWeight: '600' }}>Geri dön</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  const handleLeave = async () => {
+    const currentUid = auth.currentUser?.uid;
+    if (!currentUid || !groupId || leaving) {
+      console.log('[LEAVE] blocked', { groupId, currentUid, leaving });
+      return;
+    }
+    if (!group) {
+      Alert.alert('Hata', 'Grup bilgisi yüklenemedi.');
+      return;
+    }
+
+    try {
+      setLeaving(true);
+      const members = Array.isArray(group.memberIds) ? [...group.memberIds] : [];
+      const remaining = members.filter((m) => m !== currentUid);
+      const isOwnerNow = group.createdBy === currentUid;
+
+      console.log('[LEAVE] start', { groupId, currentUid, membersCount: members.length, isOwnerNow });
+
+      // Case 1: Last member -> delete whole group
+      if (remaining.length === 0) {
+        await deleteDoc(doc(db, 'groups', groupId));
+        console.log('[LEAVE] deleted empty group');
+        router.replace('/(tabs)/groups');
+        return;
+      }
+
+      // Case 2: Owner leaving -> transfer ownership to a random remaining member and remove current
+      if (isOwnerNow) {
+        const newOwner = remaining[Math.floor(Math.random() * remaining.length)];
+        await updateDoc(doc(db, 'groups', groupId), {
+          createdBy: newOwner,
+          memberIds: arrayRemove(currentUid),
+        });
+        console.log('[LEAVE] transferred ownership to', newOwner);
+      } else {
+        // Case 3: Regular member leaving -> just remove from memberIds
+        await updateDoc(doc(db, 'groups', groupId), {
+          memberIds: arrayRemove(currentUid),
+        });
+        console.log('[LEAVE] removed member');
+      }
+
+      router.replace('/(tabs)/groups');
+    } catch (e: any) {
+      console.error('leave group error', e);
+      const msg = typeof e?.message === 'string' ? e.message : 'Gruptan çıkarken bir sorun oluştu.';
+      Alert.alert('Çıkılamadı', msg);
+    } finally {
+      setLeaving(false);
+    }
+  };
+
+  const confirmLeave = () => {
+    const currentUid = auth.currentUser?.uid || null;
+    console.log('[LEAVE] confirm tapped', { groupId, currentUid });
+
+    if (!groupId) {
+      Alert.alert('Geçersiz grup', 'Geçersiz grup kimliği.');
+      return;
+    }
+    if (!currentUid) {
+      Alert.alert('Oturum bulunamadı', 'Lütfen tekrar giriş yapın ve tekrar deneyin.');
+      return;
+    }
+
+    if (Platform.OS === 'web') {
+      // @ts-ignore
+      const ok = typeof window !== 'undefined' && window.confirm('Bu gruptan ayrılmak istiyor musun?');
+      if (ok) handleLeave();
+      return;
+    }
+    Alert.alert(
+      'Gruptan Çık',
+      'Bu gruptan ayrılmak istiyor musun?',
+      [
+        { text: 'İptal', style: 'cancel' },
+        { text: 'Çık', style: 'destructive', onPress: handleLeave },
+      ]
+    );
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity style={styles.backButton}>
+        <TouchableOpacity style={styles.backButton} onPress={() => (router.canGoBack() ? router.back() : router.replace('/(tabs)/groups'))}>
           <ChevronLeft size={24} color="#000" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Grup Detayı</Text>
+        <TouchableOpacity
+          style={styles.leaveButton}
+          onPress={confirmLeave}
+          disabled={leaving}
+          hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+          pressRetentionOffset={{ top: 12, bottom: 12, left: 12, right: 12 }}
+        >
+          <Text style={[styles.leaveText, leaving && { opacity: 0.5 }]}>Gruptan Çık</Text>
+        </TouchableOpacity>
       </View>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.groupInfo}>
           <View style={styles.avatarContainer}>
-            <LinearGradient
-              colors={['#4A90E2', '#357ABD']}
-              style={styles.avatar}
-            >
+            <LinearGradient colors={['#4A90E2', '#357ABD']} style={styles.avatar}>
               <View style={styles.avatarIcon} />
             </LinearGradient>
           </View>
 
-          <Text style={styles.groupName}>ömsmsd</Text>
-          <Text style={styles.groupStats}>1 üye • ₺550 toplam</Text>
+          {/* Dinamik isim ve istatistikler */}
+          <Text style={styles.groupName}>{groupName}</Text>
+          <Text style={styles.groupStats}>{memberCount} üye • ₺{totalAmount} toplam</Text>
         </View>
 
+        {/* Aşağıdaki üç kutu görsel olarak korunuyor; değerleri şimdilik sabit (ileri adımda hesap bağlanacak) */}
         <View style={styles.statsContainer}>
           <View style={styles.statCard}>
             <Text style={styles.statLabel}>Harcanan</Text>
@@ -50,190 +249,76 @@ export default function GroupDetail() {
         </View>
 
         <View style={styles.actionButtons}>
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={() => setActiveModal('expense')}
-          >
+          <TouchableOpacity style={styles.actionButton} onPress={() => setActiveModal('expense')}>
             <Plus size={20} color="#FFF" strokeWidth={2.5} />
             <Text style={styles.actionButtonText}>Harcama</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={() => setActiveModal('status')}
-          >
+          <TouchableOpacity style={styles.actionButton} onPress={() => setActiveModal('status')}>
             <Info size={20} color="#FFF" strokeWidth={2.5} />
             <Text style={styles.actionButtonText}>Durum</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.actionButton}
-            onPress={() => setActiveModal('members')}
-          >
+          <TouchableOpacity style={styles.actionButton} onPress={() => setActiveModal('members')}>
             <Users size={20} color="#FFF" strokeWidth={2.5} />
             <Text style={styles.actionButtonText}>Üyeler</Text>
           </TouchableOpacity>
         </View>
 
+        {/* Aktiviteler: frontend korunuyor (dummy içerik) */}
         <View style={styles.activitySection}>
-          <View style={styles.activityItem}>
-            <View style={styles.activityHeader}>
-              <View style={styles.activityUser}>
-                <View style={styles.userAvatar}>
-                  <Text style={styles.userInitial}>A</Text>
-                </View>
-                <Text style={styles.userName}>Ali</Text>
-              </View>
-              <Text style={styles.activityTime}>10:30</Text>
-            </View>
-            <Text style={styles.activityText}>Market alışverişi yaptım, fişi ekledim</Text>
-          </View>
-
-          <View style={styles.activityItem}>
-            <View style={styles.activityHeader}>
-              <View style={styles.activityUser}>
-                <View style={styles.userAvatar}>
-                  <Text style={styles.userInitial}>A</Text>
-                </View>
-                <Text style={styles.userName}>Ali</Text>
-              </View>
-              <Text style={styles.activityTime}>10:31</Text>
-            </View>
-            <Text style={styles.activityText}>
-              "Market Alışverişi" harcamasını ekledi - ₺150
-            </Text>
-          </View>
-
-          <View style={styles.activityItem}>
-            <View style={styles.activityHeader}>
-              <View style={styles.activityUser}>
-                <View style={[styles.userAvatar, styles.userAvatarSecondary]}>
-                  <Text style={styles.userInitial}>A</Text>
-                </View>
-                <Text style={styles.userName}>Ayşe</Text>
-              </View>
-              <Text style={styles.activityTime}>11:00</Text>
-            </View>
-            <Text style={styles.activityText}>
-              Teşekkürler! Ben de benzin parasını ekleyeceğim
-            </Text>
-          </View>
+          {/* Aktiviteler bağlandığında listelenecek */}
+          <Text style={{ color: '#666' }}>Henüz aktivite yok.</Text>
         </View>
       </ScrollView>
 
       <View style={styles.messageInput}>
-        <TextInput
-          style={styles.input}
-          placeholder="Mesaj yaz..."
-          placeholderTextColor="#999"
-        />
+        <TextInput style={styles.input} placeholder="Mesaj yaz..." placeholderTextColor="#999" />
         <TouchableOpacity style={styles.sendButton}>
           <Send size={20} color="#4A90E2" />
         </TouchableOpacity>
       </View>
 
-      <Modal
-        visible={activeModal === 'expense'}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setActiveModal(null)}
-      >
-        <Pressable
-          style={styles.modalOverlay}
-          onPress={() => setActiveModal(null)}
-        >
+      {/* Harcama Modalı */}
+      <Modal visible={activeModal === 'expense'} transparent animationType="fade" onRequestClose={() => setActiveModal(null)}>
+        <Pressable style={styles.modalOverlay} onPress={() => setActiveModal(null)}>
           <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Yeni Harcama</Text>
-              <TouchableOpacity onPress={() => setActiveModal(null)}>
-                <X size={24} color="#666" />
-              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setActiveModal(null)}><X size={24} color="#666" /></TouchableOpacity>
             </View>
-
             <View style={styles.modalBody}>
               <View style={styles.inputGroup}>
                 <Text style={styles.label}>Açıklama</Text>
-                <TextInput
-                  style={styles.modalInput}
-                  placeholder="Market alışverişi"
-                  placeholderTextColor="#999"
-                />
+                <TextInput style={styles.modalInput} placeholder="Market alışverişi" placeholderTextColor="#999" />
               </View>
-
               <View style={styles.inputGroup}>
                 <Text style={styles.label}>Tutar</Text>
-                <TextInput
-                  style={styles.modalInput}
-                  placeholder="₺150"
-                  placeholderTextColor="#999"
-                  keyboardType="numeric"
-                />
+                <TextInput style={styles.modalInput} placeholder="₺150" placeholderTextColor="#999" keyboardType="numeric" />
               </View>
-
-              <TouchableOpacity style={styles.modalButton}>
-                <Text style={styles.modalButtonText}>Harcama Ekle</Text>
-              </TouchableOpacity>
+              <TouchableOpacity style={styles.modalButton}><Text style={styles.modalButtonText}>Harcama Ekle</Text></TouchableOpacity>
             </View>
           </Pressable>
         </Pressable>
       </Modal>
 
-      <Modal
-        visible={activeModal === 'status'}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setActiveModal(null)}
-      >
-        <Pressable
-          style={styles.modalOverlay}
-          onPress={() => setActiveModal(null)}
-        >
+      {/* Durum Modalı */}
+      <Modal visible={activeModal === 'status'} transparent animationType="fade" onRequestClose={() => setActiveModal(null)}>
+        <Pressable style={styles.modalOverlay} onPress={() => setActiveModal(null)}>
           <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Hesap Durumu</Text>
-              <TouchableOpacity onPress={() => setActiveModal(null)}>
-                <X size={24} color="#666" />
-              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setActiveModal(null)}><X size={24} color="#666" /></TouchableOpacity>
             </View>
-
             <View style={styles.modalBody}>
               <View style={styles.statusSummary}>
                 <TrendingUp size={32} color="#4A90E2" />
                 <Text style={styles.statusTitle}>Toplam Harcama</Text>
-                <Text style={styles.statusAmount}>₺550</Text>
+                <Text style={styles.statusAmount}>₺{totalAmount}</Text>
               </View>
-
               <View style={styles.statusList}>
-                <View style={styles.statusItem}>
-                  <View style={styles.statusItemLeft}>
-                    <View style={[styles.statusAvatar, { backgroundColor: '#4A90E2' }]}>
-                      <Text style={styles.statusInitial}>A</Text>
-                    </View>
-                    <View>
-                      <Text style={styles.statusName}>Ali</Text>
-                      <Text style={styles.statusSubtext}>Ödedi: ₺180</Text>
-                    </View>
-                  </View>
-                  <View style={styles.statusRight}>
-                    <ArrowDownRight size={16} color="#EF4444" />
-                    <Text style={[styles.statusValue, { color: '#EF4444' }]}>-₺43</Text>
-                  </View>
-                </View>
-
-                <View style={styles.statusItem}>
-                  <View style={styles.statusItemLeft}>
-                    <View style={[styles.statusAvatar, { backgroundColor: '#10B981' }]}>
-                      <Text style={styles.statusInitial}>A</Text>
-                    </View>
-                    <View>
-                      <Text style={styles.statusName}>Ayşe</Text>
-                      <Text style={styles.statusSubtext}>Ödedi: ₺370</Text>
-                    </View>
-                  </View>
-                  <View style={styles.statusRight}>
-                    <ArrowUpRight size={16} color="#10B981" />
-                    <Text style={[styles.statusValue, { color: '#10B981' }]}>+₺95</Text>
-                  </View>
+                <View style={{ alignItems: 'center' }}>
+                  <Text style={{ color: '#666' }}>Hesaplamalar bağlandığında görünecek.</Text>
                 </View>
               </View>
             </View>
@@ -241,47 +326,36 @@ export default function GroupDetail() {
         </Pressable>
       </Modal>
 
-      <Modal
-        visible={activeModal === 'members'}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setActiveModal(null)}
-      >
-        <Pressable
-          style={styles.modalOverlay}
-          onPress={() => setActiveModal(null)}
-        >
+      {/* Üyeler Modalı */}
+      <Modal visible={activeModal === 'members'} transparent animationType="fade" onRequestClose={() => setActiveModal(null)}>
+        <Pressable style={styles.modalOverlay} onPress={() => setActiveModal(null)}>
           <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Grup Üyeleri</Text>
-              <TouchableOpacity onPress={() => setActiveModal(null)}>
-                <X size={24} color="#666" />
-              </TouchableOpacity>
+              <TouchableOpacity onPress={() => setActiveModal(null)}><X size={24} color="#666" /></TouchableOpacity>
             </View>
-
             <View style={styles.modalBody}>
               <View style={styles.membersList}>
-                <View style={styles.memberItem}>
-                  <View style={[styles.memberAvatar, { backgroundColor: '#4A90E2' }]}>
-                    <Text style={styles.memberInitial}>A</Text>
-                  </View>
-                  <View style={styles.memberInfo}>
-                    <Text style={styles.memberName}>Ali</Text>
-                    <Text style={styles.memberRole}>Grup Sahibi</Text>
-                  </View>
-                </View>
-
-                <View style={styles.memberItem}>
-                  <View style={[styles.memberAvatar, { backgroundColor: '#10B981' }]}>
-                    <Text style={styles.memberInitial}>A</Text>
-                  </View>
-                  <View style={styles.memberInfo}>
-                    <Text style={styles.memberName}>Ayşe</Text>
-                    <Text style={styles.memberRole}>Üye</Text>
-                  </View>
-                </View>
+                {memberIds.length === 0 ? (
+                  <Text style={{ color: '#666' }}>Bu grupta henüz üye yok.</Text>
+                ) : (
+                  memberIds.map((muid) => {
+                    const name = userMap[muid]?.displayName || muid;
+                    const initial = (name?.[0] || '?').toUpperCase();
+                    return (
+                      <View key={muid} style={styles.memberItem}>
+                        <View style={[styles.memberAvatar, { backgroundColor: '#4A90E2' }]}>
+                          <Text style={styles.memberInitial}>{initial}</Text>
+                        </View>
+                        <View style={styles.memberInfo}>
+                          <Text style={styles.memberName}>{name}</Text>
+                          <Text style={styles.memberRole}>{muid === group?.createdBy ? 'Grup Sahibi' : 'Üye'}</Text>
+                        </View>
+                      </View>
+                    );
+                  })
+                )}
               </View>
-
               <TouchableOpacity style={styles.addMemberButton}>
                 <Plus size={20} color="#4A90E2" />
                 <Text style={styles.addMemberText}>Yeni Üye Ekle</Text>
@@ -316,6 +390,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     color: '#000',
+  },
+  leaveButton: {
+    marginLeft: 'auto',
+  },
+  leaveText: {
+    color: '#EF4444',
+    fontWeight: '700',
+    fontSize: 14,
   },
   content: {
     flex: 1,
