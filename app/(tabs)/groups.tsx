@@ -14,6 +14,7 @@ type UIGroup = {
   name: string;
   balance: number;
   members: number;
+  createdBy: string;
 };
 
 export default function GroupsScreen() {
@@ -54,6 +55,7 @@ export default function GroupsScreen() {
             name: data?.name ?? 'Adsız Grup',
             balance: Number(balanceByUser) || 0,
             members: memberIds.length,
+            createdBy: data?.createdBy ?? '',
           };
         });
         setGroups(list);
@@ -145,7 +147,13 @@ export default function GroupsScreen() {
           <TouchableOpacity
             key={group.id}
             onPress={() => router.push(`/group/${group.id}`)}
-            onLongPress={() => confirmDelete(group.id, group.name)}
+            onLongPress={() => {
+              if (uid && uid === group.createdBy) {
+                confirmDelete(group.id, group.name);
+              } else {
+                Alert.alert('İzin yok', 'Sadece grup sahibi grubu silebilir.');
+              }
+            }}
             activeOpacity={0.7}
           >
             <Card>

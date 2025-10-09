@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, TextInput, Modal, Pressable, ActivityIndicator, Alert, Platform } from 'react-native';
-import { ChevronLeft, Plus, Info, Users, Send, X, TrendingUp, ArrowUpRight, ArrowDownRight } from 'lucide-react-native';
+import { ChevronLeft, Plus, Info, Users, Send, X, TrendingUp, ArrowUpRight, ArrowDownRight, ShoppingCart, Zap, Droplets, Car, Home, Utensils, Crown } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Clipboard from 'expo-clipboard';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { db, auth } from '@/src/firebase.web';
-import { doc, onSnapshot, getDoc, updateDoc, arrayRemove, deleteDoc } from 'firebase/firestore';
+import { doc, onSnapshot, getDoc, updateDoc, arrayRemove, arrayUnion, deleteDoc, addDoc, setDoc, collection, serverTimestamp, query, orderBy, onSnapshot as onColSnapshot, getDocs, where } from 'firebase/firestore';
 
 type ModalType = 'expense' | 'status' | 'members' | null;
 
@@ -13,6 +14,7 @@ type GroupDoc = {
   memberIds?: string[];
   totalAmount?: number; // optional; if yoksa 0 gösteririz
   createdBy?: string;   // owner uid
+  inviteCode?: string;  // opsiyonel davet kodu
 };
 
 export default function GroupDetail() {
@@ -25,6 +27,41 @@ export default function GroupDetail() {
   const [error, setError] = useState<string | null>(null);
   const [group, setGroup] = useState<GroupDoc | null>(null);
   const [leaving, setLeaving] = useState(false);
+
+  // Member management state
+  const [addQuery, setAddQuery] = useState(''); // email veya uid
+  const [addBusy, setAddBusy] = useState(false);
+  const [inviteBusy, setInviteBusy] = useState(false);
+
+  // Expense form & list state
+  type Expense = { id: string; title: string; amount: number; payerUid: string; category?: string; receiptUrl?: string; createdAt?: any };
+  const [expenseTitle, setExpenseTitle] = useState('');
+  const [expenseAmount, setExpenseAmount] = useState('');
+  const [expenseCategory, setExpenseCategory] = useState<string | null>(null);
+  const [receiptUrl, setReceiptUrl] = useState(''); // optional proof URL
+  const [expenses, setExpenses] = useState<Expense[]>([]);
+  // Listen expenses under this group
+  useEffect(() => {
+    if (!groupId) return;
+    const ref = collection(db, 'groups', groupId, 'expenses');
+    const q = query(ref, orderBy('createdAt', 'desc'));
+    const unsub = onColSnapshot(q, (snap) => {
+      const list: Expense[] = snap.docs.map((d) => {
+        const data: any = d.data();
+        return {
+          id: d.id,
+          title: data?.title ?? data?.description ?? 'Harcama',
+          amount: Number(data?.amount) || 0,
+          payerUid: data?.payerUid ?? '',
+          category: data?.category ?? null,
+          receiptUrl: data?.receiptUrl ?? '',
+          createdAt: data?.createdAt,
+        } as Expense;
+      });
+      setExpenses(list);
+    });
+    return () => unsub();
+  }, [groupId]);
 
   // Subscribe to Firestore group doc
   useEffect(() => {
@@ -144,21 +181,21 @@ export default function GroupDetail() {
         return;
       }
 
-      // Case 2: Owner leaving -> transfer ownership to a random remaining member and remove current
-      if (isOwnerNow) {
-        const newOwner = remaining[Math.floor(Math.random() * remaining.length)];
-        await updateDoc(doc(db, 'groups', groupId), {
-          createdBy: newOwner,
-          memberIds: arrayRemove(currentUid),
-        });
-        console.log('[LEAVE] transferred ownership to', newOwner);
-      } else {
-        // Case 3: Regular member leaving -> just remove from memberIds
-        await updateDoc(doc(db, 'groups', groupId), {
-          memberIds: arrayRemove(currentUid),
-        });
-        console.log('[LEAVE] removed member');
+      // Case 2: Owner leaving but others remain -> block (rules gereği createdBy değiştirilemez)
+      if (isOwnerNow && remaining.length > 0) {
+        Alert.alert(
+          'Önce Sahipliği Devret',
+          'Grupta başka üyeler varken ayrılmak için önce sahipliği devretmelisin.'
+        );
+        setLeaving(false);
+        return;
       }
+
+      // Case 3: Regular member leaving -> just remove from memberIds
+      await updateDoc(doc(db, 'groups', groupId), {
+        memberIds: arrayRemove(currentUid),
+      });
+      console.log('[LEAVE] removed member');
 
       router.replace('/(tabs)/groups');
     } catch (e: any) {
@@ -195,6 +232,132 @@ export default function GroupDetail() {
       [
         { text: 'İptal', style: 'cancel' },
         { text: 'Çık', style: 'destructive', onPress: handleLeave },
+      ]
+    );
+  };
+
+  // Kullanıcıyı email ya da uid ile çöz
+  const resolveUserByQuery = async (q: string): Promise<{ uid: string; displayName?: string } | null> => {
+    const queryStr = q.trim();
+    if (!queryStr) return null;
+
+    // UID gibi görünen (28+ char) doğrudan doküman çek
+    if (!queryStr.includes('@')) {
+      const s = await getDoc(doc(db, 'users', queryStr));
+      if (s.exists()) {
+        const d = s.data() as any;
+        return { uid: s.id, displayName: d?.displayName || d?.name };
+      }
+      return null;
+    }
+
+    // Email ile arama
+    const usersRef = collection(db, 'users');
+    const snap = await getDocs(query(usersRef, where('email', '==', queryStr)));
+    if (snap.empty) return null;
+    const first = snap.docs[0];
+    const d = first.data() as any;
+    return { uid: first.id, displayName: d?.displayName || d?.name };
+  };
+
+  const addMember = async () => {
+    if (!groupId) return Alert.alert('Hata', 'Geçersiz grup.');
+    if (!isOwner) return Alert.alert('İzin yok', 'Sadece grup sahibi üye ekleyebilir.');
+    if (!addQuery.trim()) return Alert.alert('Eksik', 'Eklenecek kişinin emailini veya UID’sini gir.');
+    try {
+      setAddBusy(true);
+      const target = await resolveUserByQuery(addQuery);
+      if (!target) {
+        Alert.alert('Bulunamadı', 'Bu email/UID ile kayıtlı kullanıcı yok.');
+        return;
+      }
+      if (memberIds.includes(target.uid)) {
+        Alert.alert('Zaten üye', 'Bu kullanıcı zaten grupta.');
+        return;
+      }
+      await updateDoc(doc(db, 'groups', groupId), { memberIds: arrayUnion(target.uid) });
+      setAddQuery('');
+    } catch (e: any) {
+      Alert.alert('Eklenemedi', e?.message || 'Üye eklenirken bir hata oluştu.');
+    } finally {
+      setAddBusy(false);
+    }
+  };
+
+  const removeMember = async (muid: string) => {
+    if (!groupId) return;
+    if (!isOwner) return Alert.alert('İzin yok', 'Sadece grup sahibi üye çıkarabilir.');
+    if (muid === group?.createdBy) return Alert.alert('İşlem reddedildi', 'Sahip doğrudan çıkarılamaz. Önce sahipliği devret.');
+    try {
+      await updateDoc(doc(db, 'groups', groupId), { memberIds: arrayRemove(muid) });
+    } catch (e: any) {
+      Alert.alert('Çıkarılamadı', e?.message || 'Üye çıkarılırken bir hata oluştu.');
+    }
+  };
+
+  const ensureInviteCode = async () => {
+    if (!groupId) return;
+    if (!isOwner) return Alert.alert('İzin yok', 'Sadece grup sahibi davet kodu oluşturabilir.');
+    if (group?.inviteCode) return; // zaten var
+    try {
+      setInviteBusy(true);
+      const code = Math.random().toString(36).slice(2, 8).toUpperCase();
+      await updateDoc(doc(db, 'groups', groupId), { inviteCode: code });
+      // invites/{code} -> { groupId, active, createdAt }
+      await setDoc(doc(db, 'invites', code), {
+        groupId,
+        active: true,
+        createdAt: serverTimestamp(),
+      });
+    } catch (e: any) {
+      Alert.alert('Hata', e?.message || 'Davet kodu oluşturulamadı.');
+    } finally {
+      setInviteBusy(false);
+    }
+  };
+
+  const copyInvite = async () => {
+    if (!group?.inviteCode) return Alert.alert('Davet kodu yok', 'Önce bir davet kodu oluştur.');
+    const inviteText = `${group.inviteCode}`;
+    try {
+      await Clipboard.setStringAsync(inviteText);
+      Alert.alert('Kopyalandı', 'Davet kodu panoya kopyalandı.');
+    } catch {}
+  };
+
+  const transferOwnership = async (newOwnerUid: string) => {
+    if (!groupId) return Alert.alert('Hata', 'Geçersiz grup.');
+    const currentUid = auth.currentUser?.uid;
+    if (!currentUid) return Alert.alert('Oturum bulunamadı', 'Tekrar giriş yapmayı dene.');
+    if (!isOwner) return Alert.alert('İzin yok', 'Sadece grup sahibi devredebilir.');
+    if (!memberIds.includes(newOwnerUid)) return Alert.alert('Geçersiz seçim', 'Seçilen kişi bu grubun üyesi değil.');
+    if (newOwnerUid === group?.createdBy) return Alert.alert('Geçersiz seçim', 'Zaten bu kişi grup sahibi.');
+
+    const targetName = userMap[newOwnerUid]?.displayName || newOwnerUid;
+    const doTransfer = async () => {
+      try {
+        // NOT: Firestore Rules, createdBy değişimine izin vermelidir.
+        await updateDoc(doc(db, 'groups', groupId), { createdBy: newOwnerUid });
+        Alert.alert('Sahiplik devredildi', `${targetName} artık grup sahibi.`);
+      } catch (e: any) {
+        const msg = typeof e?.message === 'string' ? e.message : 'Sahiplik devredilemedi.';
+        Alert.alert('Hata', msg);
+      }
+    };
+
+    if (Platform.OS === 'web') {
+      // @ts-ignore
+      const ok = typeof window !== 'undefined' && window.confirm(`${targetName} kullanıcısına sahipliği devretmek istiyor musun?`);
+      if (ok) await doTransfer();
+      return;
+    }
+
+    Alert.alert(
+      'Sahipliği Devret',
+      `${targetName} kullanıcısına sahipliği devretmek istiyor musun?`,
+      [
+        { text: 'İptal', style: 'cancel' },
+        { text: 'Devret', style: 'destructive', onPress: doTransfer },
       ]
     );
   };
@@ -243,7 +406,7 @@ export default function GroupDetail() {
           </View>
 
           <View style={styles.statCard}>
-            <Text style={styles.statLabel}>Payın</Text>
+            <Text style={styles.statLabel}>Sana Düşen</Text>
             <Text style={styles.statValue}>₺138</Text>
           </View>
         </View>
@@ -265,10 +428,37 @@ export default function GroupDetail() {
           </TouchableOpacity>
         </View>
 
-        {/* Aktiviteler: frontend korunuyor (dummy içerik) */}
         <View style={styles.activitySection}>
-          {/* Aktiviteler bağlandığında listelenecek */}
-          <Text style={{ color: '#666' }}>Henüz aktivite yok.</Text>
+          {expenses.length === 0 ? (
+            <Text style={{ color: '#666' }}>Henüz harcama yok.</Text>
+          ) : (
+            expenses.map((ex) => (
+              <View key={ex.id} style={styles.activityItem}>
+                <View style={styles.activityHeader}>
+                  <View style={styles.activityUser}>
+                    <View style={styles.userAvatar}>
+                      <Text style={styles.userInitial}>
+                        {(userMap[ex.payerUid]?.displayName || ex.payerUid)?.[0]?.toUpperCase() || 'U'}
+                      </Text>
+                    </View>
+                    <Text style={styles.userName}>{userMap[ex.payerUid]?.displayName || ex.payerUid}</Text>
+                  </View>
+                  <Text style={styles.activityTime}>
+                    {ex.createdAt?.toDate ? new Date(ex.createdAt.toDate()).toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' }) : ''}
+                  </Text>
+                </View>
+                <Text style={styles.activityText}>
+                  {ex.title} — ₺{ex.amount}
+                  {ex.category ? ` • ${ex.category}` : ''}
+                </Text>
+                {ex.receiptUrl ? (
+                  <Text style={{ color: '#4A90E2', marginTop: 8 }} numberOfLines={1}>
+                    Fatura: {ex.receiptUrl}
+                  </Text>
+                ) : null}
+              </View>
+            ))
+          )}
         </View>
       </ScrollView>
 
@@ -290,13 +480,94 @@ export default function GroupDetail() {
             <View style={styles.modalBody}>
               <View style={styles.inputGroup}>
                 <Text style={styles.label}>Açıklama</Text>
-                <TextInput style={styles.modalInput} placeholder="Market alışverişi" placeholderTextColor="#999" />
+                <TextInput
+                  style={styles.modalInput}
+                  placeholder="Market alışverişi"
+                  placeholderTextColor="#999"
+                  value={expenseTitle}
+                  onChangeText={setExpenseTitle}
+                />
               </View>
               <View style={styles.inputGroup}>
                 <Text style={styles.label}>Tutar</Text>
-                <TextInput style={styles.modalInput} placeholder="₺150" placeholderTextColor="#999" keyboardType="numeric" />
+                <TextInput
+                  style={styles.modalInput}
+                  placeholder="₺150"
+                  placeholderTextColor="#999"
+                  keyboardType="numeric"
+                  value={expenseAmount}
+                  onChangeText={setExpenseAmount}
+                />
               </View>
-              <TouchableOpacity style={styles.modalButton}><Text style={styles.modalButtonText}>Harcama Ekle</Text></TouchableOpacity>
+
+              <View style={[styles.inputGroup, { marginTop: 4 }]}>
+                <Text style={styles.label}>Kategori (opsiyonel)</Text>
+                <View style={styles.categoryRow}>
+                  {[
+                    { key: 'Market', icon: ShoppingCart },
+                    { key: 'Elektrik', icon: Zap },
+                    { key: 'Su', icon: Droplets },
+                    { key: 'Ulaşım', icon: Car },
+                    { key: 'Kira', icon: Home },
+                    { key: 'Yemek', icon: Utensils },
+                  ].map(({ key, icon: Icon }) => (
+                    <TouchableOpacity
+                      key={key}
+                      style={[styles.categoryChip, expenseCategory === key && styles.categoryChipActive]}
+                      onPress={() => setExpenseCategory(expenseCategory === key ? null : key)}
+                    >
+                      <Icon size={16} color={expenseCategory === key ? '#fff' : '#4A90E2'} />
+                      <Text style={[styles.categoryText, expenseCategory === key && { color: '#fff' }]}>{key}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
+              </View>
+
+              <View style={styles.inputGroup}>
+                <Text style={styles.label}>Fatura (opsiyonel) — URL</Text>
+                <TextInput
+                  style={styles.modalInput}
+                  placeholder="https://... (Google Drive, iCloud vb.)"
+                  placeholderTextColor="#999"
+                  autoCapitalize="none"
+                  value={receiptUrl}
+                  onChangeText={setReceiptUrl}
+                />
+              </View>
+
+              <TouchableOpacity
+                style={styles.modalButton}
+                onPress={async () => {
+                  const currentUid = auth.currentUser?.uid;
+                  if (!currentUid || !groupId) return Alert.alert('Hata', 'Oturum veya grup bulunamadı.');
+                  const title = expenseTitle.trim();
+                  const amountNum = Number(expenseAmount.replace(',', '.'));
+                  if (!title || !Number.isFinite(amountNum) || amountNum <= 0) {
+                    Alert.alert('Geçersiz', 'Başlık ve tutarı doğru girin.');
+                    return;
+                  }
+                  try {
+                    await addDoc(collection(db, 'groups', groupId, 'expenses'), {
+                      title,
+                      amount: amountNum,
+                      payerUid: currentUid,
+                      participants: memberIds,
+                      category: expenseCategory,
+                      receiptUrl: receiptUrl?.trim() || '',
+                      createdAt: serverTimestamp(),
+                    });
+                    setExpenseTitle('');
+                    setExpenseAmount('');
+                    setExpenseCategory(null);
+                    setReceiptUrl('');
+                    setActiveModal(null);
+                  } catch (e: any) {
+                    Alert.alert('Eklenemedi', e?.message || 'Harcama eklenirken bir sorun oluştu.');
+                  }
+                }}
+              >
+                <Text style={styles.modalButtonText}>Harcama Ekle</Text>
+              </TouchableOpacity>
             </View>
           </Pressable>
         </Pressable>
@@ -342,24 +613,77 @@ export default function GroupDetail() {
                   memberIds.map((muid) => {
                     const name = userMap[muid]?.displayName || muid;
                     const initial = (name?.[0] || '?').toUpperCase();
+                    const isOwnerBadge = muid === group?.createdBy;
                     return (
                       <View key={muid} style={styles.memberItem}>
-                        <View style={[styles.memberAvatar, { backgroundColor: '#4A90E2' }]}>
+                        <View style={[styles.memberAvatar, { backgroundColor: '#4A90E2' }]}> 
                           <Text style={styles.memberInitial}>{initial}</Text>
                         </View>
                         <View style={styles.memberInfo}>
                           <Text style={styles.memberName}>{name}</Text>
-                          <Text style={styles.memberRole}>{muid === group?.createdBy ? 'Grup Sahibi' : 'Üye'}</Text>
+                          <Text style={styles.memberRole}>{isOwnerBadge ? 'Grup Sahibi' : 'Üye'}</Text>
                         </View>
+                        {isOwner && !isOwnerBadge && (
+                          <View style={{ flexDirection: 'row', gap: 8 }}>
+                            <TouchableOpacity
+                              onPress={() => transferOwnership(muid)}
+                              style={styles.memberTransferBtn}
+                              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                            >
+                              <Crown size={18} color="#F59E0B" />
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                              onPress={() => removeMember(muid)}
+                              style={styles.memberRemoveBtn}
+                              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                            >
+                              <X size={18} color="#EF4444" />
+                            </TouchableOpacity>
+                          </View>
+                        )}
                       </View>
                     );
                   })
                 )}
               </View>
-              <TouchableOpacity style={styles.addMemberButton}>
-                <Plus size={20} color="#4A90E2" />
-                <Text style={styles.addMemberText}>Yeni Üye Ekle</Text>
-              </TouchableOpacity>
+
+              {/* Davet kodu / link alanı */}
+              <View style={{ gap: 8, marginBottom: 16 }}>
+                <Text style={styles.label}>Davet Kodu</Text>
+                {group?.inviteCode ? (
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                    <View style={{ flex: 1, backgroundColor: '#F5F5F5', borderRadius: 12, paddingHorizontal: 16, paddingVertical: 14 }}>
+                      <Text style={{ fontSize: 16, fontWeight: '700', letterSpacing: 1 }}>{group.inviteCode}</Text>
+                    </View>
+                    <TouchableOpacity onPress={copyInvite} style={[styles.addMemberButton, { borderStyle: 'solid', paddingVertical: 12, paddingHorizontal: 16 }]}>
+                      <Text style={styles.addMemberText}>Kopyala</Text>
+                    </TouchableOpacity>
+                  </View>
+                ) : (
+                  <TouchableOpacity disabled={inviteBusy || !isOwner} onPress={ensureInviteCode} style={[styles.addMemberButton, { opacity: inviteBusy || !isOwner ? 0.6 : 1 }]}>
+                    <Plus size={20} color="#4A90E2" />
+                    <Text style={styles.addMemberText}>Davet Kodu Oluştur</Text>
+                  </TouchableOpacity>
+                )}
+              </View>
+
+              {/* Üye ekleme alanı */}
+              <View style={{ gap: 8 }}>
+                <Text style={styles.label}>Üye Ekle (email veya UID)</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                  <TextInput
+                    style={[styles.modalInput, { flex: 1 }]}
+                    placeholder="ornek@eposta.com veya uid"
+                    placeholderTextColor="#999"
+                    autoCapitalize="none"
+                    value={addQuery}
+                    onChangeText={setAddQuery}
+                  />
+                  <TouchableOpacity disabled={addBusy || !isOwner} onPress={addMember} style={[styles.addMemberButton, { borderStyle: 'solid', paddingVertical: 12, paddingHorizontal: 16, opacity: addBusy || !isOwner ? 0.6 : 1 }]}>
+                    <Text style={styles.addMemberText}>{addBusy ? 'Ekleniyor…' : 'Ekle'}</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
             </View>
           </Pressable>
         </Pressable>
@@ -738,5 +1062,43 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '600',
     color: '#4A90E2',
+  },
+  memberRemoveBtn: {
+    padding: 6,
+    borderRadius: 8,
+    backgroundColor: '#FFF',
+    borderWidth: 1,
+    borderColor: '#F0F0F0',
+  },
+  memberTransferBtn: {
+    padding: 6,
+    borderRadius: 8,
+    backgroundColor: '#FFF',
+    borderWidth: 1,
+    borderColor: '#FDE68A',
+  },
+  categoryRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  categoryChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#4A90E2',
+    backgroundColor: '#fff',
+  },
+  categoryChipActive: {
+    backgroundColor: '#4A90E2',
+  },
+  categoryText: {
+    fontSize: 13,
+    color: '#4A90E2',
+    fontWeight: '600',
   },
 });

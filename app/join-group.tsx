@@ -5,7 +5,7 @@ import { Stack, router } from 'expo-router';
 import { Button } from '@/components/Button';
 import { db, auth } from '@/src/firebase.web';
 import {
-  collection, doc, query, where, getDocs, updateDoc, serverTimestamp, setDoc
+  doc, getDoc, updateDoc, serverTimestamp, setDoc, arrayUnion
 } from 'firebase/firestore';
 
 export default function JoinGroupScreen() {
@@ -23,38 +23,45 @@ export default function JoinGroupScreen() {
       const normalized = code.trim().toUpperCase();
       if (!normalized) throw new Error('Davet kodu gerekli.');
 
-      // 1) Koda göre grup ara
-      const q = query(collection(db, 'groups'), where('inviteCode', '==', normalized));
-      const snap = await getDocs(q);
-      if (snap.empty) throw new Error('Geçersiz davet kodu');
+      // 1) Koda göre groupId bul (invites/{code}) — groups okumaya gerek yok
+      const invSnap = await getDoc(doc(db, 'invites', normalized));
+      if (!invSnap.exists()) throw new Error('Geçersiz davet kodu');
+      const groupId = invSnap.data()?.groupId as string | undefined;
+      if (!groupId) throw new Error('Davet kaydında groupId eksik');
 
-      const g = snap.docs[0];
-      const ref = g.ref;
-      const data: any = g.data();
-
-      // 2) Zaten üyeyse direkt yönlendir
-      if ((data.memberIds || []).includes(uid)) {
-        router.replace(`/group/${g.id}`);
-        return;
+      // 2) Self-join: sadece memberIds değişir (rules buna izin veriyor)
+      try {
+        await updateDoc(doc(db, 'groups', groupId), {
+          memberIds: arrayUnion(uid),
+        });
+      } catch (joinErr: any) {
+        // Eğer zaten üyeyse update reddedilir; bu durumda üyeysek grup okunabilir olmalı
+        try {
+          const probe = await getDoc(doc(db, 'groups', groupId));
+          if (probe.exists()) {
+            router.replace(`/group/${groupId}`);
+            return;
+          }
+        } catch {}
+        throw joinErr;
       }
 
-      // 3) Üye olarak ekle + kullanıcı aynasını yaz
-      await updateDoc(ref, {
-        memberIds: [...(data.memberIds || []), uid],
-        [`members.${uid}`]: { role: 'member', joinedAt: serverTimestamp() },
-        [`balances.${uid}`]: 0,
-        lastActivityAt: serverTimestamp(),
-      });
+      // 3) Artık üyeyiz; grup adını çekip kullanıcı altına yaz (opsiyonel)
+      let groupName: string | undefined = undefined;
+      try {
+        const gSnap = await getDoc(doc(db, 'groups', groupId));
+        groupName = (gSnap.exists() ? (gSnap.data() as any)?.name : undefined) as string | undefined;
+      } catch {}
 
-      await setDoc(doc(db, 'users', uid, 'groups', g.id), {
-        groupId: g.id,
-        name: data.name,
+      await setDoc(doc(db, 'users', uid, 'groups', groupId), {
+        groupId,
+        name: groupName,
         role: 'member',
         joinedAt: serverTimestamp(),
       });
 
       // 4) Grup sayfasına git
-      router.replace(`/group/${g.id}`);
+      router.replace(`/group/${groupId}`);
     } catch (e: any) {
       setErr(e?.message || 'Bir hata oluştu');
     } finally {

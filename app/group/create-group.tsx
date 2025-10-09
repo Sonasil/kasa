@@ -1,4 +1,8 @@
 // Dosya: app/group/create-group.tsx
+// Adım 3 — Grup oluşturma kurallarına uyum:
+// - createdBy: currentUser.uid
+// - memberIds: [currentUser.uid] (rules gereği tek üye şartı)
+// - Diğer metadata: createdAt, lastActivityAt vb. opsiyonel
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
 import { Stack, router } from 'expo-router';
@@ -12,20 +16,24 @@ export default function CreateGroupScreen() {
   const uid = auth.currentUser?.uid;
 
   const onCreate = async () => {
+    if (loading) return;
+    const nameNorm = name.trim();
+
     console.log('[CREATE] uid check =>', auth.currentUser?.uid);
     console.log('[CREATE] name =>', name);
     if (!uid) {
       Alert.alert('Oturum gerekli', 'Grup oluşturmak için giriş yapmalısın.');
       return;
     }
-    if (!name.trim()) return;
+    if (!nameNorm) return;
 
     setLoading(true);
     try {
       // 1) groups/{id}
       const groupRef = doc(collection(db, 'groups'));
+      // ⚖️ Firestore Rules uyumlu payload (memberIds sadece [uid])
       await setDoc(groupRef, {
-        name: name.trim(),
+        name: nameNorm,
         createdBy: uid,
         createdAt: serverTimestamp(),
         memberIds: [uid],
@@ -38,7 +46,7 @@ export default function CreateGroupScreen() {
       const userGroupRef = doc(db, 'users', uid, 'groups', groupRef.id);
       await setDoc(userGroupRef, {
         groupId: groupRef.id,
-        name: name.trim(),
+        name: nameNorm,
         role: 'admin',
         joinedAt: serverTimestamp(),
       });

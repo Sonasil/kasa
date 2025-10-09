@@ -11,6 +11,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { db } from "../src/firebase.web";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { arrayUnion } from "firebase/firestore";
 
 export default function RegisterScreen() {
   const [name, setName] = useState("");
@@ -50,6 +51,8 @@ export default function RegisterScreen() {
         email: (cred.user.email ?? emailNorm).toLowerCase(),
         createdAt: serverTimestamp(),
       });
+      // ✅ users koleksiyonuna başarıyla eklendi
+      console.log("Yeni kullanıcı Firestore'a kaydedildi:", cred.user.uid);
 
       // 4) Başarılı → tabs'e yönlendir
       router.replace("/(tabs)");
