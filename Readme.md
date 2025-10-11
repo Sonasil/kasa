@@ -57,5 +57,5 @@ Kim ne kadar harcadı, kimin borcu/alacağı var, kim kime ödeme yapmalı — h
 ---
 
 <p align="center">
-  Made with by <a href="https://github.com/Sonasil>" Asil</a>
+  Made with ❤️ by <a href="https://github.com/Sonasil">Asil</a>
 </p>
