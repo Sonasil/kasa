@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import * as Clipboard from 'expo-clipboard';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { db, auth } from '@/src/firebase.web';
-import { doc, onSnapshot, getDoc, updateDoc, arrayRemove, arrayUnion, deleteDoc, addDoc, setDoc, collection, serverTimestamp, query, orderBy, onSnapshot as onColSnapshot, getDocs, where } from 'firebase/firestore';
+import { doc, onSnapshot, getDoc, updateDoc, arrayRemove, arrayUnion, deleteDoc, addDoc, setDoc, collection, serverTimestamp, query, orderBy, onSnapshot as onColSnapshot, getDocs, where, runTransaction } from 'firebase/firestore';
 
 type ModalType = 'expense' | 'status' | 'members' | null;
 
@@ -15,6 +15,7 @@ type GroupDoc = {
   totalAmount?: number; // optional; if yoksa 0 gösteririz
   createdBy?: string;   // owner uid
   inviteCode?: string;  // opsiyonel davet kodu
+  balances?: Record<string, number>; // cents (integer)
 };
 
 export default function GroupDetail() {
@@ -35,11 +36,17 @@ export default function GroupDetail() {
 
   // Expense form & list state
   type Expense = { id: string; title: string; amount: number; payerUid: string; category?: string; receiptUrl?: string; createdAt?: any };
+  type ChatMessage = { id: string; text: string; createdAt?: any; createdBy: string; type?: 'text' | 'expense' };
   const [expenseTitle, setExpenseTitle] = useState('');
   const [expenseAmount, setExpenseAmount] = useState('');
   const [expenseCategory, setExpenseCategory] = useState<string | null>(null);
   const [receiptUrl, setReceiptUrl] = useState(''); // optional proof URL
   const [expenses, setExpenses] = useState<Expense[]>([]);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [messageText, setMessageText] = useState('');
+  const [expenseBusy, setExpenseBusy] = useState(false);
+  // Katılımcı çoklu seçimi (varsayılan: sadece current user)
+  const [selectedParticipants, setSelectedParticipants] = useState<string[]>([]);
   // Listen expenses under this group
   useEffect(() => {
     if (!groupId) return;
@@ -51,7 +58,7 @@ export default function GroupDetail() {
         return {
           id: d.id,
           title: data?.title ?? data?.description ?? 'Harcama',
-          amount: Number(data?.amount) || 0,
+          amount: data?.amountCents ? Number(data.amountCents) / 100 : (Number(data?.amount) || 0),
           payerUid: data?.payerUid ?? '',
           category: data?.category ?? null,
           receiptUrl: data?.receiptUrl ?? '',
@@ -62,6 +69,37 @@ export default function GroupDetail() {
     });
     return () => unsub();
   }, [groupId]);
+
+  // Listen messages (chat)
+  useEffect(() => {
+    if (!groupId) return;
+    const ref = collection(db, 'groups', groupId, 'messages');
+    const q = query(ref, orderBy('createdAt', 'asc'));
+    const unsub = onColSnapshot(q, (snap) => {
+      const list: ChatMessage[] = snap.docs.map((d) => {
+        const data: any = d.data();
+        return {
+          id: d.id,
+          text: data?.text || '',
+          createdAt: data?.createdAt,
+          createdBy: data?.createdBy || '',
+          type: data?.type || 'text',
+        } as ChatMessage;
+      });
+      // Order locally by createdAt seconds if present (serverTimestamp gecikmesi için)
+      list.sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
+      setMessages(list);
+    });
+    return () => unsub();
+  }, [groupId]);
+
+  // Harcama modalı açıldığında varsayılan seçim: sadece mevcut kullanıcı
+  useEffect(() => {
+    if (activeModal === 'expense') {
+      const me = auth.currentUser?.uid;
+      if (me) setSelectedParticipants([me]);
+    }
+  }, [activeModal]);
 
   // Subscribe to Firestore group doc
   useEffect(() => {
@@ -96,6 +134,17 @@ export default function GroupDetail() {
   const memberCount = Array.isArray(group?.memberIds) ? group!.memberIds!.length : 0;
   const totalAmount = typeof group?.totalAmount === 'number' ? group!.totalAmount! : 0;
   const memberIds = Array.isArray(group?.memberIds) ? group!.memberIds! : [];
+
+  // Balances (kuruş cinsinden)
+  const balances = (group?.balances || {}) as Record<string, number>;
+  const myUid = auth.currentUser?.uid || '';
+  const myBalanceCents = balances[myUid] || 0; // + alacak, - borç
+
+  // Harcama toplamını listeden çıkar (görsel için)
+  const spentSumTRY = expenses.reduce((acc, e) => acc + (Number(e.amount) || 0), 0);
+
+  const fmtTRY = (v: number) =>
+    Number(v).toLocaleString('tr-TR', { style: 'currency', currency: 'TRY' });
 
   const uid = auth.currentUser?.uid || null;
   const isOwner = !!uid && !!group?.createdBy && group.createdBy === uid;
@@ -236,6 +285,22 @@ export default function GroupDetail() {
     );
   };
 
+  // Katılımcı seçim yardımcıları
+  const toggleParticipant = (uidToToggle: string) => {
+    setSelectedParticipants((prev) => {
+      const set = new Set(prev);
+      if (set.has(uidToToggle)) set.delete(uidToToggle);
+      else set.add(uidToToggle);
+      return Array.from(set);
+    });
+  };
+
+  const selectAllParticipants = () => setSelectedParticipants(memberIds);
+  const selectOnlyMe = () => {
+    const me = auth.currentUser?.uid;
+    setSelectedParticipants(me ? [me] : []);
+  };
+
   // Kullanıcıyı email ya da uid ile çöz
   const resolveUserByQuery = async (q: string): Promise<{ uid: string; displayName?: string } | null> => {
     const queryStr = q.trim();
@@ -362,6 +427,92 @@ export default function GroupDetail() {
     );
   };
 
+  // Harcamayı ve balances'ı tek transaction içinde güncelle
+  const addExpenseWithTransaction = async (params: {
+    title: string;
+    amountTRY: number;
+    payerUid: string;
+    participants: string[];
+    category?: string | null;
+    receiptUrl?: string;
+  }) => {
+    if (!groupId) throw new Error('Geçersiz grup.');
+
+    const title = params.title.trim();
+    if (!title) throw new Error('Başlık gerekli.');
+    const totalCents = Math.round(Number(params.amountTRY) * 100);
+    if (!Number.isFinite(totalCents) || totalCents <= 0) throw new Error('Geçersiz tutar.');
+
+    // Deterministik bölüşüm: katılımcıları sıralayıp kalan kuruşları baştan dağıt
+    const participantIds = [...params.participants].sort();
+    const n = participantIds.length;
+    if (n === 0) throw new Error('En az bir katılımcı seçilmelidir.');
+    const base = Math.floor(totalCents / n);
+    let remainder = totalCents - base * n;
+    const splitCents: Record<string, number> = {};
+    for (const uid of participantIds) {
+      const extra = remainder > 0 ? 1 : 0;
+      splitCents[uid] = base + extra;
+      if (remainder > 0) remainder--;
+    }
+
+    const groupRef = doc(db, 'groups', groupId);
+    const expensesCol = collection(groupRef, 'expenses');
+
+    await runTransaction(db, async (tx) => {
+      const gSnap = await tx.get(groupRef);
+      if (!gSnap.exists()) throw new Error('Grup bulunamadı.');
+      const g = gSnap.data() as any;
+      const memberIdsTx: string[] = Array.isArray(g?.memberIds) ? g.memberIds : [];
+
+      if (!auth.currentUser?.uid || !memberIdsTx.includes(auth.currentUser.uid)) {
+        throw new Error('Bu grup için üye değilsin.');
+      }
+      if (!memberIdsTx.includes(params.payerUid)) {
+        throw new Error('Ödeyen grup üyesi olmalı.');
+      }
+      if (!participantIds.every((u) => memberIdsTx.includes(u))) {
+        throw new Error('Katılımcılar grup üyelerinden seçilmeli.');
+      }
+
+      // 1) Harcama dokümanı
+      const expRef = doc(expensesCol);
+      tx.set(expRef, {
+        title,
+        amountCents: totalCents,
+        currency: 'TRY',
+        payerUid: params.payerUid,
+        participantIds,
+        splitCents,
+        category: params.category ?? null,
+        receiptUrl: (params.receiptUrl || '').trim(),
+        createdAt: serverTimestamp(),
+        createdBy: auth.currentUser!.uid,
+        type: 'expense',
+      });
+
+      // 2) Balances güncelle (kuruş bazında)
+      const balances: Record<string, number> = { ...(g?.balances || {}) };
+      const payerShare = splitCents[params.payerUid] || 0;
+      balances[params.payerUid] = (balances[params.payerUid] || 0) + (totalCents - payerShare);
+      for (const uid of participantIds) {
+        if (uid === params.payerUid) continue;
+        balances[uid] = (balances[uid] || 0) - (splitCents[uid] || 0);
+      }
+
+      // Sadece değişmesi gereken alanları yaz: balances + lastActivityAt
+      // Böylece updateMask gereksiz alanları içermez ve kurallar sade kalır.
+      tx.set(
+        groupRef,
+        {
+          balances,
+          lastActivityAt: serverTimestamp(),
+        },
+        { merge: true }
+      );
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -397,17 +548,19 @@ export default function GroupDetail() {
         <View style={styles.statsContainer}>
           <View style={styles.statCard}>
             <Text style={styles.statLabel}>Harcanan</Text>
-            <Text style={styles.statValue}>₺180</Text>
+            <Text style={styles.statValue}>{fmtTRY(spentSumTRY)}</Text>
           </View>
 
           <View style={styles.statCard}>
             <Text style={styles.statLabel}>Durum</Text>
-            <Text style={[styles.statValue, styles.negativeValue]}>₺-43</Text>
+            <Text style={[styles.statValue, myBalanceCents < 0 ? styles.negativeValue : null]}>
+              {fmtTRY(myBalanceCents / 100)}
+            </Text>
           </View>
 
           <View style={styles.statCard}>
             <Text style={styles.statLabel}>Sana Düşen</Text>
-            <Text style={styles.statValue}>₺138</Text>
+            <Text style={styles.statValue}>{fmtTRY(Math.max(0, -myBalanceCents / 100))}</Text>
           </View>
         </View>
 
@@ -460,11 +613,51 @@ export default function GroupDetail() {
             ))
           )}
         </View>
+
+        {/* Chat Section */}
+        <View style={{ paddingHorizontal: 16, paddingBottom: 16 }}>
+          <Text style={[styles.label, { marginBottom: 8 }]}>Sohbet</Text>
+          {messages.length === 0 ? (
+            <Text style={{ color: '#666' }}>Henüz mesaj yok.</Text>
+          ) : (
+            <View style={{ gap: 8 }}>
+              {messages.map((m) => (
+                <View key={m.id} style={{ backgroundColor: '#FFF', borderRadius: 12, padding: 12 }}>
+                  <Text style={{ fontSize: 13, color: '#999', marginBottom: 4 }}>
+                    {m.type === 'expense' ? '💸 Harcama' : 'Mesaj'}
+                  </Text>
+                  <Text style={{ fontSize: 14, color: '#111' }}>
+                    {m.text}
+                  </Text>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
       </ScrollView>
 
-      <View style={styles.messageInput}>
-        <TextInput style={styles.input} placeholder="Mesaj yaz..." placeholderTextColor="#999" />
-        <TouchableOpacity style={styles.sendButton}>
+      <View style={[styles.messageInput, Platform.OS !== 'web' ? { paddingBottom: 12 } : null]}>
+        <TextInput style={styles.input} placeholder="Mesaj yaz..." placeholderTextColor="#999" value={messageText} onChangeText={setMessageText} />
+        <TouchableOpacity
+          style={styles.sendButton}
+          onPress={async () => {
+            const uidSend = auth.currentUser?.uid;
+            if (!uidSend || !groupId) return;
+            const text = messageText.trim();
+            if (!text) return;
+            try {
+              await addDoc(collection(db, 'groups', groupId, 'messages'), {
+                text,
+                createdAt: serverTimestamp(),
+                createdBy: uidSend,
+                type: 'text',
+              });
+              setMessageText('');
+            } catch (e) {
+              Alert.alert('Gönderilemedi', 'Mesaj gönderirken bir sorun oluştu.');
+            }
+          }}
+        >
           <Send size={20} color="#4A90E2" />
         </TouchableOpacity>
       </View>
@@ -472,7 +665,11 @@ export default function GroupDetail() {
       {/* Harcama Modalı */}
       <Modal visible={activeModal === 'expense'} transparent animationType="fade" onRequestClose={() => setActiveModal(null)}>
         <Pressable style={styles.modalOverlay} onPress={() => setActiveModal(null)}>
-          <Pressable style={styles.modalContent} onPress={(e) => e.stopPropagation()}>
+          <Pressable
+            style={styles.modalContent}
+            onStartShouldSetResponder={() => true}
+            onTouchEnd={(e) => { e.stopPropagation(); }}
+          >
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Yeni Harcama</Text>
               <TouchableOpacity onPress={() => setActiveModal(null)}><X size={24} color="#666" /></TouchableOpacity>
@@ -535,38 +732,107 @@ export default function GroupDetail() {
                 />
               </View>
 
+              {/* Katılımcı seçimi */}
+              <View style={styles.inputGroup}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                  <Text style={styles.label}>Bu harcamayı kimler paylaşıyor?</Text>
+                  <View style={{ flexDirection: 'row', gap: 8 }}>
+                    <TouchableOpacity onPress={selectAllParticipants} style={styles.participantShortcutBtn}>
+                      <Text style={styles.participantShortcutText}>Herkes</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={selectOnlyMe} style={styles.participantShortcutBtn}>
+                      <Text style={styles.participantShortcutText}>Sadece Ben</Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+                <View style={styles.participantRow}>
+                  {memberIds.map((muid) => {
+                    const name = userMap[muid]?.displayName || muid;
+                    const active = selectedParticipants.includes(muid);
+                    return (
+                      <TouchableOpacity
+                        key={muid}
+                        onPress={() => toggleParticipant(muid)}
+                        style={[styles.participantChip, active && styles.participantChipActive]}
+                      >
+                        <Text style={[styles.participantChipText, active && { color: '#fff' }]} numberOfLines={1}>
+                          {name}
+                        </Text>
+                      </TouchableOpacity>
+                    );
+                  })}
+                </View>
+                <Text style={{ color: '#666', marginTop: 6 }}>Seçili: {selectedParticipants.length} kişi</Text>
+              </View>
+
               <TouchableOpacity
-                style={styles.modalButton}
+                style={[styles.modalButton, expenseBusy && { opacity: 0.6 }]}
+                disabled={expenseBusy}
                 onPress={async () => {
+                  console.log('[EXPENSE] submit tapped');
                   const currentUid = auth.currentUser?.uid;
-                  if (!currentUid || !groupId) return Alert.alert('Hata', 'Oturum veya grup bulunamadı.');
+                  if (!currentUid || !groupId) {
+                    Alert.alert('Hata', 'Oturum veya grup bulunamadı.');
+                    return;
+                  }
                   const title = expenseTitle.trim();
-                  const amountNum = Number(expenseAmount.replace(',', '.'));
+                  const amountNum = Number(String(expenseAmount).replace(',', '.'));
                   if (!title || !Number.isFinite(amountNum) || amountNum <= 0) {
                     Alert.alert('Geçersiz', 'Başlık ve tutarı doğru girin.');
                     return;
                   }
+
+                  let participants = selectedParticipants;
+                  if (!participants.length) {
+                    Alert.alert('Eksik seçim', 'En az bir katılımcı seçmelisin.');
+                    return;
+                  }
+                  if (!participants.includes(currentUid)) {
+                    participants = [currentUid, ...participants];
+                  }
+
                   try {
-                    await addDoc(collection(db, 'groups', groupId, 'expenses'), {
+                    setExpenseBusy(true);
+                    console.log('[EXPENSE] calling addExpenseWithTransaction', { groupId, title, amountNum, payer: currentUid, participants });
+                    await addExpenseWithTransaction({
                       title,
-                      amount: amountNum,
+                      amountTRY: amountNum,
                       payerUid: currentUid,
-                      participants: memberIds,
+                      participants,
                       category: expenseCategory,
                       receiptUrl: receiptUrl?.trim() || '',
-                      createdAt: serverTimestamp(),
                     });
+                    console.log('[EXPENSE] success');
+                    // Chat mesajı olarak da düş
+                    try {
+                      await addDoc(collection(db, 'groups', groupId!, 'messages'), {
+                        text: `${title} — ₺${amountNum.toFixed(2)} (paylaşan: ${participants.length} kişi)`,
+                        createdAt: serverTimestamp(),
+                        createdBy: currentUid,
+                        type: 'expense',
+                      });
+                    } catch (e) {
+                      console.warn('[CHAT] expense message create failed', e);
+                    }
                     setExpenseTitle('');
                     setExpenseAmount('');
                     setExpenseCategory(null);
                     setReceiptUrl('');
+                    setSelectedParticipants([currentUid]);
                     setActiveModal(null);
                   } catch (e: any) {
+                    console.error('[EXPENSE] error', e);
                     Alert.alert('Eklenemedi', e?.message || 'Harcama eklenirken bir sorun oluştu.');
+                  } finally {
+                    setExpenseBusy(false);
                   }
                 }}
               >
-                <Text style={styles.modalButtonText}>Harcama Ekle</Text>
+                {expenseBusy ? (
+                  <ActivityIndicator color="#FFF" />
+                ) : (
+                  <Text style={styles.modalButtonText}>Harcama Ekle</Text>
+                )}
               </TouchableOpacity>
             </View>
           </Pressable>
@@ -585,12 +851,40 @@ export default function GroupDetail() {
               <View style={styles.statusSummary}>
                 <TrendingUp size={32} color="#4A90E2" />
                 <Text style={styles.statusTitle}>Toplam Harcama</Text>
-                <Text style={styles.statusAmount}>₺{totalAmount}</Text>
+                <Text style={styles.statusAmount}>{fmtTRY(spentSumTRY)}</Text>
               </View>
               <View style={styles.statusList}>
-                <View style={{ alignItems: 'center' }}>
-                  <Text style={{ color: '#666' }}>Hesaplamalar bağlandığında görünecek.</Text>
-                </View>
+                {memberIds.length === 0 ? (
+                  <View style={{ alignItems: 'center' }}>
+                    <Text style={{ color: '#666' }}>Üye bulunamadı.</Text>
+                  </View>
+                ) : (
+                  memberIds.map((muid) => {
+                    const name = userMap[muid]?.displayName || muid;
+                    const initial = (name?.[0] || '?').toUpperCase();
+                    const cents = balances[muid] || 0;
+                    const positive = cents > 0;
+                    return (
+                      <View key={muid} style={styles.statusItem}>
+                        <View style={styles.statusItemLeft}>
+                          <View style={[styles.statusAvatar, { backgroundColor: positive ? '#10B981' : '#EF4444' }]}> 
+                            <Text style={styles.statusInitial}>{initial}</Text>
+                          </View>
+                          <View>
+                            <Text style={styles.statusName}>{name}</Text>
+                            <Text style={styles.statusSubtext}>{positive ? 'Alacaklı' : (cents === 0 ? 'Dengede' : 'Borçlu')}</Text>
+                          </View>
+                        </View>
+                        <View style={styles.statusRight}>
+                          {positive ? <ArrowUpRight size={18} color="#10B981" /> : (cents < 0 ? <ArrowDownRight size={18} color="#EF4444" /> : null)}
+                          <Text style={[styles.statusValue, { color: positive ? '#10B981' : (cents < 0 ? '#EF4444' : '#111') }]}>
+                            {fmtTRY(cents / 100)}
+                          </Text>
+                        </View>
+                      </View>
+                    );
+                  })
+                )}
               </View>
             </View>
           </Pressable>
@@ -1100,5 +1394,38 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#4A90E2',
     fontWeight: '600',
+  },
+  participantRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  participantChip: {
+    maxWidth: '48%',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#4A90E2',
+    backgroundColor: '#fff',
+  },
+  participantChipActive: {
+    backgroundColor: '#4A90E2',
+  },
+  participantChipText: {
+    fontSize: 13,
+    color: '#4A90E2',
+    fontWeight: '600',
+  },
+  participantShortcutBtn: {
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 8,
+    backgroundColor: '#F0F7FF',
+  },
+  participantShortcutText: {
+    color: '#4A90E2',
+    fontWeight: '700',
+    fontSize: 12,
   },
 });

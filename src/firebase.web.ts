@@ -1,5 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, initializeFirestore, enableIndexedDbPersistence } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 // Senin Firebase Console'dan aldığın config:
 const firebaseConfig = {
@@ -16,5 +16,16 @@ const firebaseConfig = {
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 
 // Firestore referansını export et
-export const db = getFirestore(app);
+export const db = initializeFirestore(app, { ignoreUndefinedProperties: true });
+// Offline cache (web). Çoklu sekmede açıkken çakışmaması için best‑effort.
+try {
+  await enableIndexedDbPersistence(db);
+} catch (e) {
+  // eslint-disable-next-line no-console
+  console.warn('[firebase] persistence not enabled', e);
+}
 export const auth = getAuth(app);
+// Bildirimler / e‑postalar için dil tercihleri
+if (auth) {
+  try { auth.languageCode = 'tr'; } catch {}
+}

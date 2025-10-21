@@ -5,7 +5,7 @@ import { Stack, router } from 'expo-router';
 import { Button } from '@/components/Button';
 import { db, auth } from '@/src/firebase.web';
 import {
-  doc, getDoc, updateDoc, serverTimestamp, setDoc, arrayUnion
+  doc, getDoc, updateDoc, serverTimestamp, setDoc, arrayUnion, addDoc, collection
 } from 'firebase/firestore';
 
 export default function JoinGroupScreen() {
@@ -20,7 +20,7 @@ export default function JoinGroupScreen() {
       const uid = auth.currentUser?.uid;
       if (!uid) throw new Error('Giriş yapmalısın.');
 
-      const normalized = code.trim().toUpperCase();
+      const normalized = code.replace(/\s|-/g, '').trim().toUpperCase();
       if (!normalized) throw new Error('Davet kodu gerekli.');
 
       // 1) Koda göre groupId bul (invites/{code}) — groups okumaya gerek yok
@@ -39,6 +39,17 @@ export default function JoinGroupScreen() {
         try {
           const probe = await getDoc(doc(db, 'groups', groupId));
           if (probe.exists()) {
+            const gdata: any = probe.data();
+            const groupNameProbe = gdata?.name as string | undefined;
+            // users/{uid}/groups/{groupId} eşlemesini de garanti altına al
+            try {
+              await setDoc(doc(db, 'users', uid, 'groups', groupId), {
+                groupId,
+                name: groupNameProbe,
+                role: 'member',
+                joinedAt: serverTimestamp(),
+              }, { merge: true });
+            } catch {}
             router.replace(`/group/${groupId}`);
             return;
           }
@@ -46,6 +57,18 @@ export default function JoinGroupScreen() {
         throw joinErr;
       }
 
+      // 2.5) Chat'e otomatik katılım mesajı bırak
+      try {
+        const displayName = auth.currentUser?.displayName || 'Bir üye';
+        await addDoc(collection(db, 'groups', groupId, 'messages'), {
+          text: `${displayName} gruba katıldı` ,
+          createdAt: serverTimestamp(),
+          createdBy: uid,
+          type: 'text',
+        });
+      } catch (e) {
+        console.warn('[JOIN] chat welcome failed', e);
+      }
       // 3) Artık üyeyiz; grup adını çekip kullanıcı altına yaz (opsiyonel)
       let groupName: string | undefined = undefined;
       try {

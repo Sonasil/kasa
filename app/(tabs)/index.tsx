@@ -1,44 +1,148 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { FilterButton } from '@/components/FilterButton';
 import { ExpenseCard } from '@/components/ExpenseCard';
 
-const mockExpenses = [
-  { id: '1', title: 'Market Alışverişi', amount: 120, paidBy: 'Ali', date: '2024-01-15', groupName: 'Ev Arkadaşları' },
-  { id: '2', title: 'Pizza Siparişi', amount: 85, paidBy: 'Ayşe', date: '2024-01-14', groupName: 'Proje Grubu' },
-  { id: '3', title: 'Benzin', amount: 200, paidBy: 'Mehmet', date: '2024-01-13', groupName: 'Hafta Sonu Gezisi' },
-  { id: '4', title: 'Kahve', amount: 45, paidBy: 'Sen', date: '2024-01-12', groupName: 'Çalışma Grubu' },
-  
-];
+import { auth, db } from '@/src/firebase.web';
+import {
+  collectionGroup,
+  collection,
+  doc,
+  getDoc,
+  onSnapshot,
+  query,
+  where,
+  orderBy,
+  limit as qlimit,
+} from 'firebase/firestore';
+
 
 type FilterType = 'all' | 'spent' | 'incoming';
+
+  type UIExpense = {
+    id: string;
+    title: string;
+    amountTRY: number; // amountCents / 100
+    payerUid: string;
+    groupId: string;
+    createdAt?: any;
+  };
 
 export default function KasaScreen() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
 
+  const [uid, setUid] = useState<string | null>(null);
+  const [expensesMine, setExpensesMine] = useState<UIExpense[]>([]); // I am participant
+  const [expensesIPaid, setExpensesIPaid] = useState<UIExpense[]>([]); // I am payer
+  const [groupsMap, setGroupsMap] = useState<Record<string, { name: string; balances?: Record<string, number> }>>({});
+
+  // Greeting name
+  const displayName = auth.currentUser?.displayName || 'Sen';
+
+  useEffect(() => {
+    const u = auth.currentUser?.uid || null;
+    setUid(u);
+  }, []);
+
+  useEffect(() => {
+    if (!uid) return;
+    const qGroups = query(collection(db, 'groups'), where('memberIds', 'array-contains', uid));
+    const unsub = onSnapshot(qGroups, (snap) => {
+      const map: Record<string, { name: string; balances?: Record<string, number> }> = {};
+      snap.forEach((d) => {
+        const data: any = d.data();
+        map[d.id] = { name: data?.name || 'Grup', balances: data?.balances || {} };
+      });
+      setGroupsMap(map);
+    });
+    return () => unsub();
+  }, [uid]);
+
+  useEffect(() => {
+    if (!uid) return;
+    // 1) Benim katıldıklarım
+    const qPart = query(
+      collectionGroup(db, 'expenses'),
+      where('participantIds', 'array-contains', uid),
+      orderBy('createdAt', 'desc'),
+      qlimit(20)
+    );
+    const unsub1 = onSnapshot(qPart, (snap) => {
+      const list: UIExpense[] = snap.docs.map((d) => {
+        const data: any = d.data();
+        const parent = d.ref.parent; // expenses
+        const groupId = parent.parent?.id || '';
+        return {
+          id: d.id,
+          title: data?.title || 'Harcama',
+          amountTRY: data?.amountCents ? Number(data.amountCents) / 100 : Number(data?.amount || 0),
+          payerUid: data?.payerUid || '',
+          groupId,
+          createdAt: data?.createdAt,
+        };
+      });
+      setExpensesMine(list);
+    });
+
+    // 2) Benim ödediğimler
+    const qPaid = query(
+      collectionGroup(db, 'expenses'),
+      where('payerUid', '==', uid),
+      orderBy('createdAt', 'desc'),
+      qlimit(20)
+    );
+    const unsub2 = onSnapshot(qPaid, (snap) => {
+      const list: UIExpense[] = snap.docs.map((d) => {
+        const data: any = d.data();
+        const parent = d.ref.parent; // expenses
+        const groupId = parent.parent?.id || '';
+        return {
+          id: d.id,
+          title: data?.title || 'Harcama',
+          amountTRY: data?.amountCents ? Number(data.amountCents) / 100 : Number(data?.amount || 0),
+          payerUid: data?.payerUid || '',
+          groupId,
+          createdAt: data?.createdAt,
+        };
+      });
+      setExpensesIPaid(list);
+    });
+
+    return () => { unsub1(); unsub2(); };
+  }, [uid]);
+
+  const merged = useMemo(() => {
+    const map = new Map<string, UIExpense>();
+    [...expensesMine, ...expensesIPaid].forEach((e) => { map.set(e.id + '|' + e.groupId, e); });
+    const arr = Array.from(map.values());
+    // Sort by createdAt desc if available
+    arr.sort((a, b) => {
+      const ta = (a.createdAt?.seconds || 0);
+      const tb = (b.createdAt?.seconds || 0);
+      return tb - ta;
+    });
+    return arr;
+  }, [expensesMine, expensesIPaid]);
+
   const getFilteredExpenses = () => {
+    if (!uid) return [] as UIExpense[];
     switch (activeFilter) {
       case 'spent':
-        return mockExpenses.filter(expense => expense.paidBy === 'Sen');
-  
+        return merged.filter((e) => e.payerUid === uid);
       case 'incoming':
-        // Show expenses paid to others
-        return mockExpenses.filter(expense => expense.paidBy !== 'Sen');
+        return merged.filter((e) => e.payerUid !== uid);
       default:
-        return mockExpenses;
+        return merged;
     }
   };
 
   const getTotalBalance = () => {
-    const totalSpent = mockExpenses
-      .filter(expense => expense.paidBy === 'Sen')
-      .reduce((sum, expense) => sum + expense.amount, 0);
-    
-    const totalOwed = mockExpenses
-      .filter(expense => expense.paidBy !== 'Sen')
-      .reduce((sum, expense) => sum + (expense.amount / 4), 0); // Assuming 4 people per group
-    
-    return totalSpent - totalOwed;
+    if (!uid) return 0;
+    const cents = Object.entries(groupsMap).reduce((sum, [, g]) => {
+      const b = g.balances?.[uid] || 0;
+      return sum + Number(b);
+    }, 0);
+    return Math.round(cents) / 100; // TRY
   };
 
   const balance = getTotalBalance();
@@ -46,13 +150,13 @@ export default function KasaScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.greeting}>Merhaba, Ahmet!</Text>
+        <Text style={styles.greeting}>Merhaba{displayName ? `, ${displayName}!` : '!'}</Text>
         {/* 3 Kutu Başlangıç */}
         <View style={styles.summaryRow}>
           <View style={[styles.summaryBox, { backgroundColor: '#F1F5F9' }]}>
             <Text style={styles.summaryLabel}>Harcanan</Text>
             <Text style={styles.summaryValue}>
-              {mockExpenses.filter(e => e.paidBy === 'Sen').reduce((sum, e) => sum + e.amount, 0)} ₺
+              {merged.filter(e => e.payerUid === uid).reduce((sum, e) => sum + e.amountTRY, 0).toFixed(2)} ₺
             </Text>
           </View>
           <View style={[styles.summaryBox, { backgroundColor: '#E0F2FE' }]}>
@@ -73,7 +177,7 @@ export default function KasaScreen() {
           <View style={[styles.summaryBox, { backgroundColor: '#FEF9C3' }]}>
             <Text style={styles.summaryLabel}>Gelen</Text>
             <Text style={styles.summaryValue}>
-              {mockExpenses.filter(e => e.paidBy !== 'Sen').reduce((sum, e) => sum + (e.amount / 4), 0)} ₺
+              {Math.max(0, getTotalBalance()).toFixed(2)} ₺
             </Text>
           </View>
         </View>
@@ -102,18 +206,18 @@ export default function KasaScreen() {
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         <Text style={styles.sectionTitle}>Son Harcamalar</Text>
-        
+
         {getFilteredExpenses().map((expense) => (
           <ExpenseCard
-            key={expense.id}
+            key={`${expense.groupId}_${expense.id}`}
             title={expense.title}
-            amount={expense.amount}
-            paidBy={expense.paidBy}
-            date={expense.date}
-            groupName={expense.groupName}
+            amount={expense.amountTRY}
+            paidBy={expense.payerUid === uid ? 'Sen' : 'Diğer'}
+            date={expense.createdAt?.toDate ? expense.createdAt.toDate().toISOString().slice(0,10) : ''}
+            groupName={groupsMap[expense.groupId]?.name || 'Grup'}
           />
         ))}
-        
+
         {getFilteredExpenses().length === 0 && (
           <View style={styles.emptyState}>
             <Text style={styles.emptyText}>Bu filtrede harcama bulunamadı</Text>

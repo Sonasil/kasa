@@ -37,6 +37,7 @@ export default function CreateGroupScreen() {
         createdBy: uid,
         createdAt: serverTimestamp(),
         memberIds: [uid],
+        inviteCode: null,
         members: { [uid]: { role: 'admin', joinedAt: serverTimestamp() } },
         balances: { [uid]: 0 },
         lastActivityAt: serverTimestamp(),
@@ -50,6 +51,18 @@ export default function CreateGroupScreen() {
         role: 'admin',
         joinedAt: serverTimestamp(),
       });
+
+      // 2.5) groups/{id}/messages: hoşgeldin mesajı (opsiyonel ama faydalı)
+      try {
+        await setDoc(doc(collection(db, 'groups', groupRef.id, 'messages')), {
+          text: `${nameNorm} grubu oluşturuldu. Hoş geldiniz!`,
+          createdAt: serverTimestamp(),
+          createdBy: uid,
+          type: 'text',
+        });
+      } catch (e) {
+        console.warn('[CREATE] welcome message failed', e);
+      }
 
       // 3) Yönlendir
       router.replace(`/group/${groupRef.id}`);
