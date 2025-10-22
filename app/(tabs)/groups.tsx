@@ -4,7 +4,7 @@ import { router } from 'expo-router';
 import { Users } from 'lucide-react-native';
 import { Card } from '@/components/Card';
 import { Button } from '@/components/Button';
-import { db, auth } from '@/src/firebase.web';
+import { db, auth } from '@/src/firebase';
 import { collection, onSnapshot, query, where, deleteDoc, doc } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -29,6 +29,7 @@ export default function GroupsScreen() {
     const unsubAuth = onAuthStateChanged(auth, (u) => {
       setUid(u?.uid ?? null);
     });
+    // Auth hazır olmadan Firestore dinlemesi başlatılmıyor; aşağıdaki effect uid gelmeden çalışmaz.
     return () => unsubAuth();
   }, []);
 
