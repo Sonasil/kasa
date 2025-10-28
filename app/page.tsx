@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -144,6 +144,9 @@ export default function DashboardPage() {
   const [selectedActivity, setSelectedActivity] = useState<ActivityItem | null>(null)
   const [activityDetailOpen, setActivityDetailOpen] = useState(false)
 
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+
   const youOwe = 45000
   const youAreOwed = 35000
   const netBalance = youAreOwed - youOwe
@@ -259,8 +262,8 @@ export default function DashboardPage() {
           >
             <div className="h-[18px] w-[18px] flex items-center justify-center">{getIcon()}</div>
           </div>
-          <p className="text-[11px] text-muted-foreground leading-none whitespace-nowrap">
-            {formatTime(activity.timestamp)}
+          <p className="text-[11px] text-muted-foreground leading-none whitespace-nowrap" suppressHydrationWarning>
+            {mounted ? formatTime(activity.timestamp) : ""}
           </p>
         </div>
 

@@ -1,927 +1,542 @@
-[00:11:54.636] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/pages-manifest.json'
-[00:11:55.244] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.262] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.274] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.339] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.355] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.372] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.388] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.401] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.422] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.437] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.455] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.468] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.487] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.508] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.522] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.539] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.555] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.568] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.588] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.607] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.630] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.645] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.660] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.685] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.705] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.725] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.740] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.751] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.775] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.790] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.808] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.824] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.837] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.859] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.875] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.893] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.906] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.919] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:55.945] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.958] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:55.977] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:55.991] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.002] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.023] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.038] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.057] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.070] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.083] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.105] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.118] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.136] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.151] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.161] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.182] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.197] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.215] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.228] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.240] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.261] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.274] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.292] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.307] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.317] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.338] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.352] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.370] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.383] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.395] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.416] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.430] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.447] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.462] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.473] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.496] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.512] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.531] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.544] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.556] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.579] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.592] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.611] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.625] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.636] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.656] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.671] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.689] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.702] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.715] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.737] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.750] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.768] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.783] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.794] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.814] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.829] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.847] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.860] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.872] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.896] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.909] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.926] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.941] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:56.952] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:56.972] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:56.987] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.006] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.019] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.032] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.054] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.067] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.085] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.101] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.117] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.140] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.154] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.170] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.185] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.198] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.217] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.232] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.249] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.262] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.274] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.321] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.334] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.352] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.367] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.377] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.397] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.412] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.429] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.441] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.455] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.477] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.489] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.507] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.522] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.533] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.553] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.568] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.586] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.598] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.611] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.634] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.647] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.665] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.680] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.690] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.711] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.725] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.743] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.756] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.768] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.790] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.803] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.820] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.835] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.845] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.864] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.879] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.896] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.909] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.921] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:57.942] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.955] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.972] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:57.986] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:57.997] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:58.017] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:58.031] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:58.049] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:58.062] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:58.074] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:58.097] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:58.110] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:58.128] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:58.142] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:58.153] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:11:58.198] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:58.215] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:58.234] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
-[00:11:58.247] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
-Require stack:
-- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
-- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
-[00:11:58.260] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
-[00:12:22.595] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/kk/Documents/GitHub/kasa/app'
-[00:12:22.598] Server  ERROR    ⨯ "unhandledRejection:" Error: ENOENT: no such file or directory, scandir '/Users/kk/Documents/GitHub/kasa/app'
-[00:12:22.605] Server  ERROR    ⨯ "unhandledRejection: " Error: ENOENT: no such file or directory, scandir '/Users/kk/Documents/GitHub/kasa/app'
-[00:12:23.048] Server  LOG      ✓ Compiled in 39ms
-[00:12:23.148] Server  LOG      ✓ Compiled in 55ms
-[00:12:23.388] Server  LOG      ✓ Compiled in 7ms
-[00:12:23.879] Server  LOG      ✓ Compiled in 29ms
-[00:12:24.097] Server  LOG      ✓ Compiled in 80ms
-[00:12:24.187] Server  LOG      ✓ Compiled in 13ms
-[00:12:24.278] Server  LOG      ✓ Compiled in 19ms
-[00:12:24.462] Server  LOG      ✓ Compiled in 128ms
-[00:12:24.499] Server  LOG      ✓ Compiled in 6ms
-[00:12:24.563] Server  LOG      ✓ Compiled in 50ms
+[00:00:03.255] Server  LOG     
+[00:00:03.255] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+[00:00:03.256] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:03.256] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:03.256] Server  LOG     
+[00:00:03.256] Server  LOG        The following mandatory changes were made to your tsconfig.json:
+
+[00:00:03.256] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+[00:00:03.256] Server  LOG     
+[00:00:03.354] Server  LOG      ✓ Ready in 3.1s
+[00:00:07.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.533] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_1fc36e54-80fe-46cb-9744-78de2f24dbee__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                            ...
+                              <SegmentViewNode type="page" pagePath="page.tsx">
+                                <SegmentTrieNode>
+                                <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
+                                  <DashboardPage params={Promise} searchParams={Promise}>
+                                    <div
+                                      className="min-h-screen bg-background pb-20"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <div
+                                        className="border-b bg-card"
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="mx-auto max-w-4xl p-3 sm:p-6"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="flex items-center justify-between mb-3 sm:mb-4"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+-                                             bis_skin_checked="1"
+                                            >
+                                            ...
+                                          <div
+                                            className="sm:hidden"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              className="grid grid-cols-3 gap-1"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <Card className="p-2 rounde...">
+                                                <div
+                                                  data-slot="card"
+                                                  className="bg-card text-card-foreground gap-2 border shadow-sm p-2 r..."
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <div
+                                                    className="flex flex-col items-center justify-center leading-tight"
+-                                                   bis_skin_checked="1"
+                                                  >
+                                                    <p>
+                                                    <div
+                                                      className="flex items-center justify-center gap-1"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                              <Card className="p-2 rounde...">
+                                                <div
+                                                  data-slot="card"
+                                                  className="bg-card text-card-foreground gap-2 border shadow-sm p-2 r..."
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <div
+                                                    className="flex flex-col items-center justify-center leading-tight"
+-                                                   bis_skin_checked="1"
+                                                  >
+                                                    <p>
+                                                    <div
+                                                      className="flex items-center justify-center gap-1"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                              <Card className="p-2 rounde...">
+                                                <div
+                                                  data-slot="card"
+                                                  className="text-card-foreground gap-2 border shadow-sm p-2 rounded-m..."
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <div
+                                                    className="flex flex-col items-center justify-center leading-tight"
+-                                                   bis_skin_checked="1"
+                                                  >
+                                                    <p>
+                                                    <div
+                                                      className="flex items-center justify-center gap-1"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                          <div
+                                            className="hidden sm:grid sm:grid-cols-2 sm:gap-3"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <Card className="p-1.5 sm:p...">
+                                              <div
+                                                data-slot="card"
+                                                className="bg-card text-card-foreground flex flex-col gap-2 border sha..."
+-                                               bis_skin_checked="1"
+                                              >
+                                                <div
+                                                  className="leading-[1.05]"
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <p>
+                                                  <div
+                                                    className="mt-0.5 inline-flex items-center gap-1.5"
+-                                                   bis_skin_checked="1"
+                                                  >
+                                            <Card className="p-1.5 sm:p...">
+                                              <div
+                                                data-slot="card"
+                                                className="bg-card text-card-foreground flex flex-col gap-2 border sha..."
+-                                               bis_skin_checked="1"
+                                              >
+                                                <div
+                                                  className="leading-[1.05]"
+-                                                 bis_skin_checked="1"
+                                                >
+                                                  <p>
+                                                  <div
+                                                    className="mt-0.5 inline-flex items-center gap-1.5"
+-                                                   bis_skin_checked="1"
+                                                  >
+                                          <Card className="hidden sm:...">
+                                            <div
+                                              data-slot="card"
+                                              className="text-card-foreground flex-col gap-2 border shadow-sm hidden s..."
+-                                             bis_skin_checked="1"
+                                            >
+                                              <div
+                                                className="leading-[1.05] w-full"
+-                                               bis_skin_checked="1"
+                                              >
+                                                <p>
+                                                <div
+                                                  className="mt-0.5 inline-flex items-center gap-1.5"
+-                                                 bis_skin_checked="1"
+                                                >
+                                      <div
+                                        className="mx-auto max-w-4xl p-3 sm:p-6"
+-                                       bis_skin_checked="1"
+                                      >
+                                        ...
+                                          <TabsProvider scope={undefined} baseId="radix-_R_2..." value="all" ...>
+                                            <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" ...>
+                                              <div
+                                                dir="ltr"
+                                                data-orientation="horizontal"
+                                                data-slot="tabs"
+                                                className="flex flex-col gap-2 w-full"
+                                                ref={null}
+-                                               bis_skin_checked="1"
+                                              >
+                                                ...
+                                                  <Primitive.div.Slot tabIndex={-1} data-orientation="horizontal" ...>
+                                                    <Primitive.div.SlotClone tabIndex={-1} data-orientation="horizontal" ...>
+                                                      <Primitive.div role="tablist" aria-orientation="horizontal" ...>
+                                                        <div
+                                                          role="tablist"
+                                                          aria-orientation="horizontal"
+                                                          data-slot="tabs-list"
+                                                          className="bg-muted text-muted-foreground inline-flex h-9 it..."
+                                                          tabIndex={-1}
+                                                          data-orientation="horizontal"
+                                                          style={{outline:"none"}}
+                                                          onMouseDown={function handleEvent}
+                                                          onFocus={function handleEvent}
+                                                          onBlur={function handleEvent}
+                                                          ref={function}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                <TabsContent value="all" className="space-y-3">
+                                                  <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
+                                                    <Presence present={true}>
+                                                      <Primitive.div data-state="active" data-orientation="horizontal" ...>
+                                                        <div
+                                                          data-state="active"
+                                                          data-orientation="horizontal"
+                                                          role="tabpanel"
+                                                          aria-labelledby="radix-_R_2indlb_-trigger-all"
+                                                          hidden={false}
+                                                          id="radix-_R_2indlb_-content-all"
+                                                          tabIndex={0}
+                                                          data-slot="tabs-content"
+                                                          className="flex-1 outline-none space-y-3"
+                                                          style={{animationDuration:"0s"}}
+                                                          ref={function}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="grid grid-cols-2 gap-4"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <Card className="h-full p-4..." onClick={function onClick}>
+                                                              <div
+                                                                data-slot="card"
+                                                                className="bg-card text-card-foreground rounded-xl bor..."
+                                                                onClick={function onClick}
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                                <div
+                                                                  className="flex items-start justify-between gap-2"
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="rounded-full bg-purple-100 dark:bg-purp..."
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                    <div
+                                                                      className="h-[18px] w-[18px] flex items-center j..."
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                                  ...
+                                                                <div
+                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="min-w-0"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                  <div
+                                                                    className="flex items-center justify-between gap-2"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                            <Card className="h-full p-4..." onClick={function onClick}>
+                                                              <div
+                                                                data-slot="card"
+                                                                className="bg-card text-card-foreground rounded-xl bor..."
+                                                                onClick={function onClick}
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                                <div
+                                                                  className="flex items-start justify-between gap-2"
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="rounded-full bg-green-100 dark:bg-green..."
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                    <div
+                                                                      className="h-[18px] w-[18px] flex items-center j..."
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                                  ...
+                                                                <div
+                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="min-w-0"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                  <div
+                                                                    className="flex items-center justify-between gap-2"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                            <Card className="h-full p-4..." onClick={function onClick}>
+                                                              <div
+                                                                data-slot="card"
+                                                                className="bg-card text-card-foreground rounded-xl bor..."
+                                                                onClick={function onClick}
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                                <div
+                                                                  className="flex items-start justify-between gap-2"
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="rounded-full bg-blue-100 dark:bg-blue-9..."
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                    <div
+                                                                      className="h-[18px] w-[18px] flex items-center j..."
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                                  ...
+                                                                <div
+                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="min-w-0"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                  <div
+                                                                    className="flex items-center justify-between gap-2"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                            <Card className="h-full p-4..." onClick={function onClick}>
+                                                              <div
+                                                                data-slot="card"
+                                                                className="bg-card text-card-foreground rounded-xl bor..."
+                                                                onClick={function onClick}
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                                <div
+                                                                  className="flex items-start justify-between gap-2"
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="rounded-full bg-purple-100 dark:bg-purp..."
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                    <div
+                                                                      className="h-[18px] w-[18px] flex items-center j..."
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                                  ...
+                                                                <div
+                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="min-w-0"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                  <div
+                                                                    className="flex items-center justify-between gap-2"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                            <Card className="h-full p-4..." onClick={function onClick}>
+                                                              <div
+                                                                data-slot="card"
+                                                                className="bg-card text-card-foreground rounded-xl bor..."
+                                                                onClick={function onClick}
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                                <div
+                                                                  className="flex items-start justify-between gap-2"
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="rounded-full bg-orange-100 dark:bg-oran..."
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                    <div
+                                                                      className="h-[18px] w-[18px] flex items-center j..."
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                                  ...
+                                                                <div
+                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="min-w-0"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                  <div
+                                                                    className="flex items-center justify-between gap-2"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                            <Card className="h-full p-4..." onClick={function onClick}>
+                                                              <div
+                                                                data-slot="card"
+                                                                className="bg-card text-card-foreground rounded-xl bor..."
+                                                                onClick={function onClick}
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                                <div
+                                                                  className="flex items-start justify-between gap-2"
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="rounded-full bg-purple-100 dark:bg-purp..."
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                    <div
+                                                                      className="h-[18px] w-[18px] flex items-center j..."
+-                                                                     bis_skin_checked="1"
+                                                                    >
+                                                                  ...
+                                                                <div
+                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
+-                                                                 bis_skin_checked="1"
+                                                                >
+                                                                  <div
+                                                                    className="min-w-0"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                                  <div
+                                                                    className="flex items-center justify-between gap-2"
+-                                                                   bis_skin_checked="1"
+                                                                  >
+                                                          <div
+                                                            className="flex justify-center pt-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                <TabsContent value="expense" className="space-y-3">
+                                                  <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
+                                                    <Presence present={false}>
+                                                      <Primitive.div data-state="inactive" data-orientation="horizontal" ...>
+                                                        <div
+                                                          data-state="inactive"
+                                                          data-orientation="horizontal"
+                                                          role="tabpanel"
+                                                          aria-labelledby="radix-_R_2indlb_-trigger-expense"
+                                                          hidden={true}
+                                                          id="radix-_R_2indlb_-content-expense"
+                                                          tabIndex={0}
+                                                          data-slot="tabs-content"
+                                                          className="flex-1 outline-none space-y-3"
+                                                          style={{animationDuration:undefined}}
+                                                          ref={function}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                <TabsContent value="settlement" className="space-y-3">
+                                                  <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
+                                                    <Presence present={false}>
+                                                      <Primitive.div data-state="inactive" data-orientation="horizontal" ...>
+                                                        <div
+                                                          data-state="inactive"
+                                                          data-orientation="horizontal"
+                                                          role="tabpanel"
+                                                          aria-labelledby="radix-_R_2indlb_-trigger-settlement"
+                                                          hidden={true}
+                                                          id="radix-_R_2indlb_-content-settlement"
+                                                          tabIndex={0}
+                                                          data-slot="tabs-content"
+                                                          className="flex-1 outline-none space-y-3"
+                                                          style={{animationDuration:undefined}}
+                                                          ref={function}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                      <Dialog>
+                                      <nav className="fixed bott...">
+                                        <div
+                                          className="mx-auto max-w-4xl px-6 py-2.5"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="flex items-center justify-around"
+-                                           bis_skin_checked="1"
+                                          >
+                            ...
+                  ...
+
+[00:00:08.533] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:08.533] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:08.533] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655520911}
+[00:01:48.862] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:49.147] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_6efec618-4da4-43c1-bfe2-c5ecf10e8360__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+
+[00:01:49.147] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:49.147] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:01:49.147] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655622316}
+[00:03:10.390] Server  WARN     ⚠ Cross origin request detected from 192.168.254.48 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:03:10.688] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:12.117] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:12.117] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:03:12.117] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655704390}
+[00:03:17.630] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655709951}
+[00:03:20.266] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://192.168.254.48:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655712589}
+[00:03:22.072] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655714419}
+[00:03:23.042] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655715420}
+[00:03:26.243] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655718608}
+[00:03:31.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655723451}
+[00:03:41.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655734066}
+[00:03:43.999] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://192.168.254.48:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655736372}
+[00:03:45.284] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655737659}
+[00:03:45.933] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655738308}
+[00:04:14.408] Server  LOG      ✓ Compiled in 134ms
