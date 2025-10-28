@@ -1,0 +1,927 @@
+[00:11:54.636] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/pages-manifest.json'
+[00:11:55.244] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.262] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.274] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.339] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.355] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.372] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.388] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.401] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.422] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.437] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.455] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.468] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.487] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.508] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.522] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.539] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.555] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.568] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.588] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.607] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.630] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.645] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.660] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.685] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.705] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.725] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.740] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.751] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.775] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.790] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.808] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.824] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.837] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.859] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.875] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.893] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.906] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.919] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:55.945] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.958] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:55.977] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:55.991] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.002] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.023] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.038] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.057] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.070] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.083] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.105] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.118] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.136] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.151] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.161] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.182] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.197] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.215] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.228] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.240] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.261] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.274] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.292] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.307] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.317] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.338] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.352] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.370] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.383] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.395] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.416] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.430] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.447] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.462] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.473] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.496] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.512] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.531] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.544] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.556] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.579] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.592] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.611] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.625] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.636] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.656] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.671] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.689] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.702] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.715] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.737] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.750] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.768] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.783] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.794] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.814] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.829] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.847] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.860] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.872] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.896] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.909] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.926] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.941] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:56.952] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:56.972] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:56.987] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.006] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.019] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.032] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.054] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.067] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.085] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.101] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.117] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.140] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.154] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.170] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.185] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.198] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.217] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.232] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.249] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.262] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.274] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.321] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.334] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.352] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.367] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.377] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.397] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.412] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.429] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.441] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.455] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.477] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.489] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.507] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.522] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.533] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.553] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.568] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.586] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.598] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.611] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.634] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.647] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.665] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.680] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.690] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.711] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.725] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.743] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.756] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.768] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.790] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.803] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.820] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.835] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.845] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.864] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.879] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.896] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.909] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.921] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:57.942] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.955] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.972] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:57.986] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:57.997] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:58.017] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:58.031] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:58.049] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:58.062] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:58.074] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:58.097] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:58.110] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:58.128] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:58.142] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:58.153] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:11:58.198] Server  ERROR    ⨯ Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:58.215] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:58.234] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/server/app/page/build-manifest.json'
+[00:11:58.247] Server  ERROR    ⨯ Error: Cannot find module '../chunks/ssr/[turbopack]_runtime.js'
+Require stack:
+- /Users/kk/Documents/GitHub/kasa/.next/dev/server/pages/_document.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/require.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/load-components.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/utils.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/options.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/build/swc/index.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/router-server.js
+- /Users/kk/Documents/GitHub/kasa/node_modules/next/dist/server/lib/start-server.js
+[00:11:58.260] Server  ERROR   Error: ENOENT: no such file or directory, open '/Users/kk/Documents/GitHub/kasa/.next/dev/routes-manifest.json'
+[00:12:22.595] Server  ERROR   Error: ENOENT: no such file or directory, scandir '/Users/kk/Documents/GitHub/kasa/app'
+[00:12:22.598] Server  ERROR    ⨯ "unhandledRejection:" Error: ENOENT: no such file or directory, scandir '/Users/kk/Documents/GitHub/kasa/app'
+[00:12:22.605] Server  ERROR    ⨯ "unhandledRejection: " Error: ENOENT: no such file or directory, scandir '/Users/kk/Documents/GitHub/kasa/app'
+[00:12:23.048] Server  LOG      ✓ Compiled in 39ms
+[00:12:23.148] Server  LOG      ✓ Compiled in 55ms
+[00:12:23.388] Server  LOG      ✓ Compiled in 7ms
+[00:12:23.879] Server  LOG      ✓ Compiled in 29ms
+[00:12:24.097] Server  LOG      ✓ Compiled in 80ms
+[00:12:24.187] Server  LOG      ✓ Compiled in 13ms
+[00:12:24.278] Server  LOG      ✓ Compiled in 19ms
+[00:12:24.462] Server  LOG      ✓ Compiled in 128ms
+[00:12:24.499] Server  LOG      ✓ Compiled in 6ms
+[00:12:24.563] Server  LOG      ✓ Compiled in 50ms

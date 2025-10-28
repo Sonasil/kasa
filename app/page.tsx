@@ -218,11 +218,11 @@ export default function DashboardPage() {
     const getIcon = () => {
       switch (activity.type) {
         case "expense":
-          return <DollarSign className="h-4 w-4" />
+          return <DollarSign className="h-4.5 w-4.5" />
         case "settlement":
-          return <CheckCircle className="h-4 w-4" />
+          return <CheckCircle className="h-4.5 w-4.5" />
         case "join":
-          return <UserPlus className="h-4 w-4" />
+          return <UserPlus className="h-4.5 w-4.5" />
       }
     }
 
@@ -247,23 +247,27 @@ export default function DashboardPage() {
     return (
       <Card
         key={activity.id}
-        className="h-full p-3 hover:bg-accent/50 transition-all duration-200 cursor-pointer flex flex-col gap-1.5 group"
+        className="h-full p-4 hover:bg-accent/50 hover:shadow-md active:scale-[0.98] transition-all duration-200 cursor-pointer flex flex-col gap-2 group"
         onClick={() => {
           setSelectedActivity(activity)
           setActivityDetailOpen(true)
         }}
       >
         <div className="flex items-start justify-between gap-2">
-          <div className={`rounded-full ${getIconBgColor()} p-1.5 shrink-0 ${getIconColor()}`}>{getIcon()}</div>
-          <p className="text-[10px] text-muted-foreground leading-none whitespace-nowrap">
+          <div
+            className={`rounded-full ${getIconBgColor()} h-7 w-7 flex items-center justify-center shrink-0 ${getIconColor()}`}
+          >
+            <div className="h-[18px] w-[18px] flex items-center justify-center">{getIcon()}</div>
+          </div>
+          <p className="text-[11px] text-muted-foreground leading-none whitespace-nowrap">
             {formatTime(activity.timestamp)}
           </p>
         </div>
 
-        <div className="flex-1 min-w-0 flex flex-col justify-between gap-1.5">
+        <div className="flex-1 min-w-0 flex flex-col justify-between gap-2">
           <div className="min-w-0">
-            <p className="font-semibold text-sm truncate leading-tight">{activity.title}</p>
-            <p className="text-xs text-muted-foreground line-clamp-2 leading-tight mt-0.5">
+            <p className="font-semibold text-sm truncate leading-snug">{activity.title}</p>
+            <p className="text-xs text-muted-foreground line-clamp-2 leading-relaxed mt-1">
               {activity.user.name}
               {activity.groupName && ` • ${activity.groupName}`}
             </p>
@@ -272,7 +276,7 @@ export default function DashboardPage() {
             {activity.amount && (
               <Badge
                 variant={activity.isPositive ? "default" : "secondary"}
-                className={`shrink-0 whitespace-nowrap text-xs px-2 py-0.5 h-5 ${
+                className={`shrink-0 whitespace-nowrap text-xs px-2.5 py-1 h-6 transition-colors duration-200 ${
                   activity.isPositive
                     ? "bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-950/50 dark:text-green-400"
                     : "bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-950/50 dark:text-red-400"
@@ -561,7 +565,7 @@ export default function DashboardPage() {
           </TabsList>
 
           <TabsContent value="all" className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {getLimitedActivities(filterActivities("all")).map(renderActivityItem)}
             </div>
             {filterActivities("all").length > 6 && (
@@ -589,7 +593,7 @@ export default function DashboardPage() {
           </TabsContent>
 
           <TabsContent value="expense" className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {getLimitedActivities(filterActivities("expense")).length > 0 ? (
                 getLimitedActivities(filterActivities("expense")).map(renderActivityItem)
               ) : (
@@ -623,7 +627,7 @@ export default function DashboardPage() {
           </TabsContent>
 
           <TabsContent value="settlement" className="space-y-3">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-4">
               {getLimitedActivities(filterActivities("settlement")).length > 0 ? (
                 getLimitedActivities(filterActivities("settlement")).map(renderActivityItem)
               ) : (
@@ -659,7 +663,7 @@ export default function DashboardPage() {
       </div>
 
       <Dialog open={activityDetailOpen} onOpenChange={setActivityDetailOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md animate-in fade-in-0 zoom-in-95 duration-200">
           <DialogHeader>
             <DialogTitle>Activity Details</DialogTitle>
           </DialogHeader>
@@ -732,7 +736,7 @@ export default function DashboardPage() {
       </Dialog>
 
       <nav className="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-card/80 backdrop-blur-lg border-t border-border z-50">
-        <div className="mx-auto max-w-4xl px-6 py-1">
+        <div className="mx-auto max-w-4xl px-6 py-2.5">
           <div className="flex items-center justify-around">
             <button
               onClick={() => router.push("/groups")}
@@ -740,16 +744,16 @@ export default function DashboardPage() {
               aria-label="Groups"
             >
               <Wallet className="h-6 w-6 text-muted-foreground" />
-              <span className="text-[10px] text-muted-foreground">Groups</span>
+              <span className="text-[11px] text-muted-foreground">Groups</span>
             </button>
 
             <button
               onClick={() => router.push("/")}
-              className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors bg-accent"
+              className="flex flex-col items-center gap-1 p-2 px-4 rounded-full transition-colors bg-green-100 dark:bg-green-950/30"
               aria-label="Home"
             >
               <Home className="h-6 w-6 text-green-600" />
-              <span className="text-[10px] text-green-600 font-medium">Home</span>
+              <span className="text-[11px] text-green-600 font-medium">Home</span>
             </button>
 
             <button
@@ -758,7 +762,7 @@ export default function DashboardPage() {
               aria-label="Profile"
             >
               <User className="h-6 w-6 text-muted-foreground" />
-              <span className="text-[10px] text-muted-foreground">Profile</span>
+              <span className="text-[11px] text-muted-foreground">Profile</span>
             </button>
           </div>
         </div>
