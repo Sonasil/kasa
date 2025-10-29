@@ -7,6 +7,8 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2, Wallet } from "lucide-react"
+import { auth, googleProvider } from "@/lib/firebase"
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -16,9 +18,11 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({})
+  const [formError, setFormError] = useState<string | null>(null)
 
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {}
+    setFormError(null)
 
     if (!email.trim()) {
       newErrors.email = "Email is required"
@@ -42,21 +46,36 @@ export default function LoginPage() {
     if (!validateForm()) return
 
     setLoading(true)
-
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
       setLoading(false)
       router.push("/")
-    }, 1500)
+    } catch (err: any) {
+      setLoading(false)
+      // Basic error mapping
+      const code = err?.code as string | undefined
+      if (code === "auth/invalid-email") {
+        setErrors(prev => ({ ...prev, email: "Invalid email address" }))
+      } else if (code === "auth/user-not-found" || code === "auth/wrong-password") {
+        setErrors(prev => ({ ...prev, password: "Email or password is incorrect" }))
+      } else if (code === "auth/too-many-requests") {
+        setFormError("Too many attempts. Please try again later.")
+      } else {
+        setFormError("Sign-in failed. Please try again.")
+      }
+    }
   }
 
   const handleGoogleLogin = async () => {
     setGoogleLoading(true)
-    // Simulate Google OAuth flow
-    setTimeout(() => {
+    try {
+      await signInWithPopup(auth, googleProvider)
       setGoogleLoading(false)
       router.push("/")
-    }, 1500)
+    } catch (err) {
+      setGoogleLoading(false)
+      setFormError("Google sign-in failed. Please try again.")
+    }
   }
 
   return (
@@ -149,6 +168,11 @@ export default function LoginPage() {
                 "Sign In"
               )}
             </Button>
+            {formError && (
+              <p className="text-xs sm:text-sm text-destructive mt-2" role="alert">
+                {formError}
+              </p>
+            )}
           </form>
 
           <div className="relative my-6">

@@ -1,16 +1,6 @@
-[00:00:03.255] Server  LOG     
-[00:00:03.255] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-[00:00:03.256] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-
-[00:00:03.256] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
-[00:00:03.256] Server  LOG     
-[00:00:03.256] Server  LOG        The following mandatory changes were made to your tsconfig.json:
-
-[00:00:03.256] Server  LOG        	- jsx was set to react-jsx (next.js uses the React automatic runtime)
-[00:00:03.256] Server  LOG     
-[00:00:03.354] Server  LOG      ✓ Ready in 3.1s
-[00:00:07.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.533] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[00:00:00.730] Server  LOG      ✓ Ready in 514ms
+[00:00:09.471] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.607] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
 - A server/client branch `if (typeof window !== 'undefined')`.
 - Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
@@ -28,480 +18,7 @@ It can also happen if the client has a browser extension installed which messes 
         <ReplaySsrOnlyErrors>
         <DevRootHTTPAccessFallbackBoundary>
           <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head headCacheNode={{lazyData:null, ...}}>
-                    <__next_viewport_boundary__>
-                    <Next.Metadata>
-                      <div
-                        hidden={true}
--                       bis_skin_checked="1"
-                      >
-                    ...
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <link>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html lang="en">
-                          <body
-                            className="font-sans antialiased"
--                           __processed_1fc36e54-80fe-46cb-9744-78de2f24dbee__="true"
--                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
-                          >
-                            ...
-                              <SegmentViewNode type="page" pagePath="page.tsx">
-                                <SegmentTrieNode>
-                                <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
-                                  <DashboardPage params={Promise} searchParams={Promise}>
-                                    <div
-                                      className="min-h-screen bg-background pb-20"
--                                     bis_skin_checked="1"
-                                    >
-                                      <div
-                                        className="border-b bg-card"
--                                       bis_skin_checked="1"
-                                      >
-                                        <div
-                                          className="mx-auto max-w-4xl p-3 sm:p-6"
--                                         bis_skin_checked="1"
-                                        >
-                                          <div
-                                            className="flex items-center justify-between mb-3 sm:mb-4"
--                                           bis_skin_checked="1"
-                                          >
-                                            <div
--                                             bis_skin_checked="1"
-                                            >
-                                            ...
-                                          <div
-                                            className="sm:hidden"
--                                           bis_skin_checked="1"
-                                          >
-                                            <div
-                                              className="grid grid-cols-3 gap-1"
--                                             bis_skin_checked="1"
-                                            >
-                                              <Card className="p-2 rounde...">
-                                                <div
-                                                  data-slot="card"
-                                                  className="bg-card text-card-foreground gap-2 border shadow-sm p-2 r..."
--                                                 bis_skin_checked="1"
-                                                >
-                                                  <div
-                                                    className="flex flex-col items-center justify-center leading-tight"
--                                                   bis_skin_checked="1"
-                                                  >
-                                                    <p>
-                                                    <div
-                                                      className="flex items-center justify-center gap-1"
--                                                     bis_skin_checked="1"
-                                                    >
-                                              <Card className="p-2 rounde...">
-                                                <div
-                                                  data-slot="card"
-                                                  className="bg-card text-card-foreground gap-2 border shadow-sm p-2 r..."
--                                                 bis_skin_checked="1"
-                                                >
-                                                  <div
-                                                    className="flex flex-col items-center justify-center leading-tight"
--                                                   bis_skin_checked="1"
-                                                  >
-                                                    <p>
-                                                    <div
-                                                      className="flex items-center justify-center gap-1"
--                                                     bis_skin_checked="1"
-                                                    >
-                                              <Card className="p-2 rounde...">
-                                                <div
-                                                  data-slot="card"
-                                                  className="text-card-foreground gap-2 border shadow-sm p-2 rounded-m..."
--                                                 bis_skin_checked="1"
-                                                >
-                                                  <div
-                                                    className="flex flex-col items-center justify-center leading-tight"
--                                                   bis_skin_checked="1"
-                                                  >
-                                                    <p>
-                                                    <div
-                                                      className="flex items-center justify-center gap-1"
--                                                     bis_skin_checked="1"
-                                                    >
-                                          <div
-                                            className="hidden sm:grid sm:grid-cols-2 sm:gap-3"
--                                           bis_skin_checked="1"
-                                          >
-                                            <Card className="p-1.5 sm:p...">
-                                              <div
-                                                data-slot="card"
-                                                className="bg-card text-card-foreground flex flex-col gap-2 border sha..."
--                                               bis_skin_checked="1"
-                                              >
-                                                <div
-                                                  className="leading-[1.05]"
--                                                 bis_skin_checked="1"
-                                                >
-                                                  <p>
-                                                  <div
-                                                    className="mt-0.5 inline-flex items-center gap-1.5"
--                                                   bis_skin_checked="1"
-                                                  >
-                                            <Card className="p-1.5 sm:p...">
-                                              <div
-                                                data-slot="card"
-                                                className="bg-card text-card-foreground flex flex-col gap-2 border sha..."
--                                               bis_skin_checked="1"
-                                              >
-                                                <div
-                                                  className="leading-[1.05]"
--                                                 bis_skin_checked="1"
-                                                >
-                                                  <p>
-                                                  <div
-                                                    className="mt-0.5 inline-flex items-center gap-1.5"
--                                                   bis_skin_checked="1"
-                                                  >
-                                          <Card className="hidden sm:...">
-                                            <div
-                                              data-slot="card"
-                                              className="text-card-foreground flex-col gap-2 border shadow-sm hidden s..."
--                                             bis_skin_checked="1"
-                                            >
-                                              <div
-                                                className="leading-[1.05] w-full"
--                                               bis_skin_checked="1"
-                                              >
-                                                <p>
-                                                <div
-                                                  className="mt-0.5 inline-flex items-center gap-1.5"
--                                                 bis_skin_checked="1"
-                                                >
-                                      <div
-                                        className="mx-auto max-w-4xl p-3 sm:p-6"
--                                       bis_skin_checked="1"
-                                      >
-                                        ...
-                                          <TabsProvider scope={undefined} baseId="radix-_R_2..." value="all" ...>
-                                            <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" ...>
-                                              <div
-                                                dir="ltr"
-                                                data-orientation="horizontal"
-                                                data-slot="tabs"
-                                                className="flex flex-col gap-2 w-full"
-                                                ref={null}
--                                               bis_skin_checked="1"
-                                              >
-                                                ...
-                                                  <Primitive.div.Slot tabIndex={-1} data-orientation="horizontal" ...>
-                                                    <Primitive.div.SlotClone tabIndex={-1} data-orientation="horizontal" ...>
-                                                      <Primitive.div role="tablist" aria-orientation="horizontal" ...>
-                                                        <div
-                                                          role="tablist"
-                                                          aria-orientation="horizontal"
-                                                          data-slot="tabs-list"
-                                                          className="bg-muted text-muted-foreground inline-flex h-9 it..."
-                                                          tabIndex={-1}
-                                                          data-orientation="horizontal"
-                                                          style={{outline:"none"}}
-                                                          onMouseDown={function handleEvent}
-                                                          onFocus={function handleEvent}
-                                                          onBlur={function handleEvent}
-                                                          ref={function}
--                                                         bis_skin_checked="1"
-                                                        >
-                                                <TabsContent value="all" className="space-y-3">
-                                                  <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
-                                                    <Presence present={true}>
-                                                      <Primitive.div data-state="active" data-orientation="horizontal" ...>
-                                                        <div
-                                                          data-state="active"
-                                                          data-orientation="horizontal"
-                                                          role="tabpanel"
-                                                          aria-labelledby="radix-_R_2indlb_-trigger-all"
-                                                          hidden={false}
-                                                          id="radix-_R_2indlb_-content-all"
-                                                          tabIndex={0}
-                                                          data-slot="tabs-content"
-                                                          className="flex-1 outline-none space-y-3"
-                                                          style={{animationDuration:"0s"}}
-                                                          ref={function}
--                                                         bis_skin_checked="1"
-                                                        >
-                                                          <div
-                                                            className="grid grid-cols-2 gap-4"
--                                                           bis_skin_checked="1"
-                                                          >
-                                                            <Card className="h-full p-4..." onClick={function onClick}>
-                                                              <div
-                                                                data-slot="card"
-                                                                className="bg-card text-card-foreground rounded-xl bor..."
-                                                                onClick={function onClick}
--                                                               bis_skin_checked="1"
-                                                              >
-                                                                <div
-                                                                  className="flex items-start justify-between gap-2"
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="rounded-full bg-purple-100 dark:bg-purp..."
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                    <div
-                                                                      className="h-[18px] w-[18px] flex items-center j..."
--                                                                     bis_skin_checked="1"
-                                                                    >
-                                                                  ...
-                                                                <div
-                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="min-w-0"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                  <div
-                                                                    className="flex items-center justify-between gap-2"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                            <Card className="h-full p-4..." onClick={function onClick}>
-                                                              <div
-                                                                data-slot="card"
-                                                                className="bg-card text-card-foreground rounded-xl bor..."
-                                                                onClick={function onClick}
--                                                               bis_skin_checked="1"
-                                                              >
-                                                                <div
-                                                                  className="flex items-start justify-between gap-2"
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="rounded-full bg-green-100 dark:bg-green..."
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                    <div
-                                                                      className="h-[18px] w-[18px] flex items-center j..."
--                                                                     bis_skin_checked="1"
-                                                                    >
-                                                                  ...
-                                                                <div
-                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="min-w-0"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                  <div
-                                                                    className="flex items-center justify-between gap-2"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                            <Card className="h-full p-4..." onClick={function onClick}>
-                                                              <div
-                                                                data-slot="card"
-                                                                className="bg-card text-card-foreground rounded-xl bor..."
-                                                                onClick={function onClick}
--                                                               bis_skin_checked="1"
-                                                              >
-                                                                <div
-                                                                  className="flex items-start justify-between gap-2"
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="rounded-full bg-blue-100 dark:bg-blue-9..."
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                    <div
-                                                                      className="h-[18px] w-[18px] flex items-center j..."
--                                                                     bis_skin_checked="1"
-                                                                    >
-                                                                  ...
-                                                                <div
-                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="min-w-0"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                  <div
-                                                                    className="flex items-center justify-between gap-2"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                            <Card className="h-full p-4..." onClick={function onClick}>
-                                                              <div
-                                                                data-slot="card"
-                                                                className="bg-card text-card-foreground rounded-xl bor..."
-                                                                onClick={function onClick}
--                                                               bis_skin_checked="1"
-                                                              >
-                                                                <div
-                                                                  className="flex items-start justify-between gap-2"
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="rounded-full bg-purple-100 dark:bg-purp..."
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                    <div
-                                                                      className="h-[18px] w-[18px] flex items-center j..."
--                                                                     bis_skin_checked="1"
-                                                                    >
-                                                                  ...
-                                                                <div
-                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="min-w-0"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                  <div
-                                                                    className="flex items-center justify-between gap-2"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                            <Card className="h-full p-4..." onClick={function onClick}>
-                                                              <div
-                                                                data-slot="card"
-                                                                className="bg-card text-card-foreground rounded-xl bor..."
-                                                                onClick={function onClick}
--                                                               bis_skin_checked="1"
-                                                              >
-                                                                <div
-                                                                  className="flex items-start justify-between gap-2"
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="rounded-full bg-orange-100 dark:bg-oran..."
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                    <div
-                                                                      className="h-[18px] w-[18px] flex items-center j..."
--                                                                     bis_skin_checked="1"
-                                                                    >
-                                                                  ...
-                                                                <div
-                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="min-w-0"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                  <div
-                                                                    className="flex items-center justify-between gap-2"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                            <Card className="h-full p-4..." onClick={function onClick}>
-                                                              <div
-                                                                data-slot="card"
-                                                                className="bg-card text-card-foreground rounded-xl bor..."
-                                                                onClick={function onClick}
--                                                               bis_skin_checked="1"
-                                                              >
-                                                                <div
-                                                                  className="flex items-start justify-between gap-2"
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="rounded-full bg-purple-100 dark:bg-purp..."
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                    <div
-                                                                      className="h-[18px] w-[18px] flex items-center j..."
--                                                                     bis_skin_checked="1"
-                                                                    >
-                                                                  ...
-                                                                <div
-                                                                  className="flex-1 min-w-0 flex flex-col justify-betw..."
--                                                                 bis_skin_checked="1"
-                                                                >
-                                                                  <div
-                                                                    className="min-w-0"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                                  <div
-                                                                    className="flex items-center justify-between gap-2"
--                                                                   bis_skin_checked="1"
-                                                                  >
-                                                          <div
-                                                            className="flex justify-center pt-2"
--                                                           bis_skin_checked="1"
-                                                          >
-                                                <TabsContent value="expense" className="space-y-3">
-                                                  <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
-                                                    <Presence present={false}>
-                                                      <Primitive.div data-state="inactive" data-orientation="horizontal" ...>
-                                                        <div
-                                                          data-state="inactive"
-                                                          data-orientation="horizontal"
-                                                          role="tabpanel"
-                                                          aria-labelledby="radix-_R_2indlb_-trigger-expense"
-                                                          hidden={true}
-                                                          id="radix-_R_2indlb_-content-expense"
-                                                          tabIndex={0}
-                                                          data-slot="tabs-content"
-                                                          className="flex-1 outline-none space-y-3"
-                                                          style={{animationDuration:undefined}}
-                                                          ref={function}
--                                                         bis_skin_checked="1"
-                                                        >
-                                                <TabsContent value="settlement" className="space-y-3">
-                                                  <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
-                                                    <Presence present={false}>
-                                                      <Primitive.div data-state="inactive" data-orientation="horizontal" ...>
-                                                        <div
-                                                          data-state="inactive"
-                                                          data-orientation="horizontal"
-                                                          role="tabpanel"
-                                                          aria-labelledby="radix-_R_2indlb_-trigger-settlement"
-                                                          hidden={true}
-                                                          id="radix-_R_2indlb_-content-settlement"
-                                                          tabIndex={0}
-                                                          data-slot="tabs-content"
-                                                          className="flex-1 outline-none space-y-3"
-                                                          style={{animationDuration:undefined}}
-                                                          ref={function}
--                                                         bis_skin_checked="1"
-                                                        >
-                                      <Dialog>
-                                      <nav className="fixed bott...">
-                                        <div
-                                          className="mx-auto max-w-4xl px-6 py-2.5"
--                                         bis_skin_checked="1"
-                                        >
-                                          <div
-                                            className="flex items-center justify-around"
--                                           bis_skin_checked="1"
-                                          >
-                            ...
-                  ...
-
-[00:00:08.533] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.533] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:08.533] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655520911}
-[00:01:48.862] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:49.147] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-%s%s https://react.dev/link/hydration-mismatch 
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
               <RedirectBoundary>
                 <RedirectErrorBoundary router={{...}}>
                   <Head>
@@ -515,28 +32,56 @@ It can also happen if the client has a browser extension installed which messes 
                         <html lang="en">
                           <body
                             className="font-sans antialiased"
--                           __processed_6efec618-4da4-43c1-bfe2-c5ecf10e8360__="true"
+-                           __processed_bffb3b6b-036c-4562-ae40-6489f6185fdb__="true"
 -                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
                           >
                   ...
 
-[00:01:49.147] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:49.147] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:49.147] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655622316}
-[00:03:10.390] Server  WARN     ⚠ Cross origin request detected from 192.168.254.48 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
-Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:03:10.688] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:12.117] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:03:12.117] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:03:12.117] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655704390}
-[00:03:17.630] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655709951}
-[00:03:20.266] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://192.168.254.48:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655712589}
-[00:03:22.072] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655714419}
-[00:03:23.042] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655715420}
-[00:03:26.243] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655718608}
-[00:03:31.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655723451}
-[00:03:41.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655734066}
-[00:03:43.999] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://192.168.254.48:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655736372}
-[00:03:45.284] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://192.168.254.48:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655737659}
-[00:03:45.933] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://192.168.254.48:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://192.168.254.48:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761655738308}
-[00:04:14.408] Server  LOG      ✓ Compiled in 134ms
+[00:00:09.696] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:09.696] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:00:09.696] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761735832370}
+[00:00:35.602] Server  LOG      ✓ Compiled in 461ms
+[00:00:38.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:39.023] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/login" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en">
+                          <body
+                            className="font-sans antialiased"
+-                           __processed_97b2553d-9848-4a7e-a565-a1ccd9635bfd__="true"
+-                           bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWll..."
+                          >
+                  ...
+
+[00:00:39.023] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:39.023] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:00:39.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761735861696}
+[00:00:51.558] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761735874217}
+[00:00:53.556] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761735876226}
+[00:00:55.955] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1761735878626}
