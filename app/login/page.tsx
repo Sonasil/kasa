@@ -20,6 +20,7 @@ export default function LoginPage() {
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({})
   const [formError, setFormError] = useState<string | null>(null)
 
+
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {}
     setFormError(null)

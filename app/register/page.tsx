@@ -7,6 +7,9 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2, Wallet, Check, X } from "lucide-react"
+import { auth, db } from "@/lib/firebase"
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { doc, setDoc, serverTimestamp } from "firebase/firestore"
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -84,14 +87,51 @@ export default function RegisterPage() {
     if (!validateForm()) return
 
     setLoading(true)
+    try {
+      // 1) Create user with email/password
+      const cred = await createUserWithEmailAndPassword(auth, email, password)
 
-    // Simulate API call
-    setTimeout(() => {
+      // 2) Set display name if provided
+      const name = fullName.trim()
+      if (name) {
+        try { await updateProfile(cred.user, { displayName: name }) } catch {}
+      }
+
+      // 3) Upsert user profile in Firestore
+      await setDoc(
+        doc(db, "users", cred.user.uid),
+        {
+          uid: cred.user.uid,
+          email: cred.user.email ?? null,
+          displayName: name || cred.user.displayName || null,
+          photoURL: cred.user.photoURL ?? null,
+          provider: "password",
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp(),
+        },
+        { merge: true }
+      )
+
+      // 4) Redirect on success
+      router.push("/")
+    } catch (err: any) {
+      // Basic error mapping to existing inline errors
+      const code = err?.code as string | undefined
+      if (code === "auth/email-already-in-use") {
+        setErrors(prev => ({ ...prev, email: "Email already in use" }))
+      } else if (code === "auth/invalid-email") {
+        setErrors(prev => ({ ...prev, email: "Invalid email address" }))
+      } else if (code === "auth/weak-password") {
+        setErrors(prev => ({ ...prev, password: "Password is too weak" }))
+      } else {
+        // Fallback: keep UI unchanged, surface minimal feedback
+        setErrors(prev => ({ ...prev, email: prev.email || "Registration failed. Please try again." }))
+      }
+    } finally {
       setLoading(false)
-      // Mock successful registration - redirect to groups page
-      router.push("/groups/1")
-    }, 1500)
+    }
   }
+  
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
