@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { Plus, Users, DollarSign, Clock, LinkIcon } from "lucide-react"
+import { createGroup } from "@/lib/groupService"
 
 type Group = {
   id: string

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -11,6 +11,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
+import { auth, db } from "@/lib/firebase"
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock } from "lucide-react"
 
 type Group = {
@@ -70,8 +73,49 @@ const MOCK_GROUPS: Group[] = [
 export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const [loading, setLoading] = useState(false)
-  const [groups] = useState<Group[]>(MOCK_GROUPS)
+  const [loading, setLoading] = useState(true)
+  const [groups, setGroups] = useState<Group[]>([])
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (!user) {
+        setGroups([])
+        setLoading(false)
+        return
+      }
+
+      const fetchGroups = async () => {
+        try {
+          const q = query(collection(db, "groups"), where("createdBy", "==", user.uid))
+          const snap = await getDocs(q)
+          const fetched: Group[] = snap.docs.map((docSnap) => {
+            const data = docSnap.data() as any
+            return {
+              id: docSnap.id,
+              name: data.name ?? "Unnamed group",
+              memberCount: 1, // TODO: members alt koleksiyonundan gerçek sayı çekilebilir
+              totalExpenses: 0, // TODO: expenses alt koleksiyonundan hesaplanacak
+              yourBalance: 0, // TODO: gerçek balance hesaplaması eklenecek
+              lastActivity: "Group created",
+              lastActivityTime:
+                data.createdAt && typeof data.createdAt.toDate === "function"
+                  ? data.createdAt.toDate()
+                  : new Date(),
+              isActive: true,
+            }
+          })
+          setGroups(fetched)
+        } catch (error) {
+          console.error("Failed to fetch groups:", error)
+        } finally {
+          setLoading(false)
+        }
+      }
+
+      fetchGroups()
+    })
+
+    return () => unsubscribe()
+  }, [])
   const [createGroupOpen, setCreateGroupOpen] = useState(false)
   const [joinGroupOpen, setJoinGroupOpen] = useState(false)
   const [groupName, setGroupName] = useState("")
@@ -98,7 +142,7 @@ export default function GroupsPage() {
     return date.toLocaleDateString()
   }
 
-  const handleCreateGroup = () => {
+  const handleCreateGroup = async () => {
     if (!groupName.trim()) {
       toast({
         title: "Invalid input",
@@ -108,12 +152,45 @@ export default function GroupsPage() {
       return
     }
 
-    toast({
-      title: "Group created",
-      description: `${groupName} has been created successfully`,
-    })
-    setCreateGroupOpen(false)
-    setGroupName("")
+    const name = groupName.trim()
+    setLoading(true)
+
+    try {
+      const { groupId } = await createGroup(name)
+
+      toast({
+        title: "Group created",
+        description: `${name} has been created successfully`,
+      })
+
+      setCreateGroupOpen(false)
+      setGroupName("")
+      setGroups((prev) => [
+        ...prev,
+        {
+          id: groupId,
+          name,
+          memberCount: 1,
+          totalExpenses: 0,
+          yourBalance: 0,
+          lastActivity: "Group created",
+          lastActivityTime: new Date(),
+          isActive: true,
+        },
+      ])
+
+      // İstersen burada yeni grup sayfasına yönlendirebilirsin:
+      // router.push(`/groups/${groupId}`)
+    } catch (error) {
+      console.error("Failed to create group:", error)
+      toast({
+        title: "Error",
+        description: "Something went wrong while creating the group. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleJoinGroup = () => {

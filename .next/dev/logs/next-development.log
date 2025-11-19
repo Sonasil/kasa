@@ -1,10 +1,603 @@
-[00:00:02.871] Server  LOG      ✓ Ready in 2.3s
-[00:00:11.862] Server  LOG      ○ Compiling / ...
-[00:00:12.851] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:14.008] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:14.008] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:14.008] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763218908115}
-[00:00:15.615] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763218909715}
-[00:00:17.648] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763218911739}
-[00:00:18.702] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763218912810}
-[00:00:19.769] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763218913851}
+[00:00:02.206] Server  LOG      ✓ Ready in 1853ms
+[00:00:08.541] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:08.753] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+      <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+        <LoadingBoundary name="/" loading={null}>
+          <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                    <SegmentViewNode type="page" pagePath="page.tsx">
+                      <SegmentTrieNode>
+                      <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
+                        <DashboardPage params={Promise} searchParams={Promise}>
+                          <div className="min-h-scre...">
+                            <div>
+                            <div>
+                            <Dialog>
+                            <nav className="fixed bott...">
+                              <div
+                                className="mx-auto max-w-4xl px-6 py-2.5"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="flex items-center justify-around"
+-                                 bis_skin_checked="1"
+                                >
+                    ...
+                  ...
+      ...
+
+[00:00:08.753] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:08.753] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:08.753] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763559148605}
+[00:00:42.266] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763559182116}
+[00:00:44.808] Browser ERROR   Failed to fetch groups: {"code":"permission-denied","name":"FirebaseError"}
+[00:00:46.621] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:46.622] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:52.121] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.617] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="groups/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/groups" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="groups/pag...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function GroupsPage} serverProvidedParams={{...}}>
+                          <GroupsPage params={Promise} searchParams={Promise}>
+                            <div
+                              className="min-h-screen bg-background pb-20"
+-                             bis_skin_checked="1"
+                            >
+                              <div
+                                className="border-b bg-card"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="mx-auto max-w-4xl p-3 sm:p-6"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-8 w-32 mb-4">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-8 w-32 mb-4"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <div
+                                    className="flex gap-2"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <Skeleton className="h-10 w-32">
+                                      <div
+                                        data-slot="skeleton"
+                                        className="bg-accent animate-pulse rounded-md h-10 w-32"
+-                                       bis_skin_checked="1"
+                                      >
+                                    <Skeleton className="h-10 w-32">
+                                      <div
+                                        data-slot="skeleton"
+                                        className="bg-accent animate-pulse rounded-md h-10 w-32"
+-                                       bis_skin_checked="1"
+                                      >
+                              <div
+                                className="mx-auto max-w-4xl p-3 sm:p-6 space-y-3 sm:space-y-4"
+-                               bis_skin_checked="1"
+                              >
+                                <Skeleton className="h-32">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-32"
+-                                   bis_skin_checked="1"
+                                  >
+                                <Skeleton className="h-32">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-32"
+-                                   bis_skin_checked="1"
+                                  >
+                                <Skeleton className="h-32">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-32"
+-                                   bis_skin_checked="1"
+                                  >
+                      ...
+                    ...
+          ...
+
+[00:00:52.617] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:52.617] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[00:00:52.617] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763559192456}
+[00:00:53.204] Browser ERROR   Failed to fetch groups: {"code":"permission-denied","name":"FirebaseError"}
+[00:00:54.888] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763559194666}
+[00:17:52.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:52.794] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="/" loading={null}>
+              <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+                <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+                  <RedirectBoundary>
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                        <SegmentViewNode type="page" pagePath="page.tsx">
+                          <SegmentTrieNode>
+                          <ClientPageRoot Component={function DashboardPage} serverProvidedParams={{...}}>
+                            <DashboardPage params={Promise} searchParams={Promise}>
+                              <div
+                                className="min-h-screen bg-background pb-20"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="border-b bg-card"
+-                                 bis_skin_checked="1"
+                                >
+                                  <div
+                                    className="mx-auto max-w-4xl p-3 sm:p-6"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center justify-between mb-3 sm:mb-4"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <div
+-                                       bis_skin_checked="1"
+                                      >
+                                      ...
+                                    <div
+                                      className="sm:hidden"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <div
+                                        className="grid grid-cols-3 gap-1"
+-                                       bis_skin_checked="1"
+                                      >
+                                        <Card className="p-2 rounde...">
+                                          <div
+                                            data-slot="card"
+                                            className="bg-card text-card-foreground gap-2 border shadow-sm p-2 rounded..."
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              className="flex flex-col items-center justify-center leading-tight"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <p>
+                                              <div
+                                                className="flex items-center justify-center gap-1"
+-                                               bis_skin_checked="1"
+                                              >
+                                        <Card className="p-2 rounde...">
+                                          <div
+                                            data-slot="card"
+                                            className="bg-card text-card-foreground gap-2 border shadow-sm p-2 rounded..."
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              className="flex flex-col items-center justify-center leading-tight"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <p>
+                                              <div
+                                                className="flex items-center justify-center gap-1"
+-                                               bis_skin_checked="1"
+                                              >
+                                        <Card className="p-2 rounde...">
+                                          <div
+                                            data-slot="card"
+                                            className="text-card-foreground gap-2 border shadow-sm p-2 rounded-md flex..."
+-                                           bis_skin_checked="1"
+                                          >
+                                            <div
+                                              className="flex flex-col items-center justify-center leading-tight"
+-                                             bis_skin_checked="1"
+                                            >
+                                              <p>
+                                              <div
+                                                className="flex items-center justify-center gap-1"
+-                                               bis_skin_checked="1"
+                                              >
+                                    <div
+                                      className="hidden sm:grid sm:grid-cols-2 sm:gap-3"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <Card className="p-1.5 sm:p...">
+                                        <div
+                                          data-slot="card"
+                                          className="bg-card text-card-foreground flex flex-col gap-2 border shadow-sm..."
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="leading-[1.05]"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <p>
+                                            <div
+                                              className="mt-0.5 inline-flex items-center gap-1.5"
+-                                             bis_skin_checked="1"
+                                            >
+                                      <Card className="p-1.5 sm:p...">
+                                        <div
+                                          data-slot="card"
+                                          className="bg-card text-card-foreground flex flex-col gap-2 border shadow-sm..."
+-                                         bis_skin_checked="1"
+                                        >
+                                          <div
+                                            className="leading-[1.05]"
+-                                           bis_skin_checked="1"
+                                          >
+                                            <p>
+                                            <div
+                                              className="mt-0.5 inline-flex items-center gap-1.5"
+-                                             bis_skin_checked="1"
+                                            >
+                                    <Card className="hidden sm:...">
+                                      <div
+                                        data-slot="card"
+                                        className="text-card-foreground flex-col gap-2 border shadow-sm hidden sm:flex..."
+-                                       bis_skin_checked="1"
+                                      >
+                                        <div
+                                          className="leading-[1.05] w-full"
+-                                         bis_skin_checked="1"
+                                        >
+                                          <p>
+                                          <div
+                                            className="mt-0.5 inline-flex items-center gap-1.5"
+-                                           bis_skin_checked="1"
+                                          >
+                                <div
+                                  className="mx-auto max-w-4xl p-3 sm:p-6"
+-                                 bis_skin_checked="1"
+                                >
+                                  ...
+                                    <TabsProvider scope={undefined} baseId="radix-_R_2..." value="all" ...>
+                                      <Primitive.div dir="ltr" data-orientation="horizontal" data-slot="tabs" ...>
+                                        <div
+                                          dir="ltr"
+                                          data-orientation="horizontal"
+                                          data-slot="tabs"
+                                          className="flex flex-col gap-2 w-full"
+                                          ref={null}
+-                                         bis_skin_checked="1"
+                                        >
+                                          ...
+                                            <Primitive.div.Slot tabIndex={-1} data-orientation="horizontal" ...>
+                                              <Primitive.div.SlotClone tabIndex={-1} data-orientation="horizontal" ...>
+                                                <Primitive.div role="tablist" aria-orientation="horizontal" ...>
+                                                  <div
+                                                    role="tablist"
+                                                    aria-orientation="horizontal"
+                                                    data-slot="tabs-list"
+                                                    className="bg-muted text-muted-foreground inline-flex h-9 items-ce..."
+                                                    tabIndex={-1}
+                                                    data-orientation="horizontal"
+                                                    style={{outline:"none"}}
+                                                    onMouseDown={function handleEvent}
+                                                    onFocus={function handleEvent}
+                                                    onBlur={function handleEvent}
+                                                    ref={function}
+-                                                   bis_skin_checked="1"
+                                                  >
+                                          <TabsContent value="all" className="space-y-3">
+                                            <TabsContent data-slot="tabs-content" className="flex-1 out..." value="all">
+                                              <Presence present={true}>
+                                                <Primitive.div data-state="active" data-orientation="horizontal" ...>
+                                                  <div
+                                                    data-state="active"
+                                                    data-orientation="horizontal"
+                                                    role="tabpanel"
+                                                    aria-labelledby="radix-_R_2indlb_-trigger-all"
+                                                    hidden={false}
+                                                    id="radix-_R_2indlb_-content-all"
+                                                    tabIndex={0}
+                                                    data-slot="tabs-content"
+                                                    className="flex-1 outline-none space-y-3"
+                                                    style={{animationDuration:"0s"}}
+                                                    ref={function}
+-                                                   bis_skin_checked="1"
+                                                  >
+                                                    <div
+                                                      className="grid grid-cols-2 gap-4"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                                      <Card className="h-full p-4..." onClick={function onClick}>
+                                                        <div
+                                                          data-slot="card"
+                                                          className="bg-card text-card-foreground rounded-xl border sh..."
+                                                          onClick={function onClick}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="flex items-start justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="rounded-full bg-purple-100 dark:bg-purple-950..."
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <div
+                                                                className="h-[18px] w-[18px] flex items-center justify..."
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                            ...
+                                                          <div
+                                                            className="flex-1 min-w-0 flex flex-col justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="min-w-0"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                            <div
+                                                              className="flex items-center justify-between gap-2"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                      <Card className="h-full p-4..." onClick={function onClick}>
+                                                        <div
+                                                          data-slot="card"
+                                                          className="bg-card text-card-foreground rounded-xl border sh..."
+                                                          onClick={function onClick}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="flex items-start justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="rounded-full bg-green-100 dark:bg-green-950/3..."
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <div
+                                                                className="h-[18px] w-[18px] flex items-center justify..."
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                            ...
+                                                          <div
+                                                            className="flex-1 min-w-0 flex flex-col justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="min-w-0"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                            <div
+                                                              className="flex items-center justify-between gap-2"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                      <Card className="h-full p-4..." onClick={function onClick}>
+                                                        <div
+                                                          data-slot="card"
+                                                          className="bg-card text-card-foreground rounded-xl border sh..."
+                                                          onClick={function onClick}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="flex items-start justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="rounded-full bg-blue-100 dark:bg-blue-950/30 ..."
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <div
+                                                                className="h-[18px] w-[18px] flex items-center justify..."
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                            ...
+                                                          <div
+                                                            className="flex-1 min-w-0 flex flex-col justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="min-w-0"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                            <div
+                                                              className="flex items-center justify-between gap-2"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                      <Card className="h-full p-4..." onClick={function onClick}>
+                                                        <div
+                                                          data-slot="card"
+                                                          className="bg-card text-card-foreground rounded-xl border sh..."
+                                                          onClick={function onClick}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="flex items-start justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="rounded-full bg-purple-100 dark:bg-purple-950..."
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <div
+                                                                className="h-[18px] w-[18px] flex items-center justify..."
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                            ...
+                                                          <div
+                                                            className="flex-1 min-w-0 flex flex-col justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="min-w-0"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                            <div
+                                                              className="flex items-center justify-between gap-2"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                      <Card className="h-full p-4..." onClick={function onClick}>
+                                                        <div
+                                                          data-slot="card"
+                                                          className="bg-card text-card-foreground rounded-xl border sh..."
+                                                          onClick={function onClick}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="flex items-start justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="rounded-full bg-orange-100 dark:bg-orange-950..."
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <div
+                                                                className="h-[18px] w-[18px] flex items-center justify..."
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                            ...
+                                                          <div
+                                                            className="flex-1 min-w-0 flex flex-col justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="min-w-0"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                            <div
+                                                              className="flex items-center justify-between gap-2"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                      <Card className="h-full p-4..." onClick={function onClick}>
+                                                        <div
+                                                          data-slot="card"
+                                                          className="bg-card text-card-foreground rounded-xl border sh..."
+                                                          onClick={function onClick}
+-                                                         bis_skin_checked="1"
+                                                        >
+                                                          <div
+                                                            className="flex items-start justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="rounded-full bg-purple-100 dark:bg-purple-950..."
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                              <div
+                                                                className="h-[18px] w-[18px] flex items-center justify..."
+-                                                               bis_skin_checked="1"
+                                                              >
+                                                            ...
+                                                          <div
+                                                            className="flex-1 min-w-0 flex flex-col justify-between gap-2"
+-                                                           bis_skin_checked="1"
+                                                          >
+                                                            <div
+                                                              className="min-w-0"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                            <div
+                                                              className="flex items-center justify-between gap-2"
+-                                                             bis_skin_checked="1"
+                                                            >
+                                                    <div
+                                                      className="flex justify-center pt-2"
+-                                                     bis_skin_checked="1"
+                                                    >
+                                          <TabsContent value="expense" className="space-y-3">
+                                            <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
+                                              <Presence present={false}>
+                                                <Primitive.div data-state="inactive" data-orientation="horizontal" ...>
+                                                  <div
+                                                    data-state="inactive"
+                                                    data-orientation="horizontal"
+                                                    role="tabpanel"
+                                                    aria-labelledby="radix-_R_2indlb_-trigger-expense"
+                                                    hidden={true}
+                                                    id="radix-_R_2indlb_-content-expense"
+                                                    tabIndex={0}
+                                                    data-slot="tabs-content"
+                                                    className="flex-1 outline-none space-y-3"
+                                                    style={{animationDuration:undefined}}
+                                                    ref={function}
+-                                                   bis_skin_checked="1"
+                                                  >
+                                          <TabsContent value="settlement" className="space-y-3">
+                                            <TabsContent data-slot="tabs-content" className="flex-1 out..." ...>
+                                              <Presence present={false}>
+                                                <Primitive.div data-state="inactive" data-orientation="horizontal" ...>
+                                                  <div
+                                                    data-state="inactive"
+                                                    data-orientation="horizontal"
+                                                    role="tabpanel"
+                                                    aria-labelledby="radix-_R_2indlb_-trigger-settlement"
+                                                    hidden={true}
+                                                    id="radix-_R_2indlb_-content-settlement"
+                                                    tabIndex={0}
+                                                    data-slot="tabs-content"
+                                                    className="flex-1 outline-none space-y-3"
+                                                    style={{animationDuration:undefined}}
+                                                    ref={function}
+-                                                   bis_skin_checked="1"
+                                                  >
+                                <Dialog>
+                                <nav className="fixed bott...">
+                                  <div
+                                    className="mx-auto max-w-4xl px-6 py-2.5"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <div
+                                      className="flex items-center justify-around"
+-                                     bis_skin_checked="1"
+                                    >
+                        ...
+                      ...
+          ...
+
+[00:17:52.916] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:17:52.917] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:17:52.917] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763560212684}
+[00:17:55.647] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763560215408}
+[00:18:02.054] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/5jyzbHBLjtJC9eoxbN6Q color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/5jyzbHBLjtJC9eoxbN6Q","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763560221821}
+[00:18:06.066] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:18:06.066] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:18:09.417] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763560229183}
+[00:18:11.104] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1763560230804}
