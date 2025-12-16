@@ -415,6 +415,18 @@ export default function GroupDetailPage() {
   const handleLeaveGroup = () => {
     if (!group) return
 
+    // Owners must transfer ownership before leaving
+    if (currentUid === group.createdBy) {
+      toast({
+        title: "Transfer ownership first",
+        description: "You're the group owner. Transfer ownership to someone else before leaving.",
+        variant: "destructive",
+      })
+      setLeaveGroupDialog(false)
+      setMemberDialogOpen(true)
+      return
+    }
+
     const updatedMemberIds = group.memberIds.filter((id) => id !== currentUid)
     setGroup({ ...group, memberIds: updatedMemberIds })
 
@@ -539,16 +551,25 @@ export default function GroupDetailPage() {
                 <p className="text-xs text-muted-foreground sm:text-sm">{memberIds.length} members</p>
               </div>
             </div>
-            {!isOwner && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setLeaveGroupDialog(true)}
-                className="text-destructive hover:text-destructive hover:bg-destructive/10"
-              >
-                Leave Group
-              </Button>
-            )}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                if (isOwner) {
+                  toast({
+                    title: "Transfer ownership first",
+                    description: "You're the group owner. Transfer ownership to someone else before leaving.",
+                    variant: "destructive",
+                  })
+                  setMemberDialogOpen(true)
+                } else {
+                  setLeaveGroupDialog(true)
+                }
+              }}
+              className="text-destructive hover:text-destructive hover:bg-destructive/10"
+            >
+              Leave Group
+            </Button>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -712,6 +733,49 @@ export default function GroupDetailPage() {
                       <Button onClick={handleAddMember}>Add</Button>
                     </div>
                   </div>
+
+                  {!isOwner && (
+                    <div className="border-t pt-4">
+                      <Label>Leave Group</Label>
+                      <p className="text-xs text-muted-foreground mb-2">
+                        You can leave this group anytime (you'll need an invite code to rejoin)
+                      </p>
+                      <Button
+                        variant="destructive"
+                        className="w-full"
+                        onClick={() => {
+                          setMemberDialogOpen(false)
+                          setLeaveGroupDialog(true)
+                        }}
+                      >
+                        Leave Group
+                      </Button>
+                    </div>
+                  )}
+                  {isOwner && (
+                    <div className="border-t pt-4">
+                      <Label>Leave Group</Label>
+                      <p className="text-xs text-muted-foreground mb-2">
+                        You're the group owner. Transfer ownership to someone else before leaving.
+                      </p>
+                      <Button
+                        variant="destructive"
+                        className="w-full"
+                        onClick={() => {
+                          toast({
+                            title: "Transfer ownership first",
+                            description: "You're the group owner. Transfer ownership to someone else before leaving.",
+                            variant: "destructive",
+                          })
+                        }}
+                      >
+                        Leave Group
+                      </Button>
+                      <p className="mt-2 text-xs text-muted-foreground">
+                        Use the <span className="font-medium">⋮</span> menu next to a member to transfer ownership.
+                      </p>
+                    </div>
+                  )}
                 </div>
               </DialogContent>
             </Dialog>
