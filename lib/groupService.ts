@@ -1,12 +1,6 @@
 // lib/groupService.ts
 import { auth, db } from "@/lib/firebase"
-import {
-  collection,
-  doc,
-  setDoc,
-  addDoc,
-  serverTimestamp,
-} from "firebase/firestore"
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"
 
 // İleride daha fazla helper ekleyeceğiz (joinGroup, addExpense, vs.)
 // Şimdilik sadece grup oluşturma akışını kapsıyoruz.
@@ -18,36 +12,20 @@ export async function createGroup(name: string) {
     throw new Error("Kullanıcı oturumu bulunamadı. Lütfen tekrar giriş yapın.")
   }
 
-  // 1) groups koleksiyonunda yeni grup dokümanı oluştur
-  const groupRef = doc(collection(db, "groups"))
-  const groupId = groupRef.id
+  const trimmed = name.trim()
+  if (!trimmed) {
+    throw new Error("Grup adı boş olamaz.")
+  }
 
-  await setDoc(groupRef, {
-    name,
+  // ✅ Tek kaynak: groups/{groupId} dokümanı ve memberIds array'i
+  // ❌ Bu aşamada members alt koleksiyonu / activities gibi ekstra write yapmıyoruz.
+  const groupRef = await addDoc(collection(db, "groups"), {
+    name: trimmed,
     createdBy: user.uid,
+    memberIds: [user.uid],
+    isActive: true,
     createdAt: serverTimestamp(),
   })
 
-  // 2) members alt koleksiyonuna current user'ı owner olarak ekle
-  const memberRef = doc(db, "groups", groupId, "members", user.uid)
-  await setDoc(memberRef, {
-    role: "owner",
-    joinedAt: serverTimestamp(),
-  })
-
-  // 3) activities alt koleksiyonuna 'join' aktivitesi ekle
-  const activityRef = collection(db, "groups", groupId, "activities")
-  await addDoc(activityRef, {
-    type: "join",
-    title: "Joined the group",
-    user: {
-      uid: user.uid,
-      name: user.displayName ?? user.email ?? "Someone",
-    },
-    groupName: name,
-    timestamp: serverTimestamp(),
-    isPositive: true,
-  })
-
-  return { groupId }
+  return { groupId: groupRef.id }
 }

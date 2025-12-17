@@ -1,4 +1,6 @@
 "use client"
+import { doc, updateDoc, arrayRemove, onSnapshot, runTransaction } from "firebase/firestore"
+import { db ,auth } from "@/lib/firebase"
 
 import { useEffect, useState, useRef, type FormEvent } from "react"
 import { useParams, useRouter } from "next/navigation"
@@ -199,15 +201,24 @@ export default function GroupDetailPage() {
   const [paymentMember, setPaymentMember] = useState("")
   const [paymentAmount, setPaymentAmount] = useState("")
 
-  const currentUid = "user1"
+  const currentUid = auth.currentUser?.uid ?? ""
 
   useEffect(() => {
-    setTimeout(() => {
-      setGroup(MOCK_GROUP)
-      setFeedItems(MOCK_FEED_ITEMS)
+    if (!groupId) return
+  
+    const unsub = onSnapshot(doc(db, "groups", groupId), (snap) => {
+      if (!snap.exists()) {
+        setGroup(null)
+        setLoading(false)
+        return
+      }
+  
+      setGroup(snap.data() as GroupDoc)
       setLoading(false)
-    }, 500)
-  }, [])
+    })
+  
+    return () => unsub()
+  }, [groupId])
 
   useEffect(() => {
     if (autoScroll && scrollRef.current) {
@@ -383,60 +394,115 @@ export default function GroupDetailPage() {
     setExpenseDetailOpen(true)
   }
 
-  const handleKickMember = (uid: string) => {
+  const handleKickMember = async (uid: string) => {
     if (!group) return
 
-    const updatedMemberIds = group.memberIds.filter((id) => id !== uid)
-    setGroup({ ...group, memberIds: updatedMemberIds })
+    try {
+      await updateDoc(doc(db, "groups", groupId), {
+        memberIds: arrayRemove(uid),
+      })
 
-    toast({
-      title: "Member removed",
-      description: `${getUserName(uid)} has been removed from the group`,
-    })
-
-    setKickMemberDialog(false)
-    setSelectedMemberForAction(null)
-  }
-
-  const handleTransferOwnership = (uid: string) => {
-    if (!group) return
-
-    setGroup({ ...group, createdBy: uid })
-
-    toast({
-      title: "Ownership transferred",
-      description: `${getUserName(uid)} is now the group owner`,
-    })
-
-    setTransferOwnerDialog(false)
-    setSelectedMemberForAction(null)
-  }
-
-  const handleLeaveGroup = () => {
-    if (!group) return
-
-    // Owners must transfer ownership before leaving
-    if (currentUid === group.createdBy) {
       toast({
-        title: "Transfer ownership first",
-        description: "You're the group owner. Transfer ownership to someone else before leaving.",
+        title: "Member removed",
+        description: `${getUserName(uid)} has been removed from the group`,
+      })
+    } catch (error) {
+      console.error("Failed to remove member:", error)
+      toast({
+        title: "Error",
+        description: "Failed to remove member. Please try again.",
         variant: "destructive",
       })
-      setLeaveGroupDialog(false)
-      setMemberDialogOpen(true)
-      return
+    } finally {
+      setKickMemberDialog(false)
+      setSelectedMemberForAction(null)
     }
+  }
 
-    const updatedMemberIds = group.memberIds.filter((id) => id !== currentUid)
-    setGroup({ ...group, memberIds: updatedMemberIds })
+  const handleTransferOwnership = async (uid: string) => {
+    if (!group) return
 
-    toast({
-      title: "Left group",
-      description: `You have left ${group.name}`,
-    })
+    try {
+      await updateDoc(doc(db, "groups", groupId), {
+        createdBy: uid,
+      })
 
-    setLeaveGroupDialog(false)
-    router.push("/groups")
+      toast({
+        title: "Ownership transferred",
+        description: `${getUserName(uid)} is now the group owner`,
+      })
+    } catch (error) {
+      console.error("Failed to transfer ownership:", error)
+      toast({
+        title: "Error",
+        description: "Failed to transfer ownership. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setTransferOwnerDialog(false)
+      setSelectedMemberForAction(null)
+    }
+  }
+
+  const handleLeaveGroup = async () => {
+    const uid = currentUid
+    if (!uid || !group) return
+  
+    try {
+      await runTransaction(db, async (tx) => {
+        const ref = doc(db, "groups", groupId)
+        const snap = await tx.get(ref)
+        if (!snap.exists()) return
+  
+        const data = snap.data() as GroupDoc
+        const memberIds = Array.isArray(data.memberIds) ? data.memberIds : []
+  
+        if (!memberIds.includes(uid)) return
+  
+        const remaining = memberIds.filter((m) => m !== uid)
+        const isOwner = data.createdBy === uid
+  
+        // Owner + başka üyeler varsa çıkamaz
+        if (isOwner && remaining.length > 0) {
+          throw new Error("OWNER_MUST_TRANSFER")
+        }
+  
+        // Son kişi çıkıyorsa → grup silinir
+        if (remaining.length === 0) {
+          tx.delete(ref)
+          return
+        }
+  
+        // Normal leave
+        tx.update(ref, { memberIds: remaining })
+      })
+  
+      toast({
+        title: "Left group",
+        description: `You have left ${group.name}`,
+      })
+  
+      setLeaveGroupDialog(false)
+      router.push("/groups")
+    } catch (e: any) {
+      if (e?.message === "OWNER_MUST_TRANSFER") {
+        toast({
+          title: "Transfer ownership first",
+          description: "You're the group owner. Transfer ownership to someone else before leaving.",
+          variant: "destructive",
+        })
+        setLeaveGroupDialog(false)
+        setMemberDialogOpen(true)
+        return
+      }
+  
+      console.error(e)
+      toast({
+        title: "Error",
+        description: "Something went wrong while leaving the group.",
+        variant: "destructive",
+      })
+    }
   }
 
   const handleTogglePayment = (expenseId: string, userId: string) => {
@@ -551,25 +617,7 @@ export default function GroupDetailPage() {
                 <p className="text-xs text-muted-foreground sm:text-sm">{memberIds.length} members</p>
               </div>
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => {
-                if (isOwner) {
-                  toast({
-                    title: "Transfer ownership first",
-                    description: "You're the group owner. Transfer ownership to someone else before leaving.",
-                    variant: "destructive",
-                  })
-                  setMemberDialogOpen(true)
-                } else {
-                  setLeaveGroupDialog(true)
-                }
-              }}
-              className="text-destructive hover:text-destructive hover:bg-destructive/10"
-            >
-              Leave Group
-            </Button>
+            
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -734,25 +782,7 @@ export default function GroupDetailPage() {
                     </div>
                   </div>
 
-                  {!isOwner && (
-                    <div className="border-t pt-4">
-                      <Label>Leave Group</Label>
-                      <p className="text-xs text-muted-foreground mb-2">
-                        You can leave this group anytime (you'll need an invite code to rejoin)
-                      </p>
-                      <Button
-                        variant="destructive"
-                        className="w-full"
-                        onClick={() => {
-                          setMemberDialogOpen(false)
-                          setLeaveGroupDialog(true)
-                        }}
-                      >
-                        Leave Group
-                      </Button>
-                    </div>
-                  )}
-                  {isOwner && (
+                  {isOwner && memberIds.length > 1 && (
                     <div className="border-t pt-4">
                       <Label>Leave Group</Label>
                       <p className="text-xs text-muted-foreground mb-2">
@@ -774,6 +804,24 @@ export default function GroupDetailPage() {
                       <p className="mt-2 text-xs text-muted-foreground">
                         Use the <span className="font-medium">⋮</span> menu next to a member to transfer ownership.
                       </p>
+                    </div>
+                  )}
+                  {(!isOwner || memberIds.length === 1) && (
+                    <div className="border-t pt-4">
+                      <Label>Leave Group</Label>
+                      <p className="text-xs text-muted-foreground mb-2">
+                        You can leave this group anytime.
+                      </p>
+                      <Button
+                        variant="destructive"
+                        className="w-full"
+                        onClick={() => {
+                          setMemberDialogOpen(false)
+                          setLeaveGroupDialog(true)
+                        }}
+                      >
+                        Leave Group
+                      </Button>
                     </div>
                   )}
                 </div>

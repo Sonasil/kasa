@@ -861,35 +861,23 @@ async function createGroup(name) {
     if (!user) {
         throw new Error("Kullanıcı oturumu bulunamadı. Lütfen tekrar giriş yapın.");
     }
-    // 1) groups koleksiyonunda yeni grup dokümanı oluştur
-    const groupRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups"));
-    const groupId = groupRef.id;
-    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDoc"])(groupRef, {
-        name,
+    const trimmed = name.trim();
+    if (!trimmed) {
+        throw new Error("Grup adı boş olamaz.");
+    }
+    // ✅ Tek kaynak: groups/{groupId} dokümanı ve memberIds array'i
+    // ❌ Bu aşamada members alt koleksiyonu / activities gibi ekstra write yapmıyoruz.
+    const groupRef = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups"), {
+        name: trimmed,
         createdBy: user.uid,
+        memberIds: [
+            user.uid
+        ],
+        isActive: true,
         createdAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
     });
-    // 2) members alt koleksiyonuna current user'ı owner olarak ekle
-    const memberRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups", groupId, "members", user.uid);
-    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDoc"])(memberRef, {
-        role: "owner",
-        joinedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
-    });
-    // 3) activities alt koleksiyonuna 'join' aktivitesi ekle
-    const activityRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups", groupId, "activities");
-    await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addDoc"])(activityRef, {
-        type: "join",
-        title: "Joined the group",
-        user: {
-            uid: user.uid,
-            name: user.displayName ?? user.email ?? "Someone"
-        },
-        groupName: name,
-        timestamp: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])(),
-        isPositive: true
-    });
     return {
-        groupId
+        groupId: groupRef.id
     };
 }
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -947,48 +935,6 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const MOCK_GROUPS = [
-    {
-        id: "1",
-        name: "Weekend Trip",
-        memberCount: 3,
-        totalExpenses: 45000,
-        yourBalance: 5000,
-        lastActivity: "Hotel Booking added",
-        lastActivityTime: new Date(Date.now() - 3600000),
-        isActive: true
-    },
-    {
-        id: "2",
-        name: "Apartment 4B",
-        memberCount: 4,
-        totalExpenses: 125000,
-        yourBalance: -15000,
-        lastActivity: "Electricity bill paid",
-        lastActivityTime: new Date(Date.now() - 7200000),
-        isActive: true
-    },
-    {
-        id: "3",
-        name: "Office Lunch",
-        memberCount: 6,
-        totalExpenses: 32000,
-        yourBalance: 2500,
-        lastActivity: "Pizza delivery split",
-        lastActivityTime: new Date(Date.now() - 86400000),
-        isActive: true
-    },
-    {
-        id: "4",
-        name: "Summer Vacation 2024",
-        memberCount: 5,
-        totalExpenses: 0,
-        yourBalance: 0,
-        lastActivity: "Group created",
-        lastActivityTime: new Date(Date.now() - 2592000000),
-        isActive: false
-    }
-];
 function GroupsPage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -997,46 +943,62 @@ function GroupsPage() {
     const [groups, setGroups] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "GroupsPage.useEffect": ()=>{
-            const unsubscribe = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"].onAuthStateChanged({
-                "GroupsPage.useEffect.unsubscribe": (user)=>{
+            let unsubGroups;
+            const unsubAuth = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"].onAuthStateChanged({
+                "GroupsPage.useEffect.unsubAuth": (user)=>{
+                    // Logout
                     if (!user) {
+                        if (unsubGroups) {
+                            unsubGroups();
+                            unsubGroups = undefined;
+                        }
                         setGroups([]);
                         setLoading(false);
                         return;
                     }
-                    const fetchGroups = {
-                        "GroupsPage.useEffect.unsubscribe.fetchGroups": async ()=>{
-                            try {
-                                const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["where"])("createdBy", "==", user.uid));
-                                const snap = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDocs"])(q);
-                                const fetched = snap.docs.map({
-                                    "GroupsPage.useEffect.unsubscribe.fetchGroups.fetched": (docSnap)=>{
-                                        const data = docSnap.data();
-                                        return {
-                                            id: docSnap.id,
-                                            name: data.name ?? "Unnamed group",
-                                            memberCount: 1,
-                                            totalExpenses: 0,
-                                            yourBalance: 0,
-                                            lastActivity: "Group created",
-                                            lastActivityTime: data.createdAt && typeof data.createdAt.toDate === "function" ? data.createdAt.toDate() : new Date(),
-                                            isActive: true
-                                        };
-                                    }
-                                }["GroupsPage.useEffect.unsubscribe.fetchGroups.fetched"]);
-                                setGroups(fetched);
-                            } catch (error) {
-                                console.error("Failed to fetch groups:", error);
-                            } finally{
-                                setLoading(false);
-                            }
+                    setLoading(true);
+                    // Listen to groups where the user is a member (created or joined)
+                    const q = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["where"])("memberIds", "array-contains", user.uid));
+                    // Reset previous listener if any
+                    if (unsubGroups) {
+                        unsubGroups();
+                        unsubGroups = undefined;
+                    }
+                    unsubGroups = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["onSnapshot"])(q, {
+                        "GroupsPage.useEffect.unsubAuth": (snap)=>{
+                            const fetched = snap.docs.map({
+                                "GroupsPage.useEffect.unsubAuth.fetched": (docSnap)=>{
+                                    const data = docSnap.data();
+                                    const memberIds = Array.isArray(data.memberIds) ? data.memberIds : [];
+                                    return {
+                                        id: docSnap.id,
+                                        name: data.name ?? "Unnamed group",
+                                        memberCount: memberIds.length || 1,
+                                        totalExpenses: 0,
+                                        yourBalance: 0,
+                                        lastActivity: "Group created",
+                                        lastActivityTime: data.createdAt && typeof data.createdAt.toDate === "function" ? data.createdAt.toDate() : new Date(),
+                                        isActive: data.isActive ?? true
+                                    };
+                                }
+                            }["GroupsPage.useEffect.unsubAuth.fetched"]);
+                            setGroups(fetched);
+                            setLoading(false);
                         }
-                    }["GroupsPage.useEffect.unsubscribe.fetchGroups"];
-                    fetchGroups();
+                    }["GroupsPage.useEffect.unsubAuth"], {
+                        "GroupsPage.useEffect.unsubAuth": (error)=>{
+                            console.error("Failed to fetch groups:", error);
+                            setGroups([]);
+                            setLoading(false);
+                        }
+                    }["GroupsPage.useEffect.unsubAuth"]);
                 }
-            }["GroupsPage.useEffect.unsubscribe"]);
+            }["GroupsPage.useEffect.unsubAuth"]);
             return ({
-                "GroupsPage.useEffect": ()=>unsubscribe()
+                "GroupsPage.useEffect": ()=>{
+                    if (unsubGroups) unsubGroups();
+                    unsubAuth();
+                }
             })["GroupsPage.useEffect"];
         }
     }["GroupsPage.useEffect"], []);
@@ -1081,21 +1043,7 @@ function GroupsPage() {
             });
             setCreateGroupOpen(false);
             setGroupName("");
-            setGroups((prev)=>[
-                    ...prev,
-                    {
-                        id: groupId,
-                        name,
-                        memberCount: 1,
-                        totalExpenses: 0,
-                        yourBalance: 0,
-                        lastActivity: "Group created",
-                        lastActivityTime: new Date(),
-                        isActive: true
-                    }
-                ]);
-        // İstersen burada yeni grup sayfasına yönlendirebilirsin:
-        // router.push(`/groups/${groupId}`)
+            router.push(`/groups/${groupId}`);
         } catch (error) {
             console.error("Failed to create group:", error);
             toast({
@@ -1107,21 +1055,11 @@ function GroupsPage() {
             setLoading(false);
         }
     };
-    const handleJoinGroup = ()=>{
-        if (!joinCode.trim()) {
-            toast({
-                title: "Invalid input",
-                description: "Please enter a join code",
-                variant: "destructive"
-            });
-            return;
-        }
+    const handleJoinGroup = async ()=>{
         toast({
-            title: "Joined group",
-            description: "You've successfully joined the group"
+            title: "Not implemented",
+            description: "Join group will be implemented next."
         });
-        setJoinGroupOpen(false);
-        setJoinCode("");
     };
     const filteredGroups = groups.filter((group)=>{
         if (activeTab === "active") return group.isActive;
@@ -1141,7 +1079,7 @@ function GroupsPage() {
                                 className: "h-8 w-32 mb-4"
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 225,
+                                lineNumber: 181,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1151,31 +1089,31 @@ function GroupsPage() {
                                         className: "h-10 w-32"
                                     }, void 0, false, {
                                         fileName: "[project]/app/groups/page.tsx",
-                                        lineNumber: 227,
+                                        lineNumber: 183,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                                         className: "h-10 w-32"
                                     }, void 0, false, {
                                         fileName: "[project]/app/groups/page.tsx",
-                                        lineNumber: 228,
+                                        lineNumber: 184,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 226,
+                                lineNumber: 182,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/groups/page.tsx",
-                        lineNumber: 224,
+                        lineNumber: 180,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/groups/page.tsx",
-                    lineNumber: 223,
+                    lineNumber: 179,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1185,33 +1123,33 @@ function GroupsPage() {
                             className: "h-32"
                         }, void 0, false, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 233,
+                            lineNumber: 189,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                             className: "h-32"
                         }, void 0, false, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 234,
+                            lineNumber: 190,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                             className: "h-32"
                         }, void 0, false, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 235,
+                            lineNumber: 191,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/page.tsx",
-                    lineNumber: 232,
+                    lineNumber: 188,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/groups/page.tsx",
-            lineNumber: 222,
+            lineNumber: 178,
             columnNumber: 7
         }, this);
     }
@@ -1232,7 +1170,7 @@ function GroupsPage() {
                                         children: "My Groups"
                                     }, void 0, false, {
                                         fileName: "[project]/app/groups/page.tsx",
-                                        lineNumber: 247,
+                                        lineNumber: 203,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1243,18 +1181,18 @@ function GroupsPage() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/groups/page.tsx",
-                                        lineNumber: 248,
+                                        lineNumber: 204,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 246,
+                                lineNumber: 202,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 245,
+                            lineNumber: 201,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1274,19 +1212,19 @@ function GroupsPage() {
                                                         className: "mr-1 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 258,
+                                                        lineNumber: 214,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Create Group"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/groups/page.tsx",
-                                                lineNumber: 257,
+                                                lineNumber: 213,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 256,
+                                            lineNumber: 212,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -1296,12 +1234,12 @@ function GroupsPage() {
                                                         children: "Create New Group"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 264,
+                                                        lineNumber: 220,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 263,
+                                                    lineNumber: 219,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1314,7 +1252,7 @@ function GroupsPage() {
                                                                     children: "Group Name"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                    lineNumber: 268,
+                                                                    lineNumber: 224,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1325,13 +1263,13 @@ function GroupsPage() {
                                                                     className: "mt-2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                    lineNumber: 269,
+                                                                    lineNumber: 225,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/page.tsx",
-                                                            lineNumber: 267,
+                                                            lineNumber: 223,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1340,25 +1278,25 @@ function GroupsPage() {
                                                             children: "Create Group"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/page.tsx",
-                                                            lineNumber: 277,
+                                                            lineNumber: 233,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 266,
+                                                    lineNumber: 222,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 262,
+                                            lineNumber: 218,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 255,
+                                    lineNumber: 211,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -1376,19 +1314,19 @@ function GroupsPage() {
                                                         className: "mr-1 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 287,
+                                                        lineNumber: 243,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Join via Code"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/groups/page.tsx",
-                                                lineNumber: 286,
+                                                lineNumber: 242,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 285,
+                                            lineNumber: 241,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -1398,12 +1336,12 @@ function GroupsPage() {
                                                         children: "Join Group"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 293,
+                                                        lineNumber: 249,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 292,
+                                                    lineNumber: 248,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1416,7 +1354,7 @@ function GroupsPage() {
                                                                     children: "Invite Code"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                    lineNumber: 297,
+                                                                    lineNumber: 253,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -1427,13 +1365,13 @@ function GroupsPage() {
                                                                     className: "mt-2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                    lineNumber: 298,
+                                                                    lineNumber: 254,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/page.tsx",
-                                                            lineNumber: 296,
+                                                            lineNumber: 252,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1442,42 +1380,42 @@ function GroupsPage() {
                                                             children: "Join Group"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/page.tsx",
-                                                            lineNumber: 306,
+                                                            lineNumber: 262,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 295,
+                                                    lineNumber: 251,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 291,
+                                            lineNumber: 247,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 284,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 254,
+                            lineNumber: 210,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/page.tsx",
-                    lineNumber: 244,
+                    lineNumber: 200,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/page.tsx",
-                lineNumber: 243,
+                lineNumber: 199,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1496,7 +1434,7 @@ function GroupsPage() {
                                     children: "Active"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 319,
+                                    lineNumber: 275,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -1505,13 +1443,13 @@ function GroupsPage() {
                                     children: "Archived"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 322,
+                                    lineNumber: 278,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 318,
+                            lineNumber: 274,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -1536,7 +1474,7 @@ function GroupsPage() {
                                                                     children: group.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                    lineNumber: 339,
+                                                                    lineNumber: 295,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1549,20 +1487,20 @@ function GroupsPage() {
                                                                                     className: "h-3 w-3 sm:h-4 sm:w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                                    lineNumber: 342,
+                                                                                    lineNumber: 298,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: group.memberCount
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                                    lineNumber: 343,
+                                                                                    lineNumber: 299,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/groups/page.tsx",
-                                                                            lineNumber: 341,
+                                                                            lineNumber: 297,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1570,7 +1508,7 @@ function GroupsPage() {
                                                                             children: "•"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/page.tsx",
-                                                                            lineNumber: 345,
+                                                                            lineNumber: 301,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1580,32 +1518,32 @@ function GroupsPage() {
                                                                                     className: "h-3 w-3 sm:h-4 sm:w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                                    lineNumber: 347,
+                                                                                    lineNumber: 303,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: formatCurrency(group.totalExpenses)
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                                    lineNumber: 348,
+                                                                                    lineNumber: 304,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/groups/page.tsx",
-                                                                            lineNumber: 346,
+                                                                            lineNumber: 302,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/page.tsx",
-                                                                    lineNumber: 340,
+                                                                    lineNumber: 296,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/page.tsx",
-                                                            lineNumber: 338,
+                                                            lineNumber: 294,
                                                             columnNumber: 25
                                                         }, this),
                                                         group.yourBalance !== 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1618,13 +1556,13 @@ function GroupsPage() {
                                                                         className: "h-3 w-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/groups/page.tsx",
-                                                                        lineNumber: 363,
+                                                                        lineNumber: 319,
                                                                         columnNumber: 33
                                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingDown$3e$__["TrendingDown"], {
                                                                         className: "h-3 w-3"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/groups/page.tsx",
-                                                                        lineNumber: 365,
+                                                                        lineNumber: 321,
                                                                         columnNumber: 33
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1634,24 +1572,24 @@ function GroupsPage() {
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/groups/page.tsx",
-                                                                        lineNumber: 367,
+                                                                        lineNumber: 323,
                                                                         columnNumber: 31
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 361,
+                                                                lineNumber: 317,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/page.tsx",
-                                                            lineNumber: 353,
+                                                            lineNumber: 309,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 337,
+                                                    lineNumber: 293,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1663,7 +1601,7 @@ function GroupsPage() {
                                                                 className: "h-3 w-3 sm:h-4 sm:w-4 shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 378,
+                                                                lineNumber: 334,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1671,7 +1609,7 @@ function GroupsPage() {
                                                                 children: group.lastActivity
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 379,
+                                                                lineNumber: 335,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1679,34 +1617,34 @@ function GroupsPage() {
                                                                 children: formatTime(group.lastActivityTime)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 380,
+                                                                lineNumber: 336,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 377,
+                                                        lineNumber: 333,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 376,
+                                                    lineNumber: 332,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 336,
+                                            lineNumber: 292,
                                             columnNumber: 21
                                         }, this)
                                     }, group.id, false, {
                                         fileName: "[project]/app/groups/page.tsx",
-                                        lineNumber: 331,
+                                        lineNumber: 287,
                                         columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 329,
+                                lineNumber: 285,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                                 className: "p-8 sm:p-12 text-center",
@@ -1719,12 +1657,12 @@ function GroupsPage() {
                                                 className: "h-8 w-8 sm:h-10 sm:w-10 text-muted-foreground"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/groups/page.tsx",
-                                                lineNumber: 391,
+                                                lineNumber: 347,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 390,
+                                            lineNumber: 346,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1734,7 +1672,7 @@ function GroupsPage() {
                                                     children: "No active groups"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 394,
+                                                    lineNumber: 350,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1742,13 +1680,13 @@ function GroupsPage() {
                                                     children: "Create a group to start tracking expenses with friends and family."
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 395,
+                                                    lineNumber: 351,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 393,
+                                            lineNumber: 349,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1759,30 +1697,30 @@ function GroupsPage() {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 400,
+                                                    lineNumber: 356,
                                                     columnNumber: 21
                                                 }, this),
                                                 "Create Your First Group"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 399,
+                                            lineNumber: 355,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 389,
+                                    lineNumber: 345,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 388,
+                                lineNumber: 344,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 327,
+                            lineNumber: 283,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -1806,7 +1744,7 @@ function GroupsPage() {
                                                                 children: group.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 420,
+                                                                lineNumber: 376,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1819,20 +1757,20 @@ function GroupsPage() {
                                                                                 className: "h-3 w-3 sm:h-4 sm:w-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                                lineNumber: 423,
+                                                                                lineNumber: 379,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: group.memberCount
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                                lineNumber: 424,
+                                                                                lineNumber: 380,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/groups/page.tsx",
-                                                                        lineNumber: 422,
+                                                                        lineNumber: 378,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1840,7 +1778,7 @@ function GroupsPage() {
                                                                         children: "•"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/groups/page.tsx",
-                                                                        lineNumber: 426,
+                                                                        lineNumber: 382,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1850,37 +1788,37 @@ function GroupsPage() {
                                                                                 className: "h-3 w-3 sm:h-4 sm:w-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                                lineNumber: 428,
+                                                                                lineNumber: 384,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                 children: formatCurrency(group.totalExpenses)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                                lineNumber: 429,
+                                                                                lineNumber: 385,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/app/groups/page.tsx",
-                                                                        lineNumber: 427,
+                                                                        lineNumber: 383,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 421,
+                                                                lineNumber: 377,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 419,
+                                                        lineNumber: 375,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 418,
+                                                    lineNumber: 374,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1892,7 +1830,7 @@ function GroupsPage() {
                                                                 className: "h-3 w-3 sm:h-4 sm:w-4 shrink-0"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 437,
+                                                                lineNumber: 393,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1900,7 +1838,7 @@ function GroupsPage() {
                                                                 children: group.lastActivity
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 438,
+                                                                lineNumber: 394,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1908,34 +1846,34 @@ function GroupsPage() {
                                                                 children: formatTime(group.lastActivityTime)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/page.tsx",
-                                                                lineNumber: 439,
+                                                                lineNumber: 395,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/groups/page.tsx",
-                                                        lineNumber: 436,
+                                                        lineNumber: 392,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
-                                                    lineNumber: 435,
+                                                    lineNumber: 391,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
-                                            lineNumber: 417,
+                                            lineNumber: 373,
                                             columnNumber: 21
                                         }, this)
                                     }, group.id, false, {
                                         fileName: "[project]/app/groups/page.tsx",
-                                        lineNumber: 412,
+                                        lineNumber: 368,
                                         columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 410,
+                                lineNumber: 366,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                                 className: "p-8 text-center",
@@ -1944,28 +1882,28 @@ function GroupsPage() {
                                     children: "No archived groups"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 448,
+                                    lineNumber: 404,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 447,
+                                lineNumber: 403,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/groups/page.tsx",
-                            lineNumber: 408,
+                            lineNumber: 364,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/page.tsx",
-                    lineNumber: 317,
+                    lineNumber: 273,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/page.tsx",
-                lineNumber: 316,
+                lineNumber: 272,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1983,12 +1921,12 @@ function GroupsPage() {
                                     className: "h-6 w-6 text-green-600"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 463,
+                                    lineNumber: 419,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 458,
+                                lineNumber: 414,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1999,12 +1937,12 @@ function GroupsPage() {
                                     className: "h-6 w-6 text-muted-foreground"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 471,
+                                    lineNumber: 427,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 466,
+                                lineNumber: 422,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2015,34 +1953,34 @@ function GroupsPage() {
                                     className: "h-6 w-6 text-muted-foreground"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
-                                    lineNumber: 479,
+                                    lineNumber: 435,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/page.tsx",
-                                lineNumber: 474,
+                                lineNumber: 430,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/groups/page.tsx",
-                        lineNumber: 457,
+                        lineNumber: 413,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/groups/page.tsx",
-                    lineNumber: 456,
+                    lineNumber: 412,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/page.tsx",
-                lineNumber: 455,
+                lineNumber: 411,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/groups/page.tsx",
-        lineNumber: 242,
+        lineNumber: 198,
         columnNumber: 5
     }, this);
 }

@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
 import { auth, db } from "@/lib/firebase"
-import { collection, getDocs, query, where } from "firebase/firestore"
+import { collection, onSnapshot, query, where } from "firebase/firestore"
 import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock } from "lucide-react"
 
@@ -27,94 +27,74 @@ type Group = {
   isActive: boolean
 }
 
-const MOCK_GROUPS: Group[] = [
-  {
-    id: "1",
-    name: "Weekend Trip",
-    memberCount: 3,
-    totalExpenses: 45000,
-    yourBalance: 5000,
-    lastActivity: "Hotel Booking added",
-    lastActivityTime: new Date(Date.now() - 3600000),
-    isActive: true,
-  },
-  {
-    id: "2",
-    name: "Apartment 4B",
-    memberCount: 4,
-    totalExpenses: 125000,
-    yourBalance: -15000,
-    lastActivity: "Electricity bill paid",
-    lastActivityTime: new Date(Date.now() - 7200000),
-    isActive: true,
-  },
-  {
-    id: "3",
-    name: "Office Lunch",
-    memberCount: 6,
-    totalExpenses: 32000,
-    yourBalance: 2500,
-    lastActivity: "Pizza delivery split",
-    lastActivityTime: new Date(Date.now() - 86400000),
-    isActive: true,
-  },
-  {
-    id: "4",
-    name: "Summer Vacation 2024",
-    memberCount: 5,
-    totalExpenses: 0,
-    yourBalance: 0,
-    lastActivity: "Group created",
-    lastActivityTime: new Date(Date.now() - 2592000000),
-    isActive: false,
-  },
-]
-
 export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
   const [loading, setLoading] = useState(true)
   const [groups, setGroups] = useState<Group[]>([])
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    let unsubGroups: undefined | (() => void)
+  
+    const unsubAuth = auth.onAuthStateChanged((user) => {
+      // Logout
       if (!user) {
+        if (unsubGroups) {
+          unsubGroups()
+          unsubGroups = undefined
+        }
         setGroups([])
         setLoading(false)
         return
       }
-
-      const fetchGroups = async () => {
-        try {
-          const q = query(collection(db, "groups"), where("createdBy", "==", user.uid))
-          const snap = await getDocs(q)
+  
+      setLoading(true)
+  
+      // Listen to groups where the user is a member (created or joined)
+      const q = query(collection(db, "groups"), where("memberIds", "array-contains", user.uid))
+  
+      // Reset previous listener if any
+      if (unsubGroups) {
+        unsubGroups()
+        unsubGroups = undefined
+      }
+  
+      unsubGroups = onSnapshot(
+        q,
+        (snap) => {
           const fetched: Group[] = snap.docs.map((docSnap) => {
             const data = docSnap.data() as any
+            const memberIds: string[] = Array.isArray(data.memberIds) ? data.memberIds : []
+  
             return {
               id: docSnap.id,
               name: data.name ?? "Unnamed group",
-              memberCount: 1, // TODO: members alt koleksiyonundan gerçek sayı çekilebilir
-              totalExpenses: 0, // TODO: expenses alt koleksiyonundan hesaplanacak
-              yourBalance: 0, // TODO: gerçek balance hesaplaması eklenecek
+              memberCount: memberIds.length || 1,
+              totalExpenses: 0,
+              yourBalance: 0,
               lastActivity: "Group created",
               lastActivityTime:
                 data.createdAt && typeof data.createdAt.toDate === "function"
                   ? data.createdAt.toDate()
                   : new Date(),
-              isActive: true,
+              isActive: data.isActive ?? true,
             }
           })
+  
           setGroups(fetched)
-        } catch (error) {
-          console.error("Failed to fetch groups:", error)
-        } finally {
           setLoading(false)
-        }
-      }
-
-      fetchGroups()
+        },
+        (error) => {
+          console.error("Failed to fetch groups:", error)
+          setGroups([])
+          setLoading(false)
+        },
+      )
     })
-
-    return () => unsubscribe()
+  
+    return () => {
+      if (unsubGroups) unsubGroups()
+      unsubAuth()
+    }
   }, [])
   const [createGroupOpen, setCreateGroupOpen] = useState(false)
   const [joinGroupOpen, setJoinGroupOpen] = useState(false)
@@ -165,22 +145,7 @@ export default function GroupsPage() {
 
       setCreateGroupOpen(false)
       setGroupName("")
-      setGroups((prev) => [
-        ...prev,
-        {
-          id: groupId,
-          name,
-          memberCount: 1,
-          totalExpenses: 0,
-          yourBalance: 0,
-          lastActivity: "Group created",
-          lastActivityTime: new Date(),
-          isActive: true,
-        },
-      ])
-
-      // İstersen burada yeni grup sayfasına yönlendirebilirsin:
-      // router.push(`/groups/${groupId}`)
+      router.push(`/groups/${groupId}`)
     } catch (error) {
       console.error("Failed to create group:", error)
       toast({
@@ -193,23 +158,14 @@ export default function GroupsPage() {
     }
   }
 
-  const handleJoinGroup = () => {
-    if (!joinCode.trim()) {
-      toast({
-        title: "Invalid input",
-        description: "Please enter a join code",
-        variant: "destructive",
-      })
-      return
-    }
-
+  const handleJoinGroup = async () => {
     toast({
-      title: "Joined group",
-      description: "You've successfully joined the group",
+      title: "Not implemented",
+      description: "Join group will be implemented next.",
     })
-    setJoinGroupOpen(false)
-    setJoinCode("")
   }
+
+  
 
   const filteredGroups = groups.filter((group) => {
     if (activeTab === "active") return group.isActive
