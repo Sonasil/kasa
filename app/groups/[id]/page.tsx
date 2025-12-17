@@ -195,6 +195,7 @@ export default function GroupDetailPage() {
   const [transferOwnerDialog, setTransferOwnerDialog] = useState(false)
   const [selectedMemberForAction, setSelectedMemberForAction] = useState<string | null>(null)
   const [leaveGroupDialog, setLeaveGroupDialog] = useState(false)
+  const [deleteGroupDialog, setDeleteGroupDialog] = useState(false)
 
   const [paymentStatus, setPaymentStatus] = useState<Record<string, Record<string, boolean>>>({})
 
@@ -395,22 +396,45 @@ export default function GroupDetailPage() {
   }
 
   const handleKickMember = async (uid: string) => {
-    if (!group) return
+    const me = currentUid
+    if (!me || !group) return
 
     try {
-      await updateDoc(doc(db, "groups", groupId), {
-        memberIds: arrayRemove(uid),
+      await runTransaction(db, async (tx) => {
+        const ref = doc(db, "groups", groupId)
+        const snap = await tx.get(ref)
+        if (!snap.exists()) throw new Error("GROUP_NOT_FOUND")
+
+        const data = snap.data() as any
+        const memberIds: string[] = Array.isArray(data.memberIds) ? data.memberIds : []
+
+        // Only owner can kick
+        if (data.createdBy !== me) throw new Error("NOT_OWNER")
+
+        // If target is not a member, no-op
+        if (!memberIds.includes(uid)) return
+
+        // Prevent kicking the owner
+        if (uid === data.createdBy) throw new Error("CANNOT_KICK_OWNER")
+
+        const next = memberIds.filter((m) => m !== uid)
+        tx.update(ref, { memberIds: next })
       })
 
       toast({
         title: "Member removed",
         description: `${getUserName(uid)} has been removed from the group`,
       })
-    } catch (error) {
-      console.error("Failed to remove member:", error)
+    } catch (e: any) {
+      console.error("Failed to remove member:", e)
       toast({
         title: "Error",
-        description: "Failed to remove member. Please try again.",
+        description:
+          e?.message === "NOT_OWNER"
+            ? "Only the group owner can remove members."
+            : e?.message === "CANNOT_KICK_OWNER"
+              ? "You cannot remove the group owner."
+              : "Failed to remove member. Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -810,14 +834,20 @@ export default function GroupDetailPage() {
                     <div className="border-t pt-4">
                       <Label>Leave Group</Label>
                       <p className="text-xs text-muted-foreground mb-2">
-                        You can leave this group anytime.
+                        {memberIds.length === 1
+                          ? "You're the last member. Leaving will permanently delete this group."
+                          : "You can leave this group anytime."}
                       </p>
                       <Button
                         variant="destructive"
                         className="w-full"
                         onClick={() => {
                           setMemberDialogOpen(false)
-                          setLeaveGroupDialog(true)
+                          if (memberIds.length === 1) {
+                            setDeleteGroupDialog(true)
+                          } else {
+                            setLeaveGroupDialog(true)
+                          }
                         }}
                       >
                         Leave Group
@@ -1295,7 +1325,7 @@ export default function GroupDetailPage() {
           <AlertDialogHeader>
             <AlertDialogTitle>Leave Group</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to leave {group.name}? You will need an invite code to rejoin this group.
+              Are you sure you want to leave {group.name}? You will lose access to this group's activity and balances.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -1305,6 +1335,28 @@ export default function GroupDetailPage() {
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               Leave Group
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+      <AlertDialog open={deleteGroupDialog} onOpenChange={setDeleteGroupDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Delete Group</AlertDialogTitle>
+            <AlertDialogDescription>
+              You're the last member. Deleting {group.name} will permanently remove this group. This action cannot be undone.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction
+              onClick={async () => {
+                setDeleteGroupDialog(false)
+                await handleLeaveGroup()
+              }}
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+            >
+              Delete Group
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
