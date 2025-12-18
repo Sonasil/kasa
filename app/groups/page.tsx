@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
 import { auth, db } from "@/lib/firebase"
-import { collection, onSnapshot, query, where } from "firebase/firestore"
+import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore"
 import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock } from "lucide-react"
 
@@ -159,10 +159,88 @@ export default function GroupsPage() {
   }
 
   const handleJoinGroup = async () => {
-    toast({
-      title: "Not implemented",
-      description: "Join group will be implemented next.",
-    })
+    const user = auth.currentUser
+    const inviteCode = joinCode.trim().toUpperCase()
+  
+    if (!user) {
+      toast({
+        title: "Login required",
+        description: "Please sign in to join a group.",
+        variant: "destructive",
+      })
+      return
+    }
+  
+    if (!inviteCode) {
+      toast({
+        title: "Enter a code",
+        description: "Please paste the invite code.",
+        variant: "destructive",
+      })
+      return
+    }
+  
+    setLoading(true)
+  
+    try {
+      // 1) invite doc oku
+      const inviteRef = doc(db, "groupInvites", inviteCode)
+      const inviteSnap = await getDoc(inviteRef)
+  
+      if (!inviteSnap.exists()) {
+        toast({
+          title: "Invalid code",
+          description: "No invite found for this code.",
+          variant: "destructive",
+        })
+        return
+      }
+  
+      const invite = inviteSnap.data() as any
+      if (invite.disabled) {
+        toast({
+          title: "Invite disabled",
+          description: "This invite code is no longer active.",
+          variant: "destructive",
+        })
+        return
+      }
+  
+      const groupId = invite.groupId as string
+      if (!groupId) {
+        toast({
+          title: "Invite error",
+          description: "Invite is missing group information.",
+          variant: "destructive",
+        })
+        return
+      }
+  
+      
+      // 2) Gruba ekle (group doc'u okumadan). arrayUnion idempotenttir.
+      const groupRef = doc(db, "groups", groupId)
+      await updateDoc(groupRef, {
+      memberIds: arrayUnion(user.uid),
+      })
+  
+      toast({
+        title: "Joined!",
+        description: "You have joined the group.",
+      })
+  
+      setJoinGroupOpen(false)
+      setJoinCode("")
+      router.push(`/groups/${groupId}`)
+    } catch (error: any) {
+      console.error("Failed to join group:", error)
+      toast({
+        title: "Error",
+        description: "Failed to join group. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setLoading(false)
+    }
   }
 
   
@@ -259,8 +337,8 @@ export default function GroupsPage() {
                       className="mt-2"
                     />
                   </div>
-                  <Button onClick={handleJoinGroup} className="w-full">
-                    Join Group
+                  <Button onClick={handleJoinGroup} className="w-full" disabled={loading || !joinCode.trim()}>
+                  {loading ? "Joining..." : "Join Group"}
                   </Button>
                 </div>
               </DialogContent>

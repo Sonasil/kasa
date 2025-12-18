@@ -2349,3 +2349,713 @@ It can also happen if the client has a browser extension installed which messes 
 [22:08:44.765] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/jDOw1M9nWRbLO70I0I7V color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/jDOw1M9nWRbLO70I0I7V","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766000441070}
 [22:08:46.492] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [22:08:46.492] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:10:11.616] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:10:11.850] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="jDOw1M9nWR..." loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/groups/jD..." tree={[...]} params={{id:"jDOw1M..."}} ...>
+                      <SegmentViewNode type="page" pagePath="groups/[id...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function GroupDetailPage} serverProvidedParams={{...}}>
+                          <GroupDetailPage params={Promise} searchParams={Promise}>
+                            <div
+                              className="flex h-screen flex-col"
+-                             bis_skin_checked="1"
+                            >
+                              <div
+                                className="border-b p-4"
+-                               bis_skin_checked="1"
+                              >
+                                <Skeleton className="h-8 w-48">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-8 w-48"
+-                                   bis_skin_checked="1"
+                                  >
+                              <div
+                                className="flex-1 space-y-4 p-4"
+-                               bis_skin_checked="1"
+                              >
+                                <Skeleton className="h-20 w-full">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                   bis_skin_checked="1"
+                                  >
+                                <Skeleton className="h-20 w-full">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                   bis_skin_checked="1"
+                                  >
+                                <Skeleton className="h-20 w-full">
+                                  <div
+                                    data-slot="skeleton"
+                                    className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                   bis_skin_checked="1"
+                                  >
+                      ...
+                    ...
+          ...
+
+[22:10:12.150] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[22:10:12.150] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/jDOw1M9nWRbLO70I0I7V","route":"/groups/[id]"}
+[22:10:12.150] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/jDOw1M9nWRbLO70I0I7V color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/jDOw1M9nWRbLO70I0I7V","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766000528202}
+[22:10:14.077] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:10:14.078] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:10:27.863] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:10:27.863] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:10:31.159] Browser ERROR   [2025-12-17T19:42:27.393Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[22:10:31.159] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766000547459}
+[22:12:10.523] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:12:10.524] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:12:14.412] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:12:14.413] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[22:12:14.774] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766000651070}
+[22:12:22.644] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:12:22.934] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[22:12:22.934] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[22:12:22.934] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766000659193}
+[22:38:48.745] Server  LOG      ✓ Compiled in 221ms
+[22:38:49.069] Browser ERROR   [2025-12-17T20:10:45.205Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[22:39:29.751] Browser ERROR   Failed to send message: {"code":"permission-denied","name":"FirebaseError"}
+[22:39:37.003] Browser ERROR   Failed to send message: {"code":"permission-denied","name":"FirebaseError"}
+[23:03:27.859] Browser WARN    [2025-12-17T20:35:23.688Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6458187f transport errored. Name: undefined Message: undefined
+[23:06:44.821] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:06:45.263] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:06:45.263] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[23:06:45.263] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766003921026}
+[23:07:01.358] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:07:01.690] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:07:01.690] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[23:07:01.690] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766003937679}
+[23:07:03.639] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:07:03.639] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:08:29.235] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:08:29.235] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:08:50.056] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:08:50.056] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:08:52.218] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:08:52.218] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:09:07.833] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766004063909}
+[23:09:08.031] Browser ERROR   Failed to fetch groups: {"code":"permission-denied","name":"FirebaseError"}
+[23:09:10.283] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:09:10.622] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:09:10.622] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[23:09:10.622] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766004066678}
+[23:09:11.291] Browser ERROR   Failed to fetch groups: {"code":"permission-denied","name":"FirebaseError"}
+[23:09:16.253] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:09:16.253] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:09:20.751] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766004076828}
+[23:09:21.698] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766004077775}
+[23:09:21.878] Browser ERROR   Failed to fetch groups: {"code":"permission-denied","name":"FirebaseError"}
+[23:09:23.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:09:23.593] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:09:23.593] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[23:09:23.593] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766004079639}
+[23:09:24.175] Browser ERROR   Failed to fetch groups: {"code":"permission-denied","name":"FirebaseError"}
+[23:28:22.569] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:28:22.775] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/groups" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  ...
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/groups" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                        <SegmentViewNode type="page" pagePath="groups/pag...">
+                          <SegmentTrieNode>
+                          <ClientPageRoot Component={function GroupsPage} serverProvidedParams={{...}}>
+                            <GroupsPage params={Promise} searchParams={Promise}>
+                              <div
+                                className="min-h-screen bg-background pb-20"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="border-b bg-card"
+-                                 bis_skin_checked="1"
+                                >
+                                  <div
+                                    className="mx-auto max-w-4xl p-3 sm:p-6"
+-                                   bis_skin_checked="1"
+                                  >
+                                    <Skeleton className="h-8 w-32 mb-4">
+                                      <div
+                                        data-slot="skeleton"
+                                        className="bg-accent animate-pulse rounded-md h-8 w-32 mb-4"
+-                                       bis_skin_checked="1"
+                                      >
+                                    <div
+                                      className="flex gap-2"
+-                                     bis_skin_checked="1"
+                                    >
+                                      <Skeleton className="h-10 w-32">
+                                        <div
+                                          data-slot="skeleton"
+                                          className="bg-accent animate-pulse rounded-md h-10 w-32"
+-                                         bis_skin_checked="1"
+                                        >
+                                      <Skeleton className="h-10 w-32">
+                                        <div
+                                          data-slot="skeleton"
+                                          className="bg-accent animate-pulse rounded-md h-10 w-32"
+-                                         bis_skin_checked="1"
+                                        >
+                                <div
+                                  className="mx-auto max-w-4xl p-3 sm:p-6 space-y-3 sm:space-y-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-32">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-32"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-32">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-32"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-32">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-32"
+-                                     bis_skin_checked="1"
+                                    >
+                        ...
+                      ...
+                  ...
+
+[23:28:22.775] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:28:22.775] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[23:28:22.775] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005218827}
+[23:28:25.395] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005221445}
+[23:28:29.584] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005225634}
+[23:28:30.425] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005226475}
+[23:28:31.446] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005227496}
+[23:28:32.121] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:28:32.121] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:28:35.029] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:28:35.029] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:28:35.333] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/8FsO8LNABvBobOYNidfL color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/8FsO8LNABvBobOYNidfL","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005231384}
+[23:28:36.646] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005232697}
+[23:28:37.514] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/8FsO8LNABvBobOYNidfL color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/8FsO8LNABvBobOYNidfL","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005233564}
+[23:28:38.375] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:28:38.375] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:28:41.033] Browser ERROR   [2025-12-17T21:00:37.069Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[23:28:41.033] Browser ERROR   [2025-12-17T21:00:37.070Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[23:28:41.033] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005237084}
+[23:29:00.584] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:00.585] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:03.230] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005259278}
+[23:29:13.625] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:13.625] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:24.404] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:24.404] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:25.442] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:25.442] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:26.188] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:26.188] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:27.658] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:29:27.658] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:31:27.985] Server  LOG      ✓ Compiled in 500ms
+[23:31:28.150] Browser ERROR   uncaughtError: ReferenceError: memberEmail is not defined
+[23:32:04.070] Server  LOG      ✓ Compiled in 90ms
+[23:32:04.091] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[23:32:05.373] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005440301}
+[23:32:05.373] Browser ERROR   uncaughtError: ReferenceError: memberEmail is not defined
+[23:32:06.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:32:06.692] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:32:06.692] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[23:32:06.692] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005442763}
+[23:32:07.413] Browser ERROR   uncaughtError: ReferenceError: memberEmail is not defined
+[23:32:30.591] Server  LOG      ✓ Compiled in 156ms
+[23:32:30.603] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[23:32:31.337] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:32:31.882] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:32:31.882] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[23:32:31.882] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005467737}
+[23:32:34.328] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:32:34.329] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:32:44.544] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:32:44.544] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[23:32:47.707] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766005483773}
+[24:05:55.284] Browser WARN    [2025-12-17T21:37:50.389Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x47448eab transport errored. Name: undefined Message: undefined
+[24:06:19.492] Server  LOG      ✓ Compiled in 197ms
+[24:06:50.716] Server  LOG      ✓ Compiled in 169ms
+[24:07:08.254] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:07:08.653] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:07:08.653] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[24:07:08.653] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766007544564}
+[24:07:10.089] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766007546150}
+[24:07:11.407] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:07:11.407] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:07:12.985] Browser ERROR   Failed to generate invite code: {"code":"permission-denied","name":"FirebaseError"}
+[24:07:14.150] Browser ERROR   Failed to generate invite code: {"code":"permission-denied","name":"FirebaseError"}
+[24:25:53.184] Browser WARN    [2025-12-17T21:57:49.185Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c4d transport errored. Name: undefined Message: undefined
+[25:16:09.319] Browser ERROR   Failed to generate invite code: {"code":"permission-denied","name":"FirebaseError"}
+[25:34:25.018] Browser WARN    [2025-12-17T23:06:20.939Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c51 transport errored. Name: undefined Message: undefined
+[25:42:26.844] Browser WARN    [2025-12-17T23:14:22.749Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c53 transport errored. Name: undefined Message: undefined
+[25:58:13.185] Browser WARN    [2025-12-17T23:30:09.059Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c54 transport errored. Name: undefined Message: undefined
+[26:13:59.445] Browser WARN    [2025-12-17T23:45:55.292Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c55 transport errored. Name: undefined Message: undefined
+[26:29:30.404] Browser WARN    [2025-12-18T00:01:26.249Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c56 transport errored. Name: undefined Message: undefined
+[26:45:16.527] Browser WARN    [2025-12-18T00:17:12.378Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c57 transport errored. Name: undefined Message: undefined
+[27:01:02.758] Browser WARN    [2025-12-18T00:32:58.604Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c58 transport errored. Name: undefined Message: undefined
+[27:16:55.755] Browser WARN    [2025-12-18T00:48:51.534Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c59 transport errored. Name: undefined Message: undefined
+[27:20:25.974] Browser WARN    [2025-12-18T00:52:21.747Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c5a transport errored. Name: undefined Message: undefined
+[27:35:41.897] Browser WARN    [2025-12-18T01:07:37.642Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c5b transport errored. Name: undefined Message: undefined
+[27:51:27.809] Browser WARN    [2025-12-18T01:23:23.546Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c5c transport errored. Name: undefined Message: undefined
+[28:07:14.019] Browser WARN    [2025-12-18T01:39:09.740Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c5d transport errored. Name: undefined Message: undefined
+[28:22:59.880] Browser WARN    [2025-12-18T01:54:55.569Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c5e transport errored. Name: undefined Message: undefined
+[28:38:45.812] Browser WARN    [2025-12-18T02:10:41.448Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c5f transport errored. Name: undefined Message: undefined
+[28:54:31.797] Browser WARN    [2025-12-18T02:26:27.382Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c60 transport errored. Name: undefined Message: undefined
+[29:10:03.404] Browser WARN    [2025-12-18T02:41:58.950Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c61 transport errored. Name: undefined Message: undefined
+[29:25:35.169] Browser WARN    [2025-12-18T02:57:30.664Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c62 transport errored. Name: undefined Message: undefined
+[29:41:21.103] Browser WARN    [2025-12-18T03:13:16.552Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c63 transport errored. Name: undefined Message: undefined
+[29:56:52.140] Browser WARN    [2025-12-18T03:28:47.538Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c64 transport errored. Name: undefined Message: undefined
+[30:12:38.537] Browser WARN    [2025-12-18T03:44:33.923Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c65 transport errored. Name: undefined Message: undefined
+[30:28:31.126] Browser WARN    [2025-12-18T04:00:26.494Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c67 transport errored. Name: undefined Message: undefined
+[30:44:17.248] Browser WARN    [2025-12-18T04:16:12.580Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c68 transport errored. Name: undefined Message: undefined
+[30:59:32.540] Browser WARN    [2025-12-18T04:31:27.845Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c69 transport errored. Name: undefined Message: undefined
+[31:15:18.515] Browser WARN    [2025-12-18T04:47:13.817Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c6a transport errored. Name: undefined Message: undefined
+[31:31:04.712] Browser WARN    [2025-12-18T05:02:59.983Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c6b transport errored. Name: undefined Message: undefined
+[31:46:49.935] Browser WARN    [2025-12-18T05:18:45.146Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c6c transport errored. Name: undefined Message: undefined
+[32:02:35.871] Browser WARN    [2025-12-18T05:34:31.031Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c6d transport errored. Name: undefined Message: undefined
+[32:19:22.094] Browser WARN    [2025-12-18T05:51:17.202Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c6e transport errored. Name: undefined Message: undefined
+[32:35:08.356] Browser WARN    [2025-12-18T06:07:03.433Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c6f transport errored. Name: undefined Message: undefined
+[32:50:54.297] Browser WARN    [2025-12-18T06:22:49.336Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c70 transport errored. Name: undefined Message: undefined
+[33:06:55.108] Browser WARN    [2025-12-18T06:38:50.172Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c71 transport errored. Name: undefined Message: undefined
+[33:17:03.450] Browser WARN    [2025-12-18T06:48:58.510Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c72 transport errored. Name: undefined Message: undefined
+[33:32:34.495] Browser WARN    [2025-12-18T07:04:29.530Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c73 transport errored. Name: undefined Message: undefined
+[33:48:05.837] Browser WARN    [2025-12-18T07:20:00.828Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c74 transport errored. Name: undefined Message: undefined
+[34:03:36.718] Browser WARN    [2025-12-18T07:35:31.694Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c75 transport errored. Name: undefined Message: undefined
+[34:17:55.251] Browser WARN    [2025-12-18T07:49:50.195Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c76 transport errored. Name: undefined Message: undefined
+[34:33:41.233] Browser WARN    [2025-12-18T08:05:36.146Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c77 transport errored. Name: undefined Message: undefined
+[34:49:27.381] Browser WARN    [2025-12-18T08:21:22.272Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c78 transport errored. Name: undefined Message: undefined
+[35:05:13.269] Browser WARN    [2025-12-18T08:37:08.147Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c79 transport errored. Name: undefined Message: undefined
+[35:19:02.106] Browser WARN    [2025-12-18T08:50:56.972Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c7a transport errored. Name: undefined Message: undefined
+[35:34:48.363] Browser WARN    [2025-12-18T09:06:43.210Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c7b transport errored. Name: undefined Message: undefined
+[35:50:32.380] Browser WARN    [2025-12-18T09:22:27.210Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c7c transport errored. Name: undefined Message: undefined
+[36:06:18.264] Browser WARN    [2025-12-18T09:38:13.076Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c7d transport errored. Name: undefined Message: undefined
+[36:19:57.411] Browser WARN    [2025-12-18T09:51:52.198Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c7e transport errored. Name: undefined Message: undefined
+[36:35:43.318] Browser WARN    [2025-12-18T10:07:38.049Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c7f transport errored. Name: undefined Message: undefined
+[36:43:52.587] Browser WARN    [2025-12-18T10:15:47.280Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c81 transport errored. Name: undefined Message: undefined
+[36:43:52.710] Browser WARN    [2025-12-18T10:15:47.405Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c82 transport errored. Name: undefined Message: undefined
+[36:43:53.527] Browser WARN    [2025-12-18T10:15:48.219Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c83 transport errored. Name: undefined Message: undefined
+[36:43:54.770] Browser WARN    [2025-12-18T10:15:49.464Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c84 transport errored. Name: undefined Message: undefined
+[36:43:57.097] Browser WARN    [2025-12-18T10:15:51.785Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c85 transport errored. Name: undefined Message: undefined
+[36:43:59.003] Browser WARN    [2025-12-18T10:15:53.696Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c86 transport errored. Name: undefined Message: undefined
+[36:44:03.442] Browser WARN    [2025-12-18T10:15:58.135Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c87 transport errored. Name: undefined Message: undefined
+[36:44:09.557] Browser WARN    [2025-12-18T10:16:04.250Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c88 transport errored. Name: undefined Message: undefined
+[36:44:22.151] Browser WARN    [2025-12-18T10:16:16.841Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c89 transport errored. Name: undefined Message: undefined
+[36:44:53.214] Browser WARN    [2025-12-18T10:16:47.886Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c8b transport errored. Name: undefined Message: undefined
+[36:44:53.214] Browser WARN    [2025-12-18T10:16:47.897Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c8c transport errored. Name: undefined Message: undefined
+[36:44:54.381] Browser WARN    [2025-12-18T10:16:49.072Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c8d transport errored. Name: undefined Message: undefined
+[36:44:56.419] Browser WARN    [2025-12-18T10:16:51.110Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c8e transport errored. Name: undefined Message: undefined
+[36:44:59.541] Browser WARN    [2025-12-18T10:16:54.233Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c8f transport errored. Name: undefined Message: undefined
+[36:45:01.725] Browser WARN    [2025-12-18T10:16:56.416Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c90 transport errored. Name: undefined Message: undefined
+[36:45:07.556] Browser WARN    [2025-12-18T10:17:02.244Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c91 transport errored. Name: undefined Message: undefined
+[36:45:15.237] Browser WARN    [2025-12-18T10:17:09.927Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c92 transport errored. Name: undefined Message: undefined
+[36:50:15.306] Browser WARN    [2025-12-18T10:22:09.976Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c93 transport errored. Name: undefined Message: undefined
+[36:51:23.818] Browser WARN    [2025-12-18T10:23:18.478Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c95 transport errored. Name: undefined Message: undefined
+[36:51:23.818] Browser WARN    [2025-12-18T10:23:18.491Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c96 transport errored. Name: undefined Message: undefined
+[36:51:25.132] Browser WARN    [2025-12-18T10:23:19.808Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c97 transport errored. Name: undefined Message: undefined
+[36:51:26.332] Browser WARN    [2025-12-18T10:23:21.010Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c98 transport errored. Name: undefined Message: undefined
+[36:52:18.319] Browser WARN    [2025-12-18T10:24:12.955Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c9a transport errored. Name: undefined Message: undefined
+[36:52:18.320] Browser WARN    [2025-12-18T10:24:12.966Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c9b transport errored. Name: undefined Message: undefined
+[36:52:19.023] Browser WARN    [2025-12-18T10:24:13.674Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c9c transport errored. Name: undefined Message: undefined
+[36:52:21.013] Browser WARN    [2025-12-18T10:24:15.663Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c9d transport errored. Name: undefined Message: undefined
+[36:52:22.247] Browser WARN    [2025-12-18T10:24:16.894Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x62d33c9e transport errored. Name: undefined Message: undefined
+[37:01:10.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:01:11.381] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/groups/Ly..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  ...
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/groups/Ly..." tree={[...]} params={{id:"Lyvao7..."}} ...>
+                        <SegmentViewNode type="page" pagePath="groups/[id...">
+                          <SegmentTrieNode>
+                          <ClientPageRoot Component={function GroupDetailPage} serverProvidedParams={{...}}>
+                            <GroupDetailPage params={Promise} searchParams={Promise}>
+                              <div
+                                className="flex h-screen flex-col"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="border-b p-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-8 w-48">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-8 w-48"
+-                                     bis_skin_checked="1"
+                                    >
+                                <div
+                                  className="flex-1 space-y-4 p-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                        ...
+                      ...
+                  ...
+
+[37:01:11.469] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:01:11.469] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[37:01:11.469] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766053986089}
+[37:01:15.349] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:01:15.349] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:01:25.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766054000530}
+[37:25:12.622] Browser WARN    [2025-12-18T10:57:07.127Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4a426037 transport errored. Name: undefined Message: undefined
+[37:25:12.647] Browser WARN    [2025-12-18T10:57:07.146Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4a426038 transport errored. Name: undefined Message: undefined
+[37:25:14.069] Browser WARN    [2025-12-18T10:57:08.598Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4a426039 transport errored. Name: undefined Message: undefined
+[37:25:15.174] Browser WARN    [2025-12-18T10:57:09.703Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4a42603a transport errored. Name: undefined Message: undefined
+[37:31:25.300] Server  LOG      ✓ Compiled in 292ms
+[37:32:01.980] Server  LOG      ✓ Compiled in 84ms
+[37:36:32.631] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056107089}
+[37:36:33.893] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:33.893] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:35.299] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:35.299] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:40.691] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056115161}
+[37:36:41.709] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056116159}
+[37:36:42.417] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:42.417] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:47.472] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056121969}
+[37:36:49.182] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:49.182] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:51.685] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056126176}
+[37:36:54.212] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:36:54.212] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:37:30.979] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:37:31.463] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:37:31.463] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[37:37:31.463] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056165959}
+[37:37:31.593] Browser ERROR   [2025-12-18T11:09:26.087Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[37:37:31.593] Browser ERROR   [2025-12-18T11:09:26.089Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[37:37:37.623] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:37:37.785] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:37:37.785] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[37:37:37.785] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056172280}
+[37:37:39.337] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056173831}
+[37:37:43.842] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056178218}
+[37:37:49.345] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056183837}
+[37:38:19.242] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056213718}
+[37:38:21.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056215571}
+[37:38:22.607] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056217098}
+[37:38:24.362] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:24.362] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:28.277] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:28.278] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:32.480] Browser WARN    [2025-12-18T11:10:26.945Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'BatchGetDocuments' 0x21c32aa0 failed with error:  {"code":"permission-denied","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:batchGet request: {"documents":["projects/kasa-fc1ce/databases/(default)/documents/groups/Lyvao75Z5tgLCL6hAqGS"]}
+[37:38:32.480] Browser ERROR   Failed to join group: {"code":"permission-denied","name":"FirebaseError"}
+[37:38:32.481] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:32.481] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:34.286] Browser WARN    [2025-12-18T11:10:28.754Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'BatchGetDocuments' 0x21c32aa2 failed with error:  {"code":"permission-denied","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:batchGet request: {"documents":["projects/kasa-fc1ce/databases/(default)/documents/groups/Lyvao75Z5tgLCL6hAqGS"]}
+[37:38:34.286] Browser ERROR   Failed to join group: {"code":"permission-denied","name":"FirebaseError"}
+[37:38:34.286] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:38:34.286] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:41:11.162] Server  LOG      ✓ Compiled in 229ms
+[37:41:52.447] Server  LOG      ✓ Compiled in 207ms
+[37:41:58.036] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:41:58.892] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/groups/Ly..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  ...
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/groups/Ly..." tree={[...]} params={{id:"Lyvao7..."}} ...>
+                        <SegmentViewNode type="page" pagePath="groups/[id...">
+                          <SegmentTrieNode>
+                          <ClientPageRoot Component={function GroupDetailPage} serverProvidedParams={{...}}>
+                            <GroupDetailPage params={Promise} searchParams={Promise}>
+                              <div
+                                className="flex h-screen flex-col"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="border-b p-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-8 w-48">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-8 w-48"
+-                                     bis_skin_checked="1"
+                                    >
+                                <div
+                                  className="flex-1 space-y-4 p-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                        ...
+                      ...
+                  ...
+
+[37:41:58.916] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:41:58.916] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[37:41:58.916] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056433323}
+[37:42:01.152] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:01.152] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:05.133] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:42:06.580] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/groups/Ly..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{lazyData:null, ...}}>
+                    <__next_viewport_boundary__>
+                    <Next.Metadata>
+                      <div
+                        hidden={true}
+-                       bis_skin_checked="1"
+                      >
+                    ...
+                  ...
+                    <RedirectErrorBoundary router={{...}}>
+                      <InnerLayoutRouter url="/groups/Ly..." tree={[...]} params={{id:"Lyvao7..."}} ...>
+                        <SegmentViewNode type="page" pagePath="groups/[id...">
+                          <SegmentTrieNode>
+                          <ClientPageRoot Component={function GroupDetailPage} serverProvidedParams={{...}}>
+                            <GroupDetailPage params={Promise} searchParams={Promise}>
+                              <div
+                                className="flex h-screen flex-col"
+-                               bis_skin_checked="1"
+                              >
+                                <div
+                                  className="border-b p-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-8 w-48">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-8 w-48"
+-                                     bis_skin_checked="1"
+                                    >
+                                <div
+                                  className="flex-1 space-y-4 p-4"
+-                                 bis_skin_checked="1"
+                                >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                                  <Skeleton className="h-20 w-full">
+                                    <div
+                                      data-slot="skeleton"
+                                      className="bg-accent animate-pulse rounded-md h-20 w-full"
+-                                     bis_skin_checked="1"
+                                    >
+                        ...
+                      ...
+                  ...
+
+[37:42:06.581] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:42:06.581] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/Lyvao75Z5tgLCL6hAqGS","route":"/groups/[id]"}
+[37:42:06.581] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056440085}
+[37:42:07.528] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:07.528] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:11.115] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056445572}
+[37:42:12.209] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056446691}
+[37:42:13.179] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:13.179] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:25.971] Browser WARN    [2025-12-18T11:14:20.423Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'BatchGetDocuments' 0x21c32aa4 failed with error:  {"code":"permission-denied","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:batchGet request: {"documents":["projects/kasa-fc1ce/databases/(default)/documents/groups/Lyvao75Z5tgLCL6hAqGS"]}
+[37:42:25.971] Browser ERROR   Failed to join group: {"code":"permission-denied","name":"FirebaseError"}
+[37:42:25.971] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:42:25.971] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:42.409] Browser WARN    [2025-12-18T11:19:36.786Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'BatchGetDocuments' 0x21c32aa6 failed with error:  {"code":"permission-denied","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:batchGet request: {"documents":["projects/kasa-fc1ce/databases/(default)/documents/groups/Lyvao75Z5tgLCL6hAqGS"]}
+[37:47:42.416] Browser ERROR   Failed to join group: {"code":"permission-denied","name":"FirebaseError"}
+[37:47:42.418] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:42.418] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:45.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:47:45.898] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:47:45.898] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[37:47:45.898] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056780365}
+[37:47:50.826] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056785292}
+[37:47:51.799] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766056786265}
+[37:47:52.813] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:52.813] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:57.647] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:57.647] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:59.591] Browser WARN    [2025-12-18T11:19:54.003Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'BatchGetDocuments' 0x38f1d63c failed with error:  {"code":"permission-denied","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:batchGet request: {"documents":["projects/kasa-fc1ce/databases/(default)/documents/groups/mjfMvz86oH35brMyDi1x"]}
+[37:47:59.591] Browser ERROR   Failed to join group: {"code":"permission-denied","name":"FirebaseError"}
+[37:47:59.591] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:47:59.591] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:53:00.649] Server  LOG      ✓ Compiled in 554ms
+[37:56:05.255] Server  LOG      ✓ Compiled in 385ms
+[37:57:05.373] Server  LOG      ✓ Compiled in 82ms
+[37:57:12.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057346909}
+[37:57:14.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[37:57:15.228] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[37:57:15.228] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/mjfMvz86oH35brMyDi1x","route":"/groups/[id]"}
+[37:57:15.228] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057349669}
+[37:57:16.781] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[37:57:16.781] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:13.431] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057587859}
+[38:01:16.100] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057590520}
+[38:01:17.350] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:17.350] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:22.909] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057597334}
+[38:01:24.295] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057598724}
+[38:01:28.685] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057603114}
+[38:01:29.863] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057604292}
+[38:01:31.442] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:31.442] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:43.783] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057618212}
+[38:01:44.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:44.918] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[38:01:46.919] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Lyvao75Z5tgLCL6hAqGS","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057621347}
+[38:01:56.726] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057631126}
+[38:01:57.621] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/mjfMvz86oH35brMyDi1x color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/mjfMvz86oH35brMyDi1x","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766057632048}

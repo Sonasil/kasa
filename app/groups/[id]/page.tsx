@@ -1,5 +1,20 @@
+/* eslint-disable */
 "use client"
-import { doc, updateDoc, arrayRemove, onSnapshot, runTransaction } from "firebase/firestore"
+import {
+  doc,
+  updateDoc,
+  onSnapshot,
+  runTransaction,
+  collection,
+  addDoc,
+  setDoc,
+  serverTimestamp,
+  query,
+  orderBy,
+  where,
+  getDocs,
+  limit,
+} from "firebase/firestore"
 import { db ,auth } from "@/lib/firebase"
 
 import { useEffect, useState, useRef, type FormEvent } from "react"
@@ -87,66 +102,6 @@ const MOCK_USERS: Record<string, UserProfile> = {
   user3: { displayName: "Charlie Davis", email: "charlie@example.com" },
 }
 
-const MOCK_GROUP: GroupDoc = {
-  name: "Weekend Trip",
-  memberIds: ["user1", "user2", "user3"],
-  totalAmount: 45000,
-  createdBy: "user1",
-  balances: {
-    user1: 5000,
-    user2: -2500,
-    user3: -2500,
-  },
-}
-
-const MOCK_FEED_ITEMS: FeedItem[] = [
-  {
-    id: "1",
-    type: "message",
-    createdAt: new Date(Date.now() - 3600000),
-    createdBy: "user1",
-    text: "Hey everyone! Ready for the trip?",
-  },
-  {
-    id: "2",
-    type: "expense",
-    createdAt: new Date(Date.now() - 3000000),
-    createdBy: "user1",
-    title: "Hotel Booking",
-    amountCents: 30000,
-    payerUid: "user1",
-    participantIds: ["user1", "user2", "user3"],
-    splitCents: { user1: 10000, user2: 10000, user3: 10000 },
-    category: "Accommodation",
-  },
-  {
-    id: "3",
-    type: "message",
-    createdAt: new Date(Date.now() - 2400000),
-    createdBy: "user2",
-    text: "Looks great! I'll bring snacks.",
-  },
-  {
-    id: "4",
-    type: "expense",
-    createdAt: new Date(Date.now() - 1800000),
-    createdBy: "user2",
-    title: "Gas for the car",
-    amountCents: 15000,
-    payerUid: "user2",
-    participantIds: ["user1", "user2", "user3"],
-    splitCents: { user1: 5000, user2: 5000, user3: 5000 },
-    category: "Transport",
-  },
-  {
-    id: "5",
-    type: "message",
-    createdAt: new Date(Date.now() - 1200000),
-    createdBy: "user3",
-    text: "Perfect! What time should we leave?",
-  },
-]
-
 const CATEGORY_OPTIONS = [
   { value: "Electricity", label: "Electricity", icon: Zap },
   { value: "Water", label: "Water", icon: Droplets },
@@ -185,7 +140,6 @@ export default function GroupDetailPage() {
   const [customSplitAmounts, setCustomSplitAmounts] = useState<Record<string, string>>({})
 
   const [memberDialogOpen, setMemberDialogOpen] = useState(false)
-  const [memberEmail, setMemberEmail] = useState("")
   const [inviteCode, setInviteCode] = useState<string | null>(null)
 
   const [expenseDetailOpen, setExpenseDetailOpen] = useState(false)
@@ -222,6 +176,37 @@ export default function GroupDetailPage() {
   }, [groupId])
 
   useEffect(() => {
+    if (!groupId) return
+
+    const q = query(collection(db, "groups", groupId, "feed"), orderBy("createdAt", "asc"))
+    const unsub = onSnapshot(q, (snap) => {
+      const items: FeedItem[] = snap.docs
+        .map((d) => {
+          const data = d.data() as any
+          return {
+            id: d.id,
+            type: data.type,
+            createdAt: toDateSafe(data.createdAt),
+            createdBy: data.createdBy,
+            text: data.text,
+            title: data.title,
+            amountCents: data.amountCents,
+            payerUid: data.payerUid,
+            participantIds: data.participantIds,
+            splitCents: data.splitCents,
+            category: data.category,
+            receiptUrl: data.receiptUrl,
+          } as FeedItem
+        })
+        .filter((x) => x.type === "message" || x.type === "expense")
+
+      setFeedItems(items)
+    })
+
+    return () => unsub()
+  }, [groupId])
+
+  useEffect(() => {
     if (autoScroll && scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight
     }
@@ -235,20 +220,27 @@ export default function GroupDetailPage() {
     setMessageText("")
     setSending(true)
 
-    setTimeout(() => {
-      const newMessage: FeedItem = {
-        id: `msg-${Date.now()}`,
+    try {
+      await addDoc(collection(db, "groups", groupId, "feed"), {
         type: "message",
-        createdAt: new Date(),
+        createdAt: serverTimestamp(),
         createdBy: currentUid,
         text,
-      }
-      setFeedItems((prev) => [...prev, newMessage])
-      setSending(false)
+      })
+
       toast({
         title: "Message sent",
       })
-    }, 300)
+    } catch (err) {
+      console.error("Failed to send message:", err)
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setSending(false)
+    }
   }
 
   const handleAddExpense = async () => {
@@ -304,7 +296,7 @@ export default function GroupDetailPage() {
         splitCents[participantIds[0]] += diff
       }
     } else {
-      // Equal split logic
+      // Equal split logic 
       const n = participantIds.length
       const base = Math.floor(totalCents / n)
       let remainder = totalCents - base * n
@@ -316,68 +308,120 @@ export default function GroupDetailPage() {
       }
     }
 
-    const newExpense: FeedItem = {
-      id: `exp-${Date.now()}`,
-      type: "expense",
-      createdAt: new Date(),
-      createdBy: currentUid,
-      title,
-      amountCents: totalCents,
-      payerUid: currentUid,
-      participantIds,
-      splitCents,
-      category: expenseCategory || undefined,
+    try {
+      await runTransaction(db, async (tx) => {
+        const groupRef = doc(db, "groups", groupId)
+        const snap = await tx.get(groupRef)
+        if (!snap.exists()) throw new Error("GROUP_NOT_FOUND")
+
+        const data = snap.data() as any
+        const currentBalances: Record<string, number> = data.balances || {}
+
+        const nextBalances: Record<string, number> = { ...currentBalances }
+        const payerShare = splitCents[currentUid] || 0
+        nextBalances[currentUid] = (nextBalances[currentUid] || 0) + (totalCents - payerShare)
+
+        for (const uid of participantIds) {
+          if (uid === currentUid) continue
+          nextBalances[uid] = (nextBalances[uid] || 0) - (splitCents[uid] || 0)
+        }
+
+        const feedRef = doc(collection(db, "groups", groupId, "feed"))
+        tx.set(feedRef, {
+          type: "expense",
+          createdAt: serverTimestamp(),
+          createdBy: currentUid,
+          title,
+          amountCents: totalCents,
+          payerUid: currentUid,
+          participantIds,
+          splitCents,
+          category: expenseCategory || null,
+        })
+
+        tx.update(groupRef, {
+          balances: nextBalances,
+          totalAmount: (data.totalAmount || 0) + totalCents,
+        })
+      })
+
+      toast({
+        title: "Expense added",
+        description: `${title} - ₺${amountTRY.toFixed(2)}`,
+      })
+
+      setExpenseTitle("")
+      setExpenseAmount("")
+      setExpenseCategory("")
+      setCategoryMode("select")
+      setSelectedParticipants([])
+      setSplitMode("equal")
+      setCustomSplitAmounts({})
+      setExpenseDialogOpen(false)
+    } catch (err) {
+      console.error("Failed to add expense:", err)
+      toast({
+        title: "Error",
+        description: "Failed to add expense. Please try again.",
+        variant: "destructive",
+      })
     }
+  }
 
-    setFeedItems((prev) => [...prev, newExpense])
-
-    // Update balances
-    if (group) {
-      const balances = { ...group.balances }
-      const payerShare = splitCents[currentUid] || 0
-      balances[currentUid] = (balances[currentUid] || 0) + (totalCents - payerShare)
-
-      for (const uid of participantIds) {
-        if (uid === currentUid) continue
-        balances[uid] = (balances[uid] || 0) - (splitCents[uid] || 0)
+  
+  const handleGenerateInviteCode = async () => {
+    if (!currentUid || !groupId) {
+      toast({
+        title: "Error",
+        description: "You must be signed in to generate an invite code.",
+        variant: "destructive",
+      })
+      return
+    }
+  
+    try {
+      // 1) Bu grup için zaten aktif bir kod var mı? varsa onu kullan
+      const existingQ = query(
+        collection(db, "groupInvites"),
+        where("groupId", "==", groupId),
+        where("disabled", "==", false),
+        limit(1)
+      )
+  
+      const existingSnap = await getDocs(existingQ)
+      if (!existingSnap.empty) {
+        const existingCode = existingSnap.docs[0].id
+        setInviteCode(existingCode)
+        toast({
+          title: "Invite code ready",
+          description: "Bu grup için zaten aktif bir davet kodu var.",
+        })
+        return
       }
-
-      setGroup({ ...group, balances })
+  
+      // 2) Yoksa yeni kod üret ve kaydet
+      const code = Math.random().toString(36).substring(2, 10).toUpperCase()
+  
+      await setDoc(doc(db, "groupInvites", code), {
+        groupId,
+        createdBy: currentUid,
+        createdAt: serverTimestamp(),
+        disabled: false,
+      })
+  
+      setInviteCode(code)
+      toast({
+        title: "Invite code generated",
+        description: "Share this code with others to join the group",
+      })
+    } catch (err) {
+      console.error("Failed to generate invite code:", err)
+      toast({
+        title: "Error",
+        description: "Failed to generate invite code. Please try again.",
+        variant: "destructive",
+      })
     }
-
-    toast({
-      title: "Expense added",
-      description: `${title} - ₺${amountTRY.toFixed(2)}`,
-    })
-
-    setExpenseTitle("")
-    setExpenseAmount("")
-    setExpenseCategory("")
-    setCategoryMode("select")
-    setSelectedParticipants([])
-    setSplitMode("equal")
-    setCustomSplitAmounts({})
-    setExpenseDialogOpen(false)
-  }
-
-  const handleAddMember = async () => {
-    if (!memberEmail.trim()) return
-
-    toast({
-      title: "Member added",
-      description: `Invitation sent to ${memberEmail}`,
-    })
-    setMemberDialogOpen(false)
-    setMemberEmail("")
-  }
-
-  const handleGenerateInviteCode = () => {
-    const code = `${groupId}-${Math.random().toString(36).substring(2, 10).toUpperCase()}`
-    setInviteCode(code)
-    toast({
-      title: "Invite code generated",
-      description: "Share this code with others to join the group",
-    })
   }
 
   const handleCopyInviteCode = () => {
@@ -574,6 +618,14 @@ export default function GroupDetailPage() {
 
     setPaymentMember("")
     setPaymentAmount("")
+  }
+
+  const toDateSafe = (v: any): Date => {
+    if (!v) return new Date(0)
+    if (v instanceof Date) return v
+    if (v?.toDate && typeof v.toDate === "function") return v.toDate()
+    if (typeof v === "number") return new Date(v)
+    return new Date(0)
   }
 
   const formatCurrency = (cents: number) => {
@@ -792,19 +844,7 @@ export default function GroupDetailPage() {
                     )}
                   </div>
 
-                  <div className="border-t pt-4">
-                    <Label htmlFor="member-email">Add Member by Email</Label>
-                    <div className="mt-2 flex gap-2">
-                      <Input
-                        id="member-email"
-                        type="email"
-                        placeholder="email@example.com"
-                        value={memberEmail}
-                        onChange={(e) => setMemberEmail(e.target.value)}
-                      />
-                      <Button onClick={handleAddMember}>Add</Button>
-                    </div>
-                  </div>
+                  
 
                   {isOwner && memberIds.length > 1 && (
                     <div className="border-t pt-4">
@@ -895,7 +935,7 @@ export default function GroupDetailPage() {
                       >
                         <p className="text-sm sm:text-base whitespace-pre-wrap break-words">{item.text}</p>
                         <p className={`mt-1 text-xs ${isMe ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                          {formatTime(item.createdAt)}
+                          {formatTime(toDateSafe(item.createdAt))}
                         </p>
                       </div>
                     </div>
@@ -933,7 +973,7 @@ export default function GroupDetailPage() {
                             <p className="text-xs sm:text-sm text-muted-foreground">
                               Split between {item.participantIds?.length || 0} people
                             </p>
-                            <p className="text-xs text-muted-foreground">{formatTime(item.createdAt)}</p>
+                            <p className="text-xs text-muted-foreground">{formatTime(toDateSafe(item.createdAt))}</p>
                           </div>
                         </div>
                       </div>
@@ -1199,7 +1239,7 @@ export default function GroupDetailPage() {
                 </div>
                 <p className="text-2xl sm:text-3xl font-bold">{formatCurrency(selectedExpense.amountCents || 0)}</p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  {selectedExpense.createdAt.toLocaleDateString()} at {formatTime(selectedExpense.createdAt)}
+                  {toDateSafe(selectedExpense.createdAt).toLocaleDateString()} at {formatTime(toDateSafe(selectedExpense.createdAt))}
                 </p>
               </div>
 
