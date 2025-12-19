@@ -131,6 +131,8 @@ export default function GroupDetailPage() {
   const [sending, setSending] = useState(false)
 
   const [expenseDialogOpen, setExpenseDialogOpen] = useState(false)
+  const [addingExpense, setAddingExpense] = useState(false)
+  const addExpenseRequestIdRef = useRef<string | null>(null)
   const [expenseTitle, setExpenseTitle] = useState("")
   const [expenseAmount, setExpenseAmount] = useState("")
   const [expenseCategory, setExpenseCategory] = useState("")
@@ -244,6 +246,8 @@ export default function GroupDetailPage() {
   }
 
   const handleAddExpense = async () => {
+    if (addingExpense) return
+
     const title = expenseTitle.trim()
     const amountTRY = Number.parseFloat(expenseAmount)
 
@@ -255,6 +259,15 @@ export default function GroupDetailPage() {
       })
       return
     }
+    setAddingExpense(true)
+
+    // stable request id for this submission (idempotency)
+    if (!addExpenseRequestIdRef.current) {
+      const uuid = (globalThis as any)?.crypto?.randomUUID?.()
+      addExpenseRequestIdRef.current =
+        uuid || `${currentUid}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+    }
+    const requestId = addExpenseRequestIdRef.current
 
     const participants = selectedParticipants.length > 0 ? selectedParticipants : [currentUid]
     const totalCents = Math.round(amountTRY * 100)
@@ -326,7 +339,7 @@ export default function GroupDetailPage() {
           nextBalances[uid] = (nextBalances[uid] || 0) - (splitCents[uid] || 0)
         }
 
-        const feedRef = doc(collection(db, "groups", groupId, "feed"))
+        const feedRef = doc(db, "groups", groupId, "feed", requestId)
         tx.set(feedRef, {
           type: "expense",
           createdAt: serverTimestamp(),
@@ -337,6 +350,7 @@ export default function GroupDetailPage() {
           participantIds,
           splitCents,
           category: expenseCategory || null,
+          clientRequestId: requestId,
         })
 
         tx.update(groupRef, {
@@ -365,6 +379,9 @@ export default function GroupDetailPage() {
         description: "Failed to add expense. Please try again.",
         variant: "destructive",
       })
+    } finally {
+      setAddingExpense(false)
+      addExpenseRequestIdRef.current = null
     }
   }
 
@@ -1190,8 +1207,8 @@ export default function GroupDetailPage() {
                     </div>
                   )}
 
-                  <Button onClick={handleAddExpense} className="w-full">
-                    Add Expense
+                  <Button onClick={handleAddExpense} className="w-full" disabled={addingExpense}>
+                    {addingExpense ? "Adding..." : "Add Expense"}
                   </Button>
                 </div>
               </DialogContent>
