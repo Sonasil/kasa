@@ -12,6 +12,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { auth, db } from "@/lib/firebase"
+import { collection, onSnapshot, query, where, orderBy, limit } from "firebase/firestore"
 import {
   Plus,
   DollarSign,
@@ -33,7 +35,7 @@ import {
 
 type ActivityItem = {
   id: string
-  type: "expense" | "settlement" | "join"
+  type: "expense" | "settlement" | "join" | "group"
   title: string
   amount?: number
   timestamp: Date
@@ -45,97 +47,14 @@ type ActivityItem = {
   isPositive?: boolean
 }
 
-const MOCK_USER = {
-  name: "Alex",
-  uid: "user1",
-}
-
-const MOCK_ACTIVITIES: ActivityItem[] = [
-  {
-    id: "1",
-    type: "expense",
-    title: "Groceries at Migros",
-    amount: 25000,
-    timestamp: new Date(Date.now() - 3600000),
-    user: { name: "Sarah" },
-    groupName: "Apartment 4B",
-    isPositive: false,
-  },
-  {
-    id: "2",
-    type: "settlement",
-    title: "Payment received",
-    amount: 15000,
-    timestamp: new Date(Date.now() - 7200000),
-    user: { name: "Mike" },
-    groupName: "Weekend Trip",
-    isPositive: true,
-  },
-  {
-    id: "3",
-    type: "join",
-    title: "Joined your group",
-    timestamp: new Date(Date.now() - 10800000),
-    user: { name: "Emma" },
-    groupName: "Office Lunch",
-  },
-  {
-    id: "4",
-    type: "expense",
-    title: "Dinner at restaurant",
-    amount: 45000,
-    timestamp: new Date(Date.now() - 14400000),
-    user: { name: "John" },
-    groupName: "Weekend Trip",
-    isPositive: false,
-  },
-  {
-    id: "5",
-    type: "settlement",
-    title: "You paid Mike",
-    amount: 20000,
-    timestamp: new Date(Date.now() - 18000000),
-    user: { name: "Mike" },
-    groupName: "Apartment 4B",
-    isPositive: false,
-  },
-  {
-    id: "6",
-    type: "expense",
-    title: "Coffee at Starbucks",
-    amount: 8500,
-    timestamp: new Date(Date.now() - 21600000),
-    user: { name: "Lisa" },
-    groupName: "Office Lunch",
-    isPositive: false,
-  },
-  {
-    id: "7",
-    type: "settlement",
-    title: "Payment received",
-    amount: 30000,
-    timestamp: new Date(Date.now() - 25200000),
-    user: { name: "Tom" },
-    groupName: "Weekend Trip",
-    isPositive: true,
-  },
-  {
-    id: "8",
-    type: "expense",
-    title: "Taxi ride",
-    amount: 12000,
-    timestamp: new Date(Date.now() - 28800000),
-    user: { name: "Sarah" },
-    groupName: "Apartment 4B",
-    isPositive: false,
-  },
-]
 
 export default function DashboardPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const [loading, setLoading] = useState(false)
-  const [activities] = useState<ActivityItem[]>(MOCK_ACTIVITIES)
+  const [loading, setLoading] = useState(true)
+  const [displayName, setDisplayName] = useState("")
+  const [groupCount, setGroupCount] = useState(0)
+  const [activities, setActivities] = useState<ActivityItem[]>([])
   const [createGroupOpen, setCreateGroupOpen] = useState(false)
   const [joinGroupOpen, setJoinGroupOpen] = useState(false)
   const [groupName, setGroupName] = useState("")
@@ -143,14 +62,156 @@ export default function DashboardPage() {
   const [showAllActivities, setShowAllActivities] = useState(false)
   const [selectedActivity, setSelectedActivity] = useState<ActivityItem | null>(null)
   const [activityDetailOpen, setActivityDetailOpen] = useState(false)
+  const [youOwe, setYouOwe] = useState(0)
+  const [youAreOwed, setYouAreOwed] = useState(0)
+  const netBalance = youAreOwed - youOwe
 
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
+  useEffect(() => {
+    let unsubGroups: (() => void) | null = null
+    let feedUnsubs: Array<() => void> = []
+  
+    const cleanupFeeds = () => {
+      feedUnsubs.forEach((u) => {
+        try { u() } catch {}
+      })
+      feedUnsubs = []
+    }
+  
+    setLoading(true)
+  
+    const unsubAuth = auth.onAuthStateChanged((user) => {
+      // auth değişince eski listener'ları temizle
+      if (unsubGroups) {
+        try { unsubGroups() } catch {}
+        unsubGroups = null
+      }
+      cleanupFeeds()
+  
+      if (!user) {
+        setDisplayName("")
+        setGroupCount(0)
+        setActivities([])
+        setLoading(false)
+        router.push("/login")
+        return
+      }
+  
+      setDisplayName(user.displayName || user.email || "")
+  
+      const groupsQ = query(
+        collection(db, "groups"),
+        where("memberIds", "array-contains", user.uid)
+      )
+  
+      const perGroup: Record<string, ActivityItem[]> = {}
+      const baseActivities: ActivityItem[] = []
+  
+      const recompute = () => {
+        const merged = [...baseActivities, ...Object.values(perGroup).flat()]
+        merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
+        setActivities(merged)
+      }
+  
+      unsubGroups = onSnapshot(
+        groupsQ,
+        (snap) => {
+          cleanupFeeds()
 
-  const youOwe = 45000
-  const youAreOwed = 35000
-  const netBalance = youAreOwed - youOwe
+          const groups = snap.docs.map((d) => ({ id: d.id, ...(d.data() as any) }))
+          setGroupCount(groups.length)
 
+          // Compute real dashboard totals from group balances
+          // balances[uid] > 0 => user is owed
+          // balances[uid] < 0 => user owes
+          let owed = 0
+          let owe = 0
+          for (const g of groups) {
+            const b = g?.balances
+            const v = b && typeof b === "object" ? b[user.uid] : undefined
+            if (typeof v === "number") {
+              if (v > 0) owed += v
+              else if (v < 0) owe += Math.abs(v)
+            }
+          }
+          setYouAreOwed(owed)
+          setYouOwe(owe)
+
+          // reset caches
+          for (const k of Object.keys(perGroup)) delete perGroup[k]
+          baseActivities.length = 0
+  
+          if (groups.length === 0) {
+            setActivities([])
+            setLoading(false)
+            return
+          }
+  
+          // (4) Group created activity (groups doc içinde createdAt varsa)
+          for (const g of groups) {
+            if (g?.createdAt) {
+              baseActivities.push({
+                id: `group-${g.id}`,
+                type: "group",
+                title: "Group created",
+                timestamp: toDate(g.createdAt),
+                user: { name: g?.createdByName || "Someone" },
+                groupName: g?.name || "Group",
+                isPositive: true,
+              })
+            }
+          }
+  
+          // (1-3) Feed (expense/settlement/join) - her grup için dinle
+          for (const g of groups) {
+            const groupName = g?.name || "Group"
+            const feedQ = query(
+              collection(db, "groups", g.id, "feed"),
+              orderBy("createdAt", "desc"),
+              limit(25)
+            )
+  
+            const unsubFeed = onSnapshot(
+              feedQ,
+              (feedSnap) => {
+                perGroup[g.id] = feedSnap.docs.map((fd) =>
+                  mapFeedToActivity(groupName, fd.id, fd.data())
+                )
+                recompute()
+                setLoading(false)
+              },
+              (err) => {
+                console.error("Failed to fetch feed:", err)
+                perGroup[g.id] = []
+                recompute()
+                setLoading(false)
+              }
+            )
+  
+            feedUnsubs.push(unsubFeed)
+          }
+  
+          recompute()
+          setLoading(false)
+        },
+        (err) => {
+          console.error("Failed to fetch groups:", err)
+          setGroupCount(0)
+          setActivities([])
+          setLoading(false)
+        }
+      )
+    })
+  
+    return () => {
+      try { unsubAuth() } catch {}
+      if (unsubGroups) {
+        try { unsubGroups() } catch {}
+      }
+      cleanupFeeds()
+    }
+  }, [router])
   const formatCurrency = (cents: number) => {
     return new Intl.NumberFormat("tr-TR", {
       style: "currency",
@@ -169,6 +230,54 @@ export default function DashboardPage() {
     if (diffHours < 24) return `${diffHours}h ago`
     if (diffDays < 7) return `${diffDays}d ago`
     return date.toLocaleDateString()
+  }
+
+  const toDate = (v: any): Date => {
+    if (!v) return new Date()
+    if (v instanceof Date) return v
+    if (typeof v?.toDate === "function") return v.toDate()
+    if (typeof v?.seconds === "number") return new Date(v.seconds * 1000)
+    return new Date(v)
+  }
+  
+  const mapFeedToActivity = (groupName: string, docId: string, data: any): ActivityItem => {
+    const rawType = data?.type
+    const type: ActivityItem["type"] =
+      rawType === "expense" || rawType === "settlement" || rawType === "join" ? rawType : "expense"
+  
+    const title =
+      data?.title ||
+      data?.text ||
+      data?.message ||
+      data?.description ||
+      (type === "expense" ? "Expense added" : type === "settlement" ? "Settlement recorded" : "Member joined")
+  
+    const amount =
+      typeof data?.amount === "number"
+        ? data.amount
+        : typeof data?.amountCents === "number"
+          ? data.amountCents
+          : undefined
+  
+    const currentUid = auth.currentUser?.uid
+    const userName =
+      data?.createdByName ||
+      data?.userName ||
+      data?.user?.name ||
+      (data?.createdBy && currentUid && data.createdBy === currentUid ? displayName || "You" : "Someone")
+  
+    const isPositive = type === "settlement" ? Boolean(data?.isPositive) : undefined
+  
+    return {
+      id: docId,
+      type,
+      title,
+      amount,
+      timestamp: toDate(data?.createdAt || data?.timestamp),
+      user: { name: userName },
+      groupName,
+      isPositive,
+    }
   }
 
   const handleCreateGroup = () => {
@@ -220,6 +329,8 @@ export default function DashboardPage() {
   const renderActivityItem = (activity: ActivityItem) => {
     const getIcon = () => {
       switch (activity.type) {
+        case "group":
+          return <Users className="h-4.5 w-4.5" />
         case "expense":
           return <DollarSign className="h-4.5 w-4.5" />
         case "settlement":
@@ -231,6 +342,8 @@ export default function DashboardPage() {
 
     const getIconBgColor = () => {
       switch (activity.type) {
+        case "group":
+          return "bg-slate-100 dark:bg-slate-950/30"
         case "expense":
           return "bg-purple-100 dark:bg-purple-950/30"
         case "settlement":
@@ -241,6 +354,7 @@ export default function DashboardPage() {
     }
 
     const getIconColor = () => {
+      if (activity.type === "group") return "text-slate-600 dark:text-slate-400"
       if (activity.type === "join") return "text-blue-600 dark:text-blue-400"
       if (activity.type === "settlement")
         return activity.isPositive ? "text-green-600 dark:text-green-400" : "text-orange-600 dark:text-orange-400"
@@ -316,12 +430,12 @@ export default function DashboardPage() {
     )
   }
 
-  if (activities.length === 0) {
+  if (groupCount === 0) {
     return (
       <div className="min-h-screen bg-background p-3 sm:p-6 pb-20">
         <div className="mx-auto max-w-4xl">
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold">Hello, {MOCK_USER.name}</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold">Hello, {displayName}</h1>
             <p className="text-sm sm:text-base text-muted-foreground mt-1">Welcome to Kasa</p>
           </div>
 
@@ -438,7 +552,7 @@ export default function DashboardPage() {
         <div className="mx-auto max-w-4xl p-3 sm:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold">Hello, {MOCK_USER.name}</h1>
+              <h1 className="text-xl sm:text-2xl font-bold">Hello, {displayName}</h1>
               <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Here's your expense overview</p>
             </div>
             <Avatar
@@ -568,9 +682,15 @@ export default function DashboardPage() {
           </TabsList>
 
           <TabsContent value="all" className="space-y-3">
-            <div className="grid grid-cols-2 gap-4">
-              {getLimitedActivities(filterActivities("all")).map(renderActivityItem)}
-            </div>
+            {getLimitedActivities(filterActivities("all")).length > 0 ? (
+              <div className="grid grid-cols-2 gap-4">
+                {getLimitedActivities(filterActivities("all")).map(renderActivityItem)}
+              </div>
+            ) : (
+              <Card className="p-8 text-center col-span-2">
+                <p className="text-muted-foreground">No activity yet</p>
+              </Card>
+            )}
             {filterActivities("all").length > 6 && (
               <div className="flex justify-center pt-2">
                 <Button
@@ -688,6 +808,8 @@ export default function DashboardPage() {
                     <DollarSign className="h-6 w-6" />
                   ) : selectedActivity.type === "settlement" ? (
                     <CheckCircle className="h-6 w-6" />
+                  ) : selectedActivity.type === "group" ? (
+                    <Users className="h-6 w-6" />
                   ) : (
                     <UserPlus className="h-6 w-6" />
                   )}

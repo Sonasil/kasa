@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { useToast } from "@/hooks/use-toast"
 import { auth, db } from "@/lib/firebase"
-import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore"
+import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnion, addDoc, serverTimestamp } from "firebase/firestore"
 import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock } from "lucide-react"
 
@@ -220,8 +220,20 @@ export default function GroupsPage() {
       // 2) Gruba ekle (group doc'u okumadan). arrayUnion idempotenttir.
       const groupRef = doc(db, "groups", groupId)
       await updateDoc(groupRef, {
-      memberIds: arrayUnion(user.uid),
+        memberIds: arrayUnion(user.uid),
       })
+
+      try {
+        await addDoc(collection(db, "groups", groupId, "feed"), {
+          type: "join",
+          title: "Member joined",
+          createdAt: serverTimestamp(),
+          createdBy: user.uid,
+          createdByName: user.displayName || user.email || "Someone",
+        })
+      } catch (e) {
+        console.warn("Failed to write join activity:", e)
+      }
   
       toast({
         title: "Joined!",
