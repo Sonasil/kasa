@@ -1,12 +1,18 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
+import { onAuthStateChanged, signOut, updateProfile } from "firebase/auth"
+import { collection, doc, onSnapshot, orderBy, query, where, limit, setDoc, serverTimestamp } from "firebase/firestore"
+import { auth, db } from "@/lib/firebase"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { useToast } from "@/hooks/use-toast"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -30,41 +36,242 @@ import {
   TrendingUp,
   Calendar,
 } from "lucide-react"
-
-const MOCK_USER = {
-  displayName: "Alex Johnson",
-  email: "alex.johnson@example.com",
-  initials: "AJ",
-  memberSince: "January 2024",
-}
-
-const MOCK_STATS = {
-  totalGroups: 5,
-  activeExpenses: 12,
-  totalSpent: 245000, // in cents
-  balance: 5000, // in cents
-}
+import { useSettings } from "@/lib/settings-context"
 
 export default function ProfilePage() {
   const router = useRouter()
-  const [loading, setLoading] = useState(false)
+  const { formatMoney } = useSettings()
+  const { toast } = useToast()
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [signOutDialogOpen, setSignOutDialogOpen] = useState(false)
 
-  const handleSignOut = () => {
+  const [uid, setUid] = useState<string | null>(null)
+  const [displayName, setDisplayName] = useState<string>("")
+  const [email, setEmail] = useState<string>("")
+  const [photoURL, setPhotoURL] = useState<string>("")
+  const [memberSince, setMemberSince] = useState<string>("")
+  const [savingProfile, setSavingProfile] = useState(false)
+
+  const [totalGroups, setTotalGroups] = useState(0)
+  const [activeExpenses, setActiveExpenses] = useState(0)
+  const [totalSpent, setTotalSpent] = useState(0) // cents
+  const [balance, setBalance] = useState(0) // cents
+
+  const initials = useMemo(() => {
+    const v = (displayName || email || "?").trim()
+    const parts = v.split(/\s+/).filter(Boolean)
+    if (parts.length === 0) return "?"
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase()
+    return (parts[0][0] + parts[1][0]).toUpperCase()
+  }, [displayName, email])
+
+  const handleSignOut = async () => {
     setSignOutDialogOpen(false)
-    // Simulate sign out
-    setTimeout(() => {
+    try {
+      await signOut(auth)
+    } catch (e) {
+      console.warn("Sign out failed:", e)
+    } finally {
       router.push("/login")
-    }, 500)
+    }
   }
 
-  const formatCurrency = (cents: number) => {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency: "TRY",
-    }).format(cents / 100)
+  const handleSaveProfile = async () => {
+    setError(null)
+    const user = auth.currentUser
+
+    if (!user || !uid) {
+      router.push("/login")
+      return
+    }
+
+    setSavingProfile(true)
+    const trimmedName = displayName.trim()
+    const trimmedPhoto = photoURL.trim()
+
+    try {
+      await updateProfile(user, {
+        displayName: trimmedName || undefined,
+        photoURL: trimmedPhoto || undefined,
+      })
+
+      await setDoc(
+        doc(db, "users", uid),
+        {
+          displayName: trimmedName,
+          email,
+          photoURL: trimmedPhoto,
+          updatedAt: serverTimestamp(),
+        },
+        { merge: true },
+      )
+
+      toast({
+        title: "Profile updated",
+        description: "Your profile has been saved.",
+      })
+    } catch (e: any) {
+      const message = e?.message || "Failed to save profile."
+      setError(message)
+      toast({
+        variant: "destructive",
+        title: "Could not save profile",
+        description: message,
+      })
+    } finally {
+      setSavingProfile(false)
+    }
   }
+
+  useEffect(() => {
+    let unsubGroups: (() => void) | null = null
+    let unsubUser: (() => void) | null = null
+    let feedUnsubs: Array<() => void> = []
+
+    const cleanupFeeds = () => {
+      feedUnsubs.forEach((u) => {
+        try { u() } catch {}
+      })
+      feedUnsubs = []
+    }
+
+    const unsubAuth = onAuthStateChanged(auth, async (user) => {
+      setError(null)
+
+      // cleanup previous listeners
+      if (unsubGroups) {
+        try { unsubGroups() } catch {}
+        unsubGroups = null
+      }
+      cleanupFeeds()
+
+      if (!user) {
+        setUid(null)
+        setLoading(false)
+        router.push("/login")
+        return
+      }
+
+      setUid(user.uid)
+      setEmail(user.email || "")
+      setDisplayName(user.displayName || "")
+      setPhotoURL(user.photoURL || "")
+
+      // Member since: prefer Auth creationTime
+      const created = user.metadata?.creationTime ? new Date(user.metadata.creationTime) : null
+      if (created) {
+        setMemberSince(
+          new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(created)
+        )
+      } else {
+        setMemberSince("")
+      }
+
+      if (unsubUser) {
+        try { unsubUser() } catch {}
+      }
+      const uref = doc(db, "users", user.uid)
+      unsubUser = onSnapshot(
+        uref,
+        (usnap) => {
+          const data: any = usnap.data()
+          if (typeof data?.displayName === "string") setDisplayName(data.displayName)
+          if (typeof data?.email === "string") setEmail(data.email)
+          if (typeof data?.photoURL === "string") setPhotoURL(data.photoURL)
+          if (data?.createdAt?.toDate) {
+            const d = data.createdAt.toDate()
+            setMemberSince(new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(d))
+          }
+        },
+        (err) => {
+          console.warn("Failed to read user profile doc:", err)
+        },
+      )
+
+      // Groups the user is a member of
+      const groupsQ = query(collection(db, "groups"), where("memberIds", "array-contains", user.uid))
+
+      const perGroupExpenseCounts: Record<string, number> = {}
+
+      const recomputeActiveExpenses = () => {
+        const total = Object.values(perGroupExpenseCounts).reduce((a, b) => a + b, 0)
+        setActiveExpenses(total)
+      }
+
+      unsubGroups = onSnapshot(
+        groupsQ,
+        (snap) => {
+          cleanupFeeds()
+
+          const groups = snap.docs.map((d) => ({ id: d.id, ...(d.data() as any) }))
+          setTotalGroups(groups.length)
+
+          // totals
+          let spent = 0
+          let bal = 0
+          for (const g of groups) {
+            const ta = g?.totalAmount
+            if (typeof ta === "number") spent += ta
+            const b = g?.balances
+            const v = b && typeof b === "object" ? b[user.uid] : undefined
+            if (typeof v === "number") bal += v
+          }
+          setTotalSpent(spent)
+          setBalance(bal)
+
+          // active expenses: count recent feed items of type expense (lightweight)
+          for (const g of groups) {
+            const fq = query(
+              collection(db, "groups", g.id, "feed"),
+              orderBy("createdAt", "desc"),
+              limit(50)
+            )
+            const unsubFeed = onSnapshot(
+              fq,
+              (fs) => {
+                let c = 0
+                fs.forEach((docSnap) => {
+                  const data: any = docSnap.data()
+                  if (data?.type === "expense") c += 1
+                })
+                perGroupExpenseCounts[g.id] = c
+                recomputeActiveExpenses()
+              },
+              () => {
+                perGroupExpenseCounts[g.id] = 0
+                recomputeActiveExpenses()
+              }
+            )
+            feedUnsubs.push(unsubFeed)
+          }
+
+          recomputeActiveExpenses()
+          setLoading(false)
+        },
+        (err) => {
+          console.error("Failed to load groups:", err)
+          setError("Failed to load profile stats. Please try again.")
+          setTotalGroups(0)
+          setActiveExpenses(0)
+          setTotalSpent(0)
+          setBalance(0)
+          setLoading(false)
+        }
+      )
+    })
+
+    return () => {
+      try { unsubAuth() } catch {}
+      if (unsubGroups) {
+        try { unsubGroups() } catch {}
+      }
+      if (unsubUser) {
+        try { unsubUser() } catch {}
+      }
+      cleanupFeeds()
+    }
+  }, [router])
 
   if (loading) {
     return (
@@ -103,14 +310,14 @@ export default function ProfilePage() {
             <div className="flex flex-col items-center text-center">
               <Avatar className="h-20 w-20 sm:h-24 sm:w-24 border-4 border-background shadow-lg">
                 <AvatarFallback className="text-2xl sm:text-3xl font-bold bg-primary text-primary-foreground">
-                  {MOCK_USER.initials}
+                  {initials}
                 </AvatarFallback>
               </Avatar>
-              <h1 className="mt-3 text-xl sm:text-2xl font-bold">{MOCK_USER.displayName}</h1>
-              <p className="text-sm text-muted-foreground">{MOCK_USER.email}</p>
+              <h1 className="mt-3 text-xl sm:text-2xl font-bold">{displayName || "(No name)"}</h1>
+              <p className="text-sm text-muted-foreground">{email || ""}</p>
               <div className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
                 <Calendar className="h-3 w-3" />
-                <span>Member since {MOCK_USER.memberSince}</span>
+                <span>Member since {memberSince || "—"}</span>
               </div>
             </div>
           </div>
@@ -125,7 +332,7 @@ export default function ProfilePage() {
                 </div>
                 <p className="text-xs text-muted-foreground">Groups</p>
               </div>
-              <p className="text-xl sm:text-2xl font-bold">{MOCK_STATS.totalGroups}</p>
+              <p className="text-xl sm:text-2xl font-bold">{totalGroups}</p>
             </Card>
 
             <Card className="p-3 sm:p-4 bg-card/95 backdrop-blur">
@@ -135,7 +342,7 @@ export default function ProfilePage() {
                 </div>
                 <p className="text-xs text-muted-foreground">Expenses</p>
               </div>
-              <p className="text-xl sm:text-2xl font-bold">{MOCK_STATS.activeExpenses}</p>
+              <p className="text-xl sm:text-2xl font-bold">{activeExpenses}</p>
             </Card>
 
             <Card className="p-3 sm:p-4 bg-card/95 backdrop-blur">
@@ -145,27 +352,28 @@ export default function ProfilePage() {
                 </div>
                 <p className="text-xs text-muted-foreground">Total Spent</p>
               </div>
-              <p className="text-base sm:text-lg font-bold">{formatCurrency(MOCK_STATS.totalSpent)}</p>
+              <p className="text-base sm:text-lg font-bold">{formatMoney(totalSpent)}</p>
             </Card>
 
             <Card className="p-3 sm:p-4 bg-card/95 backdrop-blur">
-              <div className="flex items-center gap-2 mb-1">
+              <div className={`flex items-center gap-2 mb-1`}>
                 <div
-                  className={`rounded-full p-1.5 ${MOCK_STATS.balance >= 0 ? "bg-green-100 dark:bg-green-950" : "bg-red-100 dark:bg-red-950"}`}
+                  className={`rounded-full p-1.5 ${balance >= 0 ? "bg-green-100 dark:bg-green-950" : "bg-red-100 dark:bg-red-950"}`}
                 >
                   <DollarSign
-                    className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${MOCK_STATS.balance >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}
+                    className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${balance >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}
                   />
                 </div>
                 <p className="text-xs text-muted-foreground">Balance</p>
               </div>
               <p
-                className={`text-base sm:text-lg font-bold ${MOCK_STATS.balance >= 0 ? "text-green-600" : "text-red-600"}`}
+                className={`text-base sm:text-lg font-bold ${balance >= 0 ? "text-green-600" : "text-red-600"}`}
               >
-                {formatCurrency(MOCK_STATS.balance)}
+                {formatMoney(balance)}
               </p>
             </Card>
           </div>
+
 
           <Card className="p-3 sm:p-4 mb-3 sm:mb-4">
             <h3 className="text-xs font-semibold text-muted-foreground mb-3 px-1">SETTINGS</h3>

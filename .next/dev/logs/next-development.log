@@ -1,220 +1,775 @@
-[00:00:02.069] Server  LOG      ✓ Ready in 1833ms
-[00:00:06.677] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.850] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:06.850] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:06.850] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766176083102}
-[00:16:43.952] Server  LOG      ✓ Compiled in 53ms
-[00:16:44.051] Browser ERROR   uncaughtError: ReferenceError: MOCK_ACTIVITIES is not defined
-[00:16:58.074] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:16:58.094] Server  LOG      ✓ Compiled in 86ms
-[00:16:58.243] Server  ERROR    ⨯ ReferenceError: MOCK_ACTIVITIES is not defined
-[00:16:58.253] Browser ERROR   uncaughtError: ReferenceError: MOCK_ACTIVITIES is not defined
-[00:16:58.548] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:16:58.735] Browser ERROR   uncaughtError: ReferenceError: MOCK_ACTIVITIES is not defined
-[00:17:09.331] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:17:09.349] Server  LOG      ✓ Compiled in 64ms
-[00:17:09.438] Server  ERROR    ⨯ ReferenceError: MOCK_ACTIVITIES is not defined
-[00:17:09.551] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:09.675] Browser ERROR   uncaughtError: ReferenceError: MOCK_ACTIVITIES is not defined
-[00:17:32.502] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:17:32.526] Server  LOG      ✓ Compiled in 68ms
-[00:17:32.628] Server  ERROR    ⨯ ReferenceError: MOCK_USER is not defined
-[00:17:32.744] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:32.865] Browser ERROR   uncaughtError: ReferenceError: MOCK_USER is not defined
-[00:18:00.690] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:18:00.709] Server  LOG      ✓ Compiled in 71ms
-[00:18:00.925] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:01.061] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:18:01.061] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:18:01.061] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766177157267}
-[00:22:18.290] Server  LOG      ✓ Compiled in 73ms
-[00:22:24.923] Server  LOG      ✓ Compiled in 34ms
-[00:27:25.127] Server  LOG      ✓ Compiled in 553ms
-[00:27:26.972] Browser ERROR   uncaughtError: ReferenceError: MOCK_USER is not defined
-[00:38:54.270] Server  LOG      ✓ Compiled in 260ms
-[00:38:54.274] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:38:54.881] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178410581}
-[00:38:54.881] Browser ERROR   uncaughtError: ReferenceError: MOCK_USER is not defined
-[00:38:55.139] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:38:55.370] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:38:55.370] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:38:55.370] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178411537}
-[00:38:55.892] Browser ERROR   uncaughtError: ReferenceError: MOCK_USER is not defined
-[00:38:56.736] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:38:56.749] Server  LOG      ✓ Compiled in 75ms
-[00:38:57.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:38:57.271] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:38:57.271] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:38:57.271] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178413439}
-[00:38:57.678] Browser ERROR   uncaughtError: ReferenceError: MOCK_USER is not defined
-[00:38:59.685] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:38:59.704] Server  LOG      ✓ Compiled in 52ms
-[00:39:00.008] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:00.181] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:39:00.181] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:39:00.181] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178416348}
-[00:39:02.997] Server  LOG      ✓ Compiled in 63ms
-[00:39:06.626] Server  LOG      ✓ Compiled in 148ms
-[00:39:10.275] Server  LOG      ✓ Compiled in 194ms
-[00:39:15.122] Server  LOG      ✓ Compiled in 65ms
-[00:40:07.301] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:07.441] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:40:07.441] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:40:07.441] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178483606}
-[00:42:18.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178614848}
-[00:42:20.519] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766178616676}
-[01:06:11.545] Server  LOG      ✓ Compiled in 186ms
-[01:06:12.466] Browser ERROR   ./app/page.tsx:201:9
-Ecmascript file had an error
-  199 |   const youOwe = 45000
-  200 |   const youAreOwed = 35000
-> 201 |   const netBalance = youAreOwed - youOwe
-      |         ^^^^^^^^^^
-  202 |
-  203 |   const formatCurrency = (cents: number) => {
-  204 |     return new Intl.NumberFormat("tr-TR", {
+[00:00:00.796] Server  LOG      ✓ Ready in 560ms
+[00:00:04.313] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.581] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:04.581] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:04.581] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513218237}
+[00:00:20.206] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513233861}
+[00:00:23.608] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513237263}
+[00:00:23.940] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
 
-the name `netBalance` is defined multiple times
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[00:00:23.940] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[00:00:26.147] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:26.147] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:30.185] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513243839}
+[00:00:32.375] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513246030}
+[00:00:33.568] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513247223}
+[00:00:34.706] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513248360}
+[00:00:36.989] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513250644}
+[00:00:39.669] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513253301}
+[00:00:41.390] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:41.391] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:45.149] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513258804}
+[00:00:46.345] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513260000}
+[00:00:48.824] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513262479}
+[00:00:50.827] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513264466}
+[00:00:52.091] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:52.091] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:53.786] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:53.786] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:00:57.405] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513271059}
+[00:00:59.880] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:00.027] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:00.027] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:01:00.027] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513273684}
+[00:01:03.667] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513277322}
+[00:01:06.648] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513280302}
+[00:01:12.098] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513285753}
+[00:01:12.415] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[00:01:12.415] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[00:01:13.706] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513287360}
+[00:01:15.329] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513288958}
+[00:03:31.523] Server  LOG      ✓ Compiled in 101ms
+[00:04:19.013] Server  LOG      ✓ Compiled in 0ms
+[00:10:37.924] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:38.097] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:10:38.097] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[00:10:38.097] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513851740}
+[00:10:38.651] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[00:10:38.651] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[00:10:41.202] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513854844}
+[00:10:46.292] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513859909}
+[00:10:47.386] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766513861026}
+[00:13:56.850] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514050486}
+[00:18:01.872] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514295483}
+[00:18:42.346] Server  LOG      ✓ Compiled in 136ms
+[00:18:42.454] Browser ERROR   ./app/profile/page.tsx:421:13
+Parsing ecmascript source code failed
+  419 |             <p className="text-xs text-muted-foreground/70 mt-0.5">Version 1.0.0</p>
+  420 |           </div>
+> 421 |         </d>
+      |             ^
+> 422 |       </div>
+      | ^^^^^^^
+  423 |
+  424 |       {/* Bottom Navigation */}
+  425 |       <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-card border-t border-border z-50">
+
+Expected '</', got 'jsx text (
+      )'
 
 Import traces:
   Client Component Browser:
-    ./app/page.tsx [Client Component Browser]
-    ./app/page.tsx [Server Component]
+    ./app/profile/page.tsx [Client Component Browser]
+    ./app/profile/page.tsx [Server Component]
 
   Client Component SSR:
-    ./app/page.tsx [Client Component SSR]
-    ./app/page.tsx [Server Component]
-[01:06:12.466] Browser ERROR   ./app/page.tsx:200:9
-Ecmascript file had an error
-  198 |   }, [router])
-  199 |   const youOwe = 45000
-> 200 |   const youAreOwed = 35000
-      |         ^^^^^^^^^^
-  201 |   const netBalance = youAreOwed - youOwe
-  202 |
-  203 |   const formatCurrency = (cents: number) => {
+    ./app/profile/page.tsx [Client Component SSR]
+    ./app/profile/page.tsx [Server Component]
+[00:19:05.289] Server  LOG      ✓ Compiled in 50ms
+[00:19:32.706] Server  LOG      ✓ Compiled in 84ms
+[00:19:36.680] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:36.868] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:19:36.868] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
+[00:19:36.868] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514390481}
+[00:19:43.869] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514397477}
+[00:19:45.287] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514398896}
+[00:19:47.136] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514400748}
+[00:19:50.072] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514403683}
+[00:19:50.397] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
 
-the name `youAreOwed` is defined multiple times
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
 
-Import traces:
-  Client Component Browser:
-    ./app/page.tsx [Client Component Browser]
-    ./app/page.tsx [Server Component]
+[00:19:50.397] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[00:19:52.253] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766514405863}
+[00:47:46.878] Server  LOG      ✓ Compiled in 199ms
+[00:48:10.317] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:10.510] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:48:10.511] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[00:48:10.511] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516104029}
+[00:55:35.681] Server  LOG      ✓ Compiled in 195ms
+[00:55:51.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516565049}
+[00:55:51.869] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
 
-  Client Component SSR:
-    ./app/page.tsx [Client Component SSR]
-    ./app/page.tsx [Server Component]
-[01:06:12.466] Browser ERROR   ./app/page.tsx:199:9
-Ecmascript file had an error
-  197 |     }
-  198 |   }, [router])
-> 199 |   const youOwe = 45000
-      |         ^^^^^^
-  200 |   const youAreOwed = 35000
-  201 |   const netBalance = youAreOwed - youOwe
-  202 |
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
 
-the name `youOwe` is defined multiple times
+[00:55:51.869] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[00:55:53.904] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516567405}
+[00:55:55.581] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516569060}
+[00:55:56.535] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516570036}
+[00:56:03.309] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516576791}
+[00:56:04.519] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516578020}
+[00:56:06.566] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516580041}
+[00:56:09.192] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516582693}
+[00:56:15.464] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516588941}
+[00:56:16.603] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516590103}
+[00:56:18.064] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516591542}
+[00:56:20.241] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516593743}
+[00:56:21.495] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516594972}
+[00:56:22.292] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766516595793}
+[01:03:34.002] Server  LOG      ✓ Compiled in 185ms
+[01:07:58.497] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:59.014] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:07:59.014] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:07:59.014] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517292429}
+[01:07:59.014] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517292494}
+[01:08:02.239] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517295720}
+[01:08:16.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517310167}
+[01:08:18.959] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517312422}
+[01:08:21.494] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517314973}
+[01:08:21.824] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
 
-Import traces:
-  Client Component Browser:
-    ./app/page.tsx [Client Component Browser]
-    ./app/page.tsx [Server Component]
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
 
-  Client Component SSR:
-    ./app/page.tsx [Client Component SSR]
-    ./app/page.tsx [Server Component]
-[01:06:31.337] Server  LOG      ✓ Compiled in 53ms
-[01:06:41.967] Server  LOG      ✓ Compiled in 107ms
-[01:06:52.539] Server  LOG      ✓ Compiled in 79ms
-[01:08:01.584] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:08:01.775] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:08:01.775] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:08:01.775] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180157893}
-[01:08:03.892] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:08:03.892] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:08:22.153] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180178269}
-[01:08:25.288] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180181405}
-[01:08:36.162] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180192277}
-[01:08:39.203] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180195320}
-[01:08:40.679] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180196793}
-[01:08:44.445] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180200561}
-[01:10:17.108] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:10:17.109] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:10:30.621] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:10:30.622] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:10:31.889] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/DKZnp8G9uoZN911z5v3D color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/DKZnp8G9uoZN911z5v3D","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180308002}
-[01:10:33.479] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180309590}
-[01:10:34.798] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180310909}
-[01:10:36.953] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180313064}
-[01:10:38.364] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180314475}
-[01:11:16.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180352393}
-[01:11:17.709] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/DKZnp8G9uoZN911z5v3D color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/DKZnp8G9uoZN911z5v3D","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180353821}
-[01:11:21.727] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:11:21.728] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:11:30.045] Browser ERROR   [2025-12-19T21:39:26.141Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
-[01:11:30.045] Browser ERROR   [2025-12-19T21:39:26.142Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
-[01:11:30.045] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180366156}
-[01:11:30.152] Browser WARN    [2025-12-19T21:39:26.263Z]  @firebase/firestore: Firestore (12.4.0): BloomFilter error:  {"name":"BloomFilterError"}
-[01:11:31.054] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180367163}
-[01:11:32.051] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180368162}
-[01:11:32.888] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:11:32.888] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:11:36.678] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:11:36.678] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:11:37.011] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180373122}
-[01:11:38.995] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180375105}
-[01:11:40.454] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180376564}
-[01:12:01.269] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180397379}
-[01:12:03.504] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180399612}
-[01:16:36.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:16:37.323] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:16:37.323] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:16:37.323] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[01:16:37.323] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180673422}
-[01:16:37.323] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180673422}
-[01:17:29.907] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180726007}
-[01:18:06.473] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180762569}
-[01:18:09.413] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180765509}
-[01:18:11.884] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180767981}
-[01:18:14.543] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180770640}
-[01:18:15.901] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:18:15.901] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:18:24.278] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:18:24.278] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:18:26.630] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:18:26.630] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:18:26.757] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180782854}
-[01:18:28.778] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180784873}
-[01:18:30.014] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180786111}
-[01:18:36.563] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180792658}
-[01:18:38.113] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180794208}
-[01:19:19.942] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180836035}
-[01:19:20.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180837079}
-[01:19:22.676] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:19:22.676] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:19:36.017] Browser WARN    [2025-12-19T21:47:32.113Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'Commit' 0x8e1a57de failed with error:  {"code":"failed-precondition","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:commit request: {"writes":[{"update":{"name":"projects/kasa-fc1ce/databases/(default)/documents/groups/qNtTsDRZ2ROSki7xaCqH/feed/x2efrH7R7rOr2v6yVOaH","fields":{"type":{"stringValue":"expense"},"createdBy":{"stringValue":"cfq59mi3JAaiH8ElfUdBICaFvPV2"},"title":{"stringValue":"Market"},"amountCents":{"integerValue":"15000"},"payerUid":{"stringValue":"cfq59mi3JAaiH8ElfUdBICaFvPV2"},"participantIds":{"arrayValue":{"values":[{"stringValue":"cfq59mi3JAaiH8ElfUdBICaFvPV2"},{"stringValue":"iEXq6l7ku7Y9XE4PIbOKrSVCOu93"}]}},"splitCents":{"mapValue":{"fields":{"cfq59mi3JAaiH8ElfUdBICaFvPV2":{"integerValue":"7500"},"iEXq6l7ku7Y9XE4PIbOKrSVCOu93":{"integerValue":"7500"}}}},"category":{"stringValue":"Entertainment"}}},"updateTransforms":[{"fieldPath":"createdAt","setToServerValue":"REQUEST_TIME"}]},{"update":{"name":"projects/kasa-fc1ce/databases/(default)/documents/groups/qNtTsDRZ2ROSki7xaCqH","fields":{"balances":{"mapValue":{"fields":{"cfq59mi3JAaiH8ElfUdBICaFvPV2":{"integerValue":"7500"},"iEXq6l7ku7Y9XE4PIbOKrSVCOu93":{"integerValue":"-7500"}}}},"totalAmount":{"integerValue":"15000"}}},"updateMask":{"fieldPaths":["balances","totalAmount"]},"currentDocument":{"updateTime":"2025-12-19T21:46:22.835718000Z"}}]}
-[01:19:36.183] Browser WARN    [2025-12-19T21:47:32.278Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'Commit' 0x8e1a57e0 failed with error:  {"code":"failed-precondition","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:commit request: {"writes":[{"update":{"name":"projects/kasa-fc1ce/databases/(default)/documents/groups/qNtTsDRZ2ROSki7xaCqH/feed/oMZEQSgLEjjdrRrP1FC7","fields":{"type":{"stringValue":"expense"},"createdBy":{"stringValue":"cfq59mi3JAaiH8ElfUdBICaFvPV2"},"title":{"stringValue":"Market"},"amountCents":{"integerValue":"15000"},"payerUid":{"stringValue":"cfq59mi3JAaiH8ElfUdBICaFvPV2"},"participantIds":{"arrayValue":{"values":[{"stringValue":"cfq59mi3JAaiH8ElfUdBICaFvPV2"},{"stringValue":"iEXq6l7ku7Y9XE4PIbOKrSVCOu93"}]}},"splitCents":{"mapValue":{"fields":{"cfq59mi3JAaiH8ElfUdBICaFvPV2":{"integerValue":"7500"},"iEXq6l7ku7Y9XE4PIbOKrSVCOu93":{"integerValue":"7500"}}}},"category":{"stringValue":"Entertainment"}}},"updateTransforms":[{"fieldPath":"createdAt","setToServerValue":"REQUEST_TIME"}]},{"update":{"name":"projects/kasa-fc1ce/databases/(default)/documents/groups/qNtTsDRZ2ROSki7xaCqH","fields":{"balances":{"mapValue":{"fields":{"cfq59mi3JAaiH8ElfUdBICaFvPV2":{"integerValue":"7500"},"iEXq6l7ku7Y9XE4PIbOKrSVCOu93":{"integerValue":"-7500"}}}},"totalAmount":{"integerValue":"15000"}}},"updateMask":{"fieldPaths":["balances","totalAmount"]},"currentDocument":{"updateTime":"2025-12-19T21:46:22.835718000Z"}}]}
-[01:19:51.138] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:19:51.277] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:19:51.277] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:19:51.277] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180867372}
-[01:19:53.841] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180869934}
-[01:19:56.939] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180873030}
-[01:19:58.250] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766180874344}
-[01:50:36.097] Server  LOG      ✓ Compiled in 272ms
-[01:50:43.008] Server  LOG      ✓ Compiled in 65ms
-[01:50:47.113] Server  LOG      ✓ Compiled in 55ms
-[01:50:50.311] Server  LOG      ✓ Compiled in 36ms
-[01:50:59.409] Server  LOG      ✓ Compiled in 74ms
-[01:52:46.672] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:52:46.672] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:52:58.936] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/qNtTsDRZ2ROSki7xaCqH","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766182855039}
-[01:53:02.313] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:53:02.313] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:53:13.914] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766182870016}
-[01:53:15.300] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766182871401}
-[01:53:23.929] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:53:23.929] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:53:32.129] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:53:32.129] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:08:21.824] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[01:08:23.026] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:08:23.026] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:08:28.190] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517321668}
+[01:09:36.590] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:36.788] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:09:36.788] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:09:36.788] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517390267}
+[01:09:39.574] Server  LOG      ✓ Compiled in 169ms
+[01:09:39.682] Browser ERROR   uncaughtError: ReferenceError: handleForgotPassword is not defined
+[01:09:39.683] Browser ERROR   uncaughtError: ReferenceError: handleForgotPassword is not defined
+[01:09:42.979] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:42.980] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:09:42.997] Server  LOG      ✓ Compiled in 53ms
+[01:09:43.094] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517396562}
+[01:09:43.094] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517396562}
+[01:09:43.336] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:43.359] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:09:43.968] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:09:43.968] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:09:43.968] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517397444}
+[01:09:43.994] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:09:43.995] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:09:43.995] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517397465}
+[01:10:10.661] Server  LOG      ✓ Compiled in 120ms
+[01:10:10.825] Browser ERROR   uncaughtError: ReferenceError: handleForgotPassword is not defined
+[01:10:10.825] Browser ERROR   uncaughtError: ReferenceError: handleForgotPassword is not defined
+[01:13:14.138] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:13:14.139] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:13:14.147] Server  LOG      ✓ Compiled in 122ms
+[01:13:14.339] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517607717}
+[01:13:15.183] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:13:15.272] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:13:15.360] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:13:15.360] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:13:15.360] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517608830}
+[01:13:16.101] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:13:16.102] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:13:16.102] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766517608919}
+[01:15:03.090] Server  LOG      ✓ Compiled in 102ms
+[01:15:22.791] Server  LOG      ✓ Compiled in 73ms
+[01:15:27.757] Server  LOG      ✓ Compiled in 58ms
+[01:21:21.719] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:21:21.720] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[01:21:21.742] Server  LOG      ✓ Compiled in 116ms
+[01:21:22.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:22.418] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:22.473] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:21:22.473] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:21:22.473] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518095928}
+[01:21:23.102] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:21:23.102] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:21:23.102] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518096052}
+[01:23:29.635] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518223085}
+[01:23:29.944] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[01:23:29.944] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[01:23:33.399] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518226848}
+[01:23:34.579] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518228011}
+[01:23:37.376] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:37.376] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:39.615] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:39.615] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:43.217] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:43.217] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:50.733] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:50.733] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:23:57.965] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518251413}
+[01:24:00.227] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518253661}
+[01:24:03.154] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:24:03.154] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:24:05.454] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:24:05.454] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[01:24:07.529] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766518260976}
+[01:47:41.539] Server  LOG      ✓ Compiled in 93ms
+[01:47:47.235] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:47:47.388] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:47:47.388] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:47:47.388] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766519680767}
+[01:48:27.563] Server  LOG      ✓ Compiled in 107ms
+[01:48:30.478] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:48:30.681] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:48:30.681] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[01:48:30.681] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766519724059}
+[01:51:16.660] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766519890019}
+[01:51:16.991] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[01:51:16.991] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[01:51:18.048] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766519891405}
+[01:51:56.901] Server  LOG      ✓ Compiled in 80ms
+[02:09:16.652] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766520969996}
+[02:09:16.978] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[02:09:16.978] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[02:09:18.909] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766520972252}
+[02:11:26.967] Browser WARN    Failed to read user profile doc: {"code":"permission-denied","name":"FirebaseError"}
+[02:11:26.967] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521100308}
+[02:11:28.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521102269}
+[02:11:30.765] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521104106}
+[02:11:44.592] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521117931}
+[02:12:05.594] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521138934}
+[02:12:07.166] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521140504}
+[02:12:08.721] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521142041}
+[02:12:09.955] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521143294}
+[02:13:25.401] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:13:25.547] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:13:25.547] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[02:13:25.547] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521218884}
+[02:13:36.065] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:13:36.200] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:13:36.200] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[02:13:36.200] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521229537}
+[02:13:46.193] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521239528}
+[02:13:46.512] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[02:13:46.512] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[02:13:47.363] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766521240699}

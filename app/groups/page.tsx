@@ -15,6 +15,7 @@ import { auth, db } from "@/lib/firebase"
 import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnion, addDoc, serverTimestamp } from "firebase/firestore"
 import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock } from "lucide-react"
+import { useSettings } from "@/lib/settings-context"
 
 type Group = {
   id: string
@@ -30,6 +31,7 @@ type Group = {
 export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
+  const { formatMoney } = useSettings()
   const [loading, setLoading] = useState(true)
   const [groups, setGroups] = useState<Group[]>([])
   useEffect(() => {
@@ -101,13 +103,6 @@ export default function GroupsPage() {
   const [groupName, setGroupName] = useState("")
   const [joinCode, setJoinCode] = useState("")
   const [activeTab, setActiveTab] = useState("active")
-
-  const formatCurrency = (cents: number) => {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency: "TRY",
-    }).format(cents / 100)
-  }
 
   const formatTime = (date: Date) => {
     const now = new Date()
@@ -391,7 +386,7 @@ export default function GroupsPage() {
                             <span className="text-muted-foreground">•</span>
                             <div className="flex items-center gap-1 text-xs sm:text-sm text-muted-foreground">
                               <DollarSign className="h-3 w-3 sm:h-4 sm:w-4" />
-                              <span>{formatCurrency(group.totalExpenses)}</span>
+                              <span>{formatMoney(group.totalExpenses)}</span>
                             </div>
                           </div>
                         </div>
@@ -412,7 +407,7 @@ export default function GroupsPage() {
                               )}
                               <span>
                                 {group.yourBalance >= 0 ? "+" : ""}
-                                {formatCurrency(Math.abs(group.yourBalance))}
+                                {formatMoney(Math.abs(group.yourBalance))}
                               </span>
                             </div>
                           </Badge>
@@ -472,7 +467,7 @@ export default function GroupsPage() {
                             <span className="text-muted-foreground">•</span>
                             <div className="flex items-center gap-1 text-xs sm:text-sm text-muted-foreground">
                               <DollarSign className="h-3 w-3 sm:h-4 sm:w-4" />
-                              <span>{formatCurrency(group.totalExpenses)}</span>
+                              <span>{formatMoney(group.totalExpenses)}</span>
                             </div>
                           </div>
                         </div>

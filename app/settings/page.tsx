@@ -1,7 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import { onAuthStateChanged } from "firebase/auth"
+import { auth } from "@/lib/firebase"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -10,6 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
+import { useSettings, type AppSettings } from "@/lib/settings-context"
 import {
   ArrowLeft,
   User,
@@ -31,29 +34,47 @@ import {
   Search,
   Home,
   Wallet,
+  Palette,
 } from "lucide-react"
-
-const MOCK_USER = {
-  name: "Alex Johnson",
-  email: "alex@example.com",
-}
 
 export default function SettingsPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const [loading, setLoading] = useState(false)
-  const [searchQuery, setSearchQuery] = useState("")
+  const { settings, setCurrency, setLanguage, setNotificationsEnabled, setTheme, loading, t } = useSettings()
+  const [hydrating, setHydrating] = useState(true)
+  const [profileName, setProfileName] = useState<string>("")
+  const [profileEmail, setProfileEmail] = useState<string>("")
 
-  // Settings state
-  const [notificationsEnabled, setNotificationsEnabled] = useState(true)
-  const [currency, setCurrency] = useState("TRY")
-  const [language, setLanguage] = useState("en")
+  const [searchQuery, setSearchQuery] = useState("")
 
   // Dialog states
   const [currencyDialogOpen, setCurrencyDialogOpen] = useState(false)
   const [languageDialogOpen, setLanguageDialogOpen] = useState(false)
+  const [themeDialogOpen, setThemeDialogOpen] = useState(false)
   const [permissionDialogOpen, setPermissionDialogOpen] = useState(false)
   const [selectedPermission, setSelectedPermission] = useState<string | null>(null)
+
+  useEffect(() => {
+    const unsubAuth = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        router.replace("/login")
+        return
+      }
+
+      setProfileName(user.displayName || "")
+      setProfileEmail(user.email || "")
+    })
+
+    return () => {
+      try { unsubAuth() } catch {}
+    }
+  }, [router])
+
+  useEffect(() => {
+    if (!loading) {
+      setHydrating(false)
+    }
+  }, [loading])
 
   const handleNotificationToggle = (checked: boolean) => {
     setNotificationsEnabled(checked)
@@ -64,7 +85,7 @@ export default function SettingsPage() {
   }
 
   const handleCurrencyChange = (value: string) => {
-    setCurrency(value)
+    setCurrency(value as AppSettings["currency"])
     setCurrencyDialogOpen(false)
     toast({
       title: "Currency updated",
@@ -73,11 +94,20 @@ export default function SettingsPage() {
   }
 
   const handleLanguageChange = (value: string) => {
-    setLanguage(value)
+    setLanguage(value as AppSettings["language"])
     setLanguageDialogOpen(false)
     toast({
       title: "Language updated",
       description: `Language set to ${value === "en" ? "English" : "Türkçe"}`,
+    })
+  }
+
+  const handleThemeChange = (value: string) => {
+    setTheme(value as AppSettings["theme"])
+    setThemeDialogOpen(false)
+    toast({
+      title: "Theme updated",
+      description: value === "system" ? "Following system appearance" : `Switched to ${value} mode`,
     })
   }
 
@@ -100,7 +130,7 @@ export default function SettingsPage() {
     })
   }
 
-  if (loading) {
+  if (hydrating) {
     return (
       <div className="min-h-screen bg-background pb-20">
         <div className="border-b bg-card">
@@ -119,41 +149,48 @@ export default function SettingsPage() {
 
   const settingsSections = [
     {
-      title: "General",
+      title: t("general"),
       items: [
         {
           icon: User,
-          title: "Profile",
+          title: t("profile"),
           subtitle: "Manage your profile information",
-          onClick: () => router.push("/profile"),
+          onClick: () => router.push("/profile/settings"),
           type: "navigation" as const,
         },
         {
           icon: DollarSign,
-          title: "Currency",
-          subtitle: currency,
+          title: t("currency"),
+          subtitle: settings.currency,
           onClick: () => setCurrencyDialogOpen(true),
           type: "navigation" as const,
         },
         {
+          icon: Palette,
+          title: t("theme"),
+          subtitle: settings.theme === "system" ? t("system") : settings.theme === "dark" ? t("dark") : t("light"),
+          onClick: () => setThemeDialogOpen(true),
+          type: "navigation" as const,
+        },
+        {
           icon: Globe,
-          title: "Language",
-          subtitle: language === "en" ? "English" : "Türkçe",
+          title: t("language"),
+          subtitle: settings.language === "en" ? "English" : "Türkçe",
           onClick: () => setLanguageDialogOpen(true),
           type: "navigation" as const,
         },
         {
           icon: Bell,
-          title: "Notifications",
+          title: t("notifications"),
           subtitle: "Enable app notifications",
-          checked: notificationsEnabled,
+          checked: settings.notificationsEnabled,
           onCheckedChange: handleNotificationToggle,
           type: "toggle" as const,
         },
       ],
     },
     {
-      title: "Permissions",
+      title: t("permissions"),
       items: [
         {
           icon: Camera,
@@ -186,7 +223,7 @@ export default function SettingsPage() {
       ],
     },
     {
-      title: "Legal",
+      title: t("legal"),
       items: [
         {
           icon: FileText,
@@ -212,7 +249,7 @@ export default function SettingsPage() {
       ],
     },
     {
-      title: "Help",
+      title: t("help"),
       items: [
         {
           icon: HelpCircle,
@@ -238,7 +275,7 @@ export default function SettingsPage() {
       ],
     },
     {
-      title: "Invite & Rate Us",
+      title: t("inviteRate"),
       items: [
         {
           icon: Share2,
@@ -267,7 +304,10 @@ export default function SettingsPage() {
             <Button variant="ghost" size="icon" onClick={() => router.back()} className="h-8 w-8 sm:h-9 sm:w-9">
               <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
-            <h1 className="text-xl sm:text-2xl font-bold">Settings</h1>
+            <h1 className="text-xl sm:text-2xl font-bold">{t("settings")}</h1>
+            <div className="mt-1 text-xs sm:text-sm text-muted-foreground">
+              {profileName ? profileName : ""}{profileName && profileEmail ? " • " : ""}{profileEmail ? profileEmail : ""}
+            </div>
           </div>
 
           {/* Search */}
@@ -360,9 +400,9 @@ export default function SettingsPage() {
       <Dialog open={currencyDialogOpen} onOpenChange={setCurrencyDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Select Currency</DialogTitle>
+            <DialogTitle>{t("selectCurrency")}</DialogTitle>
           </DialogHeader>
-          <Select value={currency} onValueChange={handleCurrencyChange}>
+          <Select value={settings.currency} onValueChange={handleCurrencyChange}>
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>
@@ -380,15 +420,34 @@ export default function SettingsPage() {
       <Dialog open={languageDialogOpen} onOpenChange={setLanguageDialogOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Select Language</DialogTitle>
+            <DialogTitle>{t("selectLanguage")}</DialogTitle>
           </DialogHeader>
-          <Select value={language} onValueChange={handleLanguageChange}>
+          <Select value={settings.language} onValueChange={handleLanguageChange}>
             <SelectTrigger>
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="en">English</SelectItem>
               <SelectItem value="tr">Türkçe</SelectItem>
+            </SelectContent>
+          </Select>
+        </DialogContent>
+      </Dialog>
+
+      {/* Theme Dialog */}
+      <Dialog open={themeDialogOpen} onOpenChange={setThemeDialogOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("selectTheme")}</DialogTitle>
+          </DialogHeader>
+          <Select value={settings.theme} onValueChange={handleThemeChange}>
+            <SelectTrigger>
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="system">{t("system")}</SelectItem>
+              <SelectItem value="light">{t("light")}</SelectItem>
+              <SelectItem value="dark">{t("dark")}</SelectItem>
             </SelectContent>
           </Select>
         </DialogContent>

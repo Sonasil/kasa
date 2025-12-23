@@ -40,6 +40,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
+import { useSettings } from "@/lib/settings-context"
 import {
   ArrowLeft,
   Plus,
@@ -119,6 +120,7 @@ export default function GroupDetailPage() {
   const params = useParams()
   const router = useRouter()
   const { toast } = useToast()
+  const { formatMoney, settings } = useSettings()
   const groupId = params?.id as string
   const scrollRef = useRef<HTMLDivElement>(null)
   const [autoScroll, setAutoScroll] = useState(true)
@@ -297,7 +299,7 @@ export default function GroupDetailPage() {
       if (Math.abs(customTotal - totalCents) > participantIds.length) {
         toast({
           title: "Split amounts don't match",
-          description: `Split amounts (₺${(customTotal / 100).toFixed(2)}) must equal total (₺${amountTRY.toFixed(2)})`,
+          description: `Split amounts (${formatMoney(customTotal)}) must equal total (${formatMoney(totalCents)})`,
           variant: "destructive",
         })
         return
@@ -361,7 +363,7 @@ export default function GroupDetailPage() {
 
       toast({
         title: "Expense added",
-        description: `${title} - ₺${amountTRY.toFixed(2)}`,
+        description: `${title} - ${formatMoney(totalCents)}`,
       })
 
       setExpenseTitle("")
@@ -630,7 +632,7 @@ export default function GroupDetailPage() {
 
     toast({
       title: "Payment recorded",
-      description: `${getUserName(paymentMember)} paid you ${formatCurrency(amountCents)}`,
+      description: `${getUserName(paymentMember)} paid you ${formatMoney(amountCents)}`,
     })
 
     setPaymentMember("")
@@ -643,13 +645,6 @@ export default function GroupDetailPage() {
     if (v?.toDate && typeof v.toDate === "function") return v.toDate()
     if (typeof v === "number") return new Date(v)
     return new Date(0)
-  }
-
-  const formatCurrency = (cents: number) => {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency: "TRY",
-    }).format(cents / 100)
   }
 
   const formatTime = (date: Date) => {
@@ -725,7 +720,7 @@ export default function GroupDetailPage() {
                 <div className="p-3">
                   <p className="mb-2 text-sm font-semibold">Your Balance</p>
                   <p className={`text-2xl font-bold sm:text-xl ${myBalance >= 0 ? "text-green-600" : "text-red-600"}`}>
-                    {formatCurrency(myBalance)}
+                    {formatMoney(myBalance)}
                   </p>
                   <p className="mt-1 sm:mt-2 text-xs text-muted-foreground">
                     {myBalance >= 0 ? "You are owed" : "You owe"}
@@ -736,7 +731,7 @@ export default function GroupDetailPage() {
                     <div key={uid} className="flex items-center justify-between py-2 text-sm sm:text-base">
                       <span>{getUserName(uid)}</span>
                       <span className={(balances[uid] || 0) >= 0 ? "text-green-600" : "text-red-600"}>
-                        {formatCurrency(balances[uid] || 0)}
+                        {formatMoney(balances[uid] || 0)}
                       </span>
                     </div>
                   ))}
@@ -764,7 +759,7 @@ export default function GroupDetailPage() {
                     <Input
                       type="number"
                       step="0.01"
-                      placeholder="Amount (₺)"
+                      placeholder={`Amount (${settings.currency})`}
                       value={paymentAmount}
                       onChange={(e) => setPaymentAmount(e.target.value)}
                       className="h-9"
@@ -981,7 +976,7 @@ export default function GroupDetailPage() {
                         </div>
                         <div className="mt-2 sm:mt-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                           <div>
-                            <p className="text-xl sm:text-2xl font-bold">{formatCurrency(item.amountCents || 0)}</p>
+                            <p className="text-xl sm:text-2xl font-bold">{formatMoney(item.amountCents || 0)}</p>
                             {item.category && (
                               <p className="text-xs sm:text-sm text-muted-foreground">{item.category}</p>
                             )}
@@ -1044,7 +1039,7 @@ export default function GroupDetailPage() {
                     />
                   </div>
                   <div>
-                    <Label htmlFor="expense-amount">Amount (₺)</Label>
+                    <Label htmlFor="expense-amount">Amount ({settings.currency})</Label>
                     <Input
                       id="expense-amount"
                       type="number"
@@ -1173,7 +1168,7 @@ export default function GroupDetailPage() {
                             <div key={uid} className="flex items-center gap-2">
                               <Label className="flex-1 text-sm">{getUserName(uid)}</Label>
                               <div className="flex items-center gap-1">
-                                <span className="text-sm text-muted-foreground">₺</span>
+                                <span className="text-sm text-muted-foreground">{settings.currency}</span>
                                 <Input
                                   type="number"
                                   step="0.01"
@@ -1194,11 +1189,16 @@ export default function GroupDetailPage() {
                             <div className="flex items-center justify-between text-sm pt-2 border-t">
                               <span className="font-medium">Total:</span>
                               <span className="font-bold">
-                                ₺
-                                {Object.values(customSplitAmounts)
-                                  .reduce((sum, val) => sum + (Number.parseFloat(val) || 0), 0)
-                                  .toFixed(2)}{" "}
-                                / ₺{Number.parseFloat(expenseAmount || "0").toFixed(2)}
+                                {formatMoney(
+                                  Math.round(
+                                    Object.values(customSplitAmounts).reduce(
+                                      (sum, val) => sum + (Number.parseFloat(val) || 0),
+                                      0,
+                                    ) * 100,
+                                  ),
+                                )}{" "}
+                                /{" "}
+                                {formatMoney(Math.round((Number.parseFloat(expenseAmount || "0") || 0) * 100))}
                               </span>
                             </div>
                           )}
@@ -1254,7 +1254,7 @@ export default function GroupDetailPage() {
                     )}
                   </div>
                 </div>
-                <p className="text-2xl sm:text-3xl font-bold">{formatCurrency(selectedExpense.amountCents || 0)}</p>
+                <p className="text-2xl sm:text-3xl font-bold">{formatMoney(selectedExpense.amountCents || 0)}</p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
                   {toDateSafe(selectedExpense.createdAt).toLocaleDateString()} at {formatTime(toDateSafe(selectedExpense.createdAt))}
                 </p>
@@ -1272,7 +1272,7 @@ export default function GroupDetailPage() {
                     </p>
                   </div>
                   <p className="text-base sm:text-lg font-bold text-green-600 ml-2 shrink-0">
-                    {formatCurrency(selectedExpense.amountCents || 0)}
+                    {formatMoney(selectedExpense.amountCents || 0)}
                   </p>
                 </div>
               </div>
@@ -1306,10 +1306,10 @@ export default function GroupDetailPage() {
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
                           <div className="text-right">
-                            <p className="font-semibold text-sm sm:text-base">{formatCurrency(splitAmount)}</p>
+                            <p className="font-semibold text-sm sm:text-base">{formatMoney(splitAmount)}</p>
                             {isPayer && (
                               <p className="text-xs text-green-600">
-                                +{formatCurrency((selectedExpense.amountCents || 0) - splitAmount)}
+                                +{formatMoney((selectedExpense.amountCents || 0) - splitAmount)}
                               </p>
                             )}
                           </div>

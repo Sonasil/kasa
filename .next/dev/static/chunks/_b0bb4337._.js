@@ -576,11 +576,17 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/auth/dist/esm/index.esm.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/auth/dist/esm/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$firestore$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/firestore/dist/esm/index.esm.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/firestore/dist/index.esm.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/firebase.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/avatar.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/skeleton.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/alert.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/use-toast.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/alert-dialog.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/house.js [app-client] (ecmascript) <export default as Home>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wallet$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wallet$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/wallet.js [app-client] (ecmascript) <export default as Wallet>");
@@ -593,6 +599,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/dollar-sign.js [app-client] (ecmascript) <export default as DollarSign>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trending$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TrendingUp$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/trending-up.js [app-client] (ecmascript) <export default as TrendingUp>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar.js [app-client] (ecmascript) <export default as Calendar>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/settings-context.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -605,37 +612,259 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const MOCK_USER = {
-    displayName: "Alex Johnson",
-    email: "alex.johnson@example.com",
-    initials: "AJ",
-    memberSince: "January 2024"
-};
-const MOCK_STATS = {
-    totalGroups: 5,
-    activeExpenses: 12,
-    totalSpent: 245000,
-    balance: 5000
-};
+;
+;
+;
+;
+;
 function ProfilePage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const { formatMoney } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSettings"])();
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [signOutDialogOpen, setSignOutDialogOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const handleSignOut = ()=>{
+    const [uid, setUid] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [displayName, setDisplayName] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [photoURL, setPhotoURL] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [memberSince, setMemberSince] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [savingProfile, setSavingProfile] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [totalGroups, setTotalGroups] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [activeExpenses, setActiveExpenses] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const [totalSpent, setTotalSpent] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0) // cents
+    ;
+    const [balance, setBalance] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0) // cents
+    ;
+    const initials = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "ProfilePage.useMemo[initials]": ()=>{
+            const v = (displayName || email || "?").trim();
+            const parts = v.split(/\s+/).filter(Boolean);
+            if (parts.length === 0) return "?";
+            if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+            return (parts[0][0] + parts[1][0]).toUpperCase();
+        }
+    }["ProfilePage.useMemo[initials]"], [
+        displayName,
+        email
+    ]);
+    const handleSignOut = async ()=>{
         setSignOutDialogOpen(false);
-        // Simulate sign out
-        setTimeout(()=>{
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["signOut"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"]);
+        } catch (e) {
+            console.warn("Sign out failed:", e);
+        } finally{
             router.push("/login");
-        }, 500);
+        }
     };
-    const formatCurrency = (cents)=>{
-        return new Intl.NumberFormat("tr-TR", {
-            style: "currency",
-            currency: "TRY"
-        }).format(cents / 100);
+    const handleSaveProfile = async ()=>{
+        setError(null);
+        const user = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"].currentUser;
+        if (!user || !uid) {
+            router.push("/login");
+            return;
+        }
+        setSavingProfile(true);
+        const trimmedName = displayName.trim();
+        const trimmedPhoto = photoURL.trim();
+        try {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateProfile"])(user, {
+                displayName: trimmedName || undefined,
+                photoURL: trimmedPhoto || undefined
+            });
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "users", uid), {
+                displayName: trimmedName,
+                email,
+                photoURL: trimmedPhoto,
+                updatedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
+            }, {
+                merge: true
+            });
+            toast({
+                title: "Profile updated",
+                description: "Your profile has been saved."
+            });
+        } catch (e) {
+            const message = e?.message || "Failed to save profile.";
+            setError(message);
+            toast({
+                variant: "destructive",
+                title: "Could not save profile",
+                description: message
+            });
+        } finally{
+            setSavingProfile(false);
+        }
     };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ProfilePage.useEffect": ()=>{
+            let unsubGroups = null;
+            let unsubUser = null;
+            let feedUnsubs = [];
+            const cleanupFeeds = {
+                "ProfilePage.useEffect.cleanupFeeds": ()=>{
+                    feedUnsubs.forEach({
+                        "ProfilePage.useEffect.cleanupFeeds": (u)=>{
+                            try {
+                                u();
+                            } catch  {}
+                        }
+                    }["ProfilePage.useEffect.cleanupFeeds"]);
+                    feedUnsubs = [];
+                }
+            }["ProfilePage.useEffect.cleanupFeeds"];
+            const unsubAuth = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["onAuthStateChanged"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"], {
+                "ProfilePage.useEffect.unsubAuth": async (user)=>{
+                    setError(null);
+                    // cleanup previous listeners
+                    if (unsubGroups) {
+                        try {
+                            unsubGroups();
+                        } catch  {}
+                        unsubGroups = null;
+                    }
+                    cleanupFeeds();
+                    if (!user) {
+                        setUid(null);
+                        setLoading(false);
+                        router.push("/login");
+                        return;
+                    }
+                    setUid(user.uid);
+                    setEmail(user.email || "");
+                    setDisplayName(user.displayName || "");
+                    setPhotoURL(user.photoURL || "");
+                    // Member since: prefer Auth creationTime
+                    const created = user.metadata?.creationTime ? new Date(user.metadata.creationTime) : null;
+                    if (created) {
+                        setMemberSince(new Intl.DateTimeFormat("en-US", {
+                            month: "long",
+                            year: "numeric"
+                        }).format(created));
+                    } else {
+                        setMemberSince("");
+                    }
+                    if (unsubUser) {
+                        try {
+                            unsubUser();
+                        } catch  {}
+                    }
+                    const uref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "users", user.uid);
+                    unsubUser = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["onSnapshot"])(uref, {
+                        "ProfilePage.useEffect.unsubAuth": (usnap)=>{
+                            const data = usnap.data();
+                            if (typeof data?.displayName === "string") setDisplayName(data.displayName);
+                            if (typeof data?.email === "string") setEmail(data.email);
+                            if (typeof data?.photoURL === "string") setPhotoURL(data.photoURL);
+                            if (data?.createdAt?.toDate) {
+                                const d = data.createdAt.toDate();
+                                setMemberSince(new Intl.DateTimeFormat("en-US", {
+                                    month: "long",
+                                    year: "numeric"
+                                }).format(d));
+                            }
+                        }
+                    }["ProfilePage.useEffect.unsubAuth"], {
+                        "ProfilePage.useEffect.unsubAuth": (err)=>{
+                            console.warn("Failed to read user profile doc:", err);
+                        }
+                    }["ProfilePage.useEffect.unsubAuth"]);
+                    // Groups the user is a member of
+                    const groupsQ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["where"])("memberIds", "array-contains", user.uid));
+                    const perGroupExpenseCounts = {};
+                    const recomputeActiveExpenses = {
+                        "ProfilePage.useEffect.unsubAuth.recomputeActiveExpenses": ()=>{
+                            const total = Object.values(perGroupExpenseCounts).reduce({
+                                "ProfilePage.useEffect.unsubAuth.recomputeActiveExpenses.total": (a, b)=>a + b
+                            }["ProfilePage.useEffect.unsubAuth.recomputeActiveExpenses.total"], 0);
+                            setActiveExpenses(total);
+                        }
+                    }["ProfilePage.useEffect.unsubAuth.recomputeActiveExpenses"];
+                    unsubGroups = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["onSnapshot"])(groupsQ, {
+                        "ProfilePage.useEffect.unsubAuth": (snap)=>{
+                            cleanupFeeds();
+                            const groups = snap.docs.map({
+                                "ProfilePage.useEffect.unsubAuth.groups": (d)=>({
+                                        id: d.id,
+                                        ...d.data()
+                                    })
+                            }["ProfilePage.useEffect.unsubAuth.groups"]);
+                            setTotalGroups(groups.length);
+                            // totals
+                            let spent = 0;
+                            let bal = 0;
+                            for (const g of groups){
+                                const ta = g?.totalAmount;
+                                if (typeof ta === "number") spent += ta;
+                                const b = g?.balances;
+                                const v = b && typeof b === "object" ? b[user.uid] : undefined;
+                                if (typeof v === "number") bal += v;
+                            }
+                            setTotalSpent(spent);
+                            setBalance(bal);
+                            // active expenses: count recent feed items of type expense (lightweight)
+                            for (const g of groups){
+                                const fq = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["query"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "groups", g.id, "feed"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["orderBy"])("createdAt", "desc"), (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["limit"])(50));
+                                const unsubFeed = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["onSnapshot"])(fq, {
+                                    "ProfilePage.useEffect.unsubAuth.unsubFeed": (fs)=>{
+                                        let c = 0;
+                                        fs.forEach({
+                                            "ProfilePage.useEffect.unsubAuth.unsubFeed": (docSnap)=>{
+                                                const data = docSnap.data();
+                                                if (data?.type === "expense") c += 1;
+                                            }
+                                        }["ProfilePage.useEffect.unsubAuth.unsubFeed"]);
+                                        perGroupExpenseCounts[g.id] = c;
+                                        recomputeActiveExpenses();
+                                    }
+                                }["ProfilePage.useEffect.unsubAuth.unsubFeed"], {
+                                    "ProfilePage.useEffect.unsubAuth.unsubFeed": ()=>{
+                                        perGroupExpenseCounts[g.id] = 0;
+                                        recomputeActiveExpenses();
+                                    }
+                                }["ProfilePage.useEffect.unsubAuth.unsubFeed"]);
+                                feedUnsubs.push(unsubFeed);
+                            }
+                            recomputeActiveExpenses();
+                            setLoading(false);
+                        }
+                    }["ProfilePage.useEffect.unsubAuth"], {
+                        "ProfilePage.useEffect.unsubAuth": (err)=>{
+                            console.error("Failed to load groups:", err);
+                            setError("Failed to load profile stats. Please try again.");
+                            setTotalGroups(0);
+                            setActiveExpenses(0);
+                            setTotalSpent(0);
+                            setBalance(0);
+                            setLoading(false);
+                        }
+                    }["ProfilePage.useEffect.unsubAuth"]);
+                }
+            }["ProfilePage.useEffect.unsubAuth"]);
+            return ({
+                "ProfilePage.useEffect": ()=>{
+                    try {
+                        unsubAuth();
+                    } catch  {}
+                    if (unsubGroups) {
+                        try {
+                            unsubGroups();
+                        } catch  {}
+                    }
+                    if (unsubUser) {
+                        try {
+                            unsubUser();
+                        } catch  {}
+                    }
+                    cleanupFeeds();
+                }
+            })["ProfilePage.useEffect"];
+        }
+    }["ProfilePage.useEffect"], [
+        router
+    ]);
     if (loading) {
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "min-h-screen bg-background pb-20",
@@ -646,7 +875,7 @@ function ProfilePage() {
                         className: "h-8 w-32 mb-4 sm:mb-6"
                     }, void 0, false, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 73,
+                        lineNumber: 280,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -658,7 +887,7 @@ function ProfilePage() {
                                     className: "h-16 w-16 sm:h-20 sm:w-20 rounded-full"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 76,
+                                    lineNumber: 283,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -668,31 +897,31 @@ function ProfilePage() {
                                             className: "h-5 w-32 sm:w-40"
                                         }, void 0, false, {
                                             fileName: "[project]/app/profile/page.tsx",
-                                            lineNumber: 78,
+                                            lineNumber: 285,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$skeleton$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Skeleton"], {
                                             className: "h-4 w-40 sm:w-48"
                                         }, void 0, false, {
                                             fileName: "[project]/app/profile/page.tsx",
-                                            lineNumber: 79,
+                                            lineNumber: 286,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 77,
+                                    lineNumber: 284,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/profile/page.tsx",
-                            lineNumber: 75,
+                            lineNumber: 282,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 74,
+                        lineNumber: 281,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -701,23 +930,23 @@ function ProfilePage() {
                             className: "h-12 w-full"
                         }, void 0, false, {
                             fileName: "[project]/app/profile/page.tsx",
-                            lineNumber: 84,
+                            lineNumber: 291,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 83,
+                        lineNumber: 290,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/profile/page.tsx",
-                lineNumber: 72,
+                lineNumber: 279,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/app/profile/page.tsx",
-            lineNumber: 71,
+            lineNumber: 278,
             columnNumber: 7
         }, this);
     }
@@ -735,20 +964,20 @@ function ProfilePage() {
                                 className: "h-4 w-4"
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 96,
+                                lineNumber: 303,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDescription"], {
                                 children: error
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 97,
+                                lineNumber: 304,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 95,
+                        lineNumber: 302,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -762,31 +991,31 @@ function ProfilePage() {
                                         className: "h-20 w-20 sm:h-24 sm:w-24 border-4 border-background shadow-lg",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                             className: "text-2xl sm:text-3xl font-bold bg-primary text-primary-foreground",
-                                            children: MOCK_USER.initials
+                                            children: initials
                                         }, void 0, false, {
                                             fileName: "[project]/app/profile/page.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 312,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 311,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                         className: "mt-3 text-xl sm:text-2xl font-bold",
-                                        children: MOCK_USER.displayName
+                                        children: displayName || "(No name)"
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 109,
+                                        lineNumber: 316,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-sm text-muted-foreground",
-                                        children: MOCK_USER.email
+                                        children: email || ""
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 317,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -796,39 +1025,39 @@ function ProfilePage() {
                                                 className: "h-3 w-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 319,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: [
                                                     "Member since ",
-                                                    MOCK_USER.memberSince
+                                                    memberSince || "—"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 320,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 318,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 103,
+                                lineNumber: 310,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/profile/page.tsx",
-                            lineNumber: 102,
+                            lineNumber: 309,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 101,
+                        lineNumber: 308,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -849,12 +1078,12 @@ function ProfilePage() {
                                                             className: "h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/profile/page.tsx",
-                                                            lineNumber: 124,
+                                                            lineNumber: 331,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 330,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -862,27 +1091,27 @@ function ProfilePage() {
                                                         children: "Groups"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 333,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 122,
+                                                lineNumber: 329,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-xl sm:text-2xl font-bold",
-                                                children: MOCK_STATS.totalGroups
+                                                children: totalGroups
                                             }, void 0, false, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 335,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 328,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -897,12 +1126,12 @@ function ProfilePage() {
                                                             className: "h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-600 dark:text-green-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/profile/page.tsx",
-                                                            lineNumber: 134,
+                                                            lineNumber: 341,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 133,
+                                                        lineNumber: 340,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -910,27 +1139,27 @@ function ProfilePage() {
                                                         children: "Expenses"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 136,
+                                                        lineNumber: 343,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 339,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-xl sm:text-2xl font-bold",
-                                                children: MOCK_STATS.activeExpenses
+                                                children: activeExpenses
                                             }, void 0, false, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 138,
+                                                lineNumber: 345,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 131,
+                                        lineNumber: 338,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -945,12 +1174,12 @@ function ProfilePage() {
                                                             className: "h-3.5 w-3.5 sm:h-4 sm:w-4 text-purple-600 dark:text-purple-400"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/profile/page.tsx",
-                                                            lineNumber: 144,
+                                                            lineNumber: 351,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 350,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -958,47 +1187,47 @@ function ProfilePage() {
                                                         children: "Total Spent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 353,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 349,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-base sm:text-lg font-bold",
-                                                children: formatCurrency(MOCK_STATS.totalSpent)
+                                                children: formatMoney(totalSpent)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 148,
+                                                lineNumber: 355,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 348,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                                         className: "p-3 sm:p-4 bg-card/95 backdrop-blur",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2 mb-1",
+                                                className: `flex items-center gap-2 mb-1`,
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: `rounded-full p-1.5 ${MOCK_STATS.balance >= 0 ? "bg-green-100 dark:bg-green-950" : "bg-red-100 dark:bg-red-950"}`,
+                                                        className: `rounded-full p-1.5 ${balance >= 0 ? "bg-green-100 dark:bg-green-950" : "bg-red-100 dark:bg-red-950"}`,
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__["DollarSign"], {
-                                                            className: `h-3.5 w-3.5 sm:h-4 sm:w-4 ${MOCK_STATS.balance >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`
+                                                            className: `h-3.5 w-3.5 sm:h-4 sm:w-4 ${balance >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/profile/page.tsx",
-                                                            lineNumber: 156,
+                                                            lineNumber: 363,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 153,
+                                                        lineNumber: 360,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1006,33 +1235,33 @@ function ProfilePage() {
                                                         children: "Balance"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 160,
+                                                        lineNumber: 367,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 152,
+                                                lineNumber: 359,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: `text-base sm:text-lg font-bold ${MOCK_STATS.balance >= 0 ? "text-green-600" : "text-red-600"}`,
-                                                children: formatCurrency(MOCK_STATS.balance)
+                                                className: `text-base sm:text-lg font-bold ${balance >= 0 ? "text-green-600" : "text-red-600"}`,
+                                                children: formatMoney(balance)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 162,
+                                                lineNumber: 369,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 358,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 120,
+                                lineNumber: 327,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
@@ -1043,7 +1272,7 @@ function ProfilePage() {
                                         children: "SETTINGS"
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 171,
+                                        lineNumber: 379,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1059,12 +1288,12 @@ function ProfilePage() {
                                                             className: "h-4 w-4 sm:h-5 sm:w-5 text-primary"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/profile/page.tsx",
-                                                            lineNumber: 178,
+                                                            lineNumber: 386,
                                                             columnNumber: 19
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 385,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1075,7 +1304,7 @@ function ProfilePage() {
                                                                 children: "App Settings"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/profile/page.tsx",
-                                                                lineNumber: 181,
+                                                                lineNumber: 389,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1083,38 +1312,38 @@ function ProfilePage() {
                                                                 children: "Preferences and permissions"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/profile/page.tsx",
-                                                                lineNumber: 182,
+                                                                lineNumber: 390,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/profile/page.tsx",
-                                                        lineNumber: 180,
+                                                        lineNumber: 388,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 176,
+                                                lineNumber: 384,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                 className: "h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground shrink-0"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/profile/page.tsx",
-                                                lineNumber: 185,
+                                                lineNumber: 393,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 172,
+                                        lineNumber: 380,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 170,
+                                lineNumber: 378,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1126,14 +1355,14 @@ function ProfilePage() {
                                         className: "mr-2 h-4 w-4 sm:h-5 sm:w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 398,
                                         columnNumber: 13
                                     }, this),
                                     "Sign Out"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 189,
+                                lineNumber: 397,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1144,7 +1373,7 @@ function ProfilePage() {
                                         children: "Kasa Expense Sharing App"
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 403,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1152,25 +1381,25 @@ function ProfilePage() {
                                         children: "Version 1.0.0"
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 404,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 194,
+                                lineNumber: 402,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 119,
+                        lineNumber: 326,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/profile/page.tsx",
-                lineNumber: 93,
+                lineNumber: 300,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -1188,12 +1417,12 @@ function ProfilePage() {
                                     className: "h-6 w-6 text-muted-foreground"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 210,
+                                    lineNumber: 418,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 205,
+                                lineNumber: 413,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1204,12 +1433,12 @@ function ProfilePage() {
                                     className: "h-6 w-6 text-muted-foreground"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 218,
+                                    lineNumber: 426,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 213,
+                                lineNumber: 421,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1220,28 +1449,28 @@ function ProfilePage() {
                                     className: "h-6 w-6 text-green-600"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 226,
+                                    lineNumber: 434,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/page.tsx",
-                                lineNumber: 221,
+                                lineNumber: 429,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/profile/page.tsx",
-                        lineNumber: 204,
+                        lineNumber: 412,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/profile/page.tsx",
-                    lineNumber: 203,
+                    lineNumber: 411,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/profile/page.tsx",
-                lineNumber: 202,
+                lineNumber: 410,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialog"], {
@@ -1255,20 +1484,20 @@ function ProfilePage() {
                                     children: "Sign Out"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 236,
+                                    lineNumber: 444,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
                                     children: "Are you sure you want to sign out? You'll need to sign in again to access your groups and expenses."
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 237,
+                                    lineNumber: 445,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/profile/page.tsx",
-                            lineNumber: 235,
+                            lineNumber: 443,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
@@ -1277,7 +1506,7 @@ function ProfilePage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 242,
+                                    lineNumber: 450,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
@@ -1286,36 +1515,38 @@ function ProfilePage() {
                                     children: "Sign Out"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
-                                    lineNumber: 243,
+                                    lineNumber: 451,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/profile/page.tsx",
-                            lineNumber: 241,
+                            lineNumber: 449,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/profile/page.tsx",
-                    lineNumber: 234,
+                    lineNumber: 442,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/profile/page.tsx",
-                lineNumber: 233,
+                lineNumber: 441,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/profile/page.tsx",
-        lineNumber: 92,
+        lineNumber: 299,
         columnNumber: 5
     }, this);
 }
-_s(ProfilePage, "tSDaM+cIprapd6me/afImSI9epI=", false, function() {
+_s(ProfilePage, "ZkiYCxx459OdugNetUsaxFAt9wE=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSettings"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"]
     ];
 });
 _c = ProfilePage;

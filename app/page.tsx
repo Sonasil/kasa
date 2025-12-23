@@ -32,6 +32,7 @@ import {
   ChevronUp,
   ChevronRight,
 } from "lucide-react"
+import { useSettings } from "@/lib/settings-context"
 
 type ActivityItem = {
   id: string
@@ -51,6 +52,7 @@ type ActivityItem = {
 export default function DashboardPage() {
   const router = useRouter()
   const { toast } = useToast()
+  const { formatMoney } = useSettings()
   const [loading, setLoading] = useState(true)
   const [displayName, setDisplayName] = useState("")
   const [groupCount, setGroupCount] = useState(0)
@@ -212,13 +214,6 @@ export default function DashboardPage() {
       cleanupFeeds()
     }
   }, [router])
-  const formatCurrency = (cents: number) => {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency: "TRY",
-    }).format(cents / 100)
-  }
-
   const formatTime = (date: Date) => {
     const now = new Date()
     const diffMs = now.getTime() - date.getTime()
@@ -400,7 +395,7 @@ export default function DashboardPage() {
                 }`}
               >
                 {activity.isPositive ? "+" : "-"}
-                {formatCurrency(activity.amount)}
+                {formatMoney(activity.amount)}
               </Badge>
             )}
             <ChevronRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-200 ml-auto" />
@@ -569,7 +564,7 @@ export default function DashboardPage() {
                 <div className="flex flex-col items-center justify-center leading-tight">
                   <p className="text-[11px] text-muted-foreground mb-0.5">You owe</p>
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-[13px] font-semibold text-red-600">{formatCurrency(youOwe)}</span>
+                    <span className="text-[13px] font-semibold text-red-600">{formatMoney(youOwe)}</span>
                     <span className="rounded-full bg-red-100 dark:bg-red-950/20 p-0.5">
                       <TrendingDown className="h-3 w-3 text-red-600" />
                     </span>
@@ -580,7 +575,7 @@ export default function DashboardPage() {
                 <div className="flex flex-col items-center justify-center leading-tight">
                   <p className="text-[11px] text-muted-foreground mb-0.5">You're owed</p>
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-[13px] font-semibold text-green-600">{formatCurrency(youAreOwed)}</span>
+                    <span className="text-[13px] font-semibold text-green-600">{formatMoney(youAreOwed)}</span>
                     <span className="rounded-full bg-green-100 dark:bg-green-950/20 p-0.5">
                       <TrendingUp className="h-3 w-3 text-green-600" />
                     </span>
@@ -595,7 +590,7 @@ export default function DashboardPage() {
                       className={`text-[13px] font-semibold ${netBalance >= 0 ? "text-green-600" : "text-red-600"}`}
                     >
                       {netBalance >= 0 ? "+" : ""}
-                      {formatCurrency(Math.abs(netBalance))}
+                      {formatMoney(Math.abs(netBalance))}
                     </span>
                     <span
                       className={`rounded-full p-0.5 ${netBalance >= 0 ? "bg-green-100 dark:bg-green-950/20" : "bg-red-100 dark:bg-red-950/20"}`}
@@ -618,7 +613,7 @@ export default function DashboardPage() {
                 <p className="text-[11px] text-muted-foreground">You owe</p>
                 <div className="mt-0.5 inline-flex items-center gap-1.5">
                   <span className="text-[13px] sm:text-sm md:text-xl font-bold text-red-600">
-                    {formatCurrency(youOwe)}
+                    {formatMoney(youOwe)}
                   </span>
                   <span className="rounded-full bg-red-100 dark:bg-red-950/20 p-0.5 sm:p-1 md:p-1.5">
                     <TrendingDown className="h-3.5 w-3.5 md:h-5 md:w-5 text-red-600" />
@@ -632,7 +627,7 @@ export default function DashboardPage() {
                 <p className="text-[11px] text-muted-foreground">You're owed</p>
                 <div className="mt-0.5 inline-flex items-center gap-1.5">
                   <span className="text-[13px] sm:text-sm md:text-xl font-bold text-green-600">
-                    {formatCurrency(youAreOwed)}
+                    {formatMoney(youAreOwed)}
                   </span>
                   <span className="rounded-full bg-green-100 dark:bg-green-950/20 p-0.5 sm:p-1 md:p-1.5">
                     <TrendingUp className="h-3.5 w-3.5 md:h-5 md:w-5 text-green-600" />
@@ -650,7 +645,7 @@ export default function DashboardPage() {
                   className={`text-[13px] md:text-xl font-bold ${netBalance >= 0 ? "text-green-600" : "text-red-600"}`}
                 >
                   {netBalance >= 0 ? "+" : ""}
-                  {formatCurrency(Math.abs(netBalance))}
+                  {formatMoney(Math.abs(netBalance))}
                 </span>
                 <span
                   className={`rounded-full p-0.5 sm:p-1 md:p-1.5 ${netBalance >= 0 ? "bg-green-100 dark:bg-green-950/20" : "bg-red-100 dark:bg-red-950/20"}`}
@@ -833,7 +828,7 @@ export default function DashboardPage() {
                       }`}
                     >
                       {selectedActivity.isPositive ? "+" : "-"}
-                      {formatCurrency(selectedActivity.amount)}
+                      {formatMoney(selectedActivity.amount)}
                     </Badge>
                   </div>
                 )}

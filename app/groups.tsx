@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { Plus, Users, DollarSign, Clock, LinkIcon } from "lucide-react"
 import { createGroup } from "@/lib/groupService"
+import { useSettings } from "@/lib/settings-context"
 
 type Group = {
   id: string
@@ -55,6 +56,7 @@ const MOCK_GROUPS: Group[] = [
 export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
+  const { formatMoney } = useSettings()
   const [loading, setLoading] = useState(true)
   const [groups, setGroups] = useState<Group[]>([])
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
@@ -117,13 +119,6 @@ export default function GroupsPage() {
 
     setInviteCode("")
     setJoinDialogOpen(false)
-  }
-
-  const formatCurrency = (cents: number) => {
-    return new Intl.NumberFormat("tr-TR", {
-      style: "currency",
-      currency: "TRY",
-    }).format(cents / 100)
   }
 
   const formatTimeAgo = (date: Date) => {
@@ -278,7 +273,7 @@ export default function GroupsPage() {
                       }`}
                     >
                       {group.balance >= 0 ? "+" : ""}
-                      {formatCurrency(group.balance)}
+                      {formatMoney(group.balance)}
                     </div>
                   </div>
 
@@ -297,7 +292,7 @@ export default function GroupsPage() {
                       <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                       <span>Total expenses</span>
                     </div>
-                    <p className="text-sm font-semibold sm:text-base">{formatCurrency(group.totalExpenses)}</p>
+                    <p className="text-sm font-semibold sm:text-base">{formatMoney(group.totalExpenses)}</p>
                   </div>
                 </div>
               </Card>
