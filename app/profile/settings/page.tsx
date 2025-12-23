@@ -24,17 +24,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useToast } from "@/hooks/use-toast"
-import {
-  ArrowLeft,
-  AlertCircle,
-  BadgeCheck,
-  Camera,
-  MailCheck,
-  Save,
-  Smartphone,
-  User,
-  X,
-} from "lucide-react"
+import { ArrowLeft, AlertCircle, BadgeCheck, Camera, MailCheck, Save, Smartphone, User, X } from "lucide-react"
 
 const MAX_AVATAR_BYTES = 5 * 1024 * 1024 // 5MB
 
@@ -60,6 +50,7 @@ export default function ProfileSettingsPage() {
 
   const [memberSince, setMemberSince] = useState("")
   const [emailVerified, setEmailVerified] = useState(false)
+  const [phoneVerified, setPhoneVerified] = useState(false)
   const [sendingVerification, setSendingVerification] = useState(false)
 
   const [currentPassword, setCurrentPassword] = useState("")
@@ -87,12 +78,7 @@ export default function ProfileSettingsPage() {
 
   const isDirty = useMemo(() => {
     const base = initialRef.current
-    return (
-      displayName !== base.displayName ||
-      phone !== base.phone ||
-      photoURL !== base.photoURL ||
-      !!photoFile
-    )
+    return displayName !== base.displayName || phone !== base.phone || photoURL !== base.photoURL || !!photoFile
   }, [displayName, phone, photoURL, photoFile])
 
   const canSave = useMemo(() => {
@@ -105,7 +91,6 @@ export default function ProfileSettingsPage() {
   const isPasswordUser = useMemo(() => {
     const user = auth.currentUser
     if (!user) return false
-    // If any provider is password, allow changing password
     return (user.providerData || []).some((p) => p?.providerId === "password")
   }, [uid])
 
@@ -195,6 +180,7 @@ export default function ProfileSettingsPage() {
         setDisplayName(user.displayName ?? "")
         setPhotoURL(user.photoURL ?? "")
         setEmailVerified(user.emailVerified)
+        setPhoneVerified(!!user.phoneNumber)
 
         const formatted = formatMemberSince(user.metadata?.creationTime ?? null)
         if (formatted) setMemberSince(formatted)
@@ -212,11 +198,13 @@ export default function ProfileSettingsPage() {
             const nextEmail = typeof data?.email === "string" && data.email ? data.email : user.email ?? ""
             const nextPhone = typeof data?.phone === "string" ? data.phone : ""
             const nextPhotoURL = typeof data?.photoURL === "string" ? data.photoURL : user.photoURL ?? ""
+            const nextPhoneVerified = typeof data?.phoneVerified === "boolean" ? data.phoneVerified : phoneVerified
 
             setDisplayName(nextDisplayName)
             setEmail(nextEmail)
             setPhone(nextPhone)
             setPhotoURL(nextPhotoURL)
+            setPhoneVerified(nextPhoneVerified)
 
             if (data?.createdAt?.toDate) {
               const d = data.createdAt.toDate()
@@ -224,7 +212,6 @@ export default function ProfileSettingsPage() {
               if (formattedDate) setMemberSince(formattedDate)
             }
 
-            // update dirty baseline only when we load from Firestore
             initialRef.current = {
               displayName: nextDisplayName,
               email: nextEmail,
@@ -329,7 +316,6 @@ export default function ProfileSettingsPage() {
         { merge: true }
       )
 
-      // Update baseline after save
       initialRef.current = {
         displayName: trimmedName,
         email,
@@ -378,8 +364,6 @@ export default function ProfileSettingsPage() {
     setSendingVerification(true)
     try {
       await sendEmailVerification(user)
-
-      // Refresh local auth state so UI updates when the user verifies later
       try {
         await user.reload()
       } catch {}
@@ -413,7 +397,6 @@ export default function ProfileSettingsPage() {
       return
     }
 
-    // Password change requires email/password sign-in
     if (!user.email || !isPasswordUser) {
       toast({
         variant: "destructive",
@@ -496,7 +479,7 @@ export default function ProfileSettingsPage() {
     } finally {
       setChangingPassword(false)
     }
-  };
+  }
 
   const handleForgotPassword = async () => {
     const user = auth.currentUser
@@ -511,7 +494,6 @@ export default function ProfileSettingsPage() {
       return
     }
 
-    // Only meaningful for password users
     if (!isPasswordUser) {
       toast({
         variant: "destructive",
@@ -558,7 +540,6 @@ export default function ProfileSettingsPage() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Sticky unsaved changes bar */}
       {isDirty && (
         <div className="sticky top-0 z-20 border-b bg-background/80 backdrop-blur">
           <div className="mx-auto max-w-4xl px-3 sm:px-6 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -607,7 +588,6 @@ export default function ProfileSettingsPage() {
           </Alert>
         )}
 
-        {/* PROFILE */}
         <Card className="p-4 sm:p-6">
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
@@ -658,9 +638,7 @@ export default function ProfileSettingsPage() {
             <div className="flex-1">
               <p className="text-sm font-medium">{displayName || "(İsim yok)"}</p>
               <p className="text-xs text-muted-foreground">{email || ""}</p>
-              <p className="mt-2 text-xs text-muted-foreground">
-                Fotoğrafı değiştirmek için avatar'a tıkla veya sürükle-bırak yap.
-              </p>
+              <p className="mt-2 text-xs text-muted-foreground">Fotoğrafı değiştirmek için avatar'a tıkla veya sürükle-bırak yap.</p>
 
               <input
                 ref={fileInputRef}
@@ -682,10 +660,7 @@ export default function ProfileSettingsPage() {
               {uploadingPhoto ? (
                 <div className="mt-3">
                   <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
-                    <div
-                      className="h-full bg-primary transition-all"
-                      style={{ width: `${uploadProgress}%` }}
-                    />
+                    <div className="h-full bg-primary transition-all" style={{ width: `${uploadProgress}%` }} />
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">Fotoğraf yükleniyor… %{uploadProgress}</p>
                 </div>
@@ -707,25 +682,9 @@ export default function ProfileSettingsPage() {
                 />
               </div>
             </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="phone">Telefon</Label>
-              <div className="flex items-center gap-2">
-                <Smartphone className="h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="phone"
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="+90..."
-                  disabled={saving}
-                />
-              </div>
-            </div>
           </div>
         </Card>
 
-        {/* ACCOUNT */}
         <Card className="p-4 sm:p-6">
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
@@ -769,11 +728,34 @@ export default function ProfileSettingsPage() {
               <p className="mt-2 text-xs text-muted-foreground">
                 Doğrulanmış e-posta, bazı güvenlik işlemleri için gerekli olabilir.
               </p>
+
+              <div className="mt-6 space-y-2">
+                <Label>Telefon</Label>
+                <div className="flex flex-wrap items-center gap-2">
+                  <div
+                    className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs ${
+                      phoneVerified
+                        ? "bg-green-100 text-green-700 dark:bg-green-950/30 dark:text-green-400"
+                        : "bg-amber-100 text-amber-700 dark:bg-amber-950/30 dark:text-amber-400"
+                    }`}
+                  >
+                    <BadgeCheck className="h-3.5 w-3.5" />
+                    {phoneVerified ? "Doğrulandı" : "Doğrulanmadı"}
+                  </div>
+
+                  <Button type="button" onClick={() => router.push("/profile/settings/phone")}>
+                    {phoneVerified ? "Telefonu yönet" : "Telefonu doğrula"}
+                  </Button>
+                </div>
+
+                <p className="text-xs text-muted-foreground">
+                  Telefon doğrulaması SMS ile yapılır. Web tarafında reCAPTCHA kullanılır.
+                </p>
+              </div>
             </div>
           </div>
         </Card>
 
-        {/* SECURITY */}
         <Card className="p-4 sm:p-6">
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
@@ -785,9 +767,7 @@ export default function ProfileSettingsPage() {
             <Label>Şifre</Label>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="space-y-2 sm:col-span-2">
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  Mevcut şifreni doğrulayarak yeni şifre belirleyebilirsin.
-                </p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Mevcut şifreni doğrulayarak yeni şifre belirleyebilirsin.</p>
               </div>
 
               {!isPasswordUser ? (
@@ -857,15 +837,12 @@ export default function ProfileSettingsPage() {
                 >
                   Şifremi unuttum
                 </Button>
-                <p className="text-xs text-muted-foreground">
-                  Şifre sıfırlama bağlantısı kayıtlı e-posta adresine gönderilir.
-                </p>
+                <p className="text-xs text-muted-foreground">Şifre sıfırlama bağlantısı kayıtlı e-posta adresine gönderilir.</p>
               </div>
             </div>
           </div>
         </Card>
 
-        {/* Fallback save button (when no sticky bar is visible) */}
         {!isDirty && (
           <div className="flex justify-end">
             <Button onClick={handleSave} disabled={!canSave} className="w-full sm:w-auto">
