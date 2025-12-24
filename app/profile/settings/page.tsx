@@ -13,8 +13,6 @@ import {
 } from "firebase/auth"
 import { doc, onSnapshot, serverTimestamp, setDoc } from "firebase/firestore"
 import { auth, db } from "@/lib/firebase"
-import { getApp } from "firebase/app"
-import { getDownloadURL, getStorage, ref as storageRef, uploadBytesResumable } from "firebase/storage"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -27,6 +25,8 @@ import { useToast } from "@/hooks/use-toast"
 import { ArrowLeft, AlertCircle, BadgeCheck, Camera, MailCheck, Save, Smartphone, User, X } from "lucide-react"
 
 const MAX_AVATAR_BYTES = 5 * 1024 * 1024 // 5MB
+const CLOUDINARY_CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+const CLOUDINARY_UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
 
 export default function ProfileSettingsPage() {
   const router = useRouter()
@@ -250,38 +250,45 @@ export default function ProfileSettingsPage() {
   const uploadProfilePhotoIfNeeded = async () => {
     if (!photoFile || !uid) return null
 
-    const storage = getStorage(getApp())
-    const safeName = photoFile.name.replace(/[^a-zA-Z0-9._-]/g, "_")
-    const path = `users/${uid}/avatar_${Date.now()}_${safeName}`
-    const r = storageRef(storage, path)
+    if (!CLOUDINARY_CLOUD_NAME || !CLOUDINARY_UPLOAD_PRESET) {
+      throw new Error(
+        "Cloudinary ayarları eksik. .env dosyana NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ve NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET eklemelisin."
+      )
+    }
 
     setUploadingPhoto(true)
     setUploadProgress(0)
 
-    return await new Promise<string>((resolve, reject) => {
-      const task = uploadBytesResumable(r, photoFile, { contentType: photoFile.type || "image/jpeg" })
-      task.on(
-        "state_changed",
-        (snap) => {
-          const pct = snap.totalBytes ? Math.round((snap.bytesTransferred / snap.totalBytes) * 100) : 0
-          setUploadProgress(pct)
-        },
-        (err) => {
-          setUploadingPhoto(false)
-          reject(err)
-        },
-        async () => {
-          try {
-            const url = await getDownloadURL(task.snapshot.ref)
-            setUploadingPhoto(false)
-            resolve(url)
-          } catch (e) {
-            setUploadingPhoto(false)
-            reject(e)
-          }
-        }
-      )
-    })
+    try {
+      const form = new FormData()
+      form.append("file", photoFile)
+      form.append("upload_preset", CLOUDINARY_UPLOAD_PRESET)
+      // keep uploads organized per-user
+      form.append("folder", `avatars/${uid}`)
+
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
+        method: "POST",
+        body: form,
+      })
+
+      if (!res.ok) {
+        let details = ""
+        try {
+          const txt = await res.text()
+          details = txt ? ` (${txt})` : ""
+        } catch {}
+        throw new Error(`Cloudinary upload başarısız oldu${details}`)
+      }
+
+      const data: any = await res.json()
+      const url = (data?.secure_url || data?.url || "").toString()
+      if (!url) throw new Error("Cloudinary yanıtında URL bulunamadı")
+
+      setUploadProgress(100)
+      return url
+    } finally {
+      setUploadingPhoto(false)
+    }
   }
 
   const handleSave = async () => {
