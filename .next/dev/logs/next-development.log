@@ -1097,3 +1097,662 @@ See this log for the ancestor stack trace. button <button>
 [04:17:33.437] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766528666662}
 [04:17:49.192] Server  LOG      ✓ Compiled in 111ms
 [04:17:52.937] Server  LOG      ✓ Compiled in 40ms
+[04:21:38.933] Server  LOG      ✓ Compiled in 108ms
+[04:21:48.139] Server  LOG      ✓ Compiled in 86ms
+[04:22:59.507] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:22:59.770] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:22:59.770] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:22:59.770] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766528993045}
+[04:24:06.379] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:24:06.799] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:24:06.799] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:24:06.799] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529060073}
+[04:24:17.764] Server  LOG      ✓ Compiled in 216ms
+[04:26:48.479] Server  LOG      ✓ Compiled in 152ms
+[04:26:51.461] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:26:51.711] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:26:51.711] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:26:51.712] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529224983}
+[04:26:58.891] Server  LOG      ✓ Compiled in 50ms
+[04:27:03.646] Server  LOG      ✓ Compiled in 49ms
+[04:27:09.286] Server  LOG      ✓ Compiled in 64ms
+[04:28:18.364] Server  LOG      ✓ Compiled in 189ms
+[04:28:38.503] Server  LOG      ✓ Compiled in 69ms
+[04:28:43.793] Server  LOG      ✓ Compiled in 50ms
+[04:28:46.915] Server  LOG      ✓ Compiled in 50ms
+[04:28:49.441] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:28:49.707] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:28:49.707] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:28:49.707] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529342978}
+[04:33:05.361] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:33:05.616] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:33:05.616] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:33:05.616] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529598834}
+[04:33:06.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:33:06.696] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:33:06.696] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:33:06.696] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529599914}
+[04:33:09.929] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529603144}
+[04:33:11.595] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529604767}
+[04:35:43.652] Server  LOG      ✓ Compiled in 147ms
+[04:36:14.690] Server  LOG      ✓ Compiled in 104ms
+[04:36:17.891] Server  LOG      ✓ Compiled in 42ms
+[04:36:28.164] Server  LOG      ✓ Compiled in 58ms
+[04:36:32.788] Server  LOG      ✓ Compiled in 53ms
+[04:36:37.270] Server  LOG      ✓ Compiled in 73ms
+[04:36:50.236] Server  LOG      ✓ Compiled in 85ms
+[04:36:53.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:36:53.476] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:36:53.477] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:36:53.477] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766529826689}
+[04:36:56.395] Server  LOG      ✓ Compiled in 46ms
+[04:42:28.979] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:42:29.237] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[04:42:29.238] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[04:42:29.238] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766530162442}
+[04:51:49.210] Server  LOG      ✓ Compiled in 107ms
+[04:51:55.252] Server  LOG      ✓ Compiled in 49ms
+[04:52:24.232] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[05:02:09.153] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766531342212}
+[05:03:24.870] Server  LOG      ✓ Compiled in 233ms
+[05:03:26.955] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[05:03:32.869] Browser ERROR   uncaughtError: TypeError: Cannot read properties of null (reading 'style')
+[05:09:03.954] Server  LOG      ✓ Compiled in 119ms
+[05:09:07.095] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[05:09:07.297] Browser ERROR   sendSms error: {}
+[05:09:16.512] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:09:16.777] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[05:09:16.777] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[05:09:16.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766531769898}
+[05:09:30.151] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[05:09:31.779] Browser ERROR   sendSms error: {"code":"auth/operation-not-allowed","customData":{},"name":"FirebaseError"}
+[05:25:17.969] Browser WARN    [2025-12-23T23:32:11.060Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d42 transport errored. Name: undefined Message: undefined
+[05:25:24.528] Browser WARN    [2025-12-23T23:32:17.621Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf7b transport errored. Name: undefined Message: undefined
+[05:40:42.296] Browser WARN    [2025-12-23T23:47:35.361Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf7c transport errored. Name: undefined Message: undefined
+[05:40:49.224] Browser WARN    [2025-12-23T23:47:42.290Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d43 transport errored. Name: undefined Message: undefined
+[05:56:13.277] Browser WARN    [2025-12-24T00:03:06.314Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf7d transport errored. Name: undefined Message: undefined
+[05:56:20.224] Browser WARN    [2025-12-24T00:03:13.261Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d44 transport errored. Name: undefined Message: undefined
+[06:11:59.211] Browser WARN    [2025-12-24T00:18:52.116Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf7e transport errored. Name: undefined Message: undefined
+[06:12:06.548] Browser WARN    [2025-12-24T00:18:59.454Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d45 transport errored. Name: undefined Message: undefined
+[06:27:52.488] Browser WARN    [2025-12-24T00:34:45.402Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d46 transport errored. Name: undefined Message: undefined
+[06:27:55.112] Browser WARN    [2025-12-24T00:34:48.026Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf80 transport errored. Name: undefined Message: undefined
+[06:43:23.808] Browser WARN    [2025-12-24T00:50:16.688Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d47 transport errored. Name: undefined Message: undefined
+[06:43:25.971] Browser WARN    [2025-12-24T00:50:18.852Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf81 transport errored. Name: undefined Message: undefined
+[06:59:09.894] Browser WARN    [2025-12-24T01:06:02.759Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d48 transport errored. Name: undefined Message: undefined
+[06:59:12.067] Browser WARN    [2025-12-24T01:06:04.930Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf82 transport errored. Name: undefined Message: undefined
+[07:11:17.192] Browser WARN    [2025-12-24T01:18:10.045Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d49 transport errored. Name: undefined Message: undefined
+[07:11:18.986] Browser WARN    [2025-12-24T01:18:11.838Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf83 transport errored. Name: undefined Message: undefined
+[07:17:06.288] Browser WARN    [2025-12-24T01:23:59.148Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d4a transport errored. Name: undefined Message: undefined
+[07:17:08.155] Browser WARN    [2025-12-24T01:24:01.020Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf84 transport errored. Name: undefined Message: undefined
+[07:32:52.152] Browser WARN    [2025-12-24T01:39:45.021Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d4b transport errored. Name: undefined Message: undefined
+[07:32:54.369] Browser WARN    [2025-12-24T01:39:47.239Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf85 transport errored. Name: undefined Message: undefined
+[07:48:38.132] Browser WARN    [2025-12-24T01:55:31.001Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d4c transport errored. Name: undefined Message: undefined
+[07:48:40.323] Browser WARN    [2025-12-24T01:55:33.192Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf86 transport errored. Name: undefined Message: undefined
+[08:04:24.006] Browser WARN    [2025-12-24T02:11:16.866Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d4d transport errored. Name: undefined Message: undefined
+[08:04:26.289] Browser WARN    [2025-12-24T02:11:19.150Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf87 transport errored. Name: undefined Message: undefined
+[08:20:10.278] Browser WARN    [2025-12-24T02:27:03.124Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d4e transport errored. Name: undefined Message: undefined
+[08:20:12.176] Browser WARN    [2025-12-24T02:27:05.020Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf88 transport errored. Name: undefined Message: undefined
+[08:35:41.336] Browser WARN    [2025-12-24T02:42:34.128Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d4f transport errored. Name: undefined Message: undefined
+[08:35:43.401] Browser WARN    [2025-12-24T02:42:36.191Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf89 transport errored. Name: undefined Message: undefined
+[08:51:12.228] Browser WARN    [2025-12-24T02:58:04.996Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d50 transport errored. Name: undefined Message: undefined
+[08:51:14.456] Browser WARN    [2025-12-24T02:58:07.225Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf8a transport errored. Name: undefined Message: undefined
+[09:06:58.227] Browser WARN    [2025-12-24T03:13:50.980Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d51 transport errored. Name: undefined Message: undefined
+[09:07:00.395] Browser WARN    [2025-12-24T03:13:53.149Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf8b transport errored. Name: undefined Message: undefined
+[09:22:44.476] Browser WARN    [2025-12-24T03:29:37.157Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d52 transport errored. Name: undefined Message: undefined
+[09:22:46.261] Browser WARN    [2025-12-24T03:29:38.941Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf8c transport errored. Name: undefined Message: undefined
+[09:38:17.460] Browser WARN    [2025-12-24T03:45:10.111Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf8d transport errored. Name: undefined Message: undefined
+[09:38:30.521] Browser WARN    [2025-12-24T03:45:23.163Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d53 transport errored. Name: undefined Message: undefined
+[09:54:16.443] Browser WARN    [2025-12-24T04:01:09.042Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d54 transport errored. Name: undefined Message: undefined
+[09:54:18.287] Browser WARN    [2025-12-24T04:01:10.884Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf8e transport errored. Name: undefined Message: undefined
+[10:09:31.652] Browser WARN    [2025-12-24T04:16:24.211Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d55 transport errored. Name: undefined Message: undefined
+[10:09:33.561] Browser WARN    [2025-12-24T04:16:26.118Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf8f transport errored. Name: undefined Message: undefined
+[10:25:17.137] Browser WARN    [2025-12-24T04:32:09.656Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d56 transport errored. Name: undefined Message: undefined
+[10:25:18.854] Browser WARN    [2025-12-24T04:32:11.377Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf90 transport errored. Name: undefined Message: undefined
+[10:41:03.034] Browser WARN    [2025-12-24T04:47:55.548Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d57 transport errored. Name: undefined Message: undefined
+[10:41:05.019] Browser WARN    [2025-12-24T04:47:57.535Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf91 transport errored. Name: undefined Message: undefined
+[10:56:50.926] Browser WARN    [2025-12-24T05:03:43.431Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf92 transport errored. Name: undefined Message: undefined
+[10:57:03.965] Browser WARN    [2025-12-24T05:03:56.478Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d58 transport errored. Name: undefined Message: undefined
+[11:09:26.440] Browser WARN    [2025-12-24T05:16:18.938Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d59 transport errored. Name: undefined Message: undefined
+[11:09:28.365] Browser WARN    [2025-12-24T05:16:20.863Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf93 transport errored. Name: undefined Message: undefined
+[11:25:11.924] Browser WARN    [2025-12-24T05:32:04.375Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d5a transport errored. Name: undefined Message: undefined
+[11:25:13.633] Browser WARN    [2025-12-24T05:32:06.082Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf94 transport errored. Name: undefined Message: undefined
+[11:40:43.822] Browser WARN    [2025-12-24T05:47:36.216Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d5b transport errored. Name: undefined Message: undefined
+[11:40:44.766] Browser WARN    [2025-12-24T05:47:37.161Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf95 transport errored. Name: undefined Message: undefined
+[11:56:31.503] Browser WARN    [2025-12-24T06:03:23.849Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf96 transport errored. Name: undefined Message: undefined
+[11:56:45.075] Browser WARN    [2025-12-24T06:03:37.428Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d5c transport errored. Name: undefined Message: undefined
+[12:12:00.995] Browser WARN    [2025-12-24T06:18:53.323Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d5d transport errored. Name: undefined Message: undefined
+[12:12:02.461] Browser WARN    [2025-12-24T06:18:54.789Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf97 transport errored. Name: undefined Message: undefined
+[12:27:48.169] Browser WARN    [2025-12-24T06:34:40.446Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d5e transport errored. Name: undefined Message: undefined
+[12:27:48.342] Browser WARN    [2025-12-24T06:34:40.618Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf98 transport errored. Name: undefined Message: undefined
+[12:43:30.871] Browser WARN    [2025-12-24T06:50:23.104Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d5f transport errored. Name: undefined Message: undefined
+[12:43:31.465] Browser WARN    [2025-12-24T06:50:23.700Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf99 transport errored. Name: undefined Message: undefined
+[12:59:01.077] Browser WARN    [2025-12-24T07:05:53.282Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d60 transport errored. Name: undefined Message: undefined
+[12:59:01.678] Browser WARN    [2025-12-24T07:05:53.885Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf9a transport errored. Name: undefined Message: undefined
+[13:10:19.095] Browser WARN    [2025-12-24T07:17:11.297Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d61 transport errored. Name: undefined Message: undefined
+[13:10:19.668] Browser WARN    [2025-12-24T07:17:11.871Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf9b transport errored. Name: undefined Message: undefined
+[13:14:26.322] Browser WARN    [2025-12-24T07:21:18.513Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d62 transport errored. Name: undefined Message: undefined
+[13:14:26.916] Browser WARN    [2025-12-24T07:21:19.106Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf9c transport errored. Name: undefined Message: undefined
+[13:30:12.523] Browser WARN    [2025-12-24T07:37:04.657Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d63 transport errored. Name: undefined Message: undefined
+[13:30:12.810] Browser WARN    [2025-12-24T07:37:04.944Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf9d transport errored. Name: undefined Message: undefined
+[13:45:43.471] Browser WARN    [2025-12-24T07:52:35.579Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d64 transport errored. Name: undefined Message: undefined
+[13:45:44.055] Browser WARN    [2025-12-24T07:52:36.164Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf9e transport errored. Name: undefined Message: undefined
+[14:01:14.371] Browser WARN    [2025-12-24T08:08:06.460Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d65 transport errored. Name: undefined Message: undefined
+[14:01:14.927] Browser WARN    [2025-12-24T08:08:07.015Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cf9f transport errored. Name: undefined Message: undefined
+[14:11:18.883] Browser WARN    [2025-12-24T08:18:10.949Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d66 transport errored. Name: undefined Message: undefined
+[14:11:19.420] Browser WARN    [2025-12-24T08:18:11.486Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa0 transport errored. Name: undefined Message: undefined
+[14:27:04.775] Browser WARN    [2025-12-24T08:33:56.808Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d67 transport errored. Name: undefined Message: undefined
+[14:27:05.261] Browser WARN    [2025-12-24T08:33:57.296Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa1 transport errored. Name: undefined Message: undefined
+[14:42:50.246] Browser WARN    [2025-12-24T08:49:42.216Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d68 transport errored. Name: undefined Message: undefined
+[14:42:50.412] Browser WARN    [2025-12-24T08:49:42.383Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa2 transport errored. Name: undefined Message: undefined
+[14:58:36.247] Browser WARN    [2025-12-24T09:05:28.188Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d69 transport errored. Name: undefined Message: undefined
+[14:58:36.594] Browser WARN    [2025-12-24T09:05:28.537Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa3 transport errored. Name: undefined Message: undefined
+[15:12:17.189] Browser WARN    [2025-12-24T09:19:09.114Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d6a transport errored. Name: undefined Message: undefined
+[15:12:17.434] Browser WARN    [2025-12-24T09:19:09.360Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa4 transport errored. Name: undefined Message: undefined
+[15:28:03.245] Browser WARN    [2025-12-24T09:34:55.185Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d6b transport errored. Name: undefined Message: undefined
+[15:28:03.468] Browser WARN    [2025-12-24T09:34:55.407Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa5 transport errored. Name: undefined Message: undefined
+[15:43:34.315] Browser WARN    [2025-12-24T09:50:26.255Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa6 transport errored. Name: undefined Message: undefined
+[15:43:34.407] Browser WARN    [2025-12-24T09:50:26.346Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d6c transport errored. Name: undefined Message: undefined
+[15:59:09.958] Browser WARN    [2025-12-24T10:06:01.894Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d6d transport errored. Name: undefined Message: undefined
+[15:59:10.150] Browser WARN    [2025-12-24T10:06:02.086Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa7 transport errored. Name: undefined Message: undefined
+[16:13:18.030] Browser WARN    [2025-12-24T10:20:09.957Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d6e transport errored. Name: undefined Message: undefined
+[16:13:18.111] Browser WARN    [2025-12-24T10:20:10.038Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa8 transport errored. Name: undefined Message: undefined
+[16:29:03.963] Browser WARN    [2025-12-24T10:35:55.871Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d6f transport errored. Name: undefined Message: undefined
+[16:29:03.994] Browser WARN    [2025-12-24T10:35:55.903Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfa9 transport errored. Name: undefined Message: undefined
+[16:45:05.099] Browser WARN    [2025-12-24T10:51:56.918Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfaa transport errored. Name: undefined Message: undefined
+[16:45:05.635] Browser WARN    [2025-12-24T10:51:57.454Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d70 transport errored. Name: undefined Message: undefined
+[17:00:36.455] Browser WARN    [2025-12-24T11:07:28.223Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfab transport errored. Name: undefined Message: undefined
+[17:00:37.603] Browser WARN    [2025-12-24T11:07:29.370Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d71 transport errored. Name: undefined Message: undefined
+[17:14:23.015] Browser WARN    [2025-12-24T11:21:14.742Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfac transport errored. Name: undefined Message: undefined
+[17:14:24.253] Browser WARN    [2025-12-24T11:21:15.982Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d72 transport errored. Name: undefined Message: undefined
+[17:30:08.866] Browser WARN    [2025-12-24T11:37:00.573Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfad transport errored. Name: undefined Message: undefined
+[17:30:10.194] Browser WARN    [2025-12-24T11:37:01.903Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d73 transport errored. Name: undefined Message: undefined
+[17:47:34.707] Browser WARN    [2025-12-24T11:54:26.403Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d75 transport errored. Name: undefined Message: undefined
+[17:47:39.984] Browser WARN    [2025-12-24T11:54:31.685Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfae transport errored. Name: undefined Message: undefined
+[18:03:20.549] Browser WARN    [2025-12-24T12:10:12.235Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d76 transport errored. Name: undefined Message: undefined
+[18:03:26.120] Browser WARN    [2025-12-24T12:10:17.807Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfaf transport errored. Name: undefined Message: undefined
+[18:15:22.466] Browser WARN    [2025-12-24T12:22:14.141Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d77 transport errored. Name: undefined Message: undefined
+[18:15:27.950] Browser WARN    [2025-12-24T12:22:19.623Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb0 transport errored. Name: undefined Message: undefined
+[18:31:44.521] Browser WARN    [2025-12-24T12:38:36.168Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb1 transport errored. Name: undefined Message: undefined
+[18:31:44.660] Browser WARN    [2025-12-24T12:38:36.308Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d78 transport errored. Name: undefined Message: undefined
+[18:47:14.721] Browser WARN    [2025-12-24T12:54:06.343Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb2 transport errored. Name: undefined Message: undefined
+[18:47:15.156] Browser WARN    [2025-12-24T12:54:06.780Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d79 transport errored. Name: undefined Message: undefined
+[19:03:00.947] Browser WARN    [2025-12-24T13:09:52.544Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb3 transport errored. Name: undefined Message: undefined
+[19:03:01.112] Browser WARN    [2025-12-24T13:09:52.710Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d7a transport errored. Name: undefined Message: undefined
+[19:16:19.932] Browser WARN    [2025-12-24T13:23:11.453Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb4 transport errored. Name: undefined Message: undefined
+[19:16:20.092] Browser WARN    [2025-12-24T13:23:11.612Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d7b transport errored. Name: undefined Message: undefined
+[19:31:52.073] Browser WARN    [2025-12-24T13:38:43.559Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d7c transport errored. Name: undefined Message: undefined
+[19:31:52.073] Browser WARN    [2025-12-24T13:38:43.559Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb5 transport errored. Name: undefined Message: undefined
+[19:47:52.872] Browser WARN    [2025-12-24T13:54:44.329Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb6 transport errored. Name: undefined Message: undefined
+[19:47:53.307] Browser WARN    [2025-12-24T13:54:44.763Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d7d transport errored. Name: undefined Message: undefined
+[20:03:24.135] Browser WARN    [2025-12-24T14:10:15.546Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb7 transport errored. Name: undefined Message: undefined
+[20:03:24.288] Browser WARN    [2025-12-24T14:10:15.698Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d7e transport errored. Name: undefined Message: undefined
+[20:17:26.438] Browser WARN    [2025-12-24T14:24:17.806Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb8 transport errored. Name: undefined Message: undefined
+[20:17:26.668] Browser WARN    [2025-12-24T14:24:18.035Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d7f transport errored. Name: undefined Message: undefined
+[20:33:12.672] Browser WARN    [2025-12-24T14:40:04.000Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfb9 transport errored. Name: undefined Message: undefined
+[20:33:12.897] Browser WARN    [2025-12-24T14:40:04.226Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d80 transport errored. Name: undefined Message: undefined
+[20:48:58.791] Browser WARN    [2025-12-24T14:55:50.078Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfba transport errored. Name: undefined Message: undefined
+[20:48:59.327] Browser WARN    [2025-12-24T14:55:50.616Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d81 transport errored. Name: undefined Message: undefined
+[21:04:29.981] Browser WARN    [2025-12-24T15:11:21.234Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfbb transport errored. Name: undefined Message: undefined
+[21:04:30.211] Browser WARN    [2025-12-24T15:11:21.465Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d82 transport errored. Name: undefined Message: undefined
+[21:08:42.415] Browser WARN    [2025-12-24T15:15:33.658Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfbc transport errored. Name: undefined Message: undefined
+[21:08:42.627] Browser WARN    [2025-12-24T15:15:33.874Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d83 transport errored. Name: undefined Message: undefined
+[21:18:18.871] Browser WARN    [2025-12-24T15:25:10.097Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfbd transport errored. Name: undefined Message: undefined
+[21:18:18.965] Browser WARN    [2025-12-24T15:25:10.190Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d84 transport errored. Name: undefined Message: undefined
+[21:27:31.765] Browser WARN    [2025-12-24T15:34:22.995Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfbe transport errored. Name: undefined Message: undefined
+[21:27:31.765] Browser WARN    [2025-12-24T15:34:22.995Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d85 transport errored. Name: undefined Message: undefined
+[21:43:47.785] Browser WARN    [2025-12-24T15:50:38.980Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfbf transport errored. Name: undefined Message: undefined
+[21:43:47.828] Browser WARN    [2025-12-24T15:50:39.022Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d86 transport errored. Name: undefined Message: undefined
+[21:59:38.307] Browser WARN    [2025-12-24T16:06:29.476Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc0 transport errored. Name: undefined Message: undefined
+[21:59:38.656] Browser WARN    [2025-12-24T16:06:29.828Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d87 transport errored. Name: undefined Message: undefined
+[22:15:24.389] Browser WARN    [2025-12-24T16:22:15.527Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc1 transport errored. Name: undefined Message: undefined
+[22:15:24.421] Browser WARN    [2025-12-24T16:22:15.560Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d88 transport errored. Name: undefined Message: undefined
+[22:19:26.556] Browser WARN    [2025-12-24T16:26:17.669Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc2 transport errored. Name: undefined Message: undefined
+[22:19:26.585] Browser WARN    [2025-12-24T16:26:17.698Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d89 transport errored. Name: undefined Message: undefined
+[22:27:11.311] Browser WARN    [2025-12-24T16:34:02.403Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc3 transport errored. Name: undefined Message: undefined
+[22:27:11.357] Browser WARN    [2025-12-24T16:34:02.417Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d8a transport errored. Name: undefined Message: undefined
+[22:31:56.267] Browser WARN    [2025-12-24T16:38:47.342Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc6 transport errored. Name: undefined Message: undefined
+[22:31:56.270] Browser WARN    [2025-12-24T16:38:47.379Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc7 transport errored. Name: undefined Message: undefined
+[22:31:57.292] Browser WARN    [2025-12-24T16:38:48.411Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc8 transport errored. Name: undefined Message: undefined
+[22:31:57.358] Browser WARN    [2025-12-24T16:38:47.346Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d8c transport errored. Name: undefined Message: undefined
+[22:31:57.358] Browser WARN    [2025-12-24T16:38:47.485Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d8d transport errored. Name: undefined Message: undefined
+[22:31:58.358] Browser WARN    [2025-12-24T16:38:48.586Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d8e transport errored. Name: undefined Message: undefined
+[22:31:58.963] Browser WARN    [2025-12-24T16:38:50.082Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfc9 transport errored. Name: undefined Message: undefined
+[22:32:00.357] Browser WARN    [2025-12-24T16:38:50.583Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d8f transport errored. Name: undefined Message: undefined
+[22:32:00.846] Browser WARN    [2025-12-24T16:38:51.965Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfca transport errored. Name: undefined Message: undefined
+[22:32:03.359] Browser WARN    [2025-12-24T16:38:53.584Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d90 transport errored. Name: undefined Message: undefined
+[22:32:04.039] Browser WARN    [2025-12-24T16:38:55.158Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfcb transport errored. Name: undefined Message: undefined
+[22:32:08.357] Browser WARN    [2025-12-24T16:38:58.584Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d91 transport errored. Name: undefined Message: undefined
+[22:32:10.485] Browser WARN    [2025-12-24T16:39:01.604Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfcc transport errored. Name: undefined Message: undefined
+[22:32:13.357] Browser WARN    [2025-12-24T16:39:03.582Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d92 transport errored. Name: undefined Message: undefined
+[22:32:19.821] Browser WARN    [2025-12-24T16:39:10.939Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfcd transport errored. Name: undefined Message: undefined
+[22:32:25.357] Browser WARN    [2025-12-24T16:39:15.585Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d93 transport errored. Name: undefined Message: undefined
+[22:32:31.356] Browser WARN    [2025-12-24T16:39:21.583Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d94 transport errored. Name: undefined Message: undefined
+[22:32:32.322] Browser WARN    [2025-12-24T16:39:23.442Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfce transport errored. Name: undefined Message: undefined
+[22:32:49.358] Browser WARN    [2025-12-24T16:39:39.587Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d95 transport errored. Name: undefined Message: undefined
+[22:32:51.061] Browser WARN    [2025-12-24T16:39:42.181Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfcf transport errored. Name: undefined Message: undefined
+[22:33:07.751] Browser WARN    [2025-12-24T16:39:58.871Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd0 transport errored. Name: undefined Message: undefined
+[22:33:19.357] Browser WARN    [2025-12-24T16:40:09.582Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d96 transport errored. Name: undefined Message: undefined
+[22:33:56.723] Browser WARN    [2025-12-24T16:40:47.839Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd1 transport errored. Name: undefined Message: undefined
+[22:34:00.356] Browser WARN    [2025-12-24T16:40:50.582Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d97 transport errored. Name: undefined Message: undefined
+[22:35:15.177] Browser WARN    [2025-12-24T16:42:06.291Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd2 transport errored. Name: undefined Message: undefined
+[22:35:23.356] Browser WARN    [2025-12-24T16:42:13.580Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d98 transport errored. Name: undefined Message: undefined
+[22:35:58.195] Browser WARN    [2025-12-24T16:42:49.308Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd3 transport errored. Name: undefined Message: undefined
+[22:36:38.357] Browser WARN    [2025-12-24T16:43:28.580Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d99 transport errored. Name: undefined Message: undefined
+[22:36:51.933] Browser WARN    [2025-12-24T16:43:43.046Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd4 transport errored. Name: undefined Message: undefined
+[22:37:33.358] Browser WARN    [2025-12-24T16:44:23.585Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d9a transport errored. Name: undefined Message: undefined
+[22:37:41.872] Browser WARN    [2025-12-24T16:44:32.982Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd5 transport errored. Name: undefined Message: undefined
+[22:38:21.303] Browser WARN    [2025-12-24T16:45:12.412Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x39b9cfd6 transport errored. Name: undefined Message: undefined
+[22:38:31.358] Browser WARN    [2025-12-24T16:45:21.575Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x89811d9b transport errored. Name: undefined Message: undefined
+[22:53:37.134] Server  LOG      ✓ Compiled in 198ms
+[22:53:44.348] Server  LOG      ✓ Compiled in 53ms
+[22:53:44.483] Browser ERROR   uncaughtError: ReferenceError: resendCooldown is not defined
+[22:53:45.361] Browser ERROR   uncaughtError: ReferenceError: resendCooldown is not defined
+[22:53:50.262] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[22:53:50.263] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[22:53:50.281] Server  LOG      ✓ Compiled in 41ms
+[22:53:50.739] Server  ERROR    ⨯ ReferenceError: otp is not defined
+[22:53:50.764] Server  ERROR    ⨯ ReferenceError: otp is not defined
+[22:53:50.836] Browser ERROR   uncaughtError: ReferenceError: otp is not defined
+[22:53:51.478] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:53:51.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:53:51.662] Browser ERROR   uncaughtError: ReferenceError: otp is not defined
+[22:53:52.363] Browser ERROR   uncaughtError: ReferenceError: otp is not defined
+[22:54:15.989] Server  LOG      ✓ Compiled in 166ms
+[22:54:16.643] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:54:17.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[22:54:17.090] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[22:54:17.090] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[22:54:17.090] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766595668118}
+[22:54:18.359] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[22:54:18.359] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[22:54:18.359] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766595668246}
+[23:01:52.133] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:01:52.416] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:01:52.416] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[23:01:52.416] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596123425}
+[23:01:53.328] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596124331}
+[23:01:55.320] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596126329}
+[23:01:55.646] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[23:01:55.646] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[23:01:56.999] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596128006}
+[23:01:58.816] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596129809}
+[23:02:01.297] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596132274}
+[23:02:05.901] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596136843}
+[23:02:08.451] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596139458}
+[23:02:11.591] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596142420}
+[23:02:19.596] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[23:02:40.042] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:02:40.336] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:02:40.336] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone/otp","route":"/profile/settings/phone/otp"}
+[23:02:40.336] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone/otp color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone/otp","o":"http://localhost:3000/profile/settings/phone/otp","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596171263}
+[23:02:40.336] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596171281}
+[23:02:50.336] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:02:50.575] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:02:50.575] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone/otp","route":"/profile/settings/phone/otp"}
+[23:02:50.575] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone/otp color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone/otp","o":"http://localhost:3000/profile/settings/phone/otp","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596181509}
+[23:02:50.575] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766596181525}
+[23:02:57.892] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[23:03:49.181] Server  LOG      ✓ Compiled in 82ms
+[23:30:44.667] Browser WARN    [2025-12-24T17:37:34.951Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3f870219 transport errored. Name: undefined Message: undefined
+[23:30:56.668] Browser WARN    [2025-12-24T17:37:47.153Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c20 transport errored. Name: undefined Message: undefined
+[23:31:03.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[23:31:03.541] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[23:31:03.541] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[23:31:03.541] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766597874534}
+[23:31:07.434] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[23:31:13.848] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[24:07:24.268] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:07:24.930] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:07:24.930] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[24:07:24.930] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600055852}
+[24:07:29.247] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[24:14:38.518] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:14:39.019] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:14:39.019] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings/phone","route":"/profile/settings/phone"}
+[24:14:39.019] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600489928}
+[24:14:47.234] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[24:20:30.706] Browser LOG     Failed to initialize reCAPTCHA Enterprise config. Triggering the reCAPTCHA v2 verification.
+[24:20:31.468] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone/otp color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone/otp","o":"http://localhost:3000/profile/settings/phone/otp","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600842359}
+[24:20:37.931] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600848824}
+[24:20:40.257] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600850961}
+[24:20:55.134] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600866027}
+[24:20:56.005] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600866900}
+[24:20:56.382] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[24:20:56.382] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[24:20:57.292] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600868186}
+[24:20:57.940] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600868800}
+[24:20:58.534] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600869430}
+[24:20:59.232] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600870096}
+[24:20:59.598] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600870493}
+[24:21:01.288] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600872139}
+[24:21:02.351] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600873244}
+[24:21:04.197] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600875046}
+[24:21:05.864] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600876759}
+[24:21:07.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766600878643}
+[24:21:11.199] Browser ERROR   unhandledRejection: "Timeout"
+[24:45:59.613] Server  LOG      ✓ Compiled in 670ms
+[24:46:00.452] Server  LOG      ✓ Compiled in 92ms
+[24:48:34.900] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602525710}
+[24:48:37.583] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:48:37.798] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:48:37.798] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile/settings","route":"/profile/settings"}
+[24:48:37.798] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602528612}
+[24:48:55.973] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602546783}
+[24:48:56.296] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[24:48:56.296] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[24:48:57.716] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:48:57.716] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:01.925] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602552738}
+[24:49:03.397] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602554210}
+[24:49:05.036] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602555849}
+[24:49:06.698] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602557487}
+[24:49:07.863] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:07.863] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:15.069] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602565881}
+[24:49:16.506] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602567318}
+[24:49:17.494] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:17.494] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:19.120] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602569934}
+[24:49:21.785] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/Npi85eKZDcdA7NYEndge color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/Npi85eKZDcdA7NYEndge","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602572595}
+[24:49:23.533] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:23.533] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:49:27.016] Browser ERROR   [2025-12-24T18:56:17.814Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[24:49:27.016] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602577830}
+[24:49:27.368] Browser WARN    [2025-12-24T18:56:18.181Z]  @firebase/firestore: Firestore (12.4.0): BloomFilter error:  {"name":"BloomFilterError"}
+[24:49:30.876] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766602581688}
+[24:55:28.973] Browser WARN    [2025-12-24T19:02:19.750Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c45 transport errored. Name: undefined Message: undefined
+[24:55:28.976] Browser WARN    [2025-12-24T19:02:19.770Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c46 transport errored. Name: undefined Message: undefined
+[24:55:29.647] Browser WARN    [2025-12-24T19:02:20.446Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c47 transport errored. Name: undefined Message: undefined
+[24:55:29.665] Browser WARN    [2025-12-24T19:02:19.748Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c24 transport errored. Name: undefined Message: undefined
+[24:55:29.665] Browser WARN    [2025-12-24T19:02:19.766Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c25 transport errored. Name: undefined Message: undefined
+[24:55:30.671] Browser WARN    [2025-12-24T19:02:20.572Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c26 transport errored. Name: undefined Message: undefined
+[24:55:31.048] Browser WARN    [2025-12-24T19:02:21.847Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c48 transport errored. Name: undefined Message: undefined
+[24:55:31.715] Browser WARN    [2025-12-24T19:02:21.578Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c27 transport errored. Name: undefined Message: undefined
+[24:55:33.666] Browser WARN    [2025-12-24T19:02:23.576Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c28 transport errored. Name: undefined Message: undefined
+[25:13:04.121] Browser WARN    [2025-12-24T19:19:54.942Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c49 transport errored. Name: undefined Message: undefined
+[25:13:04.346] Browser WARN    [2025-12-24T19:19:54.913Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c29 transport errored. Name: undefined Message: undefined
+[25:29:21.941] Browser WARN    [2025-12-24T19:36:12.778Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c4a transport errored. Name: undefined Message: undefined
+[25:29:21.984] Browser WARN    [2025-12-24T19:36:12.773Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c2a transport errored. Name: undefined Message: undefined
+[25:42:30.209] Browser WARN    [2025-12-24T19:49:21.041Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1b6d4c4b transport errored. Name: undefined Message: undefined
+[25:42:31.003] Browser WARN    [2025-12-24T19:49:21.137Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x1edd7c2b transport errored. Name: undefined Message: undefined
+[25:43:47.603] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605838437}
+[25:43:48.593] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605839417}
+[25:43:50.843] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605841683}
+[25:46:09.007] Server  LOG      ✓ Compiled in 173ms
+[25:46:13.195] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605983969}
+[25:46:18.197] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605989031}
+[25:46:23.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605994796}
+[25:46:27.240] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766605998075}
+[25:46:29.686] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606000499}
+[25:46:31.021] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606001857}
+[25:46:31.617] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606002426}
+[25:46:33.400] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606004236}
+[25:49:23.227] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:23.231] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:28.085] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:28.085] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:30.848] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606181682}
+[25:49:31.737] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:31.737] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:32.868] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:32.868] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:33.308] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/evA4vBTlLhR4a0YWfIOw color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/evA4vBTlLhR4a0YWfIOw","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606184142}
+[25:49:34.801] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606185634}
+[25:49:36.495] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/evA4vBTlLhR4a0YWfIOw color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/evA4vBTlLhR4a0YWfIOw","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606187329}
+[25:49:37.402] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:37.402] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[25:49:39.839] Browser ERROR   [2025-12-24T19:56:30.653Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[25:49:39.839] Browser ERROR   [2025-12-24T19:56:30.653Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[25:49:39.839] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606190674}
+[25:49:41.139] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766606191972}
+[25:50:03.492] Server  LOG      ✓ Compiled in 280ms
+[25:50:06.362] Server  LOG      ✓ Compiled in 81ms
+[25:52:07.618] Server  LOG      ✓ Compiled in 178ms
+[26:03:20.988] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:03:21.131] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:03:21.131] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:03:21.131] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607011901}
+[26:03:22.371] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:03:22.372] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:03:24.999] Browser WARN    [2025-12-24T20:10:15.767Z]  @firebase/firestore: Firestore (12.4.0): RestConnection RPC 'Commit' 0x3aa588bb failed with error:  {"code":"permission-denied","name":"FirebaseError"} url:  https://firestore.googleapis.com/v1/projects/kasa-fc1ce/databases/(default)/documents:commit request: {"writes":[{"update":{"name":"projects/kasa-fc1ce/databases/(default)/documents/groups/fdXntWWnnwClTBOJW58Z","fields":{"name":{"stringValue":"deneme"},"createdBy":{"stringValue":"MLPUNsMXzOcFnhDq4sPrXuBEDnf1"},"createdByName":{"stringValue":"Asil"},"memberIds":{"arrayValue":{"values":[{"stringValue":"MLPUNsMXzOcFnhDq4sPrXuBEDnf1"}]}},"balances":{"mapValue":{"fields":{"MLPUNsMXzOcFnhDq4sPrXuBEDnf1":{"integerValue":"0"}}}},"totalAmount":{"integerValue":"0"}}},"updateTransforms":[{"fieldPath":"createdAt","setToServerValue":"REQUEST_TIME"}]},{"update":{"name":"projects/kasa-fc1ce/databases/(default)/documents/groups/fdXntWWnnwClTBOJW58Z/feed/FL9ORbHbIrWnIuaZGkLa","fields":{"type":{"stringValue":"group"},"title":{"stringValue":"Group created"},"createdBy":{"stringValue":"MLPUNsMXzOcFnhDq4sPrXuBEDnf1"},"createdByName":{"stringValue":"Asil"},"groupId":{"stringValue":"fdXntWWnnwClTBOJW58Z"}}},"updateTransforms":[{"fieldPath":"createdAt","setToServerValue":"REQUEST_TIME"}]}]}
+[26:03:24.999] Browser ERROR   Failed to create group: {"code":"permission-denied","name":"FirebaseError"}
+[26:06:14.646] Server  LOG      ✓ Compiled in 251ms
+[26:06:16.928] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:06:16.928] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:06:18.684] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607189448}
+[26:06:20.182] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607190943}
+[26:06:22.853] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607193617}
+[26:06:24.015] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/bdKsP9RShsKwxnDpznlQ color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/bdKsP9RShsKwxnDpznlQ","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607194763}
+[26:06:25.255] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:06:25.255] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:06:27.477] Browser ERROR   [2025-12-24T20:13:18.222Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[26:06:27.478] Browser ERROR   [2025-12-24T20:13:18.224Z]  @firebase/firestore: Firestore (12.4.0): Uncaught Error in snapshot listener: FirebaseError: [code=permission-denied]: Missing or insufficient permissions.
+[26:06:27.478] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607198241}
+[26:06:28.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607199689}
+[26:06:33.466] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:06:33.466] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:06:36.774] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607207537}
+[26:06:38.902] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/F6v9QwYP9yVuidTiEcp8 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/F6v9QwYP9yVuidTiEcp8","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607209665}
+[26:06:42.519] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607213282}
+[26:06:43.581] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607214341}
+[26:06:46.190] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607216950}
+[26:06:48.826] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607219587}
+[26:06:49.153] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[26:06:49.153] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[26:06:49.911] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766607220673}

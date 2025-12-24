@@ -13,7 +13,18 @@ import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { auth, db } from "@/lib/firebase"
-import { collection, onSnapshot, query, where, orderBy, limit } from "firebase/firestore"
+import {
+  collection,
+  onSnapshot,
+  query,
+  where,
+  orderBy,
+  limit,
+  doc,
+  getDoc,
+  serverTimestamp,
+  runTransaction,
+} from "firebase/firestore"
 import {
   Plus,
   DollarSign,
@@ -59,6 +70,8 @@ export default function DashboardPage() {
   const [activities, setActivities] = useState<ActivityItem[]>([])
   const [createGroupOpen, setCreateGroupOpen] = useState(false)
   const [joinGroupOpen, setJoinGroupOpen] = useState(false)
+  const [createGroupLoading, setCreateGroupLoading] = useState(false)
+  const [joinGroupLoading, setJoinGroupLoading] = useState(false)
   const [groupName, setGroupName] = useState("")
   const [joinCode, setJoinCode] = useState("")
   const [showAllActivities, setShowAllActivities] = useState(false)
@@ -275,8 +288,19 @@ export default function DashboardPage() {
     }
   }
 
-  const handleCreateGroup = () => {
-    if (!groupName.trim()) {
+  const normalizeInviteCode = (code: string) => code.trim().toUpperCase()
+
+  const buildE164Hint = (raw: string) => raw
+
+  const handleCreateGroup = async () => {
+    const user = auth.currentUser
+    if (!user) {
+      router.push("/login")
+      return
+    }
+
+    const name = groupName.trim()
+    if (!name) {
       toast({
         title: "Invalid input",
         description: "Please enter a group name",
@@ -285,16 +309,73 @@ export default function DashboardPage() {
       return
     }
 
-    toast({
-      title: "Group created",
-      description: `${groupName} has been created successfully`,
-    })
-    setCreateGroupOpen(false)
-    setGroupName("")
+    if (createGroupLoading) return
+    setCreateGroupLoading(true)
+
+    try {
+      const groupsCol = collection(db, "groups")
+      const groupRef = doc(groupsCol) // auto-id
+
+      // Create group document in transaction (no feed write here)
+      await runTransaction(db, async (tx) => {
+        tx.set(groupRef, {
+          name,
+          createdBy: user.uid,
+          createdByName: user.displayName || user.email || "",
+          createdAt: serverTimestamp(),
+          memberIds: [user.uid],
+          balances: { [user.uid]: 0 },
+          totalAmount: 0,
+        })
+      })
+
+      // Best-effort: add a feed item after the group exists (avoid rules issues during creation)
+      try {
+        const feedRef = doc(collection(db, "groups", groupRef.id, "feed"))
+        await runTransaction(db, async (tx) => {
+          tx.set(feedRef, {
+            type: "group",
+            title: "Group created",
+            createdAt: serverTimestamp(),
+            createdBy: user.uid,
+            createdByName: user.displayName || user.email || "",
+            groupId: groupRef.id,
+          })
+        })
+      } catch (e) {
+        console.warn("Failed to write group creation feed item:", e)
+      }
+
+      toast({
+        title: "Group created",
+        description: `${name} has been created successfully`,
+      })
+      setCreateGroupOpen(false)
+      setGroupName("")
+
+      // Navigate to groups list (or stay; snapshot will update)
+      router.push("/groups")
+    } catch (e: any) {
+      console.error("Failed to create group:", e)
+      toast({
+        title: "Create failed",
+        description: e?.message || "Could not create the group.",
+        variant: "destructive",
+      })
+    } finally {
+      setCreateGroupLoading(false)
+    }
   }
 
-  const handleJoinGroup = () => {
-    if (!joinCode.trim()) {
+  const handleJoinGroup = async () => {
+    const user = auth.currentUser
+    if (!user) {
+      router.push("/login")
+      return
+    }
+
+    const code = normalizeInviteCode(joinCode)
+    if (!code) {
       toast({
         title: "Invalid input",
         description: "Please enter a join code",
@@ -303,12 +384,83 @@ export default function DashboardPage() {
       return
     }
 
-    toast({
-      title: "Joined group",
-      description: "You've successfully joined the group",
-    })
-    setJoinGroupOpen(false)
-    setJoinCode("")
+    if (joinGroupLoading) return
+    setJoinGroupLoading(true)
+
+    try {
+      const inviteRef = doc(db, "groupInvites", code)
+      const inviteSnap = await getDoc(inviteRef)
+      if (!inviteSnap.exists()) {
+        toast({
+          title: "Invalid code",
+          description: "This invite code was not found.",
+          variant: "destructive",
+        })
+        return
+      }
+
+      const invite = inviteSnap.data() as any
+      const groupId = invite?.groupId
+      if (!groupId || typeof groupId !== "string") {
+        toast({
+          title: "Invalid invite",
+          description: "Invite is missing group information.",
+          variant: "destructive",
+        })
+        return
+      }
+
+      const groupRef = doc(db, "groups", groupId)
+
+      await runTransaction(db, async (tx) => {
+        const groupSnap = await tx.get(groupRef)
+        if (!groupSnap.exists()) {
+          throw new Error("Group not found")
+        }
+
+        const g = groupSnap.data() as any
+        const currentMembers: string[] = Array.isArray(g?.memberIds) ? g.memberIds : []
+        if (currentMembers.includes(user.uid)) {
+          // already a member; no-op
+          return
+        }
+
+        const nextMembers = [...currentMembers, user.uid]
+        const nextBalances = { ...(g?.balances || {}) }
+        if (typeof nextBalances[user.uid] !== "number") nextBalances[user.uid] = 0
+
+        tx.update(groupRef, {
+          memberIds: nextMembers,
+          balances: nextBalances,
+        })
+
+        const feedRef = doc(collection(db, "groups", groupId, "feed"))
+        tx.set(feedRef, {
+          type: "join",
+          title: "Member joined",
+          createdAt: serverTimestamp(),
+          createdBy: user.uid,
+          createdByName: user.displayName || user.email || "",
+        })
+      })
+
+      toast({
+        title: "Joined group",
+        description: "You've successfully joined the group",
+      })
+      setJoinGroupOpen(false)
+      setJoinCode("")
+      router.push("/groups")
+    } catch (e: any) {
+      console.error("Failed to join group:", e)
+      toast({
+        title: "Join failed",
+        description: e?.message || "Could not join the group.",
+        variant: "destructive",
+      })
+    } finally {
+      setJoinGroupLoading(false)
+    }
   }
 
   const filterActivities = (type?: string) => {
@@ -449,7 +601,7 @@ export default function DashboardPage() {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Dialog open={createGroupOpen} onOpenChange={setCreateGroupOpen}>
                   <DialogTrigger asChild>
-                    <Button className="flex-1 h-11 sm:h-10">
+                    <Button className="flex-1 h-11 sm:h-10" onClick={() => setCreateGroupOpen(true)}>
                       <Plus className="mr-2 h-4 w-4" />
                       Create Group
                     </Button>
@@ -469,8 +621,8 @@ export default function DashboardPage() {
                           className="mt-2"
                         />
                       </div>
-                      <Button onClick={handleCreateGroup} className="w-full">
-                        Create Group
+                      <Button onClick={handleCreateGroup} className="w-full" disabled={createGroupLoading}>
+                        {createGroupLoading ? "Creating..." : "Create Group"}
                       </Button>
                     </div>
                   </DialogContent>
@@ -478,7 +630,11 @@ export default function DashboardPage() {
 
                 <Dialog open={joinGroupOpen} onOpenChange={setJoinGroupOpen}>
                   <DialogTrigger asChild>
-                    <Button variant="outline" className="flex-1 h-11 sm:h-10 bg-transparent">
+                    <Button
+                      variant="outline"
+                      className="flex-1 h-11 sm:h-10 bg-transparent"
+                      onClick={() => setJoinGroupOpen(true)}
+                    >
                       <Link className="mr-2 h-4 w-4" />
                       Join via Code
                     </Button>
@@ -495,11 +651,11 @@ export default function DashboardPage() {
                           placeholder="Enter the group invite code"
                           value={joinCode}
                           onChange={(e) => setJoinCode(e.target.value)}
-                          className="mt-2"
+                          className="mt-2 uppercase"
                         />
                       </div>
-                      <Button onClick={handleJoinGroup} className="w-full">
-                        Join Group
+                      <Button onClick={handleJoinGroup} className="w-full" disabled={joinGroupLoading}>
+                        {joinGroupLoading ? "Joining..." : "Join Group"}
                       </Button>
                     </div>
                   </DialogContent>

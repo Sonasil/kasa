@@ -878,8 +878,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/auth/dist/esm/index.esm.js [app-client] (ecmascript) <locals>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/auth/dist/esm/index.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$firebase$2f$firestore$2f$dist$2f$esm$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/firebase/firestore/dist/esm/index.esm.js [app-client] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@firebase/firestore/dist/index.esm.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/firebase.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/input.tsx [app-client] (ecmascript)");
@@ -906,22 +904,23 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-;
 function PhoneVerificationPage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
     const [country, setCountry] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("TR");
-    const [phone, setPhone] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("") // national number part
-    ;
-    const [step, setStep] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("phone");
-    const [otp, setOtp] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(Array(6).fill(""));
+    const [phone, setPhone] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [smsSending, setSmsSending] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [smsVerifying, setSmsVerifying] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [resendCooldown, setResendCooldown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const confirmationRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     const recaptchaRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const otpRefs = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
+    const selectedCountry = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "PhoneVerificationPage.useMemo[selectedCountry]": ()=>{
+            return __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"].find({
+                "PhoneVerificationPage.useMemo[selectedCountry]": (c)=>c.id === country
+            }["PhoneVerificationPage.useMemo[selectedCountry]"]) || __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"][0];
+        }
+    }["PhoneVerificationPage.useMemo[selectedCountry]"], [
+        country
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "PhoneVerificationPage.useEffect": ()=>{
             const unsub = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"].onAuthStateChanged({
@@ -945,34 +944,19 @@ function PhoneVerificationPage() {
     }["PhoneVerificationPage.useEffect"], [
         router
     ]);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "PhoneVerificationPage.useEffect": ()=>{
-            if (resendCooldown <= 0) return;
-            const id = setInterval({
-                "PhoneVerificationPage.useEffect.id": ()=>{
-                    setResendCooldown({
-                        "PhoneVerificationPage.useEffect.id": (c)=>c > 0 ? c - 1 : 0
-                    }["PhoneVerificationPage.useEffect.id"]);
-                }
-            }["PhoneVerificationPage.useEffect.id"], 1000);
-            return ({
-                "PhoneVerificationPage.useEffect": ()=>clearInterval(id)
-            })["PhoneVerificationPage.useEffect"];
-        }
-    }["PhoneVerificationPage.useEffect"], [
-        resendCooldown
-    ]);
     const normalizePhoneE164 = (raw)=>{
+        const dial = selectedCountry.dial;
+        const dialDigits = dial.replace("+", "");
         const v = raw.trim().replace(/\s+/g, "");
         const cleaned = v.replace(/[^\d+]/g, "");
         if (!cleaned) return "";
-        // Already E.164
         if (cleaned.startsWith("+")) return cleaned;
-        // TR convenience
-        if (cleaned.startsWith("0") && cleaned.length === 11) return `+90${cleaned.slice(1)}`;
-        if (cleaned.startsWith("90") && cleaned.length >= 12) return `+${cleaned}`;
-        // Fallback: treat as TR local digits
-        return `+90${cleaned}`;
+        let national = cleaned;
+        if (national.startsWith("0")) national = national.replace(/^0+/, "");
+        if (national.startsWith(dialDigits)) {
+            return `+${national}`;
+        }
+        return `${dial}${national}`;
     };
     const ensureRecaptcha = ()=>{
         if (recaptchaRef.current) return recaptchaRef.current;
@@ -982,27 +966,21 @@ function PhoneVerificationPage() {
         recaptchaRef.current = verifier;
         return verifier;
     };
-    const resetOtp = ()=>{
-        setOtp(Array(6).fill(""));
-        otpRefs.current = [];
-    };
     const fullPhone = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "PhoneVerificationPage.useMemo[fullPhone]": ()=>{
-            const selected = __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"].find({
-                "PhoneVerificationPage.useMemo[fullPhone]": (c)=>c.id === country
-            }["PhoneVerificationPage.useMemo[fullPhone]"]) || __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"][0];
-            const cc = selected.dial;
+            const cc = selectedCountry.dial;
             const p = phone.trim().replace(/\s+/g, "");
             if (!p) return cc;
-            // If user pasted a full +E164 number into the national field, respect it
             if (p.startsWith("+")) return p;
             return `${cc}${p}`;
         }
     }["PhoneVerificationPage.useMemo[fullPhone]"], [
-        country,
+        selectedCountry,
         phone
     ]);
     const sendSms = async ()=>{
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
         const user = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"].currentUser;
         if (!user) {
             router.replace("/login");
@@ -1020,104 +998,29 @@ function PhoneVerificationPage() {
         setSmsSending(true);
         try {
             const verifier = ensureRecaptcha();
+            await verifier.render();
             const confirmation = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["linkWithPhoneNumber"])(user, e164, verifier);
-            confirmationRef.current = confirmation;
-            setStep("otp");
-            setResendCooldown(60);
-            toast({
-                title: "SMS gönderildi",
-                description: `${e164} numarasına doğrulama kodu yollandı.`
-            });
+            if ("TURBOPACK compile-time truthy", 1) {
+                sessionStorage.setItem("phone_e164", e164);
+                sessionStorage.setItem("phone_verificationId", confirmation.verificationId);
+            }
+            router.push("/profile/settings/phone/otp");
         } catch (e) {
+            const code = e?.code;
+            let message = e?.message || "SMS gönderilemedi.";
+            if (code === "auth/operation-not-allowed") message = "Phone provider'ı aç.";
+            else if (code === "auth/captcha-check-failed") message = "reCAPTCHA doğrulanamadı.";
+            else if (code === "auth/invalid-phone-number") message = "Geçersiz telefon numarası.";
+            else if (code === "auth/too-many-requests") message = "Çok fazla deneme yapıldı, lütfen bekleyin.";
             toast({
                 variant: "destructive",
                 title: "Gönderilemedi",
-                description: e?.message || "SMS gönderilemedi."
+                description: `${message}${code ? ` (${code})` : ""}`
             });
         } finally{
             setSmsSending(false);
         }
     };
-    const verifyOtp = async ()=>{
-        const code = otp.join("");
-        if (code.length !== 6) return;
-        const user = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["auth"].currentUser;
-        if (!user) {
-            router.replace("/login");
-            return;
-        }
-        const confirmation = confirmationRef.current;
-        if (!confirmation) {
-            toast({
-                variant: "destructive",
-                title: "Kod bulunamadı",
-                description: "Lütfen önce SMS gönder."
-            });
-            return;
-        }
-        setSmsVerifying(true);
-        try {
-            await confirmation.confirm(code);
-            await user.reload();
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["db"], "users", user.uid), {
-                phone: normalizePhoneE164(fullPhone),
-                phoneVerified: true,
-                updatedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
-            }, {
-                merge: true
-            });
-            setStep("success");
-            toast({
-                title: "Telefon doğrulandı",
-                description: "Numaran başarıyla doğrulandı."
-            });
-            setTimeout(()=>router.back(), 700);
-        } catch (e) {
-            toast({
-                variant: "destructive",
-                title: "Doğrulanamadı",
-                description: e?.message || "Kod doğrulanamadı."
-            });
-        } finally{
-            setSmsVerifying(false);
-        }
-    };
-    const handleOtpInput = (index, value)=>{
-        const digits = value.replace(/\D/g, "");
-        if (digits.length === 6 && index === 0) {
-            setOtp(digits.split("").slice(0, 6));
-            otpRefs.current[5]?.focus();
-            return;
-        }
-        const digit = digits.slice(0, 1);
-        setOtp((prev)=>{
-            const next = [
-                ...prev
-            ];
-            next[index] = digit;
-            return next;
-        });
-        if (digit && otpRefs.current[index + 1]) otpRefs.current[index + 1]?.focus();
-    };
-    const handleOtpKeyDown = (index, e)=>{
-        if (e.key === "Backspace" && !otp[index] && otpRefs.current[index - 1]) {
-            otpRefs.current[index - 1]?.focus();
-        }
-    };
-    const isOtpComplete = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
-        "PhoneVerificationPage.useMemo[isOtpComplete]": ()=>otp.join("").length === 6
-    }["PhoneVerificationPage.useMemo[isOtpComplete]"], [
-        otp
-    ]);
-    const selectedCountry = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
-        "PhoneVerificationPage.useMemo[selectedCountry]": ()=>{
-            return __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"].find({
-                "PhoneVerificationPage.useMemo[selectedCountry]": (c)=>c.id === country
-            }["PhoneVerificationPage.useMemo[selectedCountry]"]) || __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"][0];
-        }
-    }["PhoneVerificationPage.useMemo[selectedCountry]"], [
-        country
-    ]);
     const Stepper = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex items-center justify-center gap-3",
             children: [
@@ -1125,388 +1028,25 @@ function PhoneVerificationPage() {
                 1,
                 2
             ].map((i)=>{
-                const isDone = step === "otp" && i === 0 || step === "success" || step === "otp" && i === 1 && isOtpComplete;
-                const isActive = step === "phone" && i === 0 || step === "otp" && i === 1 || step === "success" && i === 2;
+                const isActive = i === 0;
                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: `h-9 w-9 rounded-full flex items-center justify-center text-sm font-semibold border-2 ${isDone ? "bg-black text-white border-black" : isActive ? "border-black text-black" : "border-muted text-muted-foreground"}`,
-                    children: isDone ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
+                    className: `h-9 w-9 rounded-full flex items-center justify-center text-sm font-semibold border-2 ${isActive ? "bg-black text-white border-black" : "border-muted text-muted-foreground"}`,
+                    children: isActive ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/app/profile/settings/phone/page.tsx",
-                        lineNumber: 227,
-                        columnNumber: 23
+                        lineNumber: 137,
+                        columnNumber: 25
                     }, this) : i + 1
                 }, i, false, {
                     fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 217,
+                    lineNumber: 131,
                     columnNumber: 11
                 }, this);
             })
         }, void 0, false, {
             fileName: "[project]/app/profile/settings/phone/page.tsx",
-            lineNumber: 212,
-            columnNumber: 5
-        }, this);
-    const renderPhoneStep = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "space-y-6",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-2",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-2xl sm:text-3xl font-bold",
-                            children: "Telefon numaranı gir"
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 237,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm text-muted-foreground",
-                            children: "Numaranı doğrulamak için SMS göndereceğiz."
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 238,
-                            columnNumber: 9
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 236,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-2",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
-                            children: "Telefon"
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 241,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex items-center gap-2",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
-                                    className: "h-4 w-4 text-muted-foreground"
-                                }, void 0, false, {
-                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                    lineNumber: 243,
-                                    columnNumber: 11
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "flex w-full",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
-                                            value: country,
-                                            onValueChange: setCountry,
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
-                                                    className: "h-12 w-[150px] rounded-l-lg rounded-r-none border-2 border-r-0 bg-background px-3",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "flex items-center gap-2",
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                children: selectedCountry.flag
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                                lineNumber: 249,
-                                                                columnNumber: 19
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "font-medium",
-                                                                children: selectedCountry.dial
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                                lineNumber: 250,
-                                                                columnNumber: 19
-                                                            }, this)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                        lineNumber: 248,
-                                                        columnNumber: 17
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                    lineNumber: 247,
-                                                    columnNumber: 15
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
-                                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"].map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
-                                                            value: c.id,
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "mr-2",
-                                                                    children: c.flag
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                                    lineNumber: 256,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "mr-2",
-                                                                    children: c.name
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                                    lineNumber: 257,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-muted-foreground",
-                                                                    children: [
-                                                                        "(",
-                                                                        c.dial,
-                                                                        ")"
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                                    lineNumber: 258,
-                                                                    columnNumber: 21
-                                                                }, this)
-                                                            ]
-                                                        }, c.id, true, {
-                                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                            lineNumber: 255,
-                                                            columnNumber: 19
-                                                        }, this))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                                    lineNumber: 253,
-                                                    columnNumber: 15
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                            lineNumber: 246,
-                                            columnNumber: 13
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                            value: phone,
-                                            onChange: (e)=>setPhone(e.target.value),
-                                            placeholder: "5xx xxx xx xx",
-                                            disabled: smsSending,
-                                            className: "h-12 text-base rounded-l-none rounded-r-lg border-2 border-l-0",
-                                            inputMode: "tel",
-                                            autoComplete: "tel"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                            lineNumber: 263,
-                                            columnNumber: 13
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                    lineNumber: 245,
-                                    columnNumber: 11
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 242,
-                            columnNumber: 9
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 240,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                    className: "w-full h-12 bg-black text-white hover:bg-black/90",
-                    onClick: sendSms,
-                    disabled: smsSending || !phone.trim(),
-                    children: smsSending ? "Gönderiliyor..." : "İleri"
-                }, void 0, false, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 275,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                    variant: "ghost",
-                    className: "w-full h-11",
-                    onClick: ()=>router.back(),
-                    children: "Geri dön"
-                }, void 0, false, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 282,
-                    columnNumber: 7
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/profile/settings/phone/page.tsx",
-            lineNumber: 235,
-            columnNumber: 5
-        }, this);
-    const renderOtpStep = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "space-y-6",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-2",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-2xl sm:text-3xl font-bold",
-                            children: "OTP Doğrulama kodunu gir."
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 291,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm text-muted-foreground",
-                            children: [
-                                "Doğrulama kodu şuraya gönderildi: ",
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "font-medium text-foreground",
-                                    children: normalizePhoneE164(fullPhone)
-                                }, void 0, false, {
-                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                    lineNumber: 293,
-                                    columnNumber: 45
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 292,
-                            columnNumber: 9
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 290,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-center gap-2",
-                    children: otp.map((value, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                            inputMode: "numeric",
-                            maxLength: 1,
-                            value: value,
-                            onChange: (e)=>handleOtpInput(idx, e.target.value),
-                            onKeyDown: (e)=>handleOtpKeyDown(idx, e),
-                            ref: (el)=>{
-                                otpRefs.current[idx] = el;
-                            },
-                            className: "h-12 w-12 text-center text-lg rounded-lg border-2",
-                            disabled: smsVerifying
-                        }, idx, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 298,
-                            columnNumber: 11
-                        }, this))
-                }, void 0, false, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 296,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center justify-between text-sm text-muted-foreground",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "button",
-                            className: "underline disabled:opacity-50",
-                            onClick: ()=>{
-                                resetOtp();
-                                sendSms();
-                            },
-                            disabled: smsSending || resendCooldown > 0,
-                            children: resendCooldown > 0 ? `Tekrar gönder (${resendCooldown}s)` : "Kodu yeniden gönder"
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 314,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            type: "button",
-                            className: "underline",
-                            onClick: ()=>{
-                                setStep("phone");
-                                resetOtp();
-                            },
-                            disabled: smsVerifying,
-                            children: "Geri dön"
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 325,
-                            columnNumber: 9
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 313,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                    className: "w-full h-12 bg-black text-white hover:bg-black/90",
-                    onClick: verifyOtp,
-                    disabled: smsVerifying || !isOtpComplete,
-                    children: smsVerifying ? "Doğrulanıyor..." : "İleri"
-                }, void 0, false, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 337,
-                    columnNumber: 7
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/profile/settings/phone/page.tsx",
-            lineNumber: 289,
-            columnNumber: 5
-        }, this);
-    const renderSuccess = ()=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "space-y-6 text-center",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mx-auto h-12 w-12 rounded-full bg-green-100 text-green-700 flex items-center justify-center",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
-                        className: "h-6 w-6"
-                    }, void 0, false, {
-                        fileName: "[project]/app/profile/settings/phone/page.tsx",
-                        lineNumber: 350,
-                        columnNumber: 9
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 349,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-2xl sm:text-3xl font-bold",
-                            children: "Doğrulama başarılı"
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 353,
-                            columnNumber: 9
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm text-muted-foreground mt-2",
-                            children: "Telefon numaran doğrulandı."
-                        }, void 0, false, {
-                            fileName: "[project]/app/profile/settings/phone/page.tsx",
-                            lineNumber: 354,
-                            columnNumber: 9
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 352,
-                    columnNumber: 7
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                    className: "w-full h-12",
-                    onClick: ()=>router.back(),
-                    children: "Tamam"
-                }, void 0, false, {
-                    fileName: "[project]/app/profile/settings/phone/page.tsx",
-                    lineNumber: 356,
-                    columnNumber: 7
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/app/profile/settings/phone/page.tsx",
-            lineNumber: 348,
+            lineNumber: 127,
             columnNumber: 5
         }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1527,66 +1067,253 @@ function PhoneVerificationPage() {
                                     className: "h-5 w-5"
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                    lineNumber: 367,
+                                    lineNumber: 149,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                lineNumber: 366,
+                                lineNumber: 148,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Stepper, {}, void 0, false, {
                                 fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                lineNumber: 369,
+                                lineNumber: 151,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "w-9"
                             }, void 0, false, {
                                 fileName: "[project]/app/profile/settings/phone/page.tsx",
-                                lineNumber: 370,
+                                lineNumber: 152,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/profile/settings/phone/page.tsx",
-                        lineNumber: 365,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Card"], {
                         className: "p-6 sm:p-8 shadow-lg",
-                        children: [
-                            step === "phone" && renderPhoneStep(),
-                            step === "otp" && renderOtpStep(),
-                            step === "success" && renderSuccess()
-                        ]
-                    }, void 0, true, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "space-y-6",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                            className: "text-2xl sm:text-3xl font-bold",
+                                            children: "Telefon numaranı gir"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                            lineNumber: 158,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-sm text-muted-foreground",
+                                            children: "Numaranı doğrulamak için SMS göndereceğiz."
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                            lineNumber: 159,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                    lineNumber: 157,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "space-y-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
+                                            children: "Telefon"
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                            lineNumber: 162,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex items-center gap-2",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
+                                                    className: "h-4 w-4 text-muted-foreground"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                    lineNumber: 164,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex w-full",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
+                                                            value: country,
+                                                            onValueChange: setCountry,
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectTrigger"], {
+                                                                    className: "h-12 w-[150px] rounded-l-lg rounded-r-none border-2 border-r-0 bg-background px-3",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex items-center gap-2",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                children: selectedCountry.flag
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                                lineNumber: 170,
+                                                                                columnNumber: 25
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: "font-medium",
+                                                                                children: selectedCountry.dial
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                                lineNumber: 171,
+                                                                                columnNumber: 25
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                        lineNumber: 169,
+                                                                        columnNumber: 23
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                    lineNumber: 168,
+                                                                    columnNumber: 21
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
+                                                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$profile$2f$settings$2f$phone$2f$countries$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["COUNTRIES"].map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
+                                                                            value: c.id,
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "mr-2",
+                                                                                    children: c.flag
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                                    lineNumber: 177,
+                                                                                    columnNumber: 27
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "mr-2",
+                                                                                    children: c.name
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                                    lineNumber: 178,
+                                                                                    columnNumber: 27
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "text-muted-foreground",
+                                                                                    children: [
+                                                                                        "(",
+                                                                                        c.dial,
+                                                                                        ")"
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                                    lineNumber: 179,
+                                                                                    columnNumber: 27
+                                                                                }, this)
+                                                                            ]
+                                                                        }, c.id, true, {
+                                                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                            lineNumber: 176,
+                                                                            columnNumber: 25
+                                                                        }, this))
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                                    lineNumber: 174,
+                                                                    columnNumber: 21
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                            lineNumber: 167,
+                                                            columnNumber: 19
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
+                                                            value: phone,
+                                                            onChange: (e)=>setPhone(e.target.value),
+                                                            placeholder: "5xx xxx xx xx",
+                                                            disabled: smsSending,
+                                                            className: "h-9 text-base rounded-l-none rounded-r-lg border-2 border-l-0",
+                                                            inputMode: "tel",
+                                                            autoComplete: "tel"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                            lineNumber: 184,
+                                                            columnNumber: 19
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                                    lineNumber: 166,
+                                                    columnNumber: 17
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                            lineNumber: 163,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                    lineNumber: 161,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                    className: "w-full h-12 bg-black text-white hover:bg-black/90",
+                                    onClick: sendSms,
+                                    disabled: smsSending || !phone.trim(),
+                                    children: smsSending ? "Gönderiliyor..." : "İleri"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                    lineNumber: 196,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                    variant: "ghost",
+                                    className: "w-full h-11",
+                                    onClick: ()=>router.back(),
+                                    children: "Geri dön"
+                                }, void 0, false, {
+                                    fileName: "[project]/app/profile/settings/phone/page.tsx",
+                                    lineNumber: 203,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/app/profile/settings/phone/page.tsx",
+                            lineNumber: 156,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
                         fileName: "[project]/app/profile/settings/phone/page.tsx",
-                        lineNumber: 373,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/profile/settings/phone/page.tsx",
-                lineNumber: 364,
+                lineNumber: 146,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 id: "recaptcha-container",
-                className: "hidden"
+                className: "pointer-events-none opacity-0 absolute -left-[9999px] -top-[9999px]"
             }, void 0, false, {
                 fileName: "[project]/app/profile/settings/phone/page.tsx",
-                lineNumber: 379,
+                lineNumber: 209,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/profile/settings/phone/page.tsx",
-        lineNumber: 363,
+        lineNumber: 145,
         columnNumber: 5
     }, this);
 }
-_s(PhoneVerificationPage, "vJS97ng946W3VHZYXJl4rpZCuQc=", false, function() {
+_s(PhoneVerificationPage, "6yfslRI6ZQmc1wQ6Mmu/YrhvbQg=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"]

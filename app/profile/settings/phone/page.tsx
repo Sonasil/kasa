@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { COUNTRIES } from "./countries"
 import {
   Select,
@@ -240,10 +241,10 @@ export default function PhoneVerificationPage() {
       <div className="space-y-2">
         <Label>Telefon</Label>
         <div className="flex items-center gap-2">
-          <Smartphone className="h-4 w-4 text-muted-foreground" />
 
           <div className="flex w-full">
             <Select value={country} onValueChange={setCountry}>
+              
               <SelectTrigger className="h-12 w-[150px] rounded-l-lg rounded-r-none border-2 border-r-0 bg-background px-3">
                 <div className="flex items-center gap-2">
                   <span>{selectedCountry.flag}</span>
@@ -265,7 +266,7 @@ export default function PhoneVerificationPage() {
               onChange={(e) => setPhone(e.target.value)}
               placeholder="5xx xxx xx xx"
               disabled={smsSending}
-              className="h-12 text-base rounded-l-none rounded-r-lg border-2 border-l-0"
+              className="h-9 text-base rounded-l-none rounded-r-lg border-2 border-l-0"
               inputMode="tel"
               autoComplete="tel"
             />
@@ -371,7 +372,22 @@ export default function PhoneVerificationPage() {
         </div>
 
         <Card className="p-6 sm:p-8 shadow-lg">
-          {step === "phone" && renderPhoneStep()}
+          {step === "phone" && (
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h1 className="text-xl font-semibold">Telefon Doğrulama</h1>
+                <Badge variant="secondary">Yakında</Badge>
+              </div>
+
+              <p className="text-sm text-muted-foreground">
+                Telefon doğrulama özelliği şu anda devre dışı. Hesap güvenliği için e‑posta doğrulaması yeterlidir.
+              </p>
+
+              <div className="opacity-50 pointer-events-none">
+                {renderPhoneStep()}
+              </div>
+            </div>
+          )}
           {step === "otp" && renderOtpStep()}
           {step === "success" && renderSuccess()}
         </Card>
