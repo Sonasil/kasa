@@ -13,6 +13,7 @@ import {
 } from "firebase/auth"
 import { doc, onSnapshot, serverTimestamp, setDoc } from "firebase/firestore"
 import { auth, db } from "@/lib/firebase"
+import { useUserProfile } from "@/lib/user-profile"
 
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -31,6 +32,7 @@ const CLOUDINARY_UPLOAD_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESE
 export default function ProfileSettingsPage() {
   const router = useRouter()
   const { toast } = useToast()
+  const { refreshAuthUser } = useUserProfile()
 
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
@@ -310,6 +312,10 @@ export default function ProfileSettingsPage() {
         displayName: trimmedName || undefined,
         photoURL: finalPhotoUrl || undefined,
       })
+      try {
+        await auth.currentUser?.reload()
+        await refreshAuthUser()
+      } catch {}
 
       await setDoc(
         doc(db, "users", uid),

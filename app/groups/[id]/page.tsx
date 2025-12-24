@@ -13,6 +13,7 @@ import {
   orderBy,
   where,
   getDocs,
+  getDoc,
   limit,
 } from "firebase/firestore"
 import { db ,auth } from "@/lib/firebase"
@@ -40,6 +41,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useSettings } from "@/lib/settings-context"
 import {
   ArrowLeft,
@@ -95,6 +97,7 @@ type FeedItem = {
 type UserProfile = {
   displayName: string
   email: string
+  photoURL?: string
 }
 
 const MOCK_USERS: Record<string, UserProfile> = {
@@ -128,7 +131,7 @@ export default function GroupDetailPage() {
   const [loading, setLoading] = useState(true)
   const [group, setGroup] = useState<GroupDoc | null>(null)
   const [feedItems, setFeedItems] = useState<FeedItem[]>([])
-  const [userProfiles] = useState<Record<string, UserProfile>>(MOCK_USERS)
+const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({})
   const [messageText, setMessageText] = useState("")
   const [sending, setSending] = useState(false)
 
@@ -269,7 +272,7 @@ export default function GroupDetailPage() {
       addExpenseRequestIdRef.current =
         uuid || `${currentUid}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
     }
-    const requestId = addExpenseRequestIdRef.current
+    const requestId = addExpenseRequestIdRef.current || `${currentUid}-${Date.now()}`
 
     const participants = selectedParticipants.length > 0 ? selectedParticipants : [currentUid]
     const totalCents = Math.round(amountTRY * 100)
@@ -654,8 +657,46 @@ export default function GroupDetailPage() {
     })
   }
 
+  const memberIds = group?.memberIds || []
+
+  useEffect(() => {
+    let cancelled = false
+    const loadProfiles = async () => {
+      if (!memberIds.length) {
+        setUserProfiles({})
+        return
+      }
+      const entries = await Promise.all(
+        memberIds.map(async (uid) => {
+          try {
+            const snap = await getDoc(doc(db, "users", uid))
+            if (snap.exists()) {
+              const d = snap.data() as any
+              return [
+                uid,
+                {
+                  displayName: typeof d.displayName === "string" ? d.displayName : "",
+                  email: typeof d.email === "string" ? d.email : "",
+                  photoURL: typeof d.photoURL === "string" ? d.photoURL : "",
+                },
+              ] as const
+            }
+          } catch {}
+          return [uid, { displayName: "", email: "", photoURL: "" }] as const
+        }),
+      )
+      if (!cancelled) {
+        setUserProfiles(Object.fromEntries(entries))
+      }
+    }
+    loadProfiles()
+    return () => {
+      cancelled = true
+    }
+  }, [memberIds])
+
   const getUserName = (uid: string) => {
-    return userProfiles[uid]?.displayName || uid.slice(0, 8)
+    return userProfiles[uid]?.displayName || userProfiles[uid]?.email || uid.slice(0, 8)
   }
 
   if (loading) {
@@ -687,7 +728,6 @@ export default function GroupDetailPage() {
   }
 
   const isOwner = currentUid === group.createdBy
-  const memberIds = group.memberIds || []
   const balances = group.balances || {}
   const myBalance = balances[currentUid || ""] || 0
 
@@ -792,9 +832,19 @@ export default function GroupDetailPage() {
                   <div className="space-y-2">
                     {memberIds.map((uid) => (
                       <div key={uid} className="flex items-center justify-between rounded-lg border p-3">
-                        <div className="flex-1">
-                          <p className="font-medium">{getUserName(uid)}</p>
-                          <p className="text-sm text-muted-foreground">{userProfiles[uid]?.email || ""}</p>
+                        <div className="flex items-center gap-3 flex-1 min-w-0">
+                          <Avatar className="h-9 w-9">
+                            {userProfiles[uid]?.photoURL ? (
+                              <AvatarImage src={userProfiles[uid]?.photoURL} alt={getUserName(uid)} />
+                            ) : null}
+                            <AvatarFallback>
+                              {getUserName(uid).slice(0, 2).toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium truncate">{getUserName(uid)}</p>
+                            <p className="text-sm text-muted-foreground truncate">{userProfiles[uid]?.email || ""}</p>
+                          </div>
                         </div>
                         <div className="flex items-center gap-2">
                           {uid === group.createdBy && (

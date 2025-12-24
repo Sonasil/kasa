@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
@@ -37,10 +38,12 @@ import {
   Calendar,
 } from "lucide-react"
 import { useSettings } from "@/lib/settings-context"
+import { useUserProfile } from "@/lib/user-profile"
 
 export default function ProfilePage() {
   const router = useRouter()
   const { formatMoney } = useSettings()
+  const { photoURL: globalPhotoURL } = useUserProfile()
   const { toast } = useToast()
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -309,6 +312,9 @@ export default function ProfilePage() {
           <div className="p-4 sm:p-6 pb-16 sm:pb-20">
             <div className="flex flex-col items-center text-center">
               <Avatar className="h-20 w-20 sm:h-24 sm:w-24 border-4 border-background shadow-lg">
+                {globalPhotoURL ? (
+                  <AvatarImage src={globalPhotoURL} alt={displayName || email || "Avatar"} />
+                ) : null}
                 <AvatarFallback className="text-2xl sm:text-3xl font-bold bg-primary text-primary-foreground">
                   {initials}
                 </AvatarFallback>

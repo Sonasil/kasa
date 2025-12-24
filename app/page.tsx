@@ -11,8 +11,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { auth, db } from "@/lib/firebase"
+import { useUserProfile } from "@/lib/user-profile"
 import {
   collection,
   onSnapshot,
@@ -63,6 +64,7 @@ type ActivityItem = {
 export default function DashboardPage() {
   const router = useRouter()
   const { toast } = useToast()
+  const { photoURL, displayName: profileName, email: profileEmail } = useUserProfile()
   const { formatMoney } = useSettings()
   const [loading, setLoading] = useState(true)
   const [displayName, setDisplayName] = useState("")
@@ -710,7 +712,10 @@ export default function DashboardPage() {
               className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => router.push("/profile")}
             >
-              <AvatarFallback className="bg-primary text-primary-foreground font-semibold text-sm">AJ</AvatarFallback>
+              {photoURL ? <AvatarImage src={photoURL} alt={profileName || profileEmail || "Profile"} /> : null}
+              <AvatarFallback className="bg-primary text-primary-foreground font-semibold text-sm">
+                {(profileName || profileEmail || "K")[0]?.toUpperCase?.() || "?"}
+              </AvatarFallback>
             </Avatar>
           </div>
 
