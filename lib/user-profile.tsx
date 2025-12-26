@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react"
 import { onAuthStateChanged } from "firebase/auth"
-import { doc, onSnapshot } from "firebase/firestore"
+import { doc, onSnapshot, getDoc, setDoc, serverTimestamp } from "firebase/firestore"
 import { auth, db } from "@/lib/firebase"
 
 type UserProfile = {
@@ -44,7 +44,7 @@ export function UserProfileProvider({ children }: { children: React.ReactNode })
   useEffect(() => {
     const unsubAuth = onAuthStateChanged(
       auth,
-      (user) => {
+      async (user) => {
         if (unsubUserRef.current) {
           try {
             unsubUserRef.current()
@@ -58,6 +58,24 @@ export function UserProfileProvider({ children }: { children: React.ReactNode })
         }
 
         const userDocRef = doc(db, "users", user.uid)
+
+        // Auto-create user document if it doesn't exist
+        try {
+          const userSnap = await getDoc(userDocRef)
+          if (!userSnap.exists()) {
+            // Create user document with auth data
+            await setDoc(userDocRef, {
+              displayName: user.displayName || "",
+              email: user.email || "",
+              photoURL: user.photoURL || "",
+              createdAt: serverTimestamp(),
+              updatedAt: serverTimestamp(),
+            })
+          }
+        } catch (error) {
+          console.error("Failed to create user document:", error)
+        }
+
         unsubUserRef.current = onSnapshot(
           userDocRef,
           (snap) => {

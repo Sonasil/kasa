@@ -1,0 +1,134 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // ✅ FIXED: Allow authenticated users to read any user profile (for group member display)
+    // Changed from: allow read, write: if signedIn() && request.auth.uid == uid;
+    match /users/{uid} {
+      allow read: if signedIn();  // ✅ Anyone authenticated can read profiles
+      allow write: if signedIn() && request.auth.uid == uid;  // Only owner can write
+    }
+
+    // --------------------
+    // INVITE CODES (groupInvites/{CODE})
+    // --------------------
+    match /groupInvites/{code} {
+
+      function groupDoc(groupId) {
+        return get(/databases/$(database)/documents/groups/$(groupId));
+      }
+
+      function isMemberOfGroup(groupId) {
+        return signedIn() && (request.auth.uid in groupDoc(groupId).data.memberIds);
+      }
+
+      // Join sayfasında kod kontrolü için (MVP)
+      allow read: if signedIn();
+
+      // Invite oluşturma:
+      allow create: if
+        signedIn() &&
+        !exists(/databases/$(database)/documents/groupInvites/$(code)) &&
+        request.resource.data.groupId is string &&
+        request.resource.data.createdBy == request.auth.uid &&
+        isMemberOfGroup(request.resource.data.groupId);
+
+      // Invite iptal/disable vs. (şimdilik sadece oluşturan kişi)
+      allow update, delete: if
+        signedIn() &&
+        resource.data.createdBy == request.auth.uid;
+    }
+
+    match /groups/{groupId} {
+
+      // ✅ Group document için: get() YOK (recursive risk yok)
+      function isOwner() {
+        return signedIn() && request.auth.uid == resource.data.createdBy;
+      }
+
+      function isMember() {
+        return signedIn() && (request.auth.uid in resource.data.memberIds);
+      }
+
+      // ✅ Subcollections için parent group doc (get ile)
+      function parentGroup() {
+        return get(/databases/$(database)/documents/groups/$(groupId));
+      }
+
+      function isOwnerParent() {
+        return signedIn() && request.auth.uid == parentGroup().data.createdBy;
+      }
+
+      function isMemberParent() {
+        return signedIn() && (request.auth.uid in parentGroup().data.memberIds);
+      }
+
+      // --------------------
+      // GROUP DOCUMENT
+      // --------------------
+
+      allow create: if signedIn();
+      allow read: if isOwner() || isMember();
+
+      // ✅ update:
+      // - owner her şeyi yapabilir
+      // - member: leave veya balances/totalAmount update
+      // - non-member: SADECE kendini memberIds'e ekleyerek join edebilir
+      allow update: if
+        // owner
+        isOwner()
+        ||
+
+        // member actions (leave OR balances/totalAmount)
+        (
+          isMember() &&
+          (
+            // leave
+            (request.resource.data.memberIds.size() < resource.data.memberIds.size())
+            ||
+            // balances/totalAmount update (expense transaction)
+            (request.resource.data.diff(resource.data).changedKeys().hasOnly(["balances", "totalAmount"]))
+          )
+        )
+        ||
+
+        // ✅ join (non-member can ONLY add themselves, and ONLY memberIds can change)
+        (
+          signedIn() &&
+          !isMember() &&
+          request.resource.data.diff(resource.data).changedKeys().hasOnly(["memberIds"]) &&
+          request.resource.data.memberIds.size() == resource.data.memberIds.size() + 1 &&
+          (request.auth.uid in request.resource.data.memberIds)
+        );
+
+      allow delete: if isOwner();
+
+      // --------------------
+      // SUBCOLLECTIONS
+      // --------------------
+
+      match /feed/{feedId} {
+        allow read: if isOwnerParent() || isMemberParent();
+        allow create: if isOwnerParent() || isMemberParent();
+        allow update, delete: if isOwnerParent() || (signedIn() && request.auth.uid == resource.data.createdBy);
+      }
+
+      match /activities/{activityId} {
+        allow create: if signedIn();
+        allow read, update, delete: if isOwnerParent() || isMemberParent();
+      }
+
+      match /expenses/{expenseId} {
+        allow read, create, update, delete: if isOwnerParent() || isMemberParent();
+      }
+
+      match /settlements/{settlementId} {
+        allow read, create, update, delete: if isOwnerParent() || isMemberParent();
+      }
+    }
+  }
+}

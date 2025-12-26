@@ -3,9 +3,5 @@
   "/groups/page": "app/groups/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/profile/settings/page": "app/profile/settings/page.js",
-  "/profile/settings/phone/page": "app/profile/settings/phone/page.js",
-  "/register/page": "app/register/page.js",
-  "/settings/page": "app/settings/page.js"
+  "/register/page": "app/register/page.js"
 }
