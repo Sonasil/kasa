@@ -69,6 +69,7 @@ import {
   Crown,
   UserMinus,
   CheckCircle,
+  Wallet,
 } from "lucide-react"
 
 type GroupDoc = {
@@ -94,6 +95,7 @@ type FeedItem = {
   splitCents?: Record<string, number>
   category?: string
   receiptUrl?: string
+  paymentStatus?: Record<string, boolean>
   // Settlement fields
   from?: string
   fromName?: string
@@ -154,6 +156,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [customSplitAmounts, setCustomSplitAmounts] = useState<Record<string, string>>({})
 
   const [memberDialogOpen, setMemberDialogOpen] = useState(false)
+  const [statusDialogOpen, setStatusDialogOpen] = useState(false)
   const [inviteCode, setInviteCode] = useState<string | null>(null)
 
   const [expenseDetailOpen, setExpenseDetailOpen] = useState(false)
@@ -929,98 +932,127 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
           </div>
 
           <div className="flex flex-wrap gap-2">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+            <Dialog open={statusDialogOpen} onOpenChange={setStatusDialogOpen}>
+              <DialogTrigger asChild>
                 <Button size="sm" variant="outline" className="flex-1 sm:flex-none bg-transparent">
                   <BarChart3 className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
                   Status
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-80 max-h-[80vh] overflow-y-auto">
-                <div className="p-4">
-                  <p className="mb-3 text-sm font-semibold">Your Balance</p>
-                  <p className={`text-3xl font-bold ${myBalance >= 0 ? "text-green-600" : "text-red-600"}`}>
-                    {formatMoney(myBalance)}
-                  </p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {myBalance >= 0 ? "You are owed" : "You owe"}
-                  </p>
+              </DialogTrigger>
+              <DialogContent className="max-h-[90vh] overflow-y-auto w-[95vw] max-w-md sm:w-full">
+                <DialogHeader className="pb-2">
+                  <DialogTitle className="text-xl sm:text-2xl font-bold">Group Balance</DialogTitle>
+                </DialogHeader>
+                
+                {/* Your Balance Card - Enhanced with shadow */}
+                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-xl p-5 sm:p-5 border border-slate-200 dark:border-slate-700 mb-5 shadow-sm">
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      myBalance >= 0 
+                        ? "bg-green-100 dark:bg-green-900/30" 
+                        : "bg-red-100 dark:bg-red-900/30"
+                    }`}>
+                      <Wallet className={`h-6 w-6 sm:h-7 sm:w-7 ${
+                        myBalance >= 0
+                          ? "text-green-600 dark:text-green-500"
+                          : "text-red-600 dark:text-red-500"
+                      }`} />
+                    </div>
+                    <div className="flex-1 min-w-0 pl-1 sm:pl-2">
+                      <p className={`text-2xl sm:text-3xl md:text-4xl font-bold leading-none mb-1.5 ${myBalance >= 0 ? "text-green-600 dark:text-green-500" : "text-red-600 dark:text-red-500"}`}>
+                        {formatMoney(myBalance)}
+                      </p>
+                      <p className="text-sm sm:text-base text-muted-foreground font-medium">
+                        {myBalance >= 0 ? "You're owed" : "You owe"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {(() => {
                   const { youOwe, owesYou } = calculateSimplifiedDebts(balances, currentUid)
-                  const isSettled = youOwe.length === 0 && owesYou.length === 0
+                  const allDebts = [
+                    ...youOwe.map(d => ({ from: currentUid, to: d.uid, amount: d.amount })),
+                    ...owesYou.map(d => ({ from: d.uid, to: currentUid, amount: d.amount }))
+                  ]
+                  const isSettled = allDebts.length === 0
 
                   if (isSettled) {
                     return (
-                      <div className="border-t p-6 text-center">
-                        <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3">
-                          <CheckCircle className="h-8 w-8 text-green-600" />
+                      <div className="py-10 text-center">
+                        <div className="mx-auto w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4">
+                          <CheckCircle className="h-10 w-10 text-green-600 dark:text-green-500" />
                         </div>
-                        <p className="font-semibold text-green-700">All Settled Up!</p>
-                        <p className="text-sm text-muted-foreground mt-1">No outstanding debts</p>
+                        <p className="text-xl font-bold text-foreground">All Settled!</p>
+                        <p className="text-base text-muted-foreground mt-2">No outstanding debts</p>
                       </div>
                     )
                   }
 
                   return (
-                    <>
-                      {youOwe.length > 0 && (
-                        <div className="border-t p-3">
-                          <p className="text-xs font-semibold text-red-700 mb-2 px-1">👤 You Owe</p>
-                          <div className="space-y-2">
-                            {youOwe.map(({ uid, amount }) => (
-                              <SimplifiedDebtCard
-                                key={uid}
-                                uid={uid}
-                                userName={getUserName(uid)}
-                                userPhoto={userProfiles[uid]?.photoURL}
-                                amount={amount}
-                                direction="owe"
-                                currency={settings.currency}
-                                onPayBack={() => {
-                                  setPaymentMember(uid)
-                                  setPaymentAmount((amount / 100).toFixed(2))
-                                }}
-                              />
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                    <div className="space-y-3 mb-5">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-1 mb-1">
+                        Debts
+                      </p>
+                      {allDebts.map((debt, index) => (
+                        <div
+                          key={`${debt.from}-${debt.to}-${index}`}
+                          className="bg-white dark:bg-slate-900 rounded-xl p-4 sm:p-4 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
+                        >
+                          <div className="flex items-center justify-between gap-4">
+                            {/* Left: Avatar + Info */}
+                            <div className="flex items-center gap-3.5 flex-1 min-w-0">
+                              <Avatar className="h-10 w-10 sm:h-11 sm:w-11 flex-shrink-0">
+                                {(() => {
+                                  // Show the other person's avatar (not yours)
+                                  const otherPersonId = debt.from === currentUid ? debt.to : debt.from
+                                  return userProfiles[otherPersonId]?.photoURL ? (
+                                    <AvatarImage 
+                                      src={userProfiles[otherPersonId]?.photoURL} 
+                                      alt={getUserName(otherPersonId)} 
+                                    />
+                                  ) : null
+                                })()}
+                                <AvatarFallback className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm">
+                                  {(() => {
+                                    const otherPersonId = debt.from === currentUid ? debt.to : debt.from
+                                    return getUserName(otherPersonId).slice(0, 2).toUpperCase()
+                                  })()}
+                                </AvatarFallback>
+                              </Avatar>
+                              <div className="flex-1 min-w-0">
+                                <p className="font-bold text-base text-foreground truncate leading-tight mb-0.5">
+                                  {debt.from === currentUid ? "You" : getUserName(debt.from)}
+                                </p>
+                                <p className="text-sm text-muted-foreground truncate">
+                                  owes {debt.to === currentUid ? "you" : getUserName(debt.to)}
+                                </p>
+                              </div>
+                            </div>
 
-                      {owesYou.length > 0 && (
-                        <div className="border-t p-3">
-                          <p className="text-xs font-semibold text-green-700 mb-2 px-1">👥 Owes You</p>
-                          <div className="space-y-2">
-                            {owesYou.map(({ uid, amount }) => (
-                              <SimplifiedDebtCard
-                                key={uid}
-                                uid={uid}
-                                userName={getUserName(uid)}
-                                userPhoto={userProfiles[uid]?.photoURL}
-                                amount={amount}
-                                direction="owed"
-                                currency={settings.currency}
-                                onRemind={() => {
-                                  toast({
-                                    title: "Reminder sent",
-                                    description: `Notified ${getUserName(uid)} about the debt`,
-                                  })
-                                }}
-                              />
-                            ))}
+                            {/* Right: Amount */}
+                            <div className="flex-shrink-0">
+                              <p className={`text-xl sm:text-2xl font-bold ${
+                                debt.to === currentUid 
+                                  ? "text-green-600 dark:text-green-500" 
+                                  : "text-red-600 dark:text-red-500"
+                              }`}>
+                                {formatMoney(debt.amount)}
+                              </p>
+                            </div>
                           </div>
                         </div>
-                      )}
-                    </>
+                      ))}
+                    </div>
                   )
                 })()}
 
-                <div className="border-t p-3">
-                  <DropdownMenuLabel className="text-xs text-muted-foreground px-0">Record Payment</DropdownMenuLabel>
-                  <div className="space-y-2">
+                {/* Record Payment - Enhanced */}
+                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 mb-4">
+                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Record Payment</p>
+                  <div className="space-y-3">
                     <Select value={paymentMember} onValueChange={setPaymentMember}>
-                      <SelectTrigger className="w-full h-9">
+                      <SelectTrigger className="w-full h-11">
                         <SelectValue placeholder="Who paid you?" />
                       </SelectTrigger>
                       <SelectContent>
@@ -1039,21 +1071,32 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                       placeholder={`Amount (${settings.currency})`}
                       value={paymentAmount}
                       onChange={(e) => setPaymentAmount(e.target.value)}
-                      className="h-9"
                       disabled={recordingPayment}
+                      className="h-11 text-base"
                     />
                     <Button
                       onClick={handleRecordPayment}
                       disabled={!paymentMember || !paymentAmount || recordingPayment}
-                      className="w-full h-9"
-                      size="sm"
+                      className="w-full h-11 text-base font-semibold"
                     >
                       {recordingPayment ? "Recording..." : "Record Payment"}
                     </Button>
                   </div>
                 </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+
+                {/* Close button */}
+                <div>
+                  <Button
+                    variant="outline"
+                    onClick={() => setStatusDialogOpen(false)}
+                    className="w-full h-11 text-base font-semibold"
+                  >
+                    Close
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
+
 
             <Dialog open={memberDialogOpen} onOpenChange={setMemberDialogOpen}>
               <DialogTrigger asChild>
@@ -1644,7 +1687,9 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                               </div>
                             </div>
                             <div className="text-right flex-shrink-0">
-                              <p className="font-medium text-sm sm:text-base text-foreground">
+                              <p className={`font-medium text-sm sm:text-base ${
+                                isPayer ? "text-foreground" : "text-red-600 dark:text-red-500"
+                              }`}>
                                 {formatMoney(splitAmount)}
                               </p>
                             </div>
