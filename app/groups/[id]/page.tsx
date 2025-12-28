@@ -942,30 +942,30 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   Status
                 </Button>
               </DialogTrigger>
-              <DialogContent className="max-h-[90vh] overflow-y-auto w-[95vw] max-w-md sm:w-full">
-                <DialogHeader className="pb-2">
-                  <DialogTitle className="text-xl sm:text-2xl font-bold">Group Balance</DialogTitle>
+              <DialogContent className="max-h-[90vh] overflow-y-auto w-full max-w-md px-4 sm:px-6">
+                <DialogHeader className="pb-3 sm:pb-2">
+                  <DialogTitle className="text-lg sm:text-xl font-bold">Group Balance</DialogTitle>
                 </DialogHeader>
                 
-                {/* Your Balance Card - Enhanced with shadow */}
-                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-xl p-5 sm:p-5 border border-slate-200 dark:border-slate-700 mb-5 shadow-sm">
-                  <div className="flex items-center gap-3.5 sm:gap-4">
-                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0 ${
+                {/* Your Balance Card */}
+                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-xl p-4 sm:p-5 border border-slate-200 dark:border-slate-700 mb-4 sm:mb-5 shadow-sm">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className={`w-11 h-11 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0 ${
                       myBalance >= 0 
                         ? "bg-green-100 dark:bg-green-900/30" 
                         : "bg-red-100 dark:bg-red-900/30"
                     }`}>
-                      <Wallet className={`h-6 w-6 sm:h-7 sm:w-7 ${
+                      <Wallet className={`h-5 w-5 sm:h-7 sm:w-7 ${
                         myBalance >= 0
                           ? "text-green-600 dark:text-green-500"
                           : "text-red-600 dark:text-red-500"
                       }`} />
                     </div>
-                    <div className="flex-1 min-w-0 pl-1 sm:pl-2">
-                      <p className={`text-2xl sm:text-3xl md:text-4xl font-bold leading-none mb-1.5 ${myBalance >= 0 ? "text-green-600 dark:text-green-500" : "text-red-600 dark:text-red-500"}`}>
+                    <div className="flex-1 min-w-0 pl-0.5 sm:pl-2">
+                      <p className={`text-xl sm:text-3xl md:text-4xl font-bold leading-none mb-1 ${myBalance >= 0 ? "text-green-600 dark:text-green-500" : "text-red-600 dark:text-red-500"}`}>
                         {formatMoney(myBalance)}
                       </p>
-                      <p className="text-sm sm:text-base text-muted-foreground font-medium">
+                      <p className="text-xs sm:text-base text-muted-foreground font-medium">
                         {myBalance >= 0 ? "You're owed" : "You owe"}
                       </p>
                     </div>
@@ -993,19 +993,19 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   }
 
                   return (
-                    <div className="space-y-3 mb-5">
+                    <div className="space-y-2.5 mb-4 sm:mb-5">
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-1 mb-1">
                         Debts
                       </p>
                       {allDebts.map((debt, index) => (
                         <div
                           key={`${debt.from}-${debt.to}-${index}`}
-                          className="bg-white dark:bg-slate-900 rounded-xl p-4 sm:p-4 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
+                          className="bg-white dark:bg-slate-900 rounded-xl p-3 sm:p-4 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
                         >
-                          <div className="flex items-center justify-between gap-4">
+                          <div className="flex items-center justify-between gap-3 sm:gap-4">
                             {/* Left: Avatar + Info */}
-                            <div className="flex items-center gap-3.5 flex-1 min-w-0">
-                              <Avatar className="h-10 w-10 sm:h-11 sm:w-11 flex-shrink-0">
+                            <div className="flex items-center gap-3 sm:gap-3.5 flex-1 min-w-0">
+                              <Avatar className="h-9 w-9 sm:h-11 sm:w-11 flex-shrink-0">
                                 {(() => {
                                   // Show the other person's avatar (not yours)
                                   const otherPersonId = debt.from === currentUid ? debt.to : debt.from
@@ -1016,7 +1016,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                     />
                                   ) : null
                                 })()}
-                                <AvatarFallback className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm">
+                                <AvatarFallback className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs sm:text-sm">
                                   {(() => {
                                     const otherPersonId = debt.from === currentUid ? debt.to : debt.from
                                     return getUserName(otherPersonId).slice(0, 2).toUpperCase()
@@ -1024,10 +1024,10 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                 </AvatarFallback>
                               </Avatar>
                               <div className="flex-1 min-w-0">
-                                <p className="font-bold text-base text-foreground truncate leading-tight mb-0.5">
+                                <p className="font-bold text-sm sm:text-base text-foreground truncate leading-tight mb-0.5">
                                   {debt.from === currentUid ? "You" : getUserName(debt.from)}
                                 </p>
-                                <p className="text-sm text-muted-foreground truncate">
+                                <p className="text-xs sm:text-sm text-muted-foreground truncate">
                                   owes {debt.to === currentUid ? "you" : getUserName(debt.to)}
                                 </p>
                               </div>
@@ -1035,7 +1035,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
                             {/* Right: Amount */}
                             <div className="flex-shrink-0">
-                              <p className={`text-xl sm:text-2xl font-bold ${
+                              <p className={`text-lg sm:text-2xl font-bold ${
                                 debt.to === currentUid 
                                   ? "text-green-600 dark:text-green-500" 
                                   : "text-red-600 dark:text-red-500"
@@ -1051,7 +1051,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 })()}
 
                 {/* Record Payment - Compact & Clean */}
-                <div className="border-t pt-4 mt-1">
+                <div className="border-t pt-3 sm:pt-4 mt-1">
                   <div className="mb-3">
                     <h3 className="text-sm font-bold text-foreground">Record Payment</h3>
                     <p className="text-xs text-muted-foreground">Track received payments</p>
@@ -1101,10 +1101,10 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                         <div className="space-y-3">
                           {/* Payment Type Selection */}
                           <div>
-                            <Label className="text-xs font-medium text-muted-foreground mb-1.5 block">
+                            <Label className="text-xs font-medium text-muted-foreground mb-2 block">
                               Amount
                             </Label>
-                            <div className="grid grid-cols-2 gap-2">
+                            <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                               <Button
                                 type="button"
                                 variant={paymentMode === "full" ? "default" : "outline"}
