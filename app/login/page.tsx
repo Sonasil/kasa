@@ -14,20 +14,11 @@ import { useSettings } from "@/lib/settings-context"
 export default function LoginPage() {
   const router = useRouter()
   const { t } = useSettings()
-  // DEBUG STATE
-  const [debugLogs, setDebugLogs] = useState<string[]>([])
-  const addLog = (msg: string) => setDebugLogs(prev => [...prev.slice(-4), `${new Date().toLocaleTimeString()}: ${msg}`])
-
   // Add auth listener to handle redirect result or existing session
   useEffect(() => {
-    addLog("Auth listener init")
     const unsub = auth.onAuthStateChanged((user) => {
-      addLog(`Auth state changed: ${user ? user.email : "No user"}`)
       if (user) {
-        addLog("User found! Redirecting...")
         router.push("/")
-      } else {
-        addLog("No user in AuthState.")
       }
     })
     return () => unsub()
@@ -35,20 +26,16 @@ export default function LoginPage() {
 
   // Handle redirect result (for mobile)
   useEffect(() => {
-    addLog("Checking getRedirectResult...")
     // Check for redirect result on mount
     getRedirectResult(auth)
       .then((result) => {
-        addLog(`Redirect result: ${result ? "Success (" + result.user.email + ")" : "Null"}`)
         if (result) {
           // User signed in via redirect
-          addLog("Redirect success. Navigating...")
           router.push("/")
         }
       })
       .catch((error) => {
         console.error("Redirect sign-in error:", error)
-        addLog(`Redirect Error: ${error.code} - ${error.message}`)
         setGoogleLoading(false)
         if (error?.code !== "auth/popup-closed-by-user") {
           // Show explicit error message if possible
@@ -120,17 +107,13 @@ export default function LoginPage() {
   const handleGoogleLogin = async () => {
     setGoogleLoading(true)
     setFormError(null)
-    addLog(`Starting Google Auth via Popup...`)
     
     try {
       // Desktop & Mobile: Try popup first
-      addLog("Calling signInWithPopup...")
       await signInWithPopup(auth, googleProvider)
-      addLog("Popup finished. Waiting for auth listener...")
       // Auth state listener will handle redirection
     } catch (err: any) {
       console.error("Google sign in error:", err)
-      addLog(`Popup Error: ${err.code || "unknown"} - ${err.message}`)
       
       const errorCode = err?.code
       if (errorCode === "auth/popup-closed-by-user") {
@@ -141,12 +124,10 @@ export default function LoginPage() {
       // If popup specifically fails due to blocking/support, try redirect
       if (errorCode === "auth/popup-blocked" || errorCode === "auth/cancelled-popup-request" || errorCode === "auth/operation-not-supported-in-this-environment") {
         try {
-          addLog("Fallback to redirect...")
           await signInWithRedirect(auth, googleProvider)
           return
         } catch (redirectErr: any) {
           console.error("Redirect fallback failed", redirectErr)
-           addLog(`Fallback Error: ${redirectErr.message}`)
            setGoogleLoading(false)
         }
       } else {
@@ -161,12 +142,6 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md border shadow-sm">
         <div className="p-6 sm:p-8">
-           {/* Debug logs for mobile troubleshooting */}
-           <div className="mb-4 p-2 bg-slate-100 text-[10px] font-mono rounded text-slate-700 overflow-hidden">
-            <p className="font-bold">Debug Logs (Take screenshot if fails):</p>
-            {debugLogs.map((l, i) => <p key={i}>{l}</p>)}
-          </div>
-
           <div className="mb-6 sm:mb-8 text-center">
             <div className="mb-4 flex justify-center">
               <div className="rounded-2xl bg-primary p-3 sm:p-4">
