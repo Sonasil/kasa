@@ -947,6 +947,242 @@ function Label({ className, ...props }) {
 }
 ;
 }),
+"[project]/components/ui/avatar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Avatar",
+    ()=>Avatar,
+    "AvatarFallback",
+    ()=>AvatarFallback,
+    "AvatarImage",
+    ()=>AvatarImage
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@radix-ui/react-avatar/dist/index.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-ssr] (ecmascript)");
+'use client';
+;
+;
+;
+function Avatar({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Root"], {
+        "data-slot": "avatar",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('relative flex size-8 shrink-0 overflow-hidden rounded-full', className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/avatar.tsx",
+        lineNumber: 13,
+        columnNumber: 5
+    }, this);
+}
+function AvatarImage({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Image"], {
+        "data-slot": "avatar-image",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('aspect-square size-full', className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/avatar.tsx",
+        lineNumber: 29,
+        columnNumber: 5
+    }, this);
+}
+function AvatarFallback({ className, ...props }) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fallback"], {
+        "data-slot": "avatar-fallback",
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('bg-muted flex size-full items-center justify-center rounded-full', className),
+        ...props
+    }, void 0, false, {
+        fileName: "[project]/components/ui/avatar.tsx",
+        lineNumber: 42,
+        columnNumber: 5
+    }, this);
+}
+;
+}),
+"[project]/components/SimplifiedDebtCard.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SimplifiedDebtCard",
+    ()=>SimplifiedDebtCard
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/avatar.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/button.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/card.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-left.js [app-ssr] (ecmascript) <export default as ArrowLeft>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bell$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Bell$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/bell.js [app-ssr] (ecmascript) <export default as Bell>");
+;
+;
+;
+;
+;
+function SimplifiedDebtCard({ uid, userName, userPhoto, amount, direction, currency, onPayBack, onRemind }) {
+    const isOwe = direction === "owe";
+    const formattedAmount = new Intl.NumberFormat("tr-TR", {
+        style: "currency",
+        currency: currency
+    }).format(amount / 100);
+    const getInitials = (name)=>{
+        return name.split(" ").map((n)=>n[0]).join("").toUpperCase().slice(0, 2);
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
+        className: `p-4 flex items-center justify-between gap-3 transition-all hover:shadow-md ${isOwe ? "bg-red-50 border-red-200 dark:bg-red-950/20 dark:border-red-800" : "bg-green-50 border-green-200 dark:bg-green-950/20 dark:border-green-800"}`,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex items-center gap-3 flex-1 min-w-0",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                        className: "h-10 w-10 shrink-0",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                src: userPhoto,
+                                alt: userName
+                            }, void 0, false, {
+                                fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                lineNumber: 52,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                className: isOwe ? "bg-red-200" : "bg-green-200",
+                                children: getInitials(userName)
+                            }, void 0, false, {
+                                fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                lineNumber: 53,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                        lineNumber: 51,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex-1 min-w-0",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "font-medium text-sm truncate",
+                                children: userName
+                            }, void 0, false, {
+                                fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                lineNumber: 59,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex items-center gap-1 text-xs text-muted-foreground",
+                                children: isOwe ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "You owe"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                            lineNumber: 63,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                            className: "h-3 w-3"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                            lineNumber: 64,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$left$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowLeft$3e$__["ArrowLeft"], {
+                                            className: "h-3 w-3"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                            lineNumber: 68,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            children: "Owes you"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                            lineNumber: 69,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true)
+                            }, void 0, false, {
+                                fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                                lineNumber: 60,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "text-right",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: `font-bold text-lg ${isOwe ? "text-red-700" : "text-green-700"}`,
+                            children: formattedAmount
+                        }, void 0, false, {
+                            fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                            lineNumber: 76,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                        lineNumber: 75,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                lineNumber: 50,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "shrink-0",
+                children: [
+                    isOwe && onPayBack && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                        size: "sm",
+                        onClick: onPayBack,
+                        className: "bg-red-600 hover:bg-red-700 text-white",
+                        children: "Pay Back"
+                    }, void 0, false, {
+                        fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                        lineNumber: 84,
+                        columnNumber: 11
+                    }, this),
+                    !isOwe && onRemind && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                        size: "sm",
+                        variant: "outline",
+                        onClick: onRemind,
+                        className: "border-green-300",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bell$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Bell$3e$__["Bell"], {
+                            className: "h-4 w-4"
+                        }, void 0, false, {
+                            fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                            lineNumber: 99,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                        lineNumber: 93,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/SimplifiedDebtCard.tsx",
+                lineNumber: 82,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/SimplifiedDebtCard.tsx",
+        lineNumber: 43,
+        columnNumber: 5
+    }, this);
+}
+}),
 "[project]/components/ui/textarea.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -1204,59 +1440,6 @@ function SelectScrollDownButton({ className, ...props }) {
 }
 ;
 }),
-"[project]/components/ui/avatar.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
-"use strict";
-
-__turbopack_context__.s([
-    "Avatar",
-    ()=>Avatar,
-    "AvatarFallback",
-    ()=>AvatarFallback,
-    "AvatarImage",
-    ()=>AvatarImage
-]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@radix-ui/react-avatar/dist/index.mjs [app-ssr] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/utils.ts [app-ssr] (ecmascript)");
-'use client';
-;
-;
-;
-function Avatar({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Root"], {
-        "data-slot": "avatar",
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('relative flex size-8 shrink-0 overflow-hidden rounded-full', className),
-        ...props
-    }, void 0, false, {
-        fileName: "[project]/components/ui/avatar.tsx",
-        lineNumber: 13,
-        columnNumber: 5
-    }, this);
-}
-function AvatarImage({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Image"], {
-        "data-slot": "avatar-image",
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('aspect-square size-full', className),
-        ...props
-    }, void 0, false, {
-        fileName: "[project]/components/ui/avatar.tsx",
-        lineNumber: 29,
-        columnNumber: 5
-    }, this);
-}
-function AvatarFallback({ className, ...props }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$avatar$2f$dist$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fallback"], {
-        "data-slot": "avatar-fallback",
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])('bg-muted flex size-full items-center justify-center rounded-full', className),
-        ...props
-    }, void 0, false, {
-        fileName: "[project]/components/ui/avatar.tsx",
-        lineNumber: 42,
-        columnNumber: 5
-    }, this);
-}
-;
-}),
 "[project]/app/groups/[id]/page.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -1279,6 +1462,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/dialog.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/alert-dialog.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/label.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SimplifiedDebtCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/SimplifiedDebtCard.tsx [app-ssr] (ecmascript)"); // Added SimplifiedDebtCard
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/textarea.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ui/select.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/use-toast.ts [app-ssr] (ecmascript)");
@@ -1307,6 +1491,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2d$minus$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__UserMinus$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/user-minus.js [app-ssr] (ecmascript) <export default as UserMinus>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-ssr] (ecmascript) <export default as CheckCircle>");
 "use client";
+;
 ;
 ;
 ;
@@ -2168,7 +2353,7 @@ function GroupDetailPage() {
         className: "flex h-screen flex-col bg-background",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-                className: "border-b bg-card",
+                className: "sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 shadow-md",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "flex flex-col gap-3 p-3 sm:p-4",
                     children: [
@@ -2265,13 +2450,13 @@ function GroupDetailPage() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
                                             align: "end",
-                                            className: "w-64",
+                                            className: "w-80 max-h-[80vh] overflow-y-auto",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "p-3",
+                                                    className: "p-4",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "mb-2 text-sm font-semibold",
+                                                            className: "mb-3 text-sm font-semibold",
                                                             children: "Your Balance"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
@@ -2279,7 +2464,7 @@ function GroupDetailPage() {
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: `text-2xl font-bold sm:text-xl ${myBalance >= 0 ? "text-green-600" : "text-red-600"}`,
+                                                            className: `text-3xl font-bold ${myBalance >= 0 ? "text-green-600" : "text-red-600"}`,
                                                             children: formatMoney(myBalance)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
@@ -2287,7 +2472,7 @@ function GroupDetailPage() {
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "mt-1 sm:mt-2 text-xs text-muted-foreground",
+                                                            className: "mt-1 text-xs text-muted-foreground",
                                                             children: myBalance >= 0 ? "You are owed" : "You owe"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
@@ -2300,62 +2485,146 @@ function GroupDetailPage() {
                                                     lineNumber: 940,
                                                     columnNumber: 17
                                                 }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "border-t p-2",
-                                                    children: memberIds.map((uid)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center justify-between py-2 text-sm sm:text-base",
+                                                (()=>{
+                                                    const { youOwe, owesYou } = calculateSimplifiedDebts(balances, currentUid);
+                                                    const isSettled = youOwe.length === 0 && owesYou.length === 0;
+                                                    if (isSettled) {
+                                                        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "border-t p-6 text-center",
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    children: getUserName(uid)
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
+                                                                        className: "h-8 w-8 text-green-600"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 958,
+                                                                        columnNumber: 27
+                                                                    }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 952,
-                                                                    columnNumber: 23
+                                                                    lineNumber: 957,
+                                                                    columnNumber: 25
                                                                 }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: (balances[uid] || 0) >= 0 ? "text-green-600" : "text-red-600",
-                                                                    children: formatMoney(balances[uid] || 0)
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "font-semibold text-green-700",
+                                                                    children: "All Settled Up!"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 953,
-                                                                    columnNumber: 23
-                                                                }, this)
-                                                            ]
-                                                        }, uid, true, {
-                                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 951,
-                                                            columnNumber: 21
-                                                        }, this))
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 949,
-                                                    columnNumber: 17
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "border-t p-3 space-y-3",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center gap-2",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                                                    className: "h-4 w-4 text-green-600"
+                                                                    lineNumber: 960,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-sm text-muted-foreground mt-1",
+                                                                    children: "No outstanding debts"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
                                                                     lineNumber: 961,
-                                                                    columnNumber: 21
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm font-semibold",
-                                                                    children: "Record Payment"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 962,
-                                                                    columnNumber: 21
+                                                                    columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 960,
+                                                            lineNumber: 956,
+                                                            columnNumber: 23
+                                                        }, this);
+                                                    }
+                                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                        children: [
+                                                            youOwe.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "border-t p-3",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        className: "text-xs font-semibold text-red-700 mb-2 px-1",
+                                                                        children: "👤 You Owe"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 970,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "space-y-2",
+                                                                        children: youOwe.map(({ uid, amount })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SimplifiedDebtCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SimplifiedDebtCard"], {
+                                                                                uid: uid,
+                                                                                userName: getUserName(uid),
+                                                                                userPhoto: userProfiles[uid]?.photoURL,
+                                                                                amount: amount,
+                                                                                direction: "owe",
+                                                                                currency: settings.currency,
+                                                                                onPayBack: ()=>{
+                                                                                    setPaymentMember(uid);
+                                                                                    setPaymentAmount((amount / 100).toFixed(2));
+                                                                                }
+                                                                            }, uid, false, {
+                                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                                lineNumber: 973,
+                                                                                columnNumber: 31
+                                                                            }, this))
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 971,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                lineNumber: 969,
+                                                                columnNumber: 25
+                                                            }, this),
+                                                            owesYou.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "border-t p-3",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        className: "text-xs font-semibold text-green-700 mb-2 px-1",
+                                                                        children: "👥 Owes You"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 993,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "space-y-2",
+                                                                        children: owesYou.map(({ uid, amount })=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$SimplifiedDebtCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SimplifiedDebtCard"], {
+                                                                                uid: uid,
+                                                                                userName: getUserName(uid),
+                                                                                userPhoto: userProfiles[uid]?.photoURL,
+                                                                                amount: amount,
+                                                                                direction: "owed",
+                                                                                currency: settings.currency,
+                                                                                onRemind: ()=>{
+                                                                                    toast({
+                                                                                        title: "Reminder sent",
+                                                                                        description: `Notified ${getUserName(uid)} about the debt`
+                                                                                    });
+                                                                                }
+                                                                            }, uid, false, {
+                                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                                lineNumber: 996,
+                                                                                columnNumber: 31
+                                                                            }, this))
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 994,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                lineNumber: 992,
+                                                                columnNumber: 25
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true);
+                                                })(),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "border-t p-3",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuLabel"], {
+                                                            className: "text-xs text-muted-foreground px-0",
+                                                            children: "Record Payment"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/groups/[id]/page.tsx",
+                                                            lineNumber: 1020,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2371,12 +2640,12 @@ function GroupDetailPage() {
                                                                                 placeholder: "Who paid you?"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                lineNumber: 967,
+                                                                                lineNumber: 1024,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 966,
+                                                                            lineNumber: 1023,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -2385,18 +2654,18 @@ function GroupDetailPage() {
                                                                                     children: getUserName(uid)
                                                                                 }, uid, false, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 973,
+                                                                                    lineNumber: 1030,
                                                                                     columnNumber: 29
                                                                                 }, this))
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 969,
+                                                                            lineNumber: 1026,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 965,
+                                                                    lineNumber: 1022,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -2409,7 +2678,7 @@ function GroupDetailPage() {
                                                                     disabled: recordingPayment
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 979,
+                                                                    lineNumber: 1036,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2420,19 +2689,19 @@ function GroupDetailPage() {
                                                                     children: recordingPayment ? "Recording..." : "Record Payment"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 988,
+                                                                    lineNumber: 1045,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 964,
+                                                            lineNumber: 1021,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 959,
+                                                    lineNumber: 1019,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
@@ -2462,19 +2731,19 @@ function GroupDetailPage() {
                                                         className: "mr-1 h-4 w-4 sm:h-5 sm:w-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                        lineNumber: 1004,
+                                                        lineNumber: 1061,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Members"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                lineNumber: 1003,
+                                                lineNumber: 1060,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1002,
+                                            lineNumber: 1059,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -2485,12 +2754,12 @@ function GroupDetailPage() {
                                                         children: "Group Members"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                        lineNumber: 1010,
+                                                        lineNumber: 1067,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1009,
+                                                    lineNumber: 1066,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2512,20 +2781,20 @@ function GroupDetailPage() {
                                                                                             alt: getUserName(uid)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1019,
+                                                                                            lineNumber: 1076,
                                                                                             columnNumber: 31
                                                                                         }, this) : null,
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
                                                                                             children: getUserName(uid).slice(0, 2).toUpperCase()
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1021,
+                                                                                            lineNumber: 1078,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1017,
+                                                                                    lineNumber: 1074,
                                                                                     columnNumber: 27
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2536,7 +2805,7 @@ function GroupDetailPage() {
                                                                                             children: getUserName(uid)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1026,
+                                                                                            lineNumber: 1083,
                                                                                             columnNumber: 29
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2544,19 +2813,19 @@ function GroupDetailPage() {
                                                                                             children: userProfiles[uid]?.email || ""
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1027,
+                                                                                            lineNumber: 1084,
                                                                                             columnNumber: 29
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1025,
+                                                                                    lineNumber: 1082,
                                                                                     columnNumber: 27
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1016,
+                                                                            lineNumber: 1073,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2569,20 +2838,20 @@ function GroupDetailPage() {
                                                                                             className: "h-3 w-3"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1033,
+                                                                                            lineNumber: 1090,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: "Owner"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1034,
+                                                                                            lineNumber: 1091,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1032,
+                                                                                    lineNumber: 1089,
                                                                                     columnNumber: 29
                                                                                 }, this),
                                                                                 isOwner && uid !== currentUid && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -2597,17 +2866,17 @@ function GroupDetailPage() {
                                                                                                     className: "h-4 w-4"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                    lineNumber: 1041,
+                                                                                                    lineNumber: 1098,
                                                                                                     columnNumber: 35
                                                                                                 }, this)
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                lineNumber: 1040,
+                                                                                                lineNumber: 1097,
                                                                                                 columnNumber: 33
                                                                                             }, this)
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1039,
+                                                                                            lineNumber: 1096,
                                                                                             columnNumber: 31
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -2623,14 +2892,14 @@ function GroupDetailPage() {
                                                                                                             className: "mr-2 h-4 w-4"
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                            lineNumber: 1051,
+                                                                                                            lineNumber: 1108,
                                                                                                             columnNumber: 35
                                                                                                         }, this),
                                                                                                         "Transfer Ownership"
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                    lineNumber: 1045,
+                                                                                                    lineNumber: 1102,
                                                                                                     columnNumber: 33
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -2644,43 +2913,43 @@ function GroupDetailPage() {
                                                                                                             className: "mr-2 h-4 w-4"
                                                                                                         }, void 0, false, {
                                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                            lineNumber: 1061,
+                                                                                                            lineNumber: 1118,
                                                                                                             columnNumber: 35
                                                                                                         }, this),
                                                                                                         "Remove Member"
                                                                                                     ]
                                                                                                 }, void 0, true, {
                                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                    lineNumber: 1054,
+                                                                                                    lineNumber: 1111,
                                                                                                     columnNumber: 33
                                                                                                 }, this)
                                                                                             ]
                                                                                         }, void 0, true, {
                                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                            lineNumber: 1044,
+                                                                                            lineNumber: 1101,
                                                                                             columnNumber: 31
                                                                                         }, this)
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1038,
+                                                                                    lineNumber: 1095,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1030,
+                                                                            lineNumber: 1087,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, uid, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1015,
+                                                                    lineNumber: 1072,
                                                                     columnNumber: 23
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1013,
+                                                            lineNumber: 1070,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2690,7 +2959,7 @@ function GroupDetailPage() {
                                                                     children: "Invite Code"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1073,
+                                                                    lineNumber: 1130,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2698,7 +2967,7 @@ function GroupDetailPage() {
                                                                     children: "Generate a code to share with others"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1074,
+                                                                    lineNumber: 1131,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 !inviteCode ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2710,14 +2979,14 @@ function GroupDetailPage() {
                                                                             className: "mr-2 h-4 w-4"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1077,
+                                                                            lineNumber: 1134,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         "Generate Invite Code"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1076,
+                                                                    lineNumber: 1133,
                                                                     columnNumber: 23
                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                     className: "flex gap-2",
@@ -2728,7 +2997,7 @@ function GroupDetailPage() {
                                                                             className: "font-mono"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1082,
+                                                                            lineNumber: 1139,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2739,24 +3008,24 @@ function GroupDetailPage() {
                                                                                 className: "h-4 w-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                lineNumber: 1084,
+                                                                                lineNumber: 1141,
                                                                                 columnNumber: 27
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1083,
+                                                                            lineNumber: 1140,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1081,
+                                                                    lineNumber: 1138,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1072,
+                                                            lineNumber: 1129,
                                                             columnNumber: 19
                                                         }, this),
                                                         isOwner && memberIds.length > 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2766,7 +3035,7 @@ function GroupDetailPage() {
                                                                     children: "Leave Group"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1094,
+                                                                    lineNumber: 1151,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2774,7 +3043,7 @@ function GroupDetailPage() {
                                                                     children: "You're the group owner. Transfer ownership to someone else before leaving."
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1095,
+                                                                    lineNumber: 1152,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2790,7 +3059,7 @@ function GroupDetailPage() {
                                                                     children: "Leave Group"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1098,
+                                                                    lineNumber: 1155,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2802,20 +3071,20 @@ function GroupDetailPage() {
                                                                             children: "⋮"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1112,
+                                                                            lineNumber: 1169,
                                                                             columnNumber: 33
                                                                         }, this),
                                                                         " menu next to a member to transfer ownership."
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1111,
+                                                                    lineNumber: 1168,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1093,
+                                                            lineNumber: 1150,
                                                             columnNumber: 21
                                                         }, this),
                                                         (!isOwner || memberIds.length === 1) && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2825,7 +3094,7 @@ function GroupDetailPage() {
                                                                     children: "Leave Group"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1118,
+                                                                    lineNumber: 1175,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2833,7 +3102,7 @@ function GroupDetailPage() {
                                                                     children: memberIds.length === 1 ? "You're the last member. Leaving will permanently delete this group." : "You can leave this group anytime."
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1119,
+                                                                    lineNumber: 1176,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2850,31 +3119,31 @@ function GroupDetailPage() {
                                                                     children: "Leave Group"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1124,
+                                                                    lineNumber: 1181,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1117,
+                                                            lineNumber: 1174,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1012,
+                                                    lineNumber: 1069,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1008,
+                                            lineNumber: 1065,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1001,
+                                    lineNumber: 1058,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -2911,12 +3180,12 @@ function GroupDetailPage() {
                             children: "No activity yet"
                         }, void 0, false, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1159,
+                            lineNumber: 1216,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/groups/[id]/page.tsx",
-                        lineNumber: 1158,
+                        lineNumber: 1215,
                         columnNumber: 13
                     }, this) : feedItems.map((item, index)=>{
                         const prevItem = index > 0 ? feedItems[index - 1] : null;
@@ -2933,7 +3202,7 @@ function GroupDetailPage() {
                                             children: getUserName(item.createdBy)
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1172,
+                                            lineNumber: 1229,
                                             columnNumber: 25
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2944,7 +3213,7 @@ function GroupDetailPage() {
                                                     children: item.text
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1179,
+                                                    lineNumber: 1236,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2952,24 +3221,24 @@ function GroupDetailPage() {
                                                     children: formatTime(toDateSafe(item.createdAt))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1180,
+                                                    lineNumber: 1237,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1174,
+                                            lineNumber: 1231,
                                             columnNumber: 23
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1170,
+                                    lineNumber: 1227,
                                     columnNumber: 21
                                 }, this)
                             }, item.id, false, {
                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                lineNumber: 1169,
+                                lineNumber: 1226,
                                 columnNumber: 19
                             }, this);
                         } else {
@@ -2991,7 +3260,7 @@ function GroupDetailPage() {
                                                             className: "h-4 w-4 sm:h-5 sm:w-5 text-green-600 shrink-0"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1200,
+                                                            lineNumber: 1257,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3002,7 +3271,7 @@ function GroupDetailPage() {
                                                                     children: item.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1202,
+                                                                    lineNumber: 1259,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3013,19 +3282,19 @@ function GroupDetailPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1203,
+                                                                    lineNumber: 1260,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1201,
+                                                            lineNumber: 1258,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1199,
+                                                    lineNumber: 1256,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3038,7 +3307,7 @@ function GroupDetailPage() {
                                                                     children: formatMoney(item.amountCents || 0)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1210,
+                                                                    lineNumber: 1267,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 item.category && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3046,13 +3315,13 @@ function GroupDetailPage() {
                                                                     children: item.category
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1212,
+                                                                    lineNumber: 1269,
                                                                     columnNumber: 31
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1209,
+                                                            lineNumber: 1266,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3067,7 +3336,7 @@ function GroupDetailPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1216,
+                                                                    lineNumber: 1273,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3075,25 +3344,25 @@ function GroupDetailPage() {
                                                                     children: formatTime(toDateSafe(item.createdAt))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1219,
+                                                                    lineNumber: 1276,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1215,
+                                                            lineNumber: 1272,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1208,
+                                                    lineNumber: 1265,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1198,
+                                            lineNumber: 1255,
                                             columnNumber: 23
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -3109,17 +3378,17 @@ function GroupDetailPage() {
                                                             className: "h-4 w-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1226,
+                                                            lineNumber: 1283,
                                                             columnNumber: 29
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                        lineNumber: 1225,
+                                                        lineNumber: 1282,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1224,
+                                                    lineNumber: 1281,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -3137,48 +3406,48 @@ function GroupDetailPage() {
                                                                 className: "mr-2 h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                lineNumber: 1239,
+                                                                lineNumber: 1296,
                                                                 columnNumber: 29
                                                             }, this),
                                                             "Edit"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                        lineNumber: 1230,
+                                                        lineNumber: 1287,
                                                         columnNumber: 27
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1229,
+                                                    lineNumber: 1286,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1223,
+                                            lineNumber: 1280,
                                             columnNumber: 23
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1197,
+                                    lineNumber: 1254,
                                     columnNumber: 21
                                 }, this)
                             }, item.id, false, {
                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                lineNumber: 1192,
+                                lineNumber: 1249,
                                 columnNumber: 19
                             }, this);
                         }
                     })
                 }, void 0, false, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1156,
+                    lineNumber: 1213,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1147,
+                lineNumber: 1204,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3205,17 +3474,17 @@ function GroupDetailPage() {
                                                     className: "h-5 w-5"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1259,
+                                                    lineNumber: 1316,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                lineNumber: 1258,
+                                                lineNumber: 1315,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1257,
+                                            lineNumber: 1314,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogContent"], {
@@ -3226,12 +3495,12 @@ function GroupDetailPage() {
                                                         children: "Add Expense"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                        lineNumber: 1264,
+                                                        lineNumber: 1321,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1263,
+                                                    lineNumber: 1320,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3244,7 +3513,7 @@ function GroupDetailPage() {
                                                                     children: "Description"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1268,
+                                                                    lineNumber: 1325,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -3254,13 +3523,13 @@ function GroupDetailPage() {
                                                                     onChange: (e)=>setExpenseTitle(e.target.value)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1269,
+                                                                    lineNumber: 1326,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1267,
+                                                            lineNumber: 1324,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3274,7 +3543,7 @@ function GroupDetailPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1277,
+                                                                    lineNumber: 1334,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -3286,13 +3555,13 @@ function GroupDetailPage() {
                                                                     onChange: (e)=>setExpenseAmount(e.target.value)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1278,
+                                                                    lineNumber: 1335,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1276,
+                                                            lineNumber: 1333,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3302,7 +3571,7 @@ function GroupDetailPage() {
                                                                     children: "Category (optional)"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1288,
+                                                                    lineNumber: 1345,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -3333,14 +3602,14 @@ function GroupDetailPage() {
                                                                                                     className: "h-4 w-4"
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                    lineNumber: 1310,
+                                                                                                    lineNumber: 1367,
                                                                                                     columnNumber: 46
                                                                                                 }, this),
                                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                                     children: option?.label
                                                                                                 }, void 0, false, {
                                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                    lineNumber: 1311,
+                                                                                                    lineNumber: 1368,
                                                                                                     columnNumber: 37
                                                                                                 }, this)
                                                                                             ]
@@ -3348,17 +3617,17 @@ function GroupDetailPage() {
                                                                                     })()
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1304,
+                                                                                    lineNumber: 1361,
                                                                                     columnNumber: 29
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                lineNumber: 1302,
+                                                                                lineNumber: 1359,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1301,
+                                                                            lineNumber: 1358,
                                                                             columnNumber: 23
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -3373,37 +3642,37 @@ function GroupDetailPage() {
                                                                                                 className: "h-4 w-4"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                lineNumber: 1325,
+                                                                                                lineNumber: 1382,
                                                                                                 columnNumber: 33
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                                 children: option.label
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                lineNumber: 1326,
+                                                                                                lineNumber: 1383,
                                                                                                 columnNumber: 33
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                        lineNumber: 1324,
+                                                                                        lineNumber: 1381,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 }, option.value, false, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1323,
+                                                                                    lineNumber: 1380,
                                                                                     columnNumber: 29
                                                                                 }, this);
                                                                             })
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1319,
+                                                                            lineNumber: 1376,
                                                                             columnNumber: 23
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1289,
+                                                                    lineNumber: 1346,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 categoryMode === "custom" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -3413,13 +3682,13 @@ function GroupDetailPage() {
                                                                     className: "mt-2"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1334,
+                                                                    lineNumber: 1391,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1287,
+                                                            lineNumber: 1344,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3428,7 +3697,7 @@ function GroupDetailPage() {
                                                                     children: "Split with"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1343,
+                                                                    lineNumber: 1400,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3451,18 +3720,18 @@ function GroupDetailPage() {
                                                                             children: getUserName(uid)
                                                                         }, uid, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1346,
+                                                                            lineNumber: 1403,
                                                                             columnNumber: 25
                                                                         }, this))
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1344,
+                                                                    lineNumber: 1401,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1342,
+                                                            lineNumber: 1399,
                                                             columnNumber: 19
                                                         }, this),
                                                         selectedParticipants.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3472,7 +3741,7 @@ function GroupDetailPage() {
                                                                     children: "Split Mode"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1372,
+                                                                    lineNumber: 1429,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3490,7 +3759,7 @@ function GroupDetailPage() {
                                                                             children: "Equal Split"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1374,
+                                                                            lineNumber: 1431,
                                                                             columnNumber: 25
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3502,13 +3771,13 @@ function GroupDetailPage() {
                                                                             children: "Custom Split"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1386,
+                                                                            lineNumber: 1443,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1373,
+                                                                    lineNumber: 1430,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 splitMode === "custom" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3519,7 +3788,7 @@ function GroupDetailPage() {
                                                                             children: "Enter custom amounts for each person (must sum to total)"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1399,
+                                                                            lineNumber: 1456,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         selectedParticipants.map((uid)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3530,7 +3799,7 @@ function GroupDetailPage() {
                                                                                         children: getUserName(uid)
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                        lineNumber: 1404,
+                                                                                        lineNumber: 1461,
                                                                                         columnNumber: 31
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3541,7 +3810,7 @@ function GroupDetailPage() {
                                                                                                 children: settings.currency
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                lineNumber: 1406,
+                                                                                                lineNumber: 1463,
                                                                                                 columnNumber: 33
                                                                                             }, this),
                                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -3558,19 +3827,19 @@ function GroupDetailPage() {
                                                                                                 className: "w-28"
                                                                                             }, void 0, false, {
                                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                                lineNumber: 1407,
+                                                                                                lineNumber: 1464,
                                                                                                 columnNumber: 33
                                                                                             }, this)
                                                                                         ]
                                                                                     }, void 0, true, {
                                                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                        lineNumber: 1405,
+                                                                                        lineNumber: 1462,
                                                                                         columnNumber: 31
                                                                                     }, this)
                                                                                 ]
                                                                             }, uid, true, {
                                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                lineNumber: 1403,
+                                                                                lineNumber: 1460,
                                                                                 columnNumber: 29
                                                                             }, this)),
                                                                         expenseAmount && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3581,7 +3850,7 @@ function GroupDetailPage() {
                                                                                     children: "Total:"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1425,
+                                                                                    lineNumber: 1482,
                                                                                     columnNumber: 31
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3595,25 +3864,25 @@ function GroupDetailPage() {
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                                    lineNumber: 1426,
+                                                                                    lineNumber: 1483,
                                                                                     columnNumber: 31
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1424,
+                                                                            lineNumber: 1481,
                                                                             columnNumber: 29
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1398,
+                                                                    lineNumber: 1455,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1371,
+                                                            lineNumber: 1428,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3623,25 +3892,25 @@ function GroupDetailPage() {
                                                             children: addingExpense ? "Adding..." : "Add Expense"
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1445,
+                                                            lineNumber: 1502,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1266,
+                                                    lineNumber: 1323,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1262,
+                                            lineNumber: 1319,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1256,
+                                    lineNumber: 1313,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -3658,7 +3927,7 @@ function GroupDetailPage() {
                                     rows: 1
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1452,
+                                    lineNumber: 1509,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3670,18 +3939,18 @@ function GroupDetailPage() {
                                         className: "h-4 w-4 sm:h-5 sm:w-5"
                                     }, void 0, false, {
                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                        lineNumber: 1466,
+                                        lineNumber: 1523,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1465,
+                                    lineNumber: 1522,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1255,
+                            lineNumber: 1312,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3689,348 +3958,443 @@ function GroupDetailPage() {
                             children: "Press Enter to send, Shift+Enter for new line"
                         }, void 0, false, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1469,
+                            lineNumber: 1526,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1254,
+                    lineNumber: 1311,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1253,
+                lineNumber: 1310,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
                 open: expenseDetailOpen,
                 onOpenChange: setExpenseDetailOpen,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogContent"], {
-                    className: "max-h-[90vh] overflow-y-auto w-[92vw] max-w-md sm:w-full",
+                    className: "max-h-[90vh] overflow-y-auto w-[95vw] max-w-md sm:w-full",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogHeader"], {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogTitle"], {
-                                className: "text-lg sm:text-xl",
+                                className: "text-xl sm:text-2xl font-semibold",
                                 children: "Expense Details"
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                lineNumber: 1478,
+                                lineNumber: 1535,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1477,
+                            lineNumber: 1534,
                             columnNumber: 11
                         }, this),
-                        selectedExpense && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-4 sm:space-y-6",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "space-y-2 sm:space-y-3",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center gap-2 sm:gap-3",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__["DollarSign"], {
-                                                    className: "h-5 w-5 sm:h-6 sm:w-6 text-green-600 shrink-0"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1484,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "min-w-0",
+                        selectedExpense && (()=>{
+                            const categoryOption = CATEGORY_OPTIONS.find((opt)=>opt.value === selectedExpense.category);
+                            const CategoryIcon = categoryOption?.icon || __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$dollar$2d$sign$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__DollarSign$3e$__["DollarSign"];
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "space-y-4",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-white dark:bg-slate-900 rounded-lg p-5 border border-slate-200 dark:border-slate-700 shadow-sm",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex items-start gap-3 mb-4",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center flex-shrink-0",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(CategoryIcon, {
+                                                            className: "h-5 w-5 text-white"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/app/groups/[id]/page.tsx",
+                                                            lineNumber: 1547,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                        lineNumber: 1546,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex-1 min-w-0",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                                className: "text-lg font-semibold text-foreground truncate",
+                                                                children: selectedExpense.title
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                lineNumber: 1550,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "flex items-center gap-2 mt-1 text-sm text-muted-foreground",
+                                                                children: [
+                                                                    selectedExpense.category && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                children: selectedExpense.category
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                                lineNumber: 1556,
+                                                                                columnNumber: 29
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                children: "•"
+                                                                            }, void 0, false, {
+                                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                                lineNumber: 1557,
+                                                                                columnNumber: 29
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        children: toDateSafe(selectedExpense.createdAt).toLocaleDateString()
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 1560,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                lineNumber: 1553,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                        lineNumber: 1549,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1545,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "pt-4 border-t border-slate-200 dark:border-slate-700",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-3xl sm:text-4xl font-semibold text-foreground",
+                                                        children: formatMoney(selectedExpense.amountCents || 0)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                        lineNumber: 1566,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-sm text-muted-foreground mt-1",
+                                                        children: "Total amount"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                        lineNumber: 1569,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1565,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                        lineNumber: 1544,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2 px-1",
+                                                children: "Paid By"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1575,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "bg-white dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center gap-3",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                            className: "text-base sm:text-lg font-semibold truncate",
-                                                            children: selectedExpense.title
-                                                        }, void 0, false, {
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                                                            className: "h-10 w-10",
+                                                            children: [
+                                                                userProfiles[selectedExpense.payerUid || ""]?.photoURL ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                                                    src: userProfiles[selectedExpense.payerUid || ""]?.photoURL,
+                                                                    alt: getUserName(selectedExpense.payerUid || "")
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                    lineNumber: 1582,
+                                                                    columnNumber: 27
+                                                                }, this) : null,
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                                                    className: "bg-green-600 text-white font-medium",
+                                                                    children: getUserName(selectedExpense.payerUid || "").slice(0, 2).toUpperCase()
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                    lineNumber: 1587,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1486,
-                                                            columnNumber: 21
+                                                            lineNumber: 1580,
+                                                            columnNumber: 23
                                                         }, this),
-                                                        selectedExpense.category && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-xs sm:text-sm text-muted-foreground",
-                                                            children: selectedExpense.category
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex-1 min-w-0",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "font-medium text-foreground truncate",
+                                                                    children: getUserName(selectedExpense.payerUid || "")
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                    lineNumber: 1592,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-sm text-muted-foreground truncate",
+                                                                    children: userProfiles[selectedExpense.payerUid || ""]?.email
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                    lineNumber: 1595,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/app/groups/[id]/page.tsx",
+                                                            lineNumber: 1591,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "text-right",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-lg font-semibold text-green-600 dark:text-green-500",
+                                                                children: formatMoney(selectedExpense.amountCents || 0)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                lineNumber: 1600,
+                                                                columnNumber: 25
+                                                            }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1488,
+                                                            lineNumber: 1599,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1485,
-                                                    columnNumber: 19
+                                                    lineNumber: 1579,
+                                                    columnNumber: 21
                                                 }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1483,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-2xl sm:text-3xl font-bold",
-                                            children: formatMoney(selectedExpense.amountCents || 0)
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1492,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                            className: "text-xs sm:text-sm text-muted-foreground",
-                                            children: [
-                                                toDateSafe(selectedExpense.createdAt).toLocaleDateString(),
-                                                " at ",
-                                                formatTime(toDateSafe(selectedExpense.createdAt))
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1493,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1482,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "border-t pt-3 sm:pt-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                            className: "text-sm sm:text-base font-semibold mb-2 sm:mb-3",
-                                            children: "Paid by"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1499,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "flex items-center justify-between rounded-lg border p-3 sm:p-4 bg-green-50 dark:bg-green-950/20",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "min-w-0 flex-1",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "font-medium text-sm sm:text-base truncate",
-                                                            children: getUserName(selectedExpense.payerUid || "")
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1502,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                            className: "text-xs sm:text-sm text-muted-foreground truncate",
-                                                            children: userProfiles[selectedExpense.payerUid || ""]?.email
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1505,
-                                                            columnNumber: 21
-                                                        }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1501,
-                                                    columnNumber: 19
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                    className: "text-base sm:text-lg font-bold text-green-600 ml-2 shrink-0",
-                                                    children: formatMoney(selectedExpense.amountCents || 0)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1509,
-                                                    columnNumber: 19
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1500,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1498,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "border-t pt-3 sm:pt-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                            className: "text-sm sm:text-base font-semibold mb-2 sm:mb-3",
-                                            children: [
-                                                "Split between ",
-                                                selectedExpense.participantIds?.length || 0,
-                                                " people"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1516,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "space-y-2",
-                                            children: selectedExpense.participantIds?.map((uid)=>{
-                                                const splitAmount = selectedExpense.splitCents?.[uid] || 0;
-                                                const isPayer = uid === selectedExpense.payerUid;
-                                                const hasPaid = paymentStatus[selectedExpense.id]?.[uid] || false;
-                                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: `flex items-center justify-between gap-2 rounded-lg border p-3 sm:p-4 ${isPayer ? "bg-muted" : hasPaid ? "bg-green-50 dark:bg-green-950/20" : "bg-red-50 dark:bg-red-950/20"}`,
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "min-w-0 flex-1",
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1578,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                        lineNumber: 1574,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2 px-1",
+                                                children: [
+                                                    "Split Between ",
+                                                    selectedExpense.participantIds?.length || 0,
+                                                    " People"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1610,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "space-y-2",
+                                                children: selectedExpense.participantIds?.map((uid)=>{
+                                                    const splitAmount = selectedExpense.splitCents?.[uid] || 0;
+                                                    const isPayer = uid === selectedExpense.payerUid;
+                                                    const hasPaid = paymentStatus[selectedExpense.id]?.[uid] || false;
+                                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "bg-white dark:bg-slate-900 rounded-lg p-3.5 border border-slate-200 dark:border-slate-700",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-center gap-3",
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "font-medium text-sm sm:text-base truncate",
-                                                                    children: getUserName(uid)
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1537,
-                                                                    columnNumber: 27
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-xs text-muted-foreground",
-                                                                    children: isPayer ? "Paid the full amount" : hasPaid ? "Paid their share" : "Owes the payer"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1538,
-                                                                    columnNumber: 27
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1536,
-                                                            columnNumber: 25
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex items-center gap-2 shrink-0",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                    className: "text-right",
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Avatar"], {
+                                                                    className: "h-9 w-9",
                                                                     children: [
-                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                            className: "font-semibold text-sm sm:text-base",
-                                                                            children: formatMoney(splitAmount)
+                                                                        userProfiles[uid]?.photoURL ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarImage"], {
+                                                                            src: userProfiles[uid]?.photoURL,
+                                                                            alt: getUserName(uid)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1544,
-                                                                            columnNumber: 29
-                                                                        }, this),
-                                                                        isPayer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                            className: "text-xs text-green-600",
-                                                                            children: [
-                                                                                "+",
-                                                                                formatMoney((selectedExpense.amountCents || 0) - splitAmount)
-                                                                            ]
-                                                                        }, void 0, true, {
+                                                                            lineNumber: 1627,
+                                                                            columnNumber: 33
+                                                                        }, this) : null,
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$avatar$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AvatarFallback"], {
+                                                                            className: `text-sm font-medium ${isPayer ? "bg-green-600 text-white" : hasPaid ? "bg-slate-600 text-white" : "bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300"}`,
+                                                                            children: getUserName(uid).slice(0, 2).toUpperCase()
+                                                                        }, void 0, false, {
                                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                            lineNumber: 1546,
+                                                                            lineNumber: 1629,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1543,
-                                                                    columnNumber: 27
+                                                                    lineNumber: 1625,
+                                                                    columnNumber: 29
                                                                 }, this),
-                                                                !isPayer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                                                    size: "sm",
-                                                                    variant: hasPaid ? "outline" : "default",
-                                                                    className: `h-8 px-3 text-xs ${hasPaid ? "bg-green-100 text-green-700 border-green-300 hover:bg-green-200 dark:bg-green-950 dark:text-green-400 dark:border-green-800" : "bg-red-600 text-white hover:bg-red-700"}`,
-                                                                    onClick: ()=>handleTogglePayment(selectedExpense.id, uid),
-                                                                    children: hasPaid ? "✓ Paid" : "Mark Paid"
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "flex-1 min-w-0",
+                                                                    children: [
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex items-center gap-2",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                    className: "font-medium text-sm text-foreground truncate",
+                                                                                    children: getUserName(uid)
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                                    lineNumber: 1637,
+                                                                                    columnNumber: 33
+                                                                                }, this),
+                                                                                isPayer && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                    className: "inline-flex items-center px-2 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium",
+                                                                                    children: "Payer"
+                                                                                }, void 0, false, {
+                                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                                    lineNumber: 1641,
+                                                                                    columnNumber: 35
+                                                                                }, this)
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                            lineNumber: 1636,
+                                                                            columnNumber: 31
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                            className: "text-xs text-muted-foreground mt-0.5",
+                                                                            children: isPayer ? "Paid full amount" : hasPaid ? "Paid their share" : "Owes their share"
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                            lineNumber: 1646,
+                                                                            columnNumber: 31
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                    lineNumber: 1635,
+                                                                    columnNumber: 29
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "text-right",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                        className: "font-medium text-foreground",
+                                                                        children: formatMoney(splitAmount)
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                                        lineNumber: 1651,
+                                                                        columnNumber: 31
+                                                                    }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                    lineNumber: 1552,
+                                                                    lineNumber: 1650,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1542,
-                                                            columnNumber: 25
+                                                            lineNumber: 1624,
+                                                            columnNumber: 27
                                                         }, this)
-                                                    ]
-                                                }, uid, true, {
-                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1526,
-                                                    columnNumber: 23
-                                                }, this);
-                                            })
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1519,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1515,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "border-t pt-3 sm:pt-4 flex flex-col sm:flex-row gap-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                            variant: "outline",
-                                            onClick: ()=>setExpenseDetailOpen(false),
-                                            className: "flex-1",
-                                            children: "Close"
-                                        }, void 0, false, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1573,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
-                                            variant: "outline",
-                                            onClick: ()=>{
-                                                if (selectedExpense) {
-                                                    setEditExpenseId(selectedExpense.id);
-                                                    setEditExpenseTitle(selectedExpense.title || "");
-                                                    setEditExpenseCategory(selectedExpense.category || "");
-                                                    setExpenseDetailOpen(false);
-                                                    setEditExpenseOpen(true);
-                                                }
-                                            },
-                                            className: "flex-1",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Edit$3e$__["Edit"], {
-                                                    className: "mr-2 h-4 w-4"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1593,
-                                                    columnNumber: 19
-                                                }, this),
-                                                "Edit"
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1580,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1572,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1481,
-                            columnNumber: 13
-                        }, this)
+                                                    }, uid, false, {
+                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                        lineNumber: 1620,
+                                                        columnNumber: 25
+                                                    }, this);
+                                                })
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1613,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                        lineNumber: 1609,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex gap-2 pt-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                variant: "outline",
+                                                onClick: ()=>setExpenseDetailOpen(false),
+                                                className: "flex-1",
+                                                children: "Close"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1664,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
+                                                variant: "outline",
+                                                onClick: ()=>{
+                                                    if (selectedExpense) {
+                                                        setEditExpenseId(selectedExpense.id);
+                                                        setEditExpenseTitle(selectedExpense.title || "");
+                                                        setEditExpenseCategory(selectedExpense.category || "");
+                                                        setExpenseDetailOpen(false);
+                                                        setEditExpenseOpen(true);
+                                                    }
+                                                },
+                                                className: "flex-1",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$square$2d$pen$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Edit$3e$__["Edit"], {
+                                                        className: "mr-2 h-4 w-4"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                                        lineNumber: 1684,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    "Edit"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                                lineNumber: 1671,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/groups/[id]/page.tsx",
+                                        lineNumber: 1663,
+                                        columnNumber: 17
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/groups/[id]/page.tsx",
+                                lineNumber: 1542,
+                                columnNumber: 15
+                            }, this);
+                        })()
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1476,
+                    lineNumber: 1533,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1475,
+                lineNumber: 1532,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialog"], {
@@ -4044,7 +4408,7 @@ function GroupDetailPage() {
                                     children: "Transfer Ownership"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1605,
+                                    lineNumber: 1697,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
@@ -4056,13 +4420,13 @@ function GroupDetailPage() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1606,
+                                    lineNumber: 1698,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1604,
+                            lineNumber: 1696,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
@@ -4071,7 +4435,7 @@ function GroupDetailPage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1613,
+                                    lineNumber: 1705,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
@@ -4079,24 +4443,24 @@ function GroupDetailPage() {
                                     children: "Transfer Ownership"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1614,
+                                    lineNumber: 1706,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1612,
+                            lineNumber: 1704,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1603,
+                    lineNumber: 1695,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1602,
+                lineNumber: 1694,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialog"], {
@@ -4110,7 +4474,7 @@ function GroupDetailPage() {
                                     children: "Leave Group"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1626,
+                                    lineNumber: 1718,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
@@ -4121,13 +4485,13 @@ function GroupDetailPage() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1627,
+                                    lineNumber: 1719,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1625,
+                            lineNumber: 1717,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
@@ -4136,7 +4500,7 @@ function GroupDetailPage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1632,
+                                    lineNumber: 1724,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
@@ -4145,24 +4509,24 @@ function GroupDetailPage() {
                                     children: "Leave Group"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1633,
+                                    lineNumber: 1725,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1631,
+                            lineNumber: 1723,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1624,
+                    lineNumber: 1716,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1623,
+                lineNumber: 1715,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialog"], {
@@ -4176,7 +4540,7 @@ function GroupDetailPage() {
                                     children: "Delete Group"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1645,
+                                    lineNumber: 1737,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
@@ -4187,13 +4551,13 @@ function GroupDetailPage() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1646,
+                                    lineNumber: 1738,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1644,
+                            lineNumber: 1736,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
@@ -4202,7 +4566,7 @@ function GroupDetailPage() {
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1651,
+                                    lineNumber: 1743,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
@@ -4214,24 +4578,24 @@ function GroupDetailPage() {
                                     children: "Delete Group"
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1652,
+                                    lineNumber: 1744,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1650,
+                            lineNumber: 1742,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1643,
+                    lineNumber: 1735,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1642,
+                lineNumber: 1734,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4245,12 +4609,12 @@ function GroupDetailPage() {
                                 children: "Edit Expense"
                             }, void 0, false, {
                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                lineNumber: 1669,
+                                lineNumber: 1761,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1668,
+                            lineNumber: 1760,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4263,7 +4627,7 @@ function GroupDetailPage() {
                                             children: "Title"
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1673,
+                                            lineNumber: 1765,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -4275,13 +4639,13 @@ function GroupDetailPage() {
                                             className: "mt-2"
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1674,
+                                            lineNumber: 1766,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1672,
+                                    lineNumber: 1764,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4291,7 +4655,7 @@ function GroupDetailPage() {
                                             children: "Category"
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1685,
+                                            lineNumber: 1777,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Select"], {
@@ -4305,12 +4669,12 @@ function GroupDetailPage() {
                                                         placeholder: "Select category"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                        lineNumber: 1692,
+                                                        lineNumber: 1784,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1691,
+                                                    lineNumber: 1783,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -4325,43 +4689,43 @@ function GroupDetailPage() {
                                                                         className: "h-4 w-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                        lineNumber: 1700,
+                                                                        lineNumber: 1792,
                                                                         columnNumber: 27
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                         children: option.label
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                        lineNumber: 1701,
+                                                                        lineNumber: 1793,
                                                                         columnNumber: 27
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/groups/[id]/page.tsx",
-                                                                lineNumber: 1699,
+                                                                lineNumber: 1791,
                                                                 columnNumber: 25
                                                             }, this)
                                                         }, option.value, false, {
                                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                                            lineNumber: 1698,
+                                                            lineNumber: 1790,
                                                             columnNumber: 23
                                                         }, this);
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                                    lineNumber: 1694,
+                                                    lineNumber: 1786,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1686,
+                                            lineNumber: 1778,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1684,
+                                    lineNumber: 1776,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4371,12 +4735,12 @@ function GroupDetailPage() {
                                         children: "ℹ️ Amount and split cannot be edited"
                                     }, void 0, false, {
                                         fileName: "[project]/app/groups/[id]/page.tsx",
-                                        lineNumber: 1711,
+                                        lineNumber: 1803,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1710,
+                                    lineNumber: 1802,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4395,7 +4759,7 @@ function GroupDetailPage() {
                                             children: "Cancel"
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1717,
+                                            lineNumber: 1809,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -4405,30 +4769,30 @@ function GroupDetailPage() {
                                             children: editingExpense ? "Saving..." : "Save Changes"
                                         }, void 0, false, {
                                             fileName: "[project]/app/groups/[id]/page.tsx",
-                                            lineNumber: 1730,
+                                            lineNumber: 1822,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/groups/[id]/page.tsx",
-                                    lineNumber: 1716,
+                                    lineNumber: 1808,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/groups/[id]/page.tsx",
-                            lineNumber: 1671,
+                            lineNumber: 1763,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/groups/[id]/page.tsx",
-                    lineNumber: 1667,
+                    lineNumber: 1759,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/groups/[id]/page.tsx",
-                lineNumber: 1666,
+                lineNumber: 1758,
                 columnNumber: 7
             }, this)
         ]
@@ -4441,4 +4805,4 @@ function GroupDetailPage() {
 }),
 ];
 
-//# sourceMappingURL=_1418a3d8._.js.map
+//# sourceMappingURL=_25c68be1._.js.map

@@ -114,7 +114,18 @@ service cloud.firestore {
       match /feed/{feedId} {
         allow read: if isOwnerParent() || isMemberParent();
         allow create: if isOwnerParent() || isMemberParent();
-        allow update, delete: if isOwnerParent() || (signedIn() && request.auth.uid == resource.data.createdBy);
+        
+        // ✅ UPDATE: Allow members to update paymentStatus, but only creator/owner can update other fields
+        allow update: if 
+          isOwnerParent() || 
+          (signedIn() && request.auth.uid == resource.data.createdBy) ||
+          // Allow any group member to update ONLY paymentStatus
+          (
+            isMemberParent() &&
+            request.resource.data.diff(resource.data).affectedKeys().hasOnly(['paymentStatus'])
+          );
+        
+        allow delete: if isOwnerParent() || (signedIn() && request.auth.uid == resource.data.createdBy);
       }
 
       match /activities/{activityId} {

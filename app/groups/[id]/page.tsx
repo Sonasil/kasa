@@ -15,6 +15,7 @@ import {
   getDocs,
   getDoc,
   limit,
+  deleteDoc, // Added deleteDoc
 } from "firebase/firestore"
 import { db ,auth } from "@/lib/firebase"
 
@@ -25,7 +26,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator, DropdownMenuLabel } from "@/components/ui/dropdown-menu" // Added DropdownMenuSeparator, DropdownMenuLabel
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import {
   AlertDialog,
@@ -38,6 +39,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
 import { Label } from "@/components/ui/label"
+import { SimplifiedDebtCard } from "@/components/SimplifiedDebtCard" // Added SimplifiedDebtCard
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
@@ -79,7 +81,7 @@ type GroupDoc = {
 
 type FeedItem = {
   id: string
-  type: "message" | "expense"
+  type: "message" | "expense" | "settlement"
   createdAt: Date
   createdBy: string
   // Message fields
@@ -92,6 +94,11 @@ type FeedItem = {
   splitCents?: Record<string, number>
   category?: string
   receiptUrl?: string
+  // Settlement fields
+  from?: string
+  fromName?: string
+  to?: string
+  toName?: string
 }
 
 type UserProfile = {
@@ -152,6 +159,13 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [expenseDetailOpen, setExpenseDetailOpen] = useState(false)
   const [selectedExpense, setSelectedExpense] = useState<FeedItem | null>(null)
 
+  // ✅ Edit expense dialog states
+  const [editExpenseOpen, setEditExpenseOpen] = useState(false)
+  const [editingExpense, setEditingExpense] = useState(false)
+  const [editExpenseId, setEditExpenseId] = useState<string | null>(null)
+  const [editExpenseTitle, setEditExpenseTitle] = useState("")
+  const [editExpenseCategory, setEditExpenseCategory] = useState("")
+
   const [kickMemberDialog, setKickMemberDialog] = useState(false)
   const [transferOwnerDialog, setTransferOwnerDialog] = useState(false)
   const [selectedMemberForAction, setSelectedMemberForAction] = useState<string | null>(null)
@@ -162,6 +176,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
   const [paymentMember, setPaymentMember] = useState("")
   const [paymentAmount, setPaymentAmount] = useState("")
+  const [recordingPayment, setRecordingPayment] = useState(false)
 
   const currentUid = auth.currentUser?.uid ?? ""
 
@@ -199,19 +214,43 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
             title: data.title,
             amountCents: data.amountCents,
             payerUid: data.payerUid,
-            participantIds: data.participantIds,
-            splitCents: data.splitCents,
+            participantIds: data.participantIds || [],
+            splitCents: data.splitCents || {},
             category: data.category,
             receiptUrl: data.receiptUrl,
+            // Settlement fields
+            from: data.from,
+            fromName: data.fromName,
+            to: data.to,
+            toName: data.toName,
+            // Payment status
+            paymentStatus: data.paymentStatus || {},
           } as FeedItem
         })
-        .filter((x) => x.type === "message" || x.type === "expense")
+        .filter((item) => item.type === "message" || item.type === "expense" || item.type === "settlement")
 
       setFeedItems(items)
+      
+      // Sync paymentStatus state with feed items
+      const newPaymentStatus: Record<string, Record<string, boolean>> = {}
+      items.forEach(item => {
+        if (item.type === "expense" && item.paymentStatus) {
+          newPaymentStatus[item.id] = item.paymentStatus
+        }
+      })
+      setPaymentStatus(newPaymentStatus)
+
+      if (autoScroll) {
+        setTimeout(() => {
+          if (scrollRef.current) {
+            scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+          }
+        }, 100)
+      }
     })
 
     return () => unsub()
-  }, [groupId])
+  }, [groupId, autoScroll])
 
   useEffect(() => {
     if (autoScroll && scrollRef.current) {
@@ -221,28 +260,25 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
   const handleSendMessage = async (e: FormEvent) => {
     e.preventDefault()
-    if (!messageText.trim() || sending) return
-
     const text = messageText.trim()
-    setMessageText("")
-    setSending(true)
+    if (!text || sending || !currentUid) return
 
+    setSending(true)
     try {
-      await addDoc(collection(db, "groups", groupId, "feed"), {
+      const feedRef = doc(collection(db, "groups", groupId, "feed"))
+      await setDoc(feedRef, {
         type: "message",
+        text,
         createdAt: serverTimestamp(),
         createdBy: currentUid,
-        text,
       })
 
-      toast({
-        title: "Message sent",
-      })
+      setMessageText("")
     } catch (err) {
       console.error("Failed to send message:", err)
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: "Failed to send message",
         variant: "destructive",
       })
     } finally {
@@ -256,6 +292,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     const title = expenseTitle.trim()
     const amountTRY = Number.parseFloat(expenseAmount)
 
+    // ✅ Validation 1: Basic input validation
     if (!title || !amountTRY || amountTRY <= 0) {
       toast({
         title: "Invalid input",
@@ -264,24 +301,14 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
       return
     }
-    setAddingExpense(true)
-
-    // stable request id for this submission (idempotency)
-    if (!addExpenseRequestIdRef.current) {
-      const uuid = (globalThis as any)?.crypto?.randomUUID?.()
-      addExpenseRequestIdRef.current =
-        uuid || `${currentUid}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
-    }
-    const requestId = addExpenseRequestIdRef.current || `${currentUid}-${Date.now()}`
 
     const participants = selectedParticipants.length > 0 ? selectedParticipants : [currentUid]
     const totalCents = Math.round(amountTRY * 100)
-
     const participantIds = [...participants].sort()
     const splitCents: Record<string, number> = {}
 
+    // ✅ Validation 2: Custom split validation (BEFORE setAddingExpense)
     if (splitMode === "custom") {
-      // Validate and use custom split amounts
       let customTotal = 0
       for (const uid of participantIds) {
         const customAmount = Number.parseFloat(customSplitAmounts[uid] || "0")
@@ -291,7 +318,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
             description: `Please enter a valid amount for ${getUserName(uid)}`,
             variant: "destructive",
           })
-          return
+          return // ✅ Early return WITHOUT setting loading state
         }
         const customCents = Math.round(customAmount * 100)
         splitCents[uid] = customCents
@@ -305,7 +332,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
           description: `Split amounts (${formatMoney(customTotal)}) must equal total (${formatMoney(totalCents)})`,
           variant: "destructive",
         })
-        return
+        return // ✅ Early return WITHOUT setting loading state
       }
 
       // Adjust for rounding differences
@@ -325,6 +352,17 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         if (remainder > 0) remainder--
       }
     }
+
+    // ✅ ALL validations passed - NOW set loading state
+    setAddingExpense(true)
+
+    // stable request id for this submission (idempotency)
+    if (!addExpenseRequestIdRef.current) {
+      const uuid = (globalThis as any)?.crypto?.randomUUID?.()
+      addExpenseRequestIdRef.current =
+        uuid || `${currentUid}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+    }
+    const requestId = addExpenseRequestIdRef.current || `${currentUid}-${Date.now()}`
 
     try {
       await runTransaction(db, async (tx) => {
@@ -402,33 +440,17 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     }
   
     try {
-      // 1) Bu grup için zaten aktif bir kod var mı? varsa onu kullan
-      const existingQ = query(
-        collection(db, "groupInvites"),
-        where("groupId", "==", groupId),
-        where("disabled", "==", false),
-        limit(1)
-      )
-  
-      const existingSnap = await getDocs(existingQ)
-      if (!existingSnap.empty) {
-        const existingCode = existingSnap.docs[0].id
-        setInviteCode(existingCode)
-        toast({
-          title: "Invite code ready",
-          description: "Bu grup için zaten aktif bir davet kodu var.",
-        })
-        return
+      let code = ""
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+      for (let i = 0; i < 6; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length))
       }
-  
-      // 2) Yoksa yeni kod üret ve kaydet
-      const code = Math.random().toString(36).substring(2, 10).toUpperCase()
-  
-      await setDoc(doc(db, "groupInvites", code), {
+
+      const inviteRef = doc(db, "groupInvites", code)
+      await setDoc(inviteRef, {
         groupId,
         createdBy: currentUid,
         createdAt: serverTimestamp(),
-        disabled: false,
       })
   
       setInviteCode(code)
@@ -595,23 +617,89 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     }
   }
 
-  const handleTogglePayment = (expenseId: string, userId: string) => {
+  // ✅ Fixed: Mark as paid with Firestore persistence AND balance update
+  const handleTogglePayment = async (expenseId: string, userId: string) => {
+    // Optimistic update for UI responsiveness
+    const currentStatus = paymentStatus[expenseId]?.[userId] || false
+    const newStatus = !currentStatus
+    
     setPaymentStatus((prev) => ({
       ...prev,
       [expenseId]: {
         ...(prev[expenseId] || {}),
-        [userId]: !(prev[expenseId]?.[userId] || false),
+        [userId]: newStatus,
       },
     }))
 
-    const isPaid = !(paymentStatus[expenseId]?.[userId] || false)
-    toast({
-      title: isPaid ? "Marked as paid" : "Marked as unpaid",
-      description: `${getUserName(userId)} ${isPaid ? "has paid" : "hasn't paid"} their share`,
-    })
+    try {
+      await runTransaction(db, async (tx) => {
+        // 1. Get Expense Doc
+        const feedRef = doc(db, "groups", groupId, "feed", expenseId)
+        const feedSnap = await tx.get(feedRef)
+        if (!feedSnap.exists()) throw new Error("Expense not found")
+        const expenseData = feedSnap.data() as any
+
+        // 2. Get Group Doc (for balances)
+        const groupRef = doc(db, "groups", groupId)
+        const groupSnap = await tx.get(groupRef)
+        if (!groupSnap.exists()) throw new Error("Group not found")
+        const groupData = groupSnap.data() as any
+        
+        // 3. Validation
+        if (expenseData.type !== "expense") throw new Error("Not an expense")
+        const payerUid = expenseData.payerUid
+        const splitAmount = expenseData.splitCents?.[userId] || 0
+        
+        if (!payerUid || !splitAmount) return // Should not happen for valid expense
+
+        // 4. Calculate Balance Updates
+        // If marking as paid (newStatus === true):
+        //   - Debtor (userId) pays Payer (payerUid)
+        //   - Debtor balance increases (+), Payer balance decreases (-)
+        // If unmarking (newStatus === false):
+        //   - Reverse: Debtor balance decreases (-), Payer balance increases (+)
+        
+        const modifier = newStatus ? 1 : -1
+        const currentBalances = groupData.balances || {}
+        const nextBalances = { ...currentBalances }
+        
+        // Update Debtor Balance (userId)
+        nextBalances[userId] = (nextBalances[userId] || 0) + (splitAmount * modifier)
+        
+        // Update Payer Balance (payerUid)
+        nextBalances[payerUid] = (nextBalances[payerUid] || 0) - (splitAmount * modifier)
+
+        // 5. Commit Updates
+        tx.update(groupRef, { balances: nextBalances })
+        tx.update(feedRef, { [`paymentStatus.${userId}`]: newStatus })
+      })
+
+      const isPaid = newStatus
+      toast({
+        title: isPaid ? "Marked as paid" : "Marked as unpaid",
+        description: `Balance updated. ${getUserName(userId)} ${isPaid ? "has paid" : "hasn't paid"} their share.`,
+      })
+    } catch (error) {
+      console.error("Failed to toggle payment:", error)
+      // Revert optimistic update on error
+      setPaymentStatus((prev) => ({
+        ...prev,
+        [expenseId]: {
+          ...(prev[expenseId] || {}),
+          [userId]: currentStatus,
+        },
+      }))
+
+      toast({
+        title: "Error",
+        description: "Failed to update payment status",
+        variant: "destructive",
+      })
+    }
   }
 
-  const handleRecordPayment = () => {
+  // ✅ NEW: Settlement document system with Firestore persistence
+  const handleRecordPayment = async () => {
     if (!paymentMember || !paymentAmount || !group) return
 
     const amountTRY = Number.parseFloat(paymentAmount)
@@ -624,22 +712,92 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       return
     }
 
-    const amountCents = Math.round(amountTRY * 100)
-    const balances = { ...group.balances }
+    setRecordingPayment(true)
 
-    // Update balances: the payer's debt decreases, current user's credit decreases
-    balances[paymentMember] = (balances[paymentMember] || 0) + amountCents
-    balances[currentUid] = (balances[currentUid] || 0) - amountCents
+    try {
+      const amountCents = Math.round(amountTRY * 100)
+      const groupRef = doc(db, "groups", groupId)
 
-    setGroup({ ...group, balances })
+      await runTransaction(db, async (tx) => {
+        const snap = await tx.get(groupRef)
+        if (!snap.exists()) throw new Error("Group not found")
 
-    toast({
-      title: "Payment recorded",
-      description: `${getUserName(paymentMember)} paid you ${formatMoney(amountCents)}`,
-    })
+        const data = snap.data()
+        const balances = { ...data.balances }
 
-    setPaymentMember("")
-    setPaymentAmount("")
+        // Update balances: payer's debt decreases, current user's credit decreases
+        balances[paymentMember] = (balances[paymentMember] || 0) + amountCents
+        balances[currentUid] = (balances[currentUid] || 0) - amountCents
+
+        // Create settlement record in feed for audit trail
+        const feedRef = doc(collection(db, "groups", groupId, "feed"))
+        tx.set(feedRef, {
+          type: "settlement",
+          createdAt: serverTimestamp(),
+          createdBy: currentUid,
+          from: paymentMember,
+          fromName: getUserName(paymentMember),
+          to: currentUid,
+          toName: getUserName(currentUid),
+          amountCents,
+          title: "Payment received",
+        })
+
+        // Update group balances
+        tx.update(groupRef, { balances })
+      })
+
+      toast({
+        title: "Payment recorded",
+        description: `${getUserName(paymentMember)} paid you ${formatMoney(amountCents)}`,
+      })
+
+      setPaymentMember("")
+      setPaymentAmount("")
+    } catch (error) {
+      console.error("Failed to record payment:", error)
+      toast({
+        title: "Error",
+        description: "Failed to record payment. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setRecordingPayment(false)
+    }
+  }
+
+  // ✅ NEW: Edit expense (title/category only)
+  const handleEditExpense = async () => {
+    if (!editExpenseId || !editExpenseTitle.trim()) return
+
+    setEditingExpense(true)
+
+    try {
+      const feedRef = doc(db, "groups", groupId, "feed", editExpenseId)
+      await updateDoc(feedRef, {
+        title: editExpenseTitle.trim(),
+        category: editExpenseCategory || null,
+      })
+
+      toast({
+        title: "Expense updated",
+        description: "Changes saved successfully",
+      })
+
+      setEditExpenseOpen(false)
+      setEditExpenseId(null)
+      setEditExpenseTitle("")
+      setEditExpenseCategory("")
+    } catch (error) {
+      console.error("Failed to update expense:", error)
+      toast({
+        title: "Error",
+        description: "Failed to update expense. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setEditingExpense(false)
+    }
   }
 
   const toDateSafe = (v: any): Date => {
@@ -655,6 +813,28 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       hour: "2-digit",
       minute: "2-digit",
     })
+  }
+
+  // ✅ NEW: Calculate simplified debts for modern UI
+  const calculateSimplifiedDebts = (
+    balances: Record<string, number>,
+    currentUid: string
+  ) => {
+    const youOwe: Array<{ uid: string; amount: number }> = []
+    const owesYou: Array<{ uid: string; amount: number }> = []
+
+    Object.entries(balances).forEach(([uid, balance]) => {
+      if (uid === currentUid) return
+      if (balance < 0) {
+        // Negative balance means this person owes money
+        youOwe.push({ uid, amount: Math.abs(balance) })
+      } else if (balance > 0) {
+        // Positive balance means this person is owed money
+        owesYou.push({ uid, amount: balance })
+      }
+    })
+
+    return { youOwe, owesYou }
   }
 
   const memberIds = group?.memberIds || []
@@ -733,7 +913,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
   return (
     <div className="flex h-screen flex-col bg-background">
-      <header className="border-b bg-card">
+      <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80 shadow-md">
         <div className="flex flex-col gap-3 p-3 sm:p-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 sm:gap-3">
@@ -756,31 +936,88 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   Status
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-64">
-                <div className="p-3">
-                  <p className="mb-2 text-sm font-semibold">Your Balance</p>
-                  <p className={`text-2xl font-bold sm:text-xl ${myBalance >= 0 ? "text-green-600" : "text-red-600"}`}>
+              <DropdownMenuContent align="end" className="w-80 max-h-[80vh] overflow-y-auto">
+                <div className="p-4">
+                  <p className="mb-3 text-sm font-semibold">Your Balance</p>
+                  <p className={`text-3xl font-bold ${myBalance >= 0 ? "text-green-600" : "text-red-600"}`}>
                     {formatMoney(myBalance)}
                   </p>
-                  <p className="mt-1 sm:mt-2 text-xs text-muted-foreground">
+                  <p className="mt-1 text-xs text-muted-foreground">
                     {myBalance >= 0 ? "You are owed" : "You owe"}
                   </p>
                 </div>
-                <div className="border-t p-2">
-                  {memberIds.map((uid) => (
-                    <div key={uid} className="flex items-center justify-between py-2 text-sm sm:text-base">
-                      <span>{getUserName(uid)}</span>
-                      <span className={(balances[uid] || 0) >= 0 ? "text-green-600" : "text-red-600"}>
-                        {formatMoney(balances[uid] || 0)}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div className="border-t p-3 space-y-3">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <p className="text-sm font-semibold">Record Payment</p>
-                  </div>
+
+                {(() => {
+                  const { youOwe, owesYou } = calculateSimplifiedDebts(balances, currentUid)
+                  const isSettled = youOwe.length === 0 && owesYou.length === 0
+
+                  if (isSettled) {
+                    return (
+                      <div className="border-t p-6 text-center">
+                        <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-3">
+                          <CheckCircle className="h-8 w-8 text-green-600" />
+                        </div>
+                        <p className="font-semibold text-green-700">All Settled Up!</p>
+                        <p className="text-sm text-muted-foreground mt-1">No outstanding debts</p>
+                      </div>
+                    )
+                  }
+
+                  return (
+                    <>
+                      {youOwe.length > 0 && (
+                        <div className="border-t p-3">
+                          <p className="text-xs font-semibold text-red-700 mb-2 px-1">👤 You Owe</p>
+                          <div className="space-y-2">
+                            {youOwe.map(({ uid, amount }) => (
+                              <SimplifiedDebtCard
+                                key={uid}
+                                uid={uid}
+                                userName={getUserName(uid)}
+                                userPhoto={userProfiles[uid]?.photoURL}
+                                amount={amount}
+                                direction="owe"
+                                currency={settings.currency}
+                                onPayBack={() => {
+                                  setPaymentMember(uid)
+                                  setPaymentAmount((amount / 100).toFixed(2))
+                                }}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {owesYou.length > 0 && (
+                        <div className="border-t p-3">
+                          <p className="text-xs font-semibold text-green-700 mb-2 px-1">👥 Owes You</p>
+                          <div className="space-y-2">
+                            {owesYou.map(({ uid, amount }) => (
+                              <SimplifiedDebtCard
+                                key={uid}
+                                uid={uid}
+                                userName={getUserName(uid)}
+                                userPhoto={userProfiles[uid]?.photoURL}
+                                amount={amount}
+                                direction="owed"
+                                currency={settings.currency}
+                                onRemind={() => {
+                                  toast({
+                                    title: "Reminder sent",
+                                    description: `Notified ${getUserName(uid)} about the debt`,
+                                  })
+                                }}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  )
+                })()}
+
+                <div className="border-t p-3">
+                  <DropdownMenuLabel className="text-xs text-muted-foreground px-0">Record Payment</DropdownMenuLabel>
                   <div className="space-y-2">
                     <Select value={paymentMember} onValueChange={setPaymentMember}>
                       <SelectTrigger className="w-full h-9">
@@ -803,14 +1040,15 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                       value={paymentAmount}
                       onChange={(e) => setPaymentAmount(e.target.value)}
                       className="h-9"
+                      disabled={recordingPayment}
                     />
                     <Button
                       onClick={handleRecordPayment}
-                      disabled={!paymentMember || !paymentAmount}
+                      disabled={!paymentMember || !paymentAmount || recordingPayment}
                       className="w-full h-9"
                       size="sm"
                     >
-                      Record Payment
+                      {recordingPayment ? "Recording..." : "Record Payment"}
                     </Button>
                   </div>
                 </div>
@@ -1046,13 +1284,17 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
-                          <DropdownMenuItem>
+                          <DropdownMenuItem
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setEditExpenseId(item.id)
+                              setEditExpenseTitle(item.title || "")
+                              setEditExpenseCategory(item.category || "")
+                              setEditExpenseOpen(true)
+                            }}
+                          >
                             <Edit className="mr-2 h-4 w-4" />
                             Edit
-                          </DropdownMenuItem>
-                          <DropdownMenuItem className="text-destructive">
-                            <Trash2 className="mr-2 h-4 w-4" />
-                            Delete
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -1288,121 +1530,164 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       </div>
 
       <Dialog open={expenseDetailOpen} onOpenChange={setExpenseDetailOpen}>
-        <DialogContent className="max-h-[90vh] overflow-y-auto w-[92vw] max-w-md sm:w-full">
+        <DialogContent className="max-h-[90vh] overflow-y-auto w-[95vw] max-w-md sm:w-full">
           <DialogHeader>
-            <DialogTitle className="text-lg sm:text-xl">Expense Details</DialogTitle>
+            <DialogTitle className="text-xl sm:text-2xl font-semibold">Expense Details</DialogTitle>
           </DialogHeader>
-          {selectedExpense && (
-            <div className="space-y-4 sm:space-y-6">
-              <div className="space-y-2 sm:space-y-3">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <DollarSign className="h-5 w-5 sm:h-6 sm:w-6 text-green-600 shrink-0" />
-                  <div className="min-w-0">
-                    <h3 className="text-base sm:text-lg font-semibold truncate">{selectedExpense.title}</h3>
-                    {selectedExpense.category && (
-                      <p className="text-xs sm:text-sm text-muted-foreground">{selectedExpense.category}</p>
-                    )}
-                  </div>
-                </div>
-                <p className="text-2xl sm:text-3xl font-bold">{formatMoney(selectedExpense.amountCents || 0)}</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">
-                  {toDateSafe(selectedExpense.createdAt).toLocaleDateString()} at {formatTime(toDateSafe(selectedExpense.createdAt))}
-                </p>
-              </div>
+          {selectedExpense && (() => {
+            const categoryOption = CATEGORY_OPTIONS.find((opt) => opt.value === selectedExpense.category)
+            const CategoryIcon = categoryOption?.icon || DollarSign
 
-              <div className="border-t pt-3 sm:pt-4">
-                <h4 className="text-sm sm:text-base font-semibold mb-2 sm:mb-3">Paid by</h4>
-                <div className="flex items-center justify-between rounded-lg border p-3 sm:p-4 bg-green-50 dark:bg-green-950/20">
-                  <div className="min-w-0 flex-1">
-                    <p className="font-medium text-sm sm:text-base truncate">
-                      {getUserName(selectedExpense.payerUid || "")}
-                    </p>
-                    <p className="text-xs sm:text-sm text-muted-foreground truncate">
-                      {userProfiles[selectedExpense.payerUid || ""]?.email}
-                    </p>
-                  </div>
-                  <p className="text-base sm:text-lg font-bold text-green-600 ml-2 shrink-0">
-                    {formatMoney(selectedExpense.amountCents || 0)}
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-t pt-3 sm:pt-4">
-                <h4 className="text-sm sm:text-base font-semibold mb-2 sm:mb-3">
-                  Split between {selectedExpense.participantIds?.length || 0} people
-                </h4>
-                <div className="space-y-2">
-                  {selectedExpense.participantIds?.map((uid) => {
-                    const splitAmount = selectedExpense.splitCents?.[uid] || 0
-                    const isPayer = uid === selectedExpense.payerUid
-                    const hasPaid = paymentStatus[selectedExpense.id]?.[uid] || false
-
-                    return (
-                      <div
-                        key={uid}
-                        className={`flex items-center justify-between gap-2 rounded-lg border p-3 sm:p-4 ${
-                          isPayer
-                            ? "bg-muted"
-                            : hasPaid
-                              ? "bg-green-50 dark:bg-green-950/20"
-                              : "bg-red-50 dark:bg-red-950/20"
-                        }`}
-                      >
-                        <div className="min-w-0 flex-1">
-                          <p className="font-medium text-sm sm:text-base truncate">{getUserName(uid)}</p>
-                          <p className="text-xs text-muted-foreground">
-                            {isPayer ? "Paid the full amount" : hasPaid ? "Paid their share" : "Owes the payer"}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          <div className="text-right">
-                            <p className="font-semibold text-sm sm:text-base">{formatMoney(splitAmount)}</p>
-                            {isPayer && (
-                              <p className="text-xs text-green-600">
-                                +{formatMoney((selectedExpense.amountCents || 0) - splitAmount)}
-                              </p>
-                            )}
-                          </div>
-                          {!isPayer && (
-                            <Button
-                              size="sm"
-                              variant={hasPaid ? "outline" : "default"}
-                              className={`h-8 px-3 text-xs ${
-                                hasPaid
-                                  ? "bg-green-100 text-green-700 border-green-300 hover:bg-green-200 dark:bg-green-950 dark:text-green-400 dark:border-green-800"
-                                  : "bg-red-600 text-white hover:bg-red-700"
-                              }`}
-                              onClick={() => handleTogglePayment(selectedExpense.id, uid)}
-                            >
-                              {hasPaid ? "✓ Paid" : "Mark Paid"}
-                            </Button>
-                          )}
-                        </div>
+            return (
+              <div className="space-y-4">
+                {/* Amount Card */}
+                <div className="bg-white dark:bg-slate-900 rounded-lg p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
+                  <div className="flex items-start gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center flex-shrink-0">
+                      <CategoryIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-semibold text-foreground truncate">
+                        {selectedExpense.title}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
+                        {selectedExpense.category && (
+                          <>
+                            <span>{selectedExpense.category}</span>
+                            <span>•</span>
+                          </>
+                        )}
+                        <span>{toDateSafe(selectedExpense.createdAt).toLocaleDateString()}</span>
                       </div>
-                    )
-                  })}
+                    </div>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <p className="text-3xl sm:text-4xl font-semibold text-foreground">
+                      {formatMoney(selectedExpense.amountCents || 0)}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-1">Total amount</p>
+                  </div>
+                </div>
+
+                {/* Paid By */}
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2 px-1">
+                    Paid By
+                  </p>
+                  <div className="bg-white dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                    <div className="flex items-center gap-3">
+                      <Avatar className="h-10 w-10">
+                        {userProfiles[selectedExpense.payerUid || ""]?.photoURL ? (
+                          <AvatarImage 
+                            src={userProfiles[selectedExpense.payerUid || ""]?.photoURL} 
+                            alt={getUserName(selectedExpense.payerUid || "")} 
+                          />
+                        ) : null}
+                        <AvatarFallback className="bg-green-600 text-white font-medium">
+                          {getUserName(selectedExpense.payerUid || "").slice(0, 2).toUpperCase()}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-foreground truncate">
+                          {getUserName(selectedExpense.payerUid || "")}
+                        </p>
+                        <p className="text-sm text-muted-foreground truncate">
+                          {userProfiles[selectedExpense.payerUid || ""]?.email}
+                        </p>
+                      </div>
+                      <div className="text-right">
+                        <p className="text-lg font-semibold text-green-600 dark:text-green-500">
+                          {formatMoney(selectedExpense.amountCents || 0)}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Split Between */}
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2 px-1">
+                    Split Between {selectedExpense.participantIds?.length || 0} People
+                  </p>
+                  <div className="space-y-2">
+                    {selectedExpense.participantIds?.map((uid) => {
+                      const splitAmount = selectedExpense.splitCents?.[uid] || 0
+                      const isPayer = uid === selectedExpense.payerUid
+                      const hasPaid = paymentStatus[selectedExpense.id]?.[uid] || false
+
+                      return (
+                        <div
+                          key={uid}
+                          className="bg-white dark:bg-slate-900 rounded-lg p-3.5 border border-slate-200 dark:border-slate-700"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Avatar className="h-9 w-9">
+                              {userProfiles[uid]?.photoURL ? (
+                                <AvatarImage src={userProfiles[uid]?.photoURL} alt={getUserName(uid)} />
+                              ) : null}
+                              <AvatarFallback className={`text-sm font-medium ${
+                                isPayer ? "bg-green-600 text-white" : hasPaid ? "bg-slate-600 text-white" : "bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
+                              }`}>
+                                {getUserName(uid).slice(0, 2).toUpperCase()}
+                              </AvatarFallback>
+                            </Avatar>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2">
+                                <p className="font-medium text-sm text-foreground truncate">
+                                  {getUserName(uid)}
+                                </p>
+                                {isPayer && (
+                                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium">
+                                    Payer
+                                  </span>
+                                )}
+                              </div>
+                              <p className="text-xs text-muted-foreground mt-0.5">
+                                {isPayer ? "Paid full amount" : hasPaid ? "Paid their share" : "Owes their share"}
+                              </p>
+                            </div>
+                            <div className="text-right">
+                              <p className="font-medium text-foreground">
+                                {formatMoney(splitAmount)}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-2 pt-2">
+                  <Button
+                    variant="outline"
+                    onClick={() => setExpenseDetailOpen(false)}
+                    className="flex-1"
+                  >
+                    Close
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      if (selectedExpense) {
+                        setEditExpenseId(selectedExpense.id)
+                        setEditExpenseTitle(selectedExpense.title || "")
+                        setEditExpenseCategory(selectedExpense.category || "")
+                        setExpenseDetailOpen(false)
+                        setEditExpenseOpen(true)
+                      }
+                    }}
+                    className="flex-1"
+                  >
+                    <Edit className="mr-2 h-4 w-4" />
+                    Edit
+                  </Button>
                 </div>
               </div>
-
-              <div className="border-t pt-3 sm:pt-4 flex flex-col sm:flex-row gap-2">
-                <Button
-                  variant="outline"
-                  className="flex-1 bg-transparent h-11 sm:h-10"
-                  onClick={() => setExpenseDetailOpen(false)}
-                >
-                  Close
-                </Button>
-                <Button variant="outline" className="flex-1 bg-transparent h-11 sm:h-10">
-                  <Edit className="mr-2 h-4 w-4" />
-                  Edit
-                </Button>
-                <Button variant="destructive" className="flex-1 h-11 sm:h-10">
-                  <Trash2 className="mr-2 h-4 w-4" />
-                  Delete
-                </Button>
-              </div>
-            </div>
-          )}
+            )
+          })()}
         </DialogContent>
       </Dialog>
 
@@ -1468,6 +1753,83 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+
+      {/* ✅ Edit Expense Dialog */}
+      <Dialog open={editExpenseOpen} onOpenChange={setEditExpenseOpen}>
+        <DialogContent className="max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Edit Expense</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div>
+              <Label htmlFor="edit-title">Title</Label>
+              <Input
+                id="edit-title"
+                placeholder="Expense title"
+                value={editExpenseTitle}
+                onChange={(e) => setEditExpenseTitle(e.target.value)}
+                disabled={editingExpense}
+                className="mt-2"
+              />
+            </div>
+            
+            <div>
+              <Label htmlFor="edit-category">Category</Label>
+              <Select
+                value={editExpenseCategory || ""}
+                onValueChange={setEditExpenseCategory}
+                disabled={editingExpense}
+              >
+                <SelectTrigger className="mt-2">
+                  <SelectValue placeholder="Select category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {CATEGORY_OPTIONS.filter(opt => opt.value !== "Custom").map((option) => {
+                    const Icon = option.icon
+                    return (
+                      <SelectItem key={option.value} value={option.value}>
+                        <div className="flex items-center gap-2">
+                          <Icon className="h-4 w-4" />
+                          <span>{option.label}</span>
+                        </div>
+                      </SelectItem>
+                    )
+                  })}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="bg-muted p-3 rounded-md">
+              <p className="text-sm text-muted-foreground">
+                ℹ️ Amount and split cannot be edited
+              </p>
+            </div>
+
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setEditExpenseOpen(false)
+                  setEditExpenseId(null)
+                  setEditExpenseTitle("")
+                  setEditExpenseCategory("")
+                }}
+                disabled={editingExpense}
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={handleEditExpense}
+                disabled={!editExpenseTitle.trim() || editingExpense}
+                className="flex-1"
+              >
+                {editingExpense ? "Saving..." : "Save Changes"}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
