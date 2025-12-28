@@ -179,6 +179,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
   const [paymentMember, setPaymentMember] = useState("")
   const [paymentAmount, setPaymentAmount] = useState("")
+  const [paymentMode, setPaymentMode] = useState<"full" | "partial">("full")
   const [recordingPayment, setRecordingPayment] = useState(false)
 
   const currentUid = auth.currentUser?.uid ?? ""
@@ -818,7 +819,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     })
   }
 
-  // ✅ NEW: Calculate simplified debts for modern UI
+  // ✅ Calculate simplified debts for modern UI
   const calculateSimplifiedDebts = (
     balances: Record<string, number>,
     currentUid: string
@@ -829,11 +830,13 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     Object.entries(balances).forEach(([uid, balance]) => {
       if (uid === currentUid) return
       if (balance < 0) {
-        // Negative balance means this person owes money
-        youOwe.push({ uid, amount: Math.abs(balance) })
+        // Negative balance means this person owes money to the group
+        // From current user's perspective: they owe YOU
+        owesYou.push({ uid, amount: Math.abs(balance) })
       } else if (balance > 0) {
-        // Positive balance means this person is owed money
-        owesYou.push({ uid, amount: balance })
+        // Positive balance means this person is owed money by the group
+        // From current user's perspective: YOU owe them
+        youOwe.push({ uid, amount: balance })
       }
     })
 
@@ -1047,40 +1050,129 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   )
                 })()}
 
-                {/* Record Payment - Enhanced */}
-                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 mb-4">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Record Payment</p>
+                {/* Record Payment - Compact & Clean */}
+                <div className="border-t pt-4 mt-1">
+                  <div className="mb-3">
+                    <h3 className="text-sm font-bold text-foreground">Record Payment</h3>
+                    <p className="text-xs text-muted-foreground">Track received payments</p>
+                  </div>
+                  
                   <div className="space-y-3">
-                    <Select value={paymentMember} onValueChange={setPaymentMember}>
-                      <SelectTrigger className="w-full h-11">
-                        <SelectValue placeholder="Who paid you?" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {memberIds
-                          .filter((uid) => uid !== currentUid)
-                          .map((uid) => (
-                            <SelectItem key={uid} value={uid}>
-                              {getUserName(uid)}
-                            </SelectItem>
-                          ))}
-                      </SelectContent>
-                    </Select>
-                    <Input
-                      type="number"
-                      step="0.01"
-                      placeholder={`Amount (${settings.currency})`}
-                      value={paymentAmount}
-                      onChange={(e) => setPaymentAmount(e.target.value)}
-                      disabled={recordingPayment}
-                      className="h-11 text-base"
-                    />
-                    <Button
-                      onClick={handleRecordPayment}
-                      disabled={!paymentMember || !paymentAmount || recordingPayment}
-                      className="w-full h-11 text-base font-semibold"
-                    >
-                      {recordingPayment ? "Recording..." : "Record Payment"}
-                    </Button>
+                    {/* Member Selection */}
+                    <div>
+                      <Label className="text-xs font-medium text-muted-foreground mb-1.5 block">
+                        Member
+                      </Label>
+                      <Select 
+                        value={paymentMember} 
+                        onValueChange={(value) => {
+                          setPaymentMember(value)
+                          setPaymentMode("full")
+                          // Auto-fill full amount
+                          const { owesYou } = calculateSimplifiedDebts(balances, currentUid)
+                          const debt = owesYou.find(d => d.uid === value)
+                          if (debt) {
+                            setPaymentAmount((debt.amount / 100).toFixed(2))
+                          }
+                        }}
+                      >
+                        <SelectTrigger className="w-full h-10">
+                          <SelectValue placeholder="Select member" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {memberIds
+                            .filter((uid) => uid !== currentUid)
+                            .map((uid) => (
+                              <SelectItem key={uid} value={uid}>
+                                {getUserName(uid)}
+                              </SelectItem>
+                            ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {/* Payment Options */}
+                    {paymentMember && (() => {
+                      const { owesYou } = calculateSimplifiedDebts(balances, currentUid)
+                      const debt = owesYou.find(d => d.uid === paymentMember)
+                      const debtAmount = debt?.amount || 0
+
+                      return (
+                        <div className="space-y-3">
+                          {/* Payment Type Selection */}
+                          <div>
+                            <Label className="text-xs font-medium text-muted-foreground mb-1.5 block">
+                              Amount
+                            </Label>
+                            <div className="grid grid-cols-2 gap-2">
+                              <Button
+                                type="button"
+                                variant={paymentMode === "full" ? "default" : "outline"}
+                                className="h-auto p-2.5 flex-col items-start"
+                                onClick={() => {
+                                  setPaymentMode("full")
+                                  setPaymentAmount((debtAmount / 100).toFixed(2))
+                                }}
+                              >
+                                <div className="text-xs font-medium mb-0.5 opacity-90">
+                                  Full
+                                </div>
+                                <div className="text-base font-bold">
+                                  {formatMoney(debtAmount)}
+                                </div>
+                              </Button>
+
+                              <Button
+                                type="button"
+                                variant={paymentMode === "partial" ? "default" : "outline"}
+                                className="h-auto p-2.5 flex-col items-start"
+                                onClick={() => {
+                                  setPaymentMode("partial")
+                                  setPaymentAmount("")
+                                }}
+                              >
+                                <div className="text-xs font-medium mb-0.5 opacity-90">
+                                  Custom
+                                </div>
+                                <div className="text-base font-bold">
+                                  Partial
+                                </div>
+                              </Button>
+                            </div>
+                          </div>
+
+                          {/* Custom Amount Input */}
+                          {paymentMode === "partial" && (
+                            <div>
+                              <Input
+                                type="number"
+                                step="0.01"
+                                placeholder="Enter amount"
+                                value={paymentAmount}
+                                onChange={(e) => setPaymentAmount(e.target.value)}
+                                disabled={recordingPayment}
+                                className="h-10 text-base"
+                                autoFocus
+                              />
+                            </div>
+                          )}
+
+                          {/* Submit Button */}
+                          <Button
+                            onClick={handleRecordPayment}
+                            disabled={
+                              !paymentMember || 
+                              !paymentAmount ||
+                              Number(paymentAmount) <= 0 ||
+                              recordingPayment
+                            }
+                            className="w-full h-10 text-sm font-semibold"
+                          >
+                            {recordingPayment ? "Recording..." : "Record Payment"}
+                          </Button>
+                        </div>
+                      )
+                    })()}
                   </div>
                 </div>
 

@@ -1129,6 +1129,10 @@
     margin-left: calc(var(--spacing) * 2);
   }
 
+  .ml-3 {
+    margin-left: calc(var(--spacing) * 3);
+  }
+
   .ml-4 {
     margin-left: calc(var(--spacing) * 4);
   }
@@ -1998,6 +2002,12 @@
     margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
   }
 
+  :where(.space-y-3\.5 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 3.5) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 3.5) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
   :where(.space-y-4 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
@@ -2329,6 +2339,10 @@
     border-color: var(--color-green-300);
   }
 
+  .border-green-600 {
+    border-color: var(--color-green-600);
+  }
+
   .border-input {
     border-color: var(--input);
   }
@@ -2391,6 +2405,10 @@
     .border-slate-300\/60 {
       border-color: color-mix(in oklab, var(--color-slate-300) 60%, transparent);
     }
+  }
+
+  .border-slate-600 {
+    border-color: var(--color-slate-600);
   }
 
   .border-transparent {
@@ -2467,6 +2485,10 @@
     .bg-black\/50 {
       background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
     }
+  }
+
+  .bg-blue-50 {
+    background-color: var(--color-blue-50);
   }
 
   .bg-blue-50\/30 {
@@ -2611,6 +2633,16 @@
     background-color: var(--primary);
   }
 
+  .bg-primary\/5 {
+    background-color: var(--primary);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-primary\/5 {
+      background-color: color-mix(in oklab, var(--primary) 5%, transparent);
+    }
+  }
+
   .bg-primary\/10 {
     background-color: var(--primary);
   }
@@ -2671,6 +2703,10 @@
 
   .bg-sidebar-border {
     background-color: var(--sidebar-border);
+  }
+
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
   }
 
   .bg-slate-100 {
@@ -3177,6 +3213,10 @@
 
   .p-2 {
     padding: calc(var(--spacing) * 2);
+  }
+
+  .p-2\.5 {
+    padding: calc(var(--spacing) * 2.5);
   }
 
   .p-3 {
@@ -4198,6 +4238,18 @@
     --cell-size: calc(var(--spacing) * 8);
   }
 
+  .fade-in {
+    --tw-enter-opacity: 0;
+  }
+
+  .slide-in-from-top-1 {
+    --tw-enter-translate-y: calc(1 * var(--spacing) * -1);
+  }
+
+  .slide-in-from-top-2 {
+    --tw-enter-translate-y: calc(2 * var(--spacing) * -1);
+  }
+
   .group-focus-within\/menu-item\:opacity-100:is(:where(.group\/menu-item):focus-within *) {
     opacity: 1;
   }
@@ -4635,6 +4687,30 @@
   }
 
   @media (hover: hover) {
+    .hover\:border-muted-foreground\/50:hover {
+      border-color: var(--muted-foreground);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:border-muted-foreground\/50:hover {
+        border-color: color-mix(in oklab, var(--muted-foreground) 50%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:border-primary\/50:hover {
+      border-color: var(--primary);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:border-primary\/50:hover {
+        border-color: color-mix(in oklab, var(--primary) 50%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:border-slate-300:hover {
       border-color: var(--color-slate-300);
     }
@@ -4691,6 +4767,12 @@
   @media (hover: hover) {
     .hover\:bg-green-200:hover {
       background-color: var(--color-green-200);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-green-700:hover {
+      background-color: var(--color-green-700);
     }
   }
 
@@ -7726,6 +7808,10 @@
     color: var(--color-amber-400);
   }
 
+  .dark\:text-blue-300:is(.dark *) {
+    color: var(--color-blue-300);
+  }
+
   .dark\:text-blue-400:is(.dark *) {
     color: var(--color-blue-400);
   }
@@ -7736,6 +7822,10 @@
 
   .dark\:text-gray-400:is(.dark *) {
     color: var(--color-gray-400);
+  }
+
+  .dark\:text-green-300:is(.dark *) {
+    color: var(--color-green-300);
   }
 
   .dark\:text-green-400:is(.dark *) {
@@ -7768,6 +7858,10 @@
 
   .dark\:text-rose-400:is(.dark *) {
     color: var(--color-rose-400);
+  }
+
+  .dark\:text-slate-200:is(.dark *) {
+    color: var(--color-slate-200);
   }
 
   .dark\:text-slate-300:is(.dark *) {
