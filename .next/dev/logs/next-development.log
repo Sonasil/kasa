@@ -1691,3 +1691,4 @@ Import traces:
 [07:34:37.739] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [07:34:56.187] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [07:34:56.188] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:36:13.743] Server  LOG      ✓ Compiled in 1784ms
