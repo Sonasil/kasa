@@ -10,9 +10,11 @@ import { Eye, EyeOff, Loader2, Wallet, Check, X } from "lucide-react"
 import { auth, db } from "@/lib/firebase"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 import { doc, setDoc, serverTimestamp } from "firebase/firestore"
+import { useSettings } from "@/lib/settings-context"
 
 export default function RegisterPage() {
   const router = useRouter()
+  const { t } = useSettings()
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -37,10 +39,10 @@ export default function RegisterPage() {
     if (/\d/.test(pwd)) strength++
     if (/[^a-zA-Z0-9]/.test(pwd)) strength++
 
-    if (strength <= 1) return { strength, label: "Weak", color: "text-red-600" }
-    if (strength === 2) return { strength, label: "Fair", color: "text-orange-600" }
-    if (strength === 3) return { strength, label: "Good", color: "text-yellow-600" }
-    return { strength, label: "Strong", color: "text-green-600" }
+    if (strength <= 1) return { strength, label: t("weak"), color: "text-red-600" }
+    if (strength === 2) return { strength, label: t("fair"), color: "text-orange-600" }
+    if (strength === 3) return { strength, label: t("good"), color: "text-yellow-600" }
+    return { strength, label: t("strong"), color: "text-green-600" }
   }
 
   const passwordStrength = getPasswordStrength(password)
@@ -54,27 +56,27 @@ export default function RegisterPage() {
     } = {}
 
     if (!fullName.trim()) {
-      newErrors.fullName = "Full name is required"
+      newErrors.fullName = t("nameRequired")
     } else if (fullName.trim().length < 2) {
-      newErrors.fullName = "Name must be at least 2 characters"
+      newErrors.fullName = t("invalidInput")
     }
 
     if (!email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = t("emailRequired")
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email address"
+      newErrors.email = t("invalidEmail")
     }
 
     if (!password) {
-      newErrors.password = "Password is required"
+      newErrors.password = t("passwordRequired")
     } else if (password.length < 8) {
-      newErrors.password = "Password must be at least 8 characters"
+      newErrors.password = t("atLeast8Chars")
     }
 
     if (!confirmPassword) {
-      newErrors.confirmPassword = "Please confirm your password"
+      newErrors.confirmPassword = t("enterPasswordConfirm")
     } else if (password !== confirmPassword) {
-      newErrors.confirmPassword = "Passwords do not match"
+      newErrors.confirmPassword = t("passwordsDoNotMatch")
     }
 
     setErrors(newErrors)
@@ -118,14 +120,14 @@ export default function RegisterPage() {
       // Basic error mapping to existing inline errors
       const code = err?.code as string | undefined
       if (code === "auth/email-already-in-use") {
-        setErrors(prev => ({ ...prev, email: "Email already in use" }))
+        setErrors(prev => ({ ...prev, email: t("createFailed") }))
       } else if (code === "auth/invalid-email") {
-        setErrors(prev => ({ ...prev, email: "Invalid email address" }))
+        setErrors(prev => ({ ...prev, email: t("invalidEmail") }))
       } else if (code === "auth/weak-password") {
-        setErrors(prev => ({ ...prev, password: "Password is too weak" }))
+        setErrors(prev => ({ ...prev, password: t("passwordTooWeak") }))
       } else {
         // Fallback: keep UI unchanged, surface minimal feedback
-        setErrors(prev => ({ ...prev, email: prev.email || "Registration failed. Please try again." }))
+        setErrors(prev => ({ ...prev, email: prev.email || t("createFailed") }))
       }
     } finally {
       setLoading(false)
@@ -143,9 +145,9 @@ export default function RegisterPage() {
                 <Wallet className="h-8 w-8 sm:h-10 sm:w-10 text-primary-foreground" />
               </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold">Create your account</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold">{t("createAccount")}</h1>
             <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-              Join Kasa to start sharing expenses with friends
+              {t("joinKasaDesc")}
             </p>
           </div>
 
@@ -153,7 +155,7 @@ export default function RegisterPage() {
             {/* Full Name Field */}
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-sm sm:text-base">
-                Full Name
+                {t("fullName")}
               </Label>
               <Input
                 id="fullName"
@@ -178,7 +180,7 @@ export default function RegisterPage() {
             {/* Email Field */}
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm sm:text-base">
-                Email
+                {t("email")}
               </Label>
               <Input
                 id="email"
@@ -203,13 +205,13 @@ export default function RegisterPage() {
             {/* Password Field */}
             <div className="space-y-2">
               <Label htmlFor="password" className="text-sm sm:text-base">
-                Password
+                {t("password")}
               </Label>
               <div className="relative">
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Create a strong password"
+                  placeholder={t("createStrongPassword")}
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value)
@@ -257,7 +259,7 @@ export default function RegisterPage() {
                       />
                     ))}
                   </div>
-                  <p className={`text-xs ${passwordStrength.color}`}>Password strength: {passwordStrength.label}</p>
+                  <p className={`text-xs ${passwordStrength.color}`}>{t("passwordStrength")} {passwordStrength.label}</p>
                   <div className="space-y-1 text-xs text-muted-foreground">
                     <div className="flex items-center gap-1.5">
                       {password.length >= 8 ? (
@@ -265,7 +267,7 @@ export default function RegisterPage() {
                       ) : (
                         <X className="h-3 w-3 text-muted-foreground" />
                       )}
-                      <span>At least 8 characters</span>
+                      <span>{t("atLeast8Chars")}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       {/[a-z]/.test(password) && /[A-Z]/.test(password) ? (
@@ -273,7 +275,7 @@ export default function RegisterPage() {
                       ) : (
                         <X className="h-3 w-3 text-muted-foreground" />
                       )}
-                      <span>Upper and lowercase letters</span>
+                      <span>{t("upperAndLowerCase")}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       {/\d/.test(password) ? (
@@ -281,7 +283,7 @@ export default function RegisterPage() {
                       ) : (
                         <X className="h-3 w-3 text-muted-foreground" />
                       )}
-                      <span>At least one number</span>
+                      <span>{t("atLeastOneNumber")}</span>
                     </div>
                   </div>
                 </div>
@@ -297,13 +299,13 @@ export default function RegisterPage() {
             {/* Confirm Password Field */}
             <div className="space-y-2">
               <Label htmlFor="confirmPassword" className="text-sm sm:text-base">
-                Confirm Password
+                {t("confirmPassword")}
               </Label>
               <div className="relative">
                 <Input
                   id="confirmPassword"
                   type={showConfirmPassword ? "text" : "password"}
-                  placeholder="Re-enter your password"
+                  placeholder={t("enterPasswordConfirm")}
                   value={confirmPassword}
                   onChange={(e) => {
                     setConfirmPassword(e.target.value)
@@ -342,24 +344,24 @@ export default function RegisterPage() {
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Creating account...
+                  {t("creatingAccount")}
                 </>
               ) : (
-                "Sign Up"
+                t("signUp")
               )}
             </Button>
           </form>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
-              Already have an account?{" "}
+              {t("alreadyHaveAccount")}{" "}
               <button
                 type="button"
                 onClick={() => router.push("/login")}
                 className="font-medium text-primary hover:underline focus:outline-none focus:underline"
                 disabled={loading}
               >
-                Sign in
+                {t("signIn")}
               </button>
             </p>
           </div>

@@ -65,7 +65,7 @@ export default function DashboardPage() {
   const router = useRouter()
   const { toast } = useToast()
   const { photoURL, displayName: profileName, email: profileEmail } = useUserProfile()
-  const { formatMoney } = useSettings()
+  const { formatMoney, t } = useSettings()
   const [loading, setLoading] = useState(true)
   const [displayName, setDisplayName] = useState("")
   const [groupCount, setGroupCount] = useState(0)
@@ -304,8 +304,8 @@ export default function DashboardPage() {
     const name = groupName.trim()
     if (!name) {
       toast({
-        title: "Invalid input",
-        description: "Please enter a group name",
+        title: t("invalidInput"),
+        description: t("enterGroupNameError"),
         variant: "destructive",
       })
       return
@@ -349,8 +349,8 @@ export default function DashboardPage() {
       }
 
       toast({
-        title: "Group created",
-        description: `${name} has been created successfully`,
+        title: t("groupCreated"),
+        description: `${name} ${t("groupCreatedDesc")}`,
       })
       setCreateGroupOpen(false)
       setGroupName("")
@@ -360,8 +360,8 @@ export default function DashboardPage() {
     } catch (e: any) {
       console.error("Failed to create group:", e)
       toast({
-        title: "Create failed",
-        description: e?.message || "Could not create the group.",
+        title: t("createFailed"),
+        description: e?.message || t("pleaseTryAgain"),
         variant: "destructive",
       })
     } finally {
@@ -379,8 +379,8 @@ export default function DashboardPage() {
     const code = normalizeInviteCode(joinCode)
     if (!code) {
       toast({
-        title: "Invalid input",
-        description: "Please enter a join code",
+        title: t("invalidInput"),
+        description: t("enterInviteCodeError"),
         variant: "destructive",
       })
       return
@@ -394,8 +394,8 @@ export default function DashboardPage() {
       const inviteSnap = await getDoc(inviteRef)
       if (!inviteSnap.exists()) {
         toast({
-          title: "Invalid code",
-          description: "This invite code was not found.",
+          title: t("invalidCode"),
+          description: t("pleaseTryAgain"),
           variant: "destructive",
         })
         return
@@ -447,8 +447,8 @@ export default function DashboardPage() {
       })
 
       toast({
-        title: "Joined group",
-        description: "You've successfully joined the group",
+        title: t("joinedGroup"),
+        description: t("joinedGroupDesc"),
       })
       setJoinGroupOpen(false)
       setJoinCode("")
@@ -456,8 +456,8 @@ export default function DashboardPage() {
     } catch (e: any) {
       console.error("Failed to join group:", e)
       toast({
-        title: "Join failed",
-        description: e?.message || "Could not join the group.",
+        title: t("joinFailed"),
+        description: e?.message || t("pleaseTryAgain"),
         variant: "destructive",
       })
     } finally {
@@ -584,8 +584,8 @@ export default function DashboardPage() {
       <div className="min-h-screen bg-background p-3 sm:p-6 pb-20">
         <div className="mx-auto max-w-4xl">
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold">Hello, {displayName}</h1>
-            <p className="text-sm sm:text-base text-muted-foreground mt-1">Welcome to Kasa</p>
+            <h1 className="text-2xl sm:text-3xl font-bold">{t("hello")}, {displayName}</h1>
+            <p className="text-sm sm:text-base text-muted-foreground mt-1">{t("welcomeToKasa")}</p>
           </div>
 
           <Card className="p-8 sm:p-12 text-center">
@@ -594,10 +594,9 @@ export default function DashboardPage() {
                 <Users className="h-8 w-8 sm:h-10 sm:w-10 text-muted-foreground" />
               </div>
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold mb-2">No groups yet</h2>
+                <h2 className="text-xl sm:text-2xl font-bold mb-2">{t("noGroupsYet")}</h2>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Create a group to start tracking expenses with friends and family, or join an existing group with a
-                  code.
+                  {t("noGroupsDesc")}
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -605,26 +604,26 @@ export default function DashboardPage() {
                   <DialogTrigger asChild>
                     <Button className="flex-1 h-11 sm:h-10" onClick={() => setCreateGroupOpen(true)}>
                       <Plus className="mr-2 h-4 w-4" />
-                      Create Group
+                      {t("createNewGroup")}
                     </Button>
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle>Create New Group</DialogTitle>
+                      <DialogTitle>{t("createNewGroup")}</DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4">
                       <div>
-                        <Label htmlFor="group-name">Group Name</Label>
+                        <Label htmlFor="group-name">{t("groupName")}</Label>
                         <Input
                           id="group-name"
-                          placeholder="Weekend Trip, Apartment 4B, etc."
+                          placeholder={t("enterGroupName")}
                           value={groupName}
                           onChange={(e) => setGroupName(e.target.value)}
                           className="mt-2"
                         />
                       </div>
                       <Button onClick={handleCreateGroup} className="w-full" disabled={createGroupLoading}>
-                        {createGroupLoading ? "Creating..." : "Create Group"}
+                        {createGroupLoading ? t("adding") : t("createNewGroup")}
                       </Button>
                     </div>
                   </DialogContent>
@@ -638,26 +637,26 @@ export default function DashboardPage() {
                       onClick={() => setJoinGroupOpen(true)}
                     >
                       <Link className="mr-2 h-4 w-4" />
-                      Join via Code
+                      {t("joinViaCode")}
                     </Button>
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle>Join Group</DialogTitle>
+                      <DialogTitle>{t("joinGroup")}</DialogTitle>
                     </DialogHeader>
                     <div className="space-y-4">
                       <div>
-                        <Label htmlFor="join-code">Invite Code</Label>
+                        <Label htmlFor="join-code">{t("inviteCode")}</Label>
                         <Input
                           id="join-code"
-                          placeholder="Enter the group invite code"
+                          placeholder={t("enterInviteCode")}
                           value={joinCode}
                           onChange={(e) => setJoinCode(e.target.value)}
                           className="mt-2 uppercase"
                         />
                       </div>
                       <Button onClick={handleJoinGroup} className="w-full" disabled={joinGroupLoading}>
-                        {joinGroupLoading ? "Joining..." : "Join Group"}
+                        {joinGroupLoading ? t("adding") : t("joinGroup")}
                       </Button>
                     </div>
                   </DialogContent>
@@ -705,8 +704,8 @@ export default function DashboardPage() {
         <div className="mx-auto max-w-4xl p-3 sm:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold">Hello, {displayName}</h1>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Here's your expense overview</p>
+              <h1 className="text-xl sm:text-2xl font-bold">{t("hello")}, {displayName}</h1>
+              <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">{t("expenseOverview")}</p>
             </div>
             <Avatar
               className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
@@ -723,7 +722,7 @@ export default function DashboardPage() {
             <div className="grid grid-cols-3 gap-1">
               <Card className="p-2 rounded-md flex flex-col items-center justify-center text-center min-h-0">
                 <div className="flex flex-col items-center justify-center leading-tight">
-                  <p className="text-[11px] text-muted-foreground mb-0.5">You owe</p>
+                  <p className="text-[11px] text-muted-foreground mb-0.5">{t("youOwe")}</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-[13px] font-semibold text-red-600">{formatMoney(youOwe)}</span>
                     <span className="rounded-full bg-red-100 dark:bg-red-950/20 p-0.5">
@@ -734,7 +733,7 @@ export default function DashboardPage() {
               </Card>
               <Card className="p-2 rounded-md flex flex-col items-center justify-center text-center min-h-0">
                 <div className="flex flex-col items-center justify-center leading-tight">
-                  <p className="text-[11px] text-muted-foreground mb-0.5">You're owed</p>
+                  <p className="text-[11px] text-muted-foreground mb-0.5">{t("youreOwed")}</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-[13px] font-semibold text-green-600">{formatMoney(youAreOwed)}</span>
                     <span className="rounded-full bg-green-100 dark:bg-green-950/20 p-0.5">
@@ -745,7 +744,7 @@ export default function DashboardPage() {
               </Card>
               <Card className="p-2 rounded-md flex flex-col items-center justify-center text-center min-h-0 bg-muted/50">
                 <div className="flex flex-col items-center justify-center leading-tight">
-                  <p className="text-[11px] text-muted-foreground mb-0.5">Net Balance</p>
+                  <p className="text-[11px] text-muted-foreground mb-0.5">{t("netBalance")}</p>
                   <div className="flex items-center justify-center gap-1">
                     <span
                       className={`text-[13px] font-semibold ${netBalance >= 0 ? "text-green-600" : "text-red-600"}`}
@@ -771,7 +770,7 @@ export default function DashboardPage() {
           <div className="hidden sm:grid sm:grid-cols-2 sm:gap-3">
             <Card className="p-1.5 sm:p-2 md:p-3 rounded-md">
               <div className="leading-[1.05]">
-                <p className="text-[11px] text-muted-foreground">You owe</p>
+                <p className="text-[11px] text-muted-foreground">{t("youOwe")}</p>
                 <div className="mt-0.5 inline-flex items-center gap-1.5">
                   <span className="text-[13px] sm:text-sm md:text-xl font-bold text-red-600">
                     {formatMoney(youOwe)}
@@ -785,7 +784,7 @@ export default function DashboardPage() {
 
             <Card className="p-1.5 sm:p-2 md:p-3 rounded-md">
               <div className="leading-[1.05]">
-                <p className="text-[11px] text-muted-foreground">You're owed</p>
+                <p className="text-[11px] text-muted-foreground">{t("youreOwed")}</p>
                 <div className="mt-0.5 inline-flex items-center gap-1.5">
                   <span className="text-[13px] sm:text-sm md:text-xl font-bold text-green-600">
                     {formatMoney(youAreOwed)}

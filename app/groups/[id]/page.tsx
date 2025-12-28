@@ -19,7 +19,7 @@ import {
 } from "firebase/firestore"
 import { db ,auth } from "@/lib/firebase"
 
-import { useEffect, useState, useRef, type FormEvent } from "react"
+import { useEffect, useState, useRef, useMemo, type FormEvent } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -115,24 +115,37 @@ const MOCK_USERS: Record<string, UserProfile> = {
   user3: { displayName: "Charlie Davis", email: "charlie@example.com" },
 }
 
-const CATEGORY_OPTIONS = [
-  { value: "Electricity", label: "Electricity", icon: Zap },
-  { value: "Water", label: "Water", icon: Droplets },
-  { value: "Groceries", label: "Groceries/Market", icon: ShoppingCart },
-  { value: "Internet", label: "Internet", icon: Wifi },
-  { value: "Rent", label: "Rent", icon: Home },
-  { value: "Transport", label: "Transport", icon: Bus },
-  { value: "Dining", label: "Dining", icon: Utensils },
-  { value: "Entertainment", label: "Entertainment", icon: Film },
-  { value: "Other", label: "Other", icon: Tag },
-  { value: "Custom", label: "Custom", icon: Tag },
-]
+
 
 export default function GroupDetailPage() {
   const params = useParams()
   const router = useRouter()
   const { toast } = useToast()
-  const { formatMoney, settings } = useSettings()
+  const { formatMoney, settings, t } = useSettings()
+
+  const categoryOptions: { value: string; label: string; icon: any }[] = useMemo(() => [
+    { value: "Electricity", label: t("electricity"), icon: Zap },
+    { value: "Water", label: t("water"), icon: Droplets },
+    { value: "Groceries", label: t("groceries"), icon: ShoppingCart },
+    { value: "Internet", label: t("internet"), icon: Wifi },
+    { value: "Rent", label: t("rent"), icon: Home },
+    { value: "Transport", label: t("transport"), icon: Bus },
+    { value: "Dining", label: t("dining"), icon: Utensils },
+    { value: "Entertainment", label: t("entertainment"), icon: Film },
+    { value: "Other", label: t("other"), icon: Tag },
+    { value: "Custom", label: t("custom"), icon: Tag },
+  ], [t])
+
+  const formatTimeAgo = (date: Date) => {
+    const seconds = Math.floor((Date.now() - date.getTime()) / 1000)
+    if (seconds < 60) return t("justNow")
+    const minutes = Math.floor(seconds / 60)
+    if (minutes < 60) return `${minutes}${t("minutesAgo")}`
+    const hours = Math.floor(minutes / 60)
+    if (hours < 24) return `${hours}${t("hoursAgo")}`
+    const days = Math.floor(hours / 24)
+    return `${days}${t("daysAgo")}`
+  }
   const groupId = params?.id as string
   const scrollRef = useRef<HTMLDivElement>(null)
   const [autoScroll, setAutoScroll] = useState(true)
@@ -281,7 +294,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     } catch (err) {
       console.error("Failed to send message:", err)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to send message",
         variant: "destructive",
       })
@@ -299,7 +312,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     // ✅ Validation 1: Basic input validation
     if (!title || !amountTRY || amountTRY <= 0) {
       toast({
-        title: "Invalid input",
+        title: t("invalidInput"),
         description: "Please enter a valid title and amount",
         variant: "destructive",
       })
@@ -407,7 +420,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
 
       toast({
-        title: "Expense added",
+        title: t("expenseAdded"),
         description: `${title} - ${formatMoney(totalCents)}`,
       })
 
@@ -422,7 +435,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     } catch (err) {
       console.error("Failed to add expense:", err)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to add expense. Please try again.",
         variant: "destructive",
       })
@@ -436,7 +449,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const handleGenerateInviteCode = async () => {
     if (!currentUid || !groupId) {
       toast({
-        title: "Error",
+        title: t("error"),
         description: "You must be signed in to generate an invite code.",
         variant: "destructive",
       })
@@ -459,13 +472,13 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   
       setInviteCode(code)
       toast({
-        title: "Invite code generated",
+        title: t("inviteCodeGenerated"),
         description: "Share this code with others to join the group",
       })
     } catch (err) {
       console.error("Failed to generate invite code:", err)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to generate invite code. Please try again.",
         variant: "destructive",
       })
@@ -476,7 +489,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     if (inviteCode) {
       navigator.clipboard.writeText(inviteCode)
       toast({
-        title: "Copied to clipboard",
+        title: t("copiedToClipboard"),
         description: "Invite code copied successfully",
       })
     }
@@ -514,13 +527,13 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
 
       toast({
-        title: "Member removed",
+        title: t("memberRemoved"),
         description: `${getUserName(uid)} has been removed from the group`,
       })
     } catch (e: any) {
       console.error("Failed to remove member:", e)
       toast({
-        title: "Error",
+        title: t("error"),
         description:
           e?.message === "NOT_OWNER"
             ? "Only the group owner can remove members."
@@ -544,13 +557,13 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
 
       toast({
-        title: "Ownership transferred",
+        title: t("ownershipTransferred"),
         description: `${getUserName(uid)} is now the group owner`,
       })
     } catch (error) {
       console.error("Failed to transfer ownership:", error)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to transfer ownership. Please try again.",
         variant: "destructive",
       })
@@ -594,7 +607,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
   
       toast({
-        title: "Left group",
+        title: t("leftGroup"),
         description: `You have left ${group.name}`,
       })
   
@@ -614,7 +627,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   
       console.error(e)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Something went wrong while leaving the group.",
         variant: "destructive",
       })
@@ -695,7 +708,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       }))
 
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to update payment status",
         variant: "destructive",
       })
@@ -709,7 +722,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     const amountTRY = Number.parseFloat(paymentAmount)
     if (amountTRY <= 0) {
       toast({
-        title: "Invalid amount",
+        title: t("invalidAmount"),
         description: "Please enter a valid amount",
         variant: "destructive",
       })
@@ -752,7 +765,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
 
       toast({
-        title: "Payment recorded",
+        title: t("paymentRecorded"),
         description: `${getUserName(paymentMember)} paid you ${formatMoney(amountCents)}`,
       })
 
@@ -761,7 +774,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     } catch (error) {
       console.error("Failed to record payment:", error)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to record payment. Please try again.",
         variant: "destructive",
       })
@@ -784,7 +797,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
 
       toast({
-        title: "Expense updated",
+        title: t("expenseUpdated"),
         description: "Changes saved successfully",
       })
 
@@ -795,7 +808,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     } catch (error) {
       console.error("Failed to update expense:", error)
       toast({
-        title: "Error",
+        title: t("error"),
         description: "Failed to update expense. Please try again.",
         variant: "destructive",
       })
@@ -904,9 +917,9 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     return (
       <div className="flex h-screen items-center justify-center">
         <Card className="p-6">
-          <p className="text-destructive">Group not found</p>
+          <p className="text-destructive">{t("groupNotFound")}</p>
           <Button onClick={() => router.back()} className="mt-4">
-            Go Back
+            {t("goBack")}
           </Button>
         </Card>
       </div>
@@ -939,16 +952,16 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
               <DialogTrigger asChild>
                 <Button size="sm" variant="outline" className="flex-1 sm:flex-none bg-transparent">
                   <BarChart3 className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
-                  Status
+                  {t("status")}
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-h-[90vh] overflow-y-auto w-[95vw] max-w-md sm:w-full">
                 <DialogHeader className="pb-2">
-                  <DialogTitle className="text-xl sm:text-2xl font-bold">Group Balance</DialogTitle>
+                  <DialogTitle className="text-xl sm:text-2xl font-bold">{t("groupBalance")}</DialogTitle>
                 </DialogHeader>
                 
-                {/* Your Balance Card - Enhanced with shadow */}
-                <div className="bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 rounded-xl p-5 sm:p-5 border border-slate-200 dark:border-slate-700 mb-5 shadow-sm">
+                {/* Your Balance Card - Clean & Minimal */}
+                <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-5 sm:p-5 border border-slate-200 dark:border-slate-700/50 mb-5">
                   <div className="flex items-center gap-3.5 sm:gap-4">
                     <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0 ${
                       myBalance >= 0 
@@ -962,11 +975,11 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                       }`} />
                     </div>
                     <div className="flex-1 min-w-0 pl-1 sm:pl-2">
-                      <p className={`text-2xl sm:text-3xl md:text-4xl font-bold leading-none mb-1.5 ${myBalance >= 0 ? "text-green-600 dark:text-green-500" : "text-red-600 dark:text-red-500"}`}>
+                      <p className={`text-2xl sm:text-3xl md:text-4xl font-bold leading-none mb-1.5 ${myBalance >= 0 ? "text-green-600 dark:text-green-400 dark:[text-shadow:0_0_12px_rgba(34,197,94,0.3)]" : "text-red-600 dark:text-red-400 dark:[text-shadow:0_0_12px_rgba(239,68,68,0.3)]"}`}>
                         {formatMoney(myBalance)}
                       </p>
                       <p className="text-sm sm:text-base text-muted-foreground font-medium">
-                        {myBalance >= 0 ? "You're owed" : "You owe"}
+                        {myBalance >= 0 ? t("youreOwed") : t("youOwe")}
                       </p>
                     </div>
                   </div>
@@ -983,11 +996,11 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   if (isSettled) {
                     return (
                       <div className="py-10 text-center">
-                        <div className="mx-auto w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-4">
+                        <div className="mx-auto w-20 h-20 bg-green-100 dark:bg-green-900/30 dark:ring-1 dark:ring-green-500/20 rounded-full flex items-center justify-center mb-4">
                           <CheckCircle className="h-10 w-10 text-green-600 dark:text-green-500" />
                         </div>
-                        <p className="text-xl font-bold text-foreground">All Settled!</p>
-                        <p className="text-base text-muted-foreground mt-2">No outstanding debts</p>
+                        <p className="text-xl font-bold text-foreground">{t("allSettled")}</p>
+                        <p className="text-base text-muted-foreground mt-2">{t("noOutstandingDebts")}</p>
                       </div>
                     )
                   }
@@ -995,12 +1008,12 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   return (
                     <div className="space-y-3 mb-5">
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-1 mb-1">
-                        Debts
+                        {t("debts").toUpperCase()}
                       </p>
                       {allDebts.map((debt, index) => (
                         <div
                           key={`${debt.from}-${debt.to}-${index}`}
-                          className="bg-white dark:bg-slate-900 rounded-xl p-4 sm:p-4 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
+                          className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-4 sm:p-4 border border-slate-200 dark:border-slate-700/50 hover:border-slate-300 dark:hover:border-slate-600/60 transition-colors duration-150"
                         >
                           <div className="flex items-center justify-between gap-4">
                             {/* Left: Avatar + Info */}
@@ -1016,7 +1029,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                     />
                                   ) : null
                                 })()}
-                                <AvatarFallback className="bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-sm">
+                                <AvatarFallback className="bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-200 font-semibold text-sm">
                                   {(() => {
                                     const otherPersonId = debt.from === currentUid ? debt.to : debt.from
                                     return getUserName(otherPersonId).slice(0, 2).toUpperCase()
@@ -1025,10 +1038,10 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                               </Avatar>
                               <div className="flex-1 min-w-0">
                                 <p className="font-bold text-base text-foreground truncate leading-tight mb-0.5">
-                                  {debt.from === currentUid ? "You" : getUserName(debt.from)}
+                                  {debt.from === currentUid ? t("You") : getUserName(debt.from)}
                                 </p>
                                 <p className="text-sm text-muted-foreground truncate">
-                                  owes {debt.to === currentUid ? "you" : getUserName(debt.to)}
+                                  {t("owes")} {debt.to === currentUid ? t("you") : getUserName(debt.to)}
                                 </p>
                               </div>
                             </div>
@@ -1037,8 +1050,8 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                             <div className="flex-shrink-0">
                               <p className={`text-xl sm:text-2xl font-bold ${
                                 debt.to === currentUid 
-                                  ? "text-green-600 dark:text-green-500" 
-                                  : "text-red-600 dark:text-red-500"
+                                  ? "text-green-600 dark:text-green-400 dark:[text-shadow:0_0_8px_rgba(34,197,94,0.25)]" 
+                                  : "text-red-600 dark:text-red-400 dark:[text-shadow:0_0_8px_rgba(239,68,68,0.25)]"
                               }`}>
                                 {formatMoney(debt.amount)}
                               </p>
@@ -1053,15 +1066,15 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 {/* Record Payment - Compact & Clean */}
                 <div className="border-t pt-4 mt-1">
                   <div className="mb-3">
-                    <h3 className="text-sm font-bold text-foreground">Record Payment</h3>
-                    <p className="text-xs text-muted-foreground">Track received payments</p>
+                    <h3 className="text-sm font-bold text-foreground">{t("recordPayment")}</h3>
+                    <p className="text-xs text-muted-foreground">{t("trackPayments")}</p>
                   </div>
                   
                   <div className="space-y-3">
                     {/* Member Selection */}
                     <div>
                       <Label className="text-xs font-medium text-muted-foreground mb-1.5 block">
-                        Member
+                        {t("member")}
                       </Label>
                       <Select 
                         value={paymentMember} 
@@ -1077,7 +1090,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                         }}
                       >
                         <SelectTrigger className="w-full h-10">
-                          <SelectValue placeholder="Select member" />
+                          <SelectValue placeholder={t("selectMember")} />
                         </SelectTrigger>
                         <SelectContent>
                           {memberIds
@@ -1102,7 +1115,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           {/* Payment Type Selection */}
                           <div>
                             <Label className="text-xs font-medium text-muted-foreground mb-1.5 block">
-                              Amount
+                              {t("amount")}
                             </Label>
                             <div className="grid grid-cols-2 gap-2">
                               <Button
@@ -1115,7 +1128,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                 }}
                               >
                                 <div className="text-xs font-medium mb-0.5 opacity-90">
-                                  Full
+                                  {t("full")}
                                 </div>
                                 <div className="text-base font-bold">
                                   {formatMoney(debtAmount)}
@@ -1132,10 +1145,10 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                 }}
                               >
                                 <div className="text-xs font-medium mb-0.5 opacity-90">
-                                  Custom
+                                  {t("custom")}
                                 </div>
                                 <div className="text-base font-bold">
-                                  Partial
+                                  {t("partial")}
                                 </div>
                               </Button>
                             </div>
@@ -1147,7 +1160,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                               <Input
                                 type="number"
                                 step="0.01"
-                                placeholder="Enter amount"
+                                placeholder={t("enterAmount")}
                                 value={paymentAmount}
                                 onChange={(e) => setPaymentAmount(e.target.value)}
                                 disabled={recordingPayment}
@@ -1168,7 +1181,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                             }
                             className="w-full h-10 text-sm font-semibold"
                           >
-                            {recordingPayment ? "Recording..." : "Record Payment"}
+                            {recordingPayment ? t("recording") : t("recordPayment")}
                           </Button>
                         </div>
                       )
@@ -1194,12 +1207,12 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
               <DialogTrigger asChild>
                 <Button size="sm" variant="outline" className="flex-1 sm:flex-none bg-transparent">
                   <Users className="mr-1 h-4 w-4 sm:h-5 sm:w-5" />
-                  Members
+                  {t("members")}
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle>Group Members</DialogTitle>
+                  <DialogTitle>{t("groupMembers")}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <div className="space-y-2">
@@ -1223,7 +1236,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           {uid === group.createdBy && (
                             <div className="flex items-center gap-1 text-xs text-amber-600 bg-amber-50 dark:bg-amber-950/20 px-2 py-1 rounded">
                               <Crown className="h-3 w-3" />
-                              <span>Owner</span>
+                              <span>{t("owner")}</span>
                             </div>
                           )}
                           {isOwner && uid !== currentUid && (
@@ -1241,7 +1254,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                   }}
                                 >
                                   <Crown className="mr-2 h-4 w-4" />
-                                  Transfer Ownership
+                                  {t("transferOwnership")}
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
                                   className="text-destructive"
@@ -1251,7 +1264,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                   }}
                                 >
                                   <UserMinus className="mr-2 h-4 w-4" />
-                                  Remove Member
+                                  {t("removeMember")}
                                 </DropdownMenuItem>
                               </DropdownMenuContent>
                             </DropdownMenu>
@@ -1261,13 +1274,13 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     ))}
                   </div>
 
-                  <div className="border-t pt-4">
-                    <Label>Invite Code</Label>
-                    <p className="text-xs text-muted-foreground mb-2">Generate a code to share with others</p>
+                    <div className="border-t pt-4">
+                    <Label>{t("inviteCode")}</Label>
+                    <p className="text-xs text-muted-foreground mb-2">{t("generateInviteCodeDesc")}</p>
                     {!inviteCode ? (
                       <Button onClick={handleGenerateInviteCode} variant="outline" className="w-full bg-transparent">
                         <Link className="mr-2 h-4 w-4" />
-                        Generate Invite Code
+                        {t("generateInviteCode")}
                       </Button>
                     ) : (
                       <div className="flex gap-2">
@@ -1283,35 +1296,35 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
                   {isOwner && memberIds.length > 1 && (
                     <div className="border-t pt-4">
-                      <Label>Leave Group</Label>
+                      <Label>{t("leaveGroup")}</Label>
                       <p className="text-xs text-muted-foreground mb-2">
-                        You're the group owner. Transfer ownership to someone else before leaving.
+                        {t("leaveGroupOwnerDesc")}
                       </p>
                       <Button
                         variant="destructive"
                         className="w-full"
                         onClick={() => {
                           toast({
-                            title: "Transfer ownership first",
-                            description: "You're the group owner. Transfer ownership to someone else before leaving.",
+                            title: t("transferOwnershipFirst"),
+                            description: t("leaveGroupOwnerDesc"),
                             variant: "destructive",
                           })
                         }}
                       >
-                        Leave Group
+                        {t("leaveGroup")}
                       </Button>
                       <p className="mt-2 text-xs text-muted-foreground">
-                        Use the <span className="font-medium">⋮</span> menu next to a member to transfer ownership.
+                        {t("useMenuToTransfer")}
                       </p>
                     </div>
                   )}
                   {(!isOwner || memberIds.length === 1) && (
                     <div className="border-t pt-4">
-                      <Label>Leave Group</Label>
+                      <Label>{t("leaveGroup")}</Label>
                       <p className="text-xs text-muted-foreground mb-2">
                         {memberIds.length === 1
-                          ? "You're the last member. Leaving will permanently delete this group."
-                          : "You can leave this group anytime."}
+                          ? t("leaveGroupLastMemberDesc")
+                          : t("leaveGroupDesc")}
                       </p>
                       <Button
                         variant="destructive"
@@ -1325,7 +1338,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           }
                         }}
                       >
-                        Leave Group
+                        {t("leaveGroup")}
                       </Button>
                     </div>
                   )}
@@ -1348,7 +1361,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         <div className="mx-auto max-w-3xl space-y-3 sm:space-y-4">
           {feedItems.length === 0 ? (
             <div className="flex h-64 items-center justify-center">
-              <p className="text-muted-foreground">No activity yet</p>
+              <p className="text-muted-foreground">{t("noActivityYet")}</p>
             </div>
           ) : (
             feedItems.map((item, index) => {
@@ -1377,7 +1390,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   </div>
                 )
               } else {
-                const categoryOption = CATEGORY_OPTIONS.find((opt) => opt.value === item.category)
+                const categoryOption = categoryOptions.find((opt) => opt.value === item.category)
                 const CategoryIcon = categoryOption?.icon || DollarSign
 
                 return (
@@ -1393,7 +1406,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           <div className="min-w-0">
                             <p className="font-semibold text-sm sm:text-base truncate">{item.title}</p>
                             <p className="text-xs sm:text-sm text-muted-foreground truncate">
-                              Paid by {getUserName(item.payerUid || "")}
+                              {t("paidBy")} {getUserName(item.payerUid || "")}
                             </p>
                           </div>
                         </div>
@@ -1406,7 +1419,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           </div>
                           <div className="sm:text-right">
                             <p className="text-xs sm:text-sm text-muted-foreground">
-                              Split between {item.participantIds?.length || 0} people
+                              {t("splitBetween")} {item.participantIds?.length || 0} {t("people")}
                             </p>
                             <p className="text-xs text-muted-foreground">{formatTime(toDateSafe(item.createdAt))}</p>
                           </div>
@@ -1429,7 +1442,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                             }}
                           >
                             <Edit className="mr-2 h-4 w-4" />
-                            Edit
+                            {t("edit")}
                           </DropdownMenuItem>
                         </DropdownMenuContent>
                       </DropdownMenu>
@@ -1453,20 +1466,20 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
               </DialogTrigger>
               <DialogContent className="max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle>Add Expense</DialogTitle>
+                  <DialogTitle>{t("addExpense")}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="expense-title">Description</Label>
+                    <Label htmlFor="expense-title">{t("description")}</Label>
                     <Input
                       id="expense-title"
-                      placeholder="Groceries, dinner, etc."
+                      placeholder={t("groceriesEtc")}
                       value={expenseTitle}
                       onChange={(e) => setExpenseTitle(e.target.value)}
                     />
                   </div>
                   <div>
-                    <Label htmlFor="expense-amount">Amount ({settings.currency})</Label>
+                    <Label htmlFor="expense-amount">{t("amount")} ({settings.currency})</Label>
                     <Input
                       id="expense-amount"
                       type="number"
@@ -1477,7 +1490,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     />
                   </div>
                   <div>
-                    <Label htmlFor="expense-category">Category (optional)</Label>
+                    <Label htmlFor="expense-category">{t("category")}</Label>
                     <Select
                       value={categoryMode === "custom" ? "Custom" : expenseCategory || ""}
                       onValueChange={(value) => {
@@ -1495,7 +1508,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           {expenseCategory && categoryMode === "select" && (
                             <div className="flex items-center gap-2">
                               {(() => {
-                                const option = CATEGORY_OPTIONS.find((opt) => opt.value === expenseCategory)
+                                const option = categoryOptions.find((opt) => opt.value === expenseCategory)
                                 const Icon = option?.icon
                                 return (
                                   <>
@@ -1509,7 +1522,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                         </SelectValue>
                       </SelectTrigger>
                       <SelectContent>
-                        {CATEGORY_OPTIONS.map((option) => {
+                        {categoryOptions.map((option) => {
                           const Icon = option.icon
                           return (
                             <SelectItem key={option.value} value={option.value}>
@@ -1524,7 +1537,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     </Select>
                     {categoryMode === "custom" && (
                       <Input
-                        placeholder="Enter custom category"
+                        placeholder={t("enterCustomCategory")}
                         value={expenseCategory}
                         onChange={(e) => setExpenseCategory(e.target.value)}
                         className="mt-2"
@@ -1532,7 +1545,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     )}
                   </div>
                   <div>
-                    <Label>Split with</Label>
+                    <Label>{t("splitWith")}</Label>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {memberIds.map((uid) => (
                         <Button
@@ -1635,7 +1648,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   )}
 
                   <Button onClick={handleAddExpense} className="w-full" disabled={addingExpense}>
-                    {addingExpense ? "Adding..." : "Add Expense"}
+                    {addingExpense ? t("adding") : t("addExpense")}
                   </Button>
                 </div>
               </DialogContent>
@@ -1667,10 +1680,10 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       <Dialog open={expenseDetailOpen} onOpenChange={setExpenseDetailOpen}>
         <DialogContent className="max-h-[90vh] overflow-y-auto w-[95vw] max-w-md sm:w-full">
           <DialogHeader>
-            <DialogTitle className="text-xl sm:text-2xl font-semibold">Expense Details</DialogTitle>
+            <DialogTitle className="text-xl sm:text-2xl font-semibold">{t("expenseDetails")}</DialogTitle>
           </DialogHeader>
           {selectedExpense && (() => {
-            const categoryOption = CATEGORY_OPTIONS.find((opt) => opt.value === selectedExpense.category)
+            const categoryOption = categoryOptions.find((opt) => opt.value === selectedExpense.category)
             const CategoryIcon = categoryOption?.icon || DollarSign
 
             return (
@@ -1917,7 +1930,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
                 <SelectContent>
-                  {CATEGORY_OPTIONS.filter(opt => opt.value !== "Custom").map((option) => {
+                  {categoryOptions.filter(opt => opt.value !== "Custom").map((option) => {
                     const Icon = option.icon
                     return (
                       <SelectItem key={option.value} value={option.value}>
@@ -1957,7 +1970,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 disabled={!editExpenseTitle.trim() || editingExpense}
                 className="flex-1"
               >
-                {editingExpense ? "Saving..." : "Save Changes"}
+                {editingExpense ? t("saving") : t("saveChanges")}
               </Button>
             </div>
           </div>

@@ -56,7 +56,7 @@ const MOCK_GROUPS: Group[] = [
 export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const { formatMoney } = useSettings()
+  const { formatMoney, t } = useSettings()
   const [loading, setLoading] = useState(true)
   const [groups, setGroups] = useState<Group[]>([])
   const [createDialogOpen, setCreateDialogOpen] = useState(false)
@@ -75,8 +75,8 @@ export default function GroupsPage() {
   const handleCreateGroup = () => {
     if (!groupName.trim()) {
       toast({
-        title: "Invalid input",
-        description: "Please enter a group name",
+        title: t("invalidInput"),
+        description: t("enterGroupNameError"),
         variant: "destructive",
       })
       return
@@ -94,8 +94,8 @@ export default function GroupsPage() {
 
     setGroups((prev) => [newGroup, ...prev])
     toast({
-      title: "Group created",
-      description: `${groupName} has been created successfully`,
+      title: t("groupCreated"),
+      description: `${groupName} ${t("groupCreatedDesc")}`,
     })
 
     setGroupName("")
@@ -105,16 +105,16 @@ export default function GroupsPage() {
   const handleJoinGroup = () => {
     if (!inviteCode.trim()) {
       toast({
-        title: "Invalid input",
-        description: "Please enter an invite code",
+        title: t("invalidInput"),
+        description: t("enterInviteCodeError"),
         variant: "destructive",
       })
       return
     }
 
     toast({
-      title: "Joined group",
-      description: "You've successfully joined the group",
+      title: t("joinedGroup"),
+      description: t("joinedGroupDesc"),
     })
 
     setInviteCode("")
@@ -123,13 +123,13 @@ export default function GroupsPage() {
 
   const formatTimeAgo = (date: Date) => {
     const seconds = Math.floor((Date.now() - date.getTime()) / 1000)
-    if (seconds < 60) return "Just now"
+    if (seconds < 60) return t("justNow")
     const minutes = Math.floor(seconds / 60)
-    if (minutes < 60) return `${minutes}m ago`
+    if (minutes < 60) return `${minutes}${t("minutesAgo")}`
     const hours = Math.floor(minutes / 60)
-    if (hours < 24) return `${hours}h ago`
+    if (hours < 24) return `${hours}${t("hoursAgo")}`
     const days = Math.floor(hours / 24)
-    return `${days}d ago`
+    return `${days}${t("daysAgo")}`
   }
 
   if (loading) {
@@ -158,32 +158,32 @@ export default function GroupsPage() {
       {/* Header */}
       <div className="border-b bg-card">
         <div className="mx-auto max-w-4xl p-4 sm:p-6">
-          <h1 className="text-xl font-bold mb-3 sm:mb-4 sm:text-2xl">Groups</h1>
+          <h1 className="text-xl font-bold mb-3 sm:mb-4 sm:text-2xl">{t("groupsTitle")}</h1>
           <div className="flex flex-wrap gap-2">
             <Dialog open={createDialogOpen} onOpenChange={setCreateDialogOpen}>
               <DialogTrigger asChild>
                 <Button size="sm" className="flex-1 sm:flex-none h-9">
                   <Plus className="mr-1.5 h-4 w-4" />
-                  Create Group
+                  {t("createNewGroup")}
                 </Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Create New Group</DialogTitle>
+                  <DialogTitle>{t("createNewGroup")}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="group-name">Group Name</Label>
+                    <Label htmlFor="group-name">{t("groupName")}</Label>
                     <Input
                       id="group-name"
-                      placeholder="Weekend Trip, Apartment, etc."
+                      placeholder={t("enterGroupName")}
                       value={groupName}
                       onChange={(e) => setGroupName(e.target.value)}
                       className="mt-2"
                     />
                   </div>
                   <Button onClick={handleCreateGroup} className="w-full">
-                    Create Group
+                    {t("createNewGroup")}
                   </Button>
                 </div>
               </DialogContent>
@@ -193,26 +193,26 @@ export default function GroupsPage() {
               <DialogTrigger asChild>
                 <Button size="sm" variant="outline" className="flex-1 sm:flex-none h-9 bg-transparent">
                   <LinkIcon className="mr-1.5 h-4 w-4" />
-                  Join via Code
+                  {t("joinViaCode")}
                 </Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Join Group</DialogTitle>
+                  <DialogTitle>{t("joinGroup")}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="invite-code">Invite Code</Label>
+                    <Label htmlFor="invite-code">{t("inviteCode")}</Label>
                     <Input
                       id="invite-code"
-                      placeholder="Enter invite code"
+                      placeholder={t("enterInviteCode")}
                       value={inviteCode}
                       onChange={(e) => setInviteCode(e.target.value)}
                       className="mt-2 font-mono"
                     />
                   </div>
                   <Button onClick={handleJoinGroup} className="w-full">
-                    Join Group
+                    {t("joinGroup")}
                   </Button>
                 </div>
               </DialogContent>
@@ -230,19 +230,19 @@ export default function GroupsPage() {
                 <Users className="h-8 w-8 sm:h-10 sm:w-10 text-muted-foreground" />
               </div>
               <div>
-                <h2 className="text-lg font-semibold mb-2 sm:text-xl">No groups yet</h2>
+                <h2 className="text-lg font-semibold mb-2 sm:text-xl">{t("noGroupsYet")}</h2>
                 <p className="text-sm text-muted-foreground sm:text-base">
-                  Create a new group or join an existing one to start tracking expenses with friends and family.
+                  {t("noGroupsDesc")}
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2">
                 <Button onClick={() => setCreateDialogOpen(true)} className="flex-1">
                   <Plus className="mr-2 h-4 w-4" />
-                  Create Group
+                  {t("createNewGroup")}
                 </Button>
                 <Button onClick={() => setJoinDialogOpen(true)} variant="outline" className="flex-1 bg-transparent">
                   <LinkIcon className="mr-2 h-4 w-4" />
-                  Join via Code
+                  {t("joinViaCode")}
                 </Button>
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function GroupsPage() {
                       <h3 className="font-semibold text-base sm:text-lg truncate">{group.name}</h3>
                       <div className="flex items-center gap-1.5 text-xs text-muted-foreground sm:text-sm mt-0.5">
                         <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                        <span>{group.memberCount} members</span>
+                        <span>{group.memberCount} {t("membersCount")}</span>
                       </div>
                     </div>
                     <div
@@ -290,7 +290,7 @@ export default function GroupsPage() {
                   <div className="flex items-center justify-between pt-2 sm:pt-3 border-t">
                     <div className="flex items-center gap-1.5 text-xs text-muted-foreground sm:text-sm">
                       <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                      <span>Total expenses</span>
+                      <span>{t("totalExpenses")}</span>
                     </div>
                     <p className="text-sm font-semibold sm:text-base">{formatMoney(group.totalExpenses)}</p>
                   </div>

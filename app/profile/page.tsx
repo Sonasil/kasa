@@ -42,7 +42,7 @@ import { useUserProfile } from "@/lib/user-profile"
 
 export default function ProfilePage() {
   const router = useRouter()
-  const { formatMoney } = useSettings()
+  const { formatMoney, t } = useSettings()
   const { photoURL: globalPhotoURL } = useUserProfile()
   const { toast } = useToast()
   const [loading, setLoading] = useState(true)
@@ -111,15 +111,15 @@ export default function ProfilePage() {
       )
 
       toast({
-        title: "Profile updated",
-        description: "Your profile has been saved.",
+        title: t("profileUpdated"),
+        description: t("profileSaved"),
       })
     } catch (e: any) {
-      const message = e?.message || "Failed to save profile."
+      const message = e?.message || t("couldNotSaveProfile")
       setError(message)
       toast({
         variant: "destructive",
-        title: "Could not save profile",
+        title: t("couldNotSaveProfile"),
         description: message,
       })
     } finally {
@@ -254,7 +254,7 @@ export default function ProfilePage() {
         },
         (err) => {
           console.error("Failed to load groups:", err)
-          setError("Failed to load profile stats. Please try again.")
+          setError(t("failedToLoad"))
           setTotalGroups(0)
           setActiveExpenses(0)
           setTotalSpent(0)
@@ -323,7 +323,7 @@ export default function ProfilePage() {
               <p className="text-sm text-muted-foreground">{email || ""}</p>
               <div className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
                 <Calendar className="h-3 w-3" />
-                <span>Member since {memberSince || "—"}</span>
+                <span>{t("memberSince")} {memberSince || "—"}</span>
               </div>
             </div>
           </div>
@@ -336,7 +336,7 @@ export default function ProfilePage() {
                 <div className="rounded-full bg-blue-100 dark:bg-blue-950 p-1.5">
                   <Users className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-blue-600 dark:text-blue-400" />
                 </div>
-                <p className="text-xs text-muted-foreground">Groups</p>
+                <p className="text-xs text-muted-foreground">{t("groupsTitle")}</p>
               </div>
               <p className="text-xl sm:text-2xl font-bold">{totalGroups}</p>
             </Card>
@@ -346,7 +346,7 @@ export default function ProfilePage() {
                 <div className="rounded-full bg-green-100 dark:bg-green-950 p-1.5">
                   <DollarSign className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-green-600 dark:text-green-400" />
                 </div>
-                <p className="text-xs text-muted-foreground">Expenses</p>
+                <p className="text-xs text-muted-foreground">{t("totalExpenses")}</p>
               </div>
               <p className="text-xl sm:text-2xl font-bold">{activeExpenses}</p>
             </Card>
@@ -356,7 +356,7 @@ export default function ProfilePage() {
                 <div className="rounded-full bg-purple-100 dark:bg-purple-950 p-1.5">
                   <TrendingUp className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-purple-600 dark:text-purple-400" />
                 </div>
-                <p className="text-xs text-muted-foreground">Total Spent</p>
+                <p className="text-xs text-muted-foreground">{t("totalSpent")}</p>
               </div>
               <p className="text-base sm:text-lg font-bold">{formatMoney(totalSpent)}</p>
             </Card>
@@ -370,7 +370,7 @@ export default function ProfilePage() {
                     className={`h-3.5 w-3.5 sm:h-4 sm:w-4 ${balance >= 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}
                   />
                 </div>
-                <p className="text-xs text-muted-foreground">Balance</p>
+                <p className="text-xs text-muted-foreground">{t("balance")}</p>
               </div>
               <p
                 className={`text-base sm:text-lg font-bold ${balance >= 0 ? "text-green-600" : "text-red-600"}`}
@@ -382,7 +382,7 @@ export default function ProfilePage() {
 
 
           <Card className="p-3 sm:p-4 mb-3 sm:mb-4">
-            <h3 className="text-xs font-semibold text-muted-foreground mb-3 px-1">SETTINGS</h3>
+            <h3 className="text-xs font-semibold text-muted-foreground mb-3 px-1">{t("settings").toUpperCase()}</h3>
             <button
               onClick={() => router.push("/settings")}
               className="w-full flex items-center justify-between p-3 sm:p-4 rounded-lg border hover:bg-accent hover:border-accent-foreground/10 transition-all text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
@@ -392,8 +392,8 @@ export default function ProfilePage() {
                   <Sliders className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm sm:text-base font-semibold">App Settings</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Preferences and permissions</p>
+                  <p className="text-sm sm:text-base font-semibold">{t("appSettings")}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{t("preferencesPermissions")}</p>
                 </div>
               </div>
               <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground shrink-0" />
@@ -402,11 +402,11 @@ export default function ProfilePage() {
 
           <Button variant="destructive" className="w-full h-11 sm:h-10 mb-4" onClick={() => setSignOutDialogOpen(true)}>
             <LogOut className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-            Sign Out
+            {t("signOut")}
           </Button>
 
           <div className="text-center pb-2">
-            <p className="text-xs text-muted-foreground">Kasa Expense Sharing App</p>
+            <p className="text-xs text-muted-foreground">{t("ksExpenseApp")}</p>
             <p className="text-xs text-muted-foreground/70 mt-0.5">Version 1.0.0</p>
           </div>
         </div>
@@ -447,18 +447,18 @@ export default function ProfilePage() {
       <AlertDialog open={signOutDialogOpen} onOpenChange={setSignOutDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Sign Out</AlertDialogTitle>
+            <AlertDialogTitle>{t("signOutConfirmTitle")}</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to sign out? You'll need to sign in again to access your groups and expenses.
+              {t("signOutConfirmDesc")}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>{t("cancel")}</AlertDialogCancel>
             <AlertDialogAction
               onClick={handleSignOut}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
-              Sign Out
+              {t("signOut")}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

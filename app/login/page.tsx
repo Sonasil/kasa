@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, type FormEvent } from "react"
+import { useState, useEffect, type FormEvent } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -8,17 +8,67 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2, Wallet } from "lucide-react"
 import { auth, googleProvider } from "@/lib/firebase"
-import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import { signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, getRedirectResult } from "firebase/auth"
+import { useSettings } from "@/lib/settings-context"
 
 export default function LoginPage() {
   const router = useRouter()
+  const { t } = useSettings()
+  // DEBUG STATE
+  const [debugLogs, setDebugLogs] = useState<string[]>([])
+  const addLog = (msg: string) => setDebugLogs(prev => [...prev.slice(-4), `${new Date().toLocaleTimeString()}: ${msg}`])
+
+  // Add auth listener to handle redirect result or existing session
+  useEffect(() => {
+    addLog("Auth listener init")
+    const unsub = auth.onAuthStateChanged((user) => {
+      addLog(`Auth state changed: ${user ? user.email : "No user"}`)
+      if (user) {
+        addLog("User found! Redirecting...")
+        router.push("/")
+      } else {
+        addLog("No user in AuthState.")
+      }
+    })
+    return () => unsub()
+  }, [router])
+
+  // Handle redirect result (for mobile)
+  useEffect(() => {
+    addLog("Checking getRedirectResult...")
+    // Check for redirect result on mount
+    getRedirectResult(auth)
+      .then((result) => {
+        addLog(`Redirect result: ${result ? "Success (" + result.user.email + ")" : "Null"}`)
+        if (result) {
+          // User signed in via redirect
+          addLog("Redirect success. Navigating...")
+          router.push("/")
+        }
+      })
+      .catch((error) => {
+        console.error("Redirect sign-in error:", error)
+        addLog(`Redirect Error: ${error.code} - ${error.message}`)
+        setGoogleLoading(false)
+        if (error?.code !== "auth/popup-closed-by-user") {
+          // Show explicit error message if possible
+          const msg = error?.message || t("googleSignInFailed")
+          setFormError(`${t("googleSignInFailed")} (${msg})`)
+        }
+      })
+  }, [t, router])
+
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [googleLoading, setGoogleLoading] = useState(false)
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({})
+
+
   const [formError, setFormError] = useState<string | null>(null)
+
+
 
 
   const validateForm = () => {
@@ -26,15 +76,15 @@ export default function LoginPage() {
     setFormError(null)
 
     if (!email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = t("emailRequired")
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      newErrors.email = "Please enter a valid email address"
+      newErrors.email = t("invalidEmail")
     }
 
     if (!password) {
-      newErrors.password = "Password is required"
+      newErrors.password = t("passwordRequired")
     } else if (password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters"
+      newErrors.password = t("passwordTooWeak")
     }
 
     setErrors(newErrors)
@@ -56,26 +106,54 @@ export default function LoginPage() {
       // Basic error mapping
       const code = err?.code as string | undefined
       if (code === "auth/invalid-email") {
-        setErrors(prev => ({ ...prev, email: "Invalid email address" }))
+        setErrors(prev => ({ ...prev, email: t("invalidEmail") }))
       } else if (code === "auth/user-not-found" || code === "auth/wrong-password") {
-        setErrors(prev => ({ ...prev, password: "Email or password is incorrect" }))
+        setErrors(prev => ({ ...prev, password: t("signInFailed") }))
       } else if (code === "auth/too-many-requests") {
-        setFormError("Too many attempts. Please try again later.")
+        setFormError(t("pleaseTryAgain"))
       } else {
-        setFormError("Sign-in failed. Please try again.")
+        setFormError(t("signInFailed"))
       }
     }
   }
 
   const handleGoogleLogin = async () => {
     setGoogleLoading(true)
+    setFormError(null)
+    addLog(`Starting Google Auth via Popup...`)
+    
     try {
+      // Desktop & Mobile: Try popup first
+      addLog("Calling signInWithPopup...")
       await signInWithPopup(auth, googleProvider)
-      setGoogleLoading(false)
-      router.push("/")
-    } catch (err) {
-      setGoogleLoading(false)
-      setFormError("Google sign-in failed. Please try again.")
+      addLog("Popup finished. Waiting for auth listener...")
+      // Auth state listener will handle redirection
+    } catch (err: any) {
+      console.error("Google sign in error:", err)
+      addLog(`Popup Error: ${err.code || "unknown"} - ${err.message}`)
+      
+      const errorCode = err?.code
+      if (errorCode === "auth/popup-closed-by-user") {
+        setGoogleLoading(false)
+        return // Ignore if user closed it
+      }
+      
+      // If popup specifically fails due to blocking/support, try redirect
+      if (errorCode === "auth/popup-blocked" || errorCode === "auth/cancelled-popup-request" || errorCode === "auth/operation-not-supported-in-this-environment") {
+        try {
+          addLog("Fallback to redirect...")
+          await signInWithRedirect(auth, googleProvider)
+          return
+        } catch (redirectErr: any) {
+          console.error("Redirect fallback failed", redirectErr)
+           addLog(`Fallback Error: ${redirectErr.message}`)
+           setGoogleLoading(false)
+        }
+      } else {
+         setGoogleLoading(false)
+      }
+
+      setFormError(t("googleSignInFailed"))
     }
   }
 
@@ -83,20 +161,26 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md border shadow-sm">
         <div className="p-6 sm:p-8">
+           {/* Debug logs for mobile troubleshooting */}
+           <div className="mb-4 p-2 bg-slate-100 text-[10px] font-mono rounded text-slate-700 overflow-hidden">
+            <p className="font-bold">Debug Logs (Take screenshot if fails):</p>
+            {debugLogs.map((l, i) => <p key={i}>{l}</p>)}
+          </div>
+
           <div className="mb-6 sm:mb-8 text-center">
             <div className="mb-4 flex justify-center">
               <div className="rounded-2xl bg-primary p-3 sm:p-4">
                 <Wallet className="h-8 w-8 sm:h-10 sm:w-10 text-primary-foreground" />
               </div>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold">Welcome to Kasa</h1>
-            <p className="mt-2 text-sm sm:text-base text-muted-foreground">Sign in to manage your shared expenses</p>
+            <h1 className="text-2xl sm:text-3xl font-bold">{t("welcomeToKasa")}</h1>
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground">{t("signInDesc")}</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
             <div className="space-y-2">
               <Label htmlFor="email" className="text-sm sm:text-base">
-                Email
+                {t("email")}
               </Label>
               <Input
                 id="email"
@@ -120,13 +204,13 @@ export default function LoginPage() {
 
             <div className="space-y-2">
               <Label htmlFor="password" className="text-sm sm:text-base">
-                Password
+                {t("password")}
               </Label>
               <div className="relative">
                 <Input
                   id="password"
                   type={showPassword ? "text" : "password"}
-                  placeholder="Enter your password"
+                  placeholder={t("enterPassword")}
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value)
@@ -163,10 +247,10 @@ export default function LoginPage() {
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Signing in...
+                  {t("signingIn")}
                 </>
               ) : (
-                "Sign In"
+                t("signIn")
               )}
             </Button>
             {formError && (
@@ -181,7 +265,7 @@ export default function LoginPage() {
               <div className="w-full border-t border-border"></div>
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
+              <span className="bg-card px-2 text-muted-foreground">{t("orContinueWith")}</span>
             </div>
           </div>
 
@@ -195,7 +279,7 @@ export default function LoginPage() {
             {googleLoading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Connecting...
+                {t("connecting")}
               </>
             ) : (
               <>
@@ -217,21 +301,21 @@ export default function LoginPage() {
                     d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
                   />
                 </svg>
-                Login with Google
+                {t("loginWithGoogle")}
               </>
             )}
           </Button>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
-              Don't have an account?{" "}
+              {t("dontHaveAccount")}{" "}
               <button
                 type="button"
                 onClick={() => router.push("/register")}
                 className="font-medium text-primary hover:underline focus:outline-none focus:underline"
                 disabled={loading || googleLoading}
               >
-                Sign up
+                {t("signUp")}
               </button>
             </p>
           </div>

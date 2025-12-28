@@ -623,7 +623,7 @@ var _s = __turbopack_context__.k.signature();
 function ProfilePage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
-    const { formatMoney } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSettings"])();
+    const { formatMoney, t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSettings"])();
     const { photoURL: globalPhotoURL } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$user$2d$profile$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUserProfile"])();
     const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
@@ -687,15 +687,15 @@ function ProfilePage() {
                 merge: true
             });
             toast({
-                title: "Profile updated",
-                description: "Your profile has been saved."
+                title: t("profileUpdated"),
+                description: t("profileSaved")
             });
         } catch (e) {
-            const message = e?.message || "Failed to save profile.";
+            const message = e?.message || t("couldNotSaveProfile");
             setError(message);
             toast({
                 variant: "destructive",
-                title: "Could not save profile",
+                title: t("couldNotSaveProfile"),
                 description: message
             });
         } finally{
@@ -837,7 +837,7 @@ function ProfilePage() {
                     }["ProfilePage.useEffect.unsubAuth"], {
                         "ProfilePage.useEffect.unsubAuth": (err)=>{
                             console.error("Failed to load groups:", err);
-                            setError("Failed to load profile stats. Please try again.");
+                            setError(t("failedToLoad"));
                             setTotalGroups(0);
                             setActiveExpenses(0);
                             setTotalSpent(0);
@@ -1044,7 +1044,8 @@ function ProfilePage() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: [
-                                                    "Member since ",
+                                                    t("memberSince"),
+                                                    " ",
                                                     memberSince || "—"
                                                 ]
                                             }, void 0, true, {
@@ -1102,7 +1103,7 @@ function ProfilePage() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "text-xs text-muted-foreground",
-                                                        children: "Groups"
+                                                        children: t("groupsTitle")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
                                                         lineNumber: 339,
@@ -1150,7 +1151,7 @@ function ProfilePage() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "text-xs text-muted-foreground",
-                                                        children: "Expenses"
+                                                        children: t("totalExpenses")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
                                                         lineNumber: 349,
@@ -1198,7 +1199,7 @@ function ProfilePage() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "text-xs text-muted-foreground",
-                                                        children: "Total Spent"
+                                                        children: t("totalSpent")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
                                                         lineNumber: 359,
@@ -1246,7 +1247,7 @@ function ProfilePage() {
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         className: "text-xs text-muted-foreground",
-                                                        children: "Balance"
+                                                        children: t("balance")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/profile/page.tsx",
                                                         lineNumber: 373,
@@ -1283,7 +1284,7 @@ function ProfilePage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-xs font-semibold text-muted-foreground mb-3 px-1",
-                                        children: "SETTINGS"
+                                        children: t("settings").toUpperCase()
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
                                         lineNumber: 385,
@@ -1315,7 +1316,7 @@ function ProfilePage() {
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-sm sm:text-base font-semibold",
-                                                                children: "App Settings"
+                                                                children: t("appSettings")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/profile/page.tsx",
                                                                 lineNumber: 395,
@@ -1323,7 +1324,7 @@ function ProfilePage() {
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-xs sm:text-sm text-muted-foreground",
-                                                                children: "Preferences and permissions"
+                                                                children: t("preferencesPermissions")
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/profile/page.tsx",
                                                                 lineNumber: 396,
@@ -1372,7 +1373,7 @@ function ProfilePage() {
                                         lineNumber: 404,
                                         columnNumber: 13
                                     }, this),
-                                    "Sign Out"
+                                    t("signOut")
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/profile/page.tsx",
@@ -1384,7 +1385,7 @@ function ProfilePage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-xs text-muted-foreground",
-                                        children: "Kasa Expense Sharing App"
+                                        children: t("ksExpenseApp")
                                     }, void 0, false, {
                                         fileName: "[project]/app/profile/page.tsx",
                                         lineNumber: 409,
@@ -1495,14 +1496,14 @@ function ProfilePage() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogHeader"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogTitle"], {
-                                    children: "Sign Out"
+                                    children: t("signOutConfirmTitle")
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
                                     lineNumber: 450,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogDescription"], {
-                                    children: "Are you sure you want to sign out? You'll need to sign in again to access your groups and expenses."
+                                    children: t("signOutConfirmDesc")
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
                                     lineNumber: 451,
@@ -1517,7 +1518,7 @@ function ProfilePage() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogFooter"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogCancel"], {
-                                    children: "Cancel"
+                                    children: t("cancel")
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
                                     lineNumber: 456,
@@ -1526,7 +1527,7 @@ function ProfilePage() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$alert$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertDialogAction"], {
                                     onClick: handleSignOut,
                                     className: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-                                    children: "Sign Out"
+                                    children: t("signOut")
                                 }, void 0, false, {
                                     fileName: "[project]/app/profile/page.tsx",
                                     lineNumber: 457,
@@ -1556,7 +1557,7 @@ function ProfilePage() {
         columnNumber: 5
     }, this);
 }
-_s(ProfilePage, "7zVMals/JDIC0lggWSxSShr6ADQ=", false, function() {
+_s(ProfilePage, "4Jee+lB8QO6bRshRdjBxoV5aBhk=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],
         __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSettings"],
