@@ -1539,34 +1539,34 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
             const CategoryIcon = categoryOption?.icon || DollarSign
 
             return (
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {/* Amount Card */}
-                <div className="bg-white dark:bg-slate-900 rounded-lg p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
-                  <div className="flex items-start gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-green-600 flex items-center justify-center flex-shrink-0">
-                      <CategoryIcon className="h-5 w-5 text-white" />
+                <div className="bg-white dark:bg-slate-900 rounded-lg p-4 sm:p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
+                  <div className="flex items-start gap-2.5 sm:gap-3 mb-3 sm:mb-4">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-700 dark:bg-slate-600 flex items-center justify-center flex-shrink-0">
+                      <CategoryIcon className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg font-semibold text-foreground truncate">
+                      <h3 className="text-base sm:text-lg font-semibold text-foreground truncate">
                         {selectedExpense.title}
                       </h3>
-                      <div className="flex items-center gap-2 mt-1 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1.5 sm:gap-2 mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground">
                         {selectedExpense.category && (
                           <>
-                            <span>{selectedExpense.category}</span>
+                            <span className="truncate">{selectedExpense.category}</span>
                             <span>•</span>
                           </>
                         )}
-                        <span>{toDateSafe(selectedExpense.createdAt).toLocaleDateString()}</span>
+                        <span className="truncate">{toDateSafe(selectedExpense.createdAt).toLocaleDateString()}</span>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
-                    <p className="text-3xl sm:text-4xl font-semibold text-foreground">
+                  <div className="pt-3 sm:pt-4 border-t border-slate-200 dark:border-slate-700">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground">
                       {formatMoney(selectedExpense.amountCents || 0)}
                     </p>
-                    <p className="text-sm text-muted-foreground mt-1">Total amount</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mt-1">Total amount</p>
                   </div>
                 </div>
 
@@ -1575,29 +1575,29 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2 px-1">
                     Paid By
                   </p>
-                  <div className="bg-white dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
-                    <div className="flex items-center gap-3">
-                      <Avatar className="h-10 w-10">
+                  <div className="bg-white dark:bg-slate-900 rounded-lg p-3 sm:p-4 border border-slate-200 dark:border-slate-700">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
+                      <Avatar className="h-9 w-9 sm:h-10 sm:w-10">
                         {userProfiles[selectedExpense.payerUid || ""]?.photoURL ? (
                           <AvatarImage 
                             src={userProfiles[selectedExpense.payerUid || ""]?.photoURL} 
                             alt={getUserName(selectedExpense.payerUid || "")} 
                           />
                         ) : null}
-                        <AvatarFallback className="bg-green-600 text-white font-medium">
+                        <AvatarFallback className="bg-slate-700 dark:bg-slate-600 text-white font-medium text-sm">
                           {getUserName(selectedExpense.payerUid || "").slice(0, 2).toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
                       <div className="flex-1 min-w-0">
-                        <p className="font-medium text-foreground truncate">
+                        <p className="font-medium text-sm sm:text-base text-foreground truncate">
                           {getUserName(selectedExpense.payerUid || "")}
                         </p>
-                        <p className="text-sm text-muted-foreground truncate">
+                        <p className="text-xs sm:text-sm text-muted-foreground truncate">
                           {userProfiles[selectedExpense.payerUid || ""]?.email}
                         </p>
                       </div>
-                      <div className="text-right">
-                        <p className="text-lg font-semibold text-green-600 dark:text-green-500">
+                      <div className="text-right flex-shrink-0">
+                        <p className="text-base sm:text-lg font-semibold text-green-600 dark:text-green-500">
                           {formatMoney(selectedExpense.amountCents || 0)}
                         </p>
                       </div>
@@ -1614,41 +1614,37 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     {selectedExpense.participantIds?.map((uid) => {
                       const splitAmount = selectedExpense.splitCents?.[uid] || 0
                       const isPayer = uid === selectedExpense.payerUid
-                      const hasPaid = paymentStatus[selectedExpense.id]?.[uid] || false
 
                       return (
                         <div
                           key={uid}
-                          className="bg-white dark:bg-slate-900 rounded-lg p-3.5 border border-slate-200 dark:border-slate-700"
+                          className="bg-white dark:bg-slate-900 rounded-lg p-3 sm:p-3.5 border border-slate-200 dark:border-slate-700"
                         >
-                          <div className="flex items-center gap-3">
-                            <Avatar className="h-9 w-9">
+                          <div className="flex items-center gap-2.5 sm:gap-3">
+                            <Avatar className="h-8 w-8 sm:h-9 sm:w-9">
                               {userProfiles[uid]?.photoURL ? (
                                 <AvatarImage src={userProfiles[uid]?.photoURL} alt={getUserName(uid)} />
                               ) : null}
-                              <AvatarFallback className={`text-sm font-medium ${
-                                isPayer ? "bg-green-600 text-white" : hasPaid ? "bg-slate-600 text-white" : "bg-slate-300 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
+                              <AvatarFallback className={`text-xs sm:text-sm font-medium ${
+                                isPayer ? "bg-slate-700 dark:bg-slate-600 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
                               }`}>
                                 {getUserName(uid).slice(0, 2).toUpperCase()}
                               </AvatarFallback>
                             </Avatar>
                             <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-2">
-                                <p className="font-medium text-sm text-foreground truncate">
+                              <div className="flex items-center gap-1.5 sm:gap-2">
+                                <p className="font-medium text-xs sm:text-sm text-foreground truncate">
                                   {getUserName(uid)}
                                 </p>
                                 {isPayer && (
-                                  <span className="inline-flex items-center px-2 py-0.5 rounded-md bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-medium">
+                                  <span className="inline-flex items-center px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-medium flex-shrink-0">
                                     Payer
                                   </span>
                                 )}
                               </div>
-                              <p className="text-xs text-muted-foreground mt-0.5">
-                                {isPayer ? "Paid full amount" : hasPaid ? "Paid their share" : "Owes their share"}
-                              </p>
                             </div>
-                            <div className="text-right">
-                              <p className="font-medium text-foreground">
+                            <div className="text-right flex-shrink-0">
+                              <p className="font-medium text-sm sm:text-base text-foreground">
                                 {formatMoney(splitAmount)}
                               </p>
                             </div>
