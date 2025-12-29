@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SettingsProvider } from "@/lib/settings-context"
 import { UserProfileProvider } from "@/lib/user-profile"
+import { OfflineAlert } from "@/components/OfflineAlert"
 import './globals.css'
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`} suppressHydrationWarning>
         <SettingsProvider>
           <UserProfileProvider>
+            <OfflineAlert />
             {children}
             <Analytics />
           </UserProfileProvider>

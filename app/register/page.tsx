@@ -8,7 +8,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Eye, EyeOff, Loader2, Wallet, Check, X } from "lucide-react"
 import { auth, db } from "@/lib/firebase"
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
+import { createUserWithEmailAndPassword, updateProfile, sendEmailVerification } from "firebase/auth"
+
+
 import { doc, setDoc, serverTimestamp } from "firebase/firestore"
 import { useSettings } from "@/lib/settings-context"
 
@@ -99,7 +101,14 @@ export default function RegisterPage() {
         try { await updateProfile(cred.user, { displayName: name }) } catch {}
       }
 
-      // 3) Upsert user profile in Firestore
+      // 3) Send verification email
+      try {
+        await sendEmailVerification(cred.user)
+      } catch (verifyError) {
+        console.error("Failed to send verification:", verifyError)
+      }
+
+      // 4) Upsert user profile in Firestore
       await setDoc(
         doc(db, "users", cred.user.uid),
         {
@@ -114,7 +123,7 @@ export default function RegisterPage() {
         { merge: true }
       )
 
-      // 4) Redirect on success
+      // 5) Redirect on success
       router.push("/")
     } catch (err: any) {
       // Basic error mapping to existing inline errors

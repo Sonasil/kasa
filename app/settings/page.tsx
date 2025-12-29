@@ -295,7 +295,7 @@ export default function SettingsPage() {
       <div className="border-b bg-card">
         <div className="mx-auto max-w-4xl p-3 sm:p-4">
           <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-            <Button variant="ghost" size="icon" onClick={() => router.back()} className="h-8 w-8 sm:h-9 sm:w-9">
+            <Button variant="ghost" size="icon" onClick={() => router.replace("/profile")} className="h-8 w-8 sm:h-9 sm:w-9">
               <ArrowLeft className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
             <h1 className="text-xl sm:text-2xl font-bold">{t("settings")}</h1>

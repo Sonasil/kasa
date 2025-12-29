@@ -14,8 +14,24 @@ import { useToast } from "@/hooks/use-toast"
 import { auth, db } from "@/lib/firebase"
 import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnion, addDoc, serverTimestamp } from "firebase/firestore"
 import { createGroup } from "@/lib/groupService"
-import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock } from "lucide-react"
+import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock, MoreVertical, Archive, RefreshCw } from "lucide-react"
 import { useSettings } from "@/lib/settings-context"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
 
 type Group = {
   id: string
@@ -252,6 +268,28 @@ export default function GroupsPage() {
 
   
 
+  
+
+  const handleArchiveGroup = async (group: Group, isActive: boolean) => {
+    try {
+      await updateDoc(doc(db, "groups", group.id), {
+        isActive: isActive
+      })
+      
+      toast({
+        title: isActive ? t("unarchiveSuccess") : t("archiveSuccess"),
+        description: group.name,
+      })
+    } catch (error) {
+      console.error("Failed to update group status:", error)
+      toast({
+        title: t("genericErrorTitle"),
+        description: t("failedToUpdate"),
+        variant: "destructive",
+      })
+    }
+  }
+
   const filteredGroups = groups.filter((group) => {
     if (activeTab === "active") return group.isActive
     if (activeTab === "archived") return !group.isActive
@@ -371,7 +409,7 @@ export default function GroupsPage() {
                 {filteredGroups.map((group) => (
                   <Card
                     key={group.id}
-                    className="p-3 sm:p-4 cursor-pointer hover:bg-accent/50 transition-colors"
+                    className="p-3 sm:p-4 cursor-pointer hover:bg-accent/50 transition-colors relative group"
                     onClick={() => router.push(`/groups/${group.id}`)}
                   >
                     <div className="space-y-3">
@@ -414,6 +452,34 @@ export default function GroupsPage() {
                         )}
                       </div>
 
+                       {/* Dropdown Menu for Active Groups */}
+                       <div className="absolute top-2 right-2 z-10 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button 
+                              variant="ghost" 
+                              size="icon" 
+                              className="h-8 w-8 hover:bg-background/80"
+                              onClick={(e) => e.stopPropagation()}
+                              onPointerDown={(e) => e.stopPropagation()}
+                            >
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem
+                              onSelect={(e) => {
+                                handleArchiveGroup(group, false)
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Archive className="mr-2 h-4 w-4" />
+                              {t("archiveGroup")}
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+
                       <div className="border-t pt-2 sm:pt-3">
                         <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                           <Clock className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
@@ -452,7 +518,7 @@ export default function GroupsPage() {
                 {filteredGroups.map((group) => (
                   <Card
                     key={group.id}
-                    className="p-3 sm:p-4 cursor-pointer hover:bg-accent/50 transition-colors opacity-75"
+                    className="p-3 sm:p-4 cursor-pointer hover:bg-accent/50 transition-colors opacity-75 relative group"
                     onClick={() => router.push(`/groups/${group.id}`)}
                   >
                     <div className="space-y-3">
@@ -471,6 +537,34 @@ export default function GroupsPage() {
                             </div>
                           </div>
                         </div>
+                      </div>
+
+                      {/* Dropdown Menu for Archived Groups */}
+                      <div className="absolute top-2 right-2 z-10 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button 
+                              variant="ghost" 
+                              size="icon" 
+                              className="h-8 w-8 hover:bg-background/80"
+                              onClick={(e) => e.stopPropagation()}
+                              onPointerDown={(e) => e.stopPropagation()}
+                            >
+                              <MoreVertical className="h-4 w-4" />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent align="end">
+                            <DropdownMenuItem
+                              onSelect={(e) => {
+                                handleArchiveGroup(group, true)
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <RefreshCw className="mr-2 h-4 w-4" />
+                              {t("unarchiveGroup")}
+                            </DropdownMenuItem>
+                          </DropdownMenuContent>
+                        </DropdownMenu>
                       </div>
 
                       <div className="border-t pt-2 sm:pt-3">

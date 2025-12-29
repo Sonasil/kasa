@@ -168,7 +168,7 @@ export default function PhoneVerificationPage() {
       )
       setStep("success")
       toast({ title: "Telefon doğrulandı", description: "Numaran başarıyla doğrulandı." })
-      setTimeout(() => router.back(), 700)
+      setTimeout(() => router.replace("/profile/settings"), 700)
     } catch (e: any) {
       toast({
         variant: "destructive",
@@ -280,7 +280,7 @@ export default function PhoneVerificationPage() {
       >
         {smsSending ? "Gönderiliyor..." : "İleri"}
       </Button>
-      <Button variant="ghost" className="w-full h-11" onClick={() => router.back()}>
+      <Button variant="ghost" className="w-full h-11" onClick={() => router.replace("/profile/settings")}>
         Geri dön
       </Button>
     </div>
@@ -354,7 +354,7 @@ export default function PhoneVerificationPage() {
         <h1 className="text-2xl sm:text-3xl font-bold">Doğrulama başarılı</h1>
         <p className="text-sm text-muted-foreground mt-2">Telefon numaran doğrulandı.</p>
       </div>
-      <Button className="w-full h-12" onClick={() => router.back()}>
+      <Button className="w-full h-12" onClick={() => router.replace("/profile/settings")}>
         Tamam
       </Button>
     </div>
@@ -364,7 +364,7 @@ export default function PhoneVerificationPage() {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-lg px-4 py-6 space-y-6">
         <div className="flex items-center justify-between">
-          <Button variant="ghost" size="icon" onClick={() => router.back()} className="h-9 w-9">
+          <Button variant="ghost" size="icon" onClick={() => router.replace("/profile/settings")} className="h-9 w-9">
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <Stepper />

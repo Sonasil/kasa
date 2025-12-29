@@ -205,6 +205,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [selectedMemberForAction, setSelectedMemberForAction] = useState<string | null>(null)
   const [leaveGroupDialog, setLeaveGroupDialog] = useState(false)
   const [deleteGroupDialog, setDeleteGroupDialog] = useState(false)
+  const [archiveGroupDialog, setArchiveGroupDialog] = useState(false)
 
   const [paymentStatus, setPaymentStatus] = useState<Record<string, Record<string, boolean>>>({})
 
@@ -212,6 +213,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [paymentAmount, setPaymentAmount] = useState("")
   const [paymentMode, setPaymentMode] = useState<"full" | "partial">("full")
   const [recordingPayment, setRecordingPayment] = useState(false)
+  const [paymentToggleLoading, setPaymentToggleLoading] = useState<Record<string, boolean>>({})
 
   const currentUid = auth.currentUser?.uid ?? ""
 
@@ -652,8 +654,71 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     }
   }
 
+  // Archive group (set isActive: false)
+  const handleArchiveGroup = async () => {
+    if (!group || !groupId) return
+
+    try {
+      await updateDoc(doc(db, "groups", groupId), {
+        isActive: false,
+      })
+
+      toast({
+        title: t("archiveSuccess"),
+        description: group.name,
+      })
+
+      setArchiveGroupDialog(false)
+      router.push("/groups")
+    } catch (error) {
+      console.error("Failed to archive group:", error)
+      toast({
+        title: t("error"),
+        description: "Failed to archive group",
+        variant: "destructive",
+      })
+    }
+  }
+
+  // Delete group (only owner)
+  const handleDeleteGroup = async () => {
+    if (!group || !groupId) return
+
+    // Check if current user is owner
+    if (group.createdBy !== currentUid) {
+      toast({
+        title: t("error"),
+        description: t("onlyOwnerDelete"),
+        variant: "destructive",
+      })
+      return
+    }
+
+    try {
+      await deleteDoc(doc(db, "groups", groupId))
+
+      toast({
+        title: t("deleteSuccess"),
+        description: group.name,
+      })
+
+      setDeleteGroupDialog(false)
+      router.push("/groups")
+    } catch (error) {
+      console.error("Failed to delete group:", error)
+      toast({
+        title: t("error"),
+        description: "Failed to delete group",
+        variant: "destructive",
+      })
+    }
+  }
+
   // ✅ Fixed: Mark as paid with Firestore persistence AND balance update
   const handleTogglePayment = async (expenseId: string, userId: string) => {
+    const toggleKey = `${expenseId}-${userId}`
+    if (paymentToggleLoading[toggleKey]) return // Prevent double-click
+
     // Optimistic update for UI responsiveness
     const currentStatus = paymentStatus[expenseId]?.[userId] || false
     const newStatus = !currentStatus
@@ -666,6 +731,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       },
     }))
 
+    setPaymentToggleLoading(prev => ({ ...prev, [toggleKey]: true }))
     try {
       await runTransaction(db, async (tx) => {
         // 1. Get Expense Doc
@@ -816,7 +882,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
       toast({
         title: t("expenseUpdated"),
-        description: "Changes saved successfully",
+        description: t("changesSaved"),
       })
 
       setEditExpenseOpen(false)
@@ -827,7 +893,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       console.error("Failed to update expense:", error)
       toast({
         title: t("error"),
-        description: "Failed to update expense. Please try again.",
+        description: t("failedToUpdate"),
         variant: "destructive",
       })
     } finally {
@@ -844,7 +910,8 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   }
 
   const formatTime = (date: Date) => {
-    return date.toLocaleTimeString("en-US", {
+    const locale = settings.language === "tr" ? "tr-TR" : "en-US"
+    return date.toLocaleTimeString(locale, {
       hour: "2-digit",
       minute: "2-digit",
     })
@@ -962,6 +1029,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 <p className="text-xs text-muted-foreground sm:text-sm">{memberIds.length} members</p>
               </div>
             </div>
+            
             
           </div>
 
@@ -1891,28 +1959,6 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               Leave Group
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
-      <AlertDialog open={deleteGroupDialog} onOpenChange={setDeleteGroupDialog}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Delete Group</AlertDialogTitle>
-            <AlertDialogDescription>
-              You're the last member. Deleting {group.name} will permanently remove this group. This action cannot be undone.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction
-              onClick={async () => {
-                setDeleteGroupDialog(false)
-                await handleLeaveGroup()
-              }}
-              className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
-            >
-              Delete Group
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

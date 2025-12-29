@@ -293,7 +293,6 @@ const translations: Record<string, Record<string, string>> = {
     navProfile: "Profile",
 
     // Dashboard
-    netBalance: "Net Balance",
     activityDetails: "Activity Details",
     amountLabel: "Amount",
     userLabel: "User",
@@ -353,6 +352,36 @@ const translations: Record<string, Record<string, string>> = {
     permissionAllows: "This permission allows Kasa to access your",
     changeInSettings: "You can change this in your device settings",
     gotIt: "Got it",
+
+    // Error & Success Messages
+    changesSaved: "Changes saved successfully",
+    failedToUpdate: "Failed to update expense. Please try again.",
+    failedToSend: "Failed to send message",
+    failedToAdd: "Failed to add expense",
+    verificationSent: "Verification email sent",
+    checkEmail: "Please check your email to verify your account",
+    emailNotVerified: "Email not verified",
+    resendVerification: "Resend verification email",
+    forgotPassword: "Forgot Password?",
+    resetPassword: "Reset Password",
+    resetEmailSent: "Password reset email sent",
+    enterEmailForReset: "Enter your email to reset password",
+    noInternet: "No internet connection. Please check your network.",
+
+    // Group Actions
+    archiveGroup: "Archive Group",
+    deleteGroup: "Delete Group",
+    archiveConfirm: "Archive this group?",
+    archiveConfirmDesc: "You can restore it later from the Archived tab.",
+    deleteConfirm: "Permanently delete this group?",
+    deleteConfirmDesc: "This action cannot be undone. All expenses and data will be lost.",
+    archiveSuccess: "Group archived",
+    deleteSuccess: "Group deleted",
+    onlyOwnerDelete: "Only the group owner can delete this group.",
+    unarchiveGroup: "Unarchive Group",
+    unarchiveSuccess: "Group unarchived", 
+    unarchiveConfirm: "Unarchive this group?",
+    unarchiveConfirmDesc: "It will move back to the Active tab.",
 
   },
   tr: {
@@ -612,7 +641,6 @@ const translations: Record<string, Record<string, string>> = {
     navProfile: "Profil",
 
     // Dashboard
-    netBalance: "Net Bakiye",
     activityDetails: "Aktivite Detayları",
     amountLabel: "Tutar",
     userLabel: "Kullanıcı",
@@ -672,6 +700,36 @@ const translations: Record<string, Record<string, string>> = {
     permissionAllows: "Bu izin, Kasa'nın şunlara erişmesine izin verir:",
     changeInSettings: "Bunu cihaz ayarlarınızdan değiştirebilirsiniz",
     gotIt: "Anladım",
+
+    // Error & Success Messages
+    changesSaved: "Değişiklikler kaydedildi",
+    failedToUpdate: "Harcama güncellenemedi. Lütfen tekrar deneyin.",
+    failedToSend: "Mesaj gönderilemedi",
+    failedToAdd: "Harcama eklenemedi",
+    verificationSent: "Doğrulama e-postası gönderildi",
+    checkEmail: "Hesabınızı doğrulamak için lütfen e-postanızı kontrol edin",
+    emailNotVerified: "E-posta doğrulanmadı",
+    resendVerification: "Doğrulama e-postasını tekrar gönder",
+    forgotPassword: "Şifremi Unuttum?",
+    resetPassword: "Şifreyi Sıfırla",
+    resetEmailSent: "Şifre sıfırlama e-postası gönderildi",
+    enterEmailForReset: "Şifrenizi sıfırlamak için e-postanızı girin",
+    noInternet: "İnternet bağlantısı yok. Lütfen ağınızı kontrol edin.",
+
+    // Group Actions
+    archiveGroup: "Grubu Arşivle",
+    archiveSuccess: "Grup arşivlendi",
+    archiveConfirm: "Bu grubu arşivlemek istediğinize emin misiniz?",
+    archiveConfirmDesc: "Daha sonra Arşiv sekmesinden geri yükleyebilirsiniz.",
+    deleteGroup: "Grubu Sil",
+    deleteSuccess: "Grup silindi",
+    deleteConfirm: "Bu grubu kalıcı olarak silmek istediğinize emin misiniz?",
+    deleteConfirmDesc: "Bu işlem geri alınamaz. Tüm harcamalar ve veriler kaybolacak.",
+    onlyOwnerDelete: "Sadece grup sahibi bu grubu silebilir.",
+    unarchiveGroup: "Grubu Arşivden Çıkar",
+    unarchiveSuccess: "Grup arşivden çıkarıldı",
+    unarchiveConfirm: "Bu grubu arşivden çıkarmak istiyor musunuz?",
+    unarchiveConfirmDesc: "Aktif sekmesine geri taşınacak.",
 
 
   },

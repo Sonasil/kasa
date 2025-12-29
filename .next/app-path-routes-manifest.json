@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/groups/[id]/page": "/groups/[id]",
+  "/groups/page": "/groups",
+  "/login/page": "/login",
+  "/page": "/",
+  "/profile/account/page": "/profile/account",
+  "/profile/page": "/profile",
+  "/profile/settings/page": "/profile/settings",
+  "/profile/settings/phone/otp/page": "/profile/settings/phone/otp",
+  "/profile/settings/phone/page": "/profile/settings/phone",
+  "/register/page": "/register",
+  "/settings/page": "/settings",
+  "/test/page": "/test"
+}
