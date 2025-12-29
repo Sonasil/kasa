@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SettingsProvider } from "@/lib/settings-context"
 import { UserProfileProvider } from "@/lib/user-profile"
+import { GroupsProvider } from "@/lib/groups-context"
 import { OfflineAlert } from "@/components/OfflineAlert"
+import { ErrorBoundary } from "@/components/ErrorBoundary"
 import './globals.css'
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -23,13 +25,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`} suppressHydrationWarning>
-        <SettingsProvider>
-          <UserProfileProvider>
-            <OfflineAlert />
-            {children}
-            <Analytics />
-          </UserProfileProvider>
-        </SettingsProvider>
+        <ErrorBoundary>
+          <SettingsProvider>
+            <UserProfileProvider>
+              <GroupsProvider>
+                <OfflineAlert />
+                {children}
+                <Analytics />
+              </GroupsProvider>
+            </UserProfileProvider>
+          </SettingsProvider>
+        </ErrorBoundary>
       </body>
     </html>
   )

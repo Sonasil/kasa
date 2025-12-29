@@ -1,17 +1,315 @@
-[00:00:01.001] Server  LOG      ✓ Ready in 738ms
-[00:00:06.364] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.403] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:06.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:08.100] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.100] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:00:08.100] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025530825}
-[00:00:08.609] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.609] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
-[00:00:08.618] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025531548}
-[00:00:08.622] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:08.622] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[00:00:08.622] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025531559}
-[00:00:09.387] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+[00:00:02.542] Server  LOG      ✓ Ready in 1379ms
+[00:00:05.723] Server  LOG      ○ Compiling /profile ...
+[00:00:08.314] Server  ERROR    ⨯ ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+
+
+[00:00:08.409] Server  ERROR    ⨯ ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+
+
+[00:00:08.438] Server  ERROR    ⨯ ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+
+
+[00:00:13.595] Browser ERROR   uncaughtError: Error: ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+
+
+[00:00:13.763] Browser ERROR   uncaughtError: Error: ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+
+
+[00:00:13.783] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:13.783] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:13.784] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:13.826] Browser ERROR   uncaughtError: Error: ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+
+
+[00:00:14.161] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.161] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.161] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.550] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.552] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.753] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.754] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.754] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:14.754] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
+Parsing ecmascript source code failed
+  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
+  43 |             </div>
+> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
+     |                ^
+  45 |             <p className="text-sm text-muted-foreground mb-6">
+  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
+  47 |             </p>
+
+Expected '</', got 'numeric literal (2, 2)'
+
+Import trace:
+  Server Component:
+    ./components/ErrorBoundary.tsx
+    ./app/layout.tsx
+[00:00:22.046] Server  LOG      ✓ Compiled in 224ms
+[00:00:28.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:29.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:32.595] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:32.595] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:00:32.595] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767030843505}
+[00:00:33.546] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:33.546] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[00:00:33.546] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767030844634}
+[00:00:34.799] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
 This will cause a hydration error.%s <button> button 
 
   ...
@@ -65,32 +363,22 @@ This will cause a hydration error.%s <button> button
             ...
           ...
 
-[00:00:09.387] Browser ERROR   <%s> cannot contain a nested %s.
+[00:00:34.810] Browser ERROR   <%s> cannot contain a nested %s.
 See this log for the ancestor stack trace. button <button>
-[00:00:16.210] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025539284}
-[00:00:18.002] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025541121}
-[00:00:40.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025563164}
-[00:00:41.882] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025564989}
-[00:02:13.650] Server  LOG      ✓ Compiled in 269ms
-[00:02:13.656] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:13.658] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:13.667] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:13.681] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:13.704] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:13.724] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:16.805] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:17.446] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:18.731] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:19.309] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:19.309] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:02:19.309] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025662371}
-[00:02:19.516] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:19.516] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[00:02:19.516] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025662600}
-[00:02:20.262] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:20.264] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[00:02:20.264] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025663289}
-[00:02:20.679] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+[00:00:37.669] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:39.738] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:39.738] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
+[00:00:39.738] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767030850508}
+[00:07:05.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:05.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:07.321] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:07.323] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:07:07.324] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031238425}
+[00:07:08.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:08.240] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:08.240] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[00:07:08.240] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031239067}
+[00:07:09.398] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
 This will cause a hydration error.%s <button> button 
 
   ...
@@ -144,19 +432,221 @@ This will cause a hydration error.%s <button> button
             ...
           ...
 
-[00:02:20.680] Browser ERROR   <%s> cannot contain a nested %s.
+[00:07:09.407] Browser ERROR   <%s> cannot contain a nested %s.
 See this log for the ancestor stack trace. button <button>
-[00:02:22.723] Server  LOG      ✓ Compiled in 1437ms
-[00:02:22.752] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:22.780] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:22.781] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:02:28.887] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:29.135] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:31.468] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:35.061] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:35.062] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[00:02:35.062] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025674994}
-[00:02:35.063] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+[00:07:11.699] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:07:11.699] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
+[00:07:11.699] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031242574}
+[00:13:36.649] Server  LOG      ✓ Compiled in 954ms
+[00:17:16.857] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:17.040] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:17:17.040] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
+[00:17:17.040] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031848162}
+[00:17:20.082] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031851193}
+[00:17:21.558] Server  ERROR    ⨯ ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+
+
+[00:17:21.659] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:21.660] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:21.768] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:21.772] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:21.861] Server  ERROR    ⨯ ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+
+
+[00:17:21.882] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:21.882] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:23.697] Browser ERROR   uncaughtError: Error: ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+
+
+[00:17:23.902] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:23.902] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:23.904] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:23.904] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:47.026] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:47.027] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:17:47.667] Browser ERROR   ./app/page.tsx:1:5
+Parsing ecmascript source code failed
+> 1 | use client
+    |     ^^^^^^
+  2 | import { useState, useEffect } from "react"
+  3 | import { useRouter } from "next/navigation"
+  4 | import { Button } from "@/components/ui/button"
+
+Expected ';', '}' or <eof>
+[00:18:05.809] Server  LOG      ✓ Compiled in 377ms
+[00:18:11.660] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:11.927] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:18:11.928] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:18:11.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031903043}
+[00:18:13.099] Browser ERROR   Error caught by boundary: {} {"componentStack":"\n    at DashboardPage (http://localhost:3000/_next/static/chunks/_8a099db0._.js:558:171)\n    at ClientPageRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:2157:27)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at GroupsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1298:27)\n    at UserProfileProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1145:32)\n    at SettingsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:912:29)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/_933183d7._.js:1781:9)\n    at body (<anonymous>)\n    at html (<anonymous>)\n    at RootLayout [Server] (<anonymous>)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at __next_root_layout_boundary__ (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:1673:64)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at DevRootHTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9754:46)\n    at AppDevOverlayErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3417:9)\n    at HotReload (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10748:22)\n    at Router (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10928:23)\n    at ErrorBoundaryHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:982:9)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at RootErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9434:30)\n    at AppRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:11245:22)\n    at ServerRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12725:23)\n    at Root (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12743:17)"}
+[00:18:45.327] Server  LOG      ✓ Compiled in 1235ms
+[00:19:33.539] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031984260}
+[00:19:33.539] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031984263}
+[00:19:35.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:35.322] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:19:35.322] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:19:35.322] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031986525}
+[00:19:38.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031989775}
+[00:19:39.816] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031990963}
+[00:19:41.008] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031992156}
+[00:19:42.233] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031993381}
+[00:19:42.564] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
 This will cause a hydration error.%s <button> button 
 
   ...
@@ -210,169 +700,32 @@ This will cause a hydration error.%s <button> button
             ...
           ...
 
-[00:02:35.063] Browser ERROR   <%s> cannot contain a nested %s.
+[00:19:42.564] Browser ERROR   <%s> cannot contain a nested %s.
 See this log for the ancestor stack trace. button <button>
-[00:02:35.080] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:35.080] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:02:35.080] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025678069}
-[00:02:36.975] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:02:36.976] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[00:02:36.976] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025680064}
-[00:06:12.133] Server  LOG      ✓ Compiled in 318ms
-[00:06:12.136] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:06:12.155] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:06:12.176] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:06:16.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:17.083] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:17.114] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:18.466] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:06:18.467] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:06:18.467] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025901565}
-[00:06:18.738] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:06:18.738] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[00:06:18.738] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025901815}
-[00:06:18.895] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:06:18.895] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[00:06:18.895] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767025901923}
-[00:06:19.808] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
-
-  ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-            <SegmentViewNode type="page" pagePath="settings/p...">
-              <SegmentTrieNode>
-              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
-                <SettingsPage params={Promise} searchParams={Promise}>
-                  <div className="min-h-scre...">
-                    <div>
-                    <div className="mx-auto ma...">
-                      <div>
-                      <div>
-                        <h2>
-                        <Card className="divide-y">
-                          <div data-slot="card" className="bg-card te...">
-                            <button>
-                            <button>
-                            <button>
->                           <button
->                             onClick={undefined}
->                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
->                           >
-                              <div>
-                              <div>
-                              ...
-                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
-                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
->                                   <button
->                                     type="button"
->                                     role="switch"
->                                     aria-checked={true}
->                                     aria-required={undefined}
->                                     data-state="checked"
->                                     data-disabled={undefined}
->                                     disabled={undefined}
->                                     value="on"
->                                     data-slot="switch"
->                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
->                                     aria-label="Bildirimler"
->                                     onClick={function handleEvent}
->                                     ref={function}
->                                   >
-                                  ...
-                      ...
-                      ...
-                    ...
-            ...
-          ...
-
-[00:06:19.808] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[00:24:57.919] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027021007}
-[00:24:59.133] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027022245}
-[00:25:00.029] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027023142}
-[00:25:01.139] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027024250}
-[00:25:02.334] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027025446}
-[00:25:03.072] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:25:03.072] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:25:04.387] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027027498}
-[00:25:05.917] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027029027}
-[00:25:06.916] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027030027}
-[00:25:07.252] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
-
-  ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-            <SegmentViewNode type="page" pagePath="settings/p...">
-              <SegmentTrieNode>
-              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
-                <SettingsPage params={Promise} searchParams={Promise}>
-                  <div className="min-h-scre...">
-                    <div>
-                    <div className="mx-auto ma...">
-                      <div>
-                      <div>
-                        <h2>
-                        <Card className="divide-y">
-                          <div data-slot="card" className="bg-card te...">
-                            <button>
-                            <button>
-                            <button>
->                           <button
->                             onClick={undefined}
->                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
->                           >
-                              <div>
-                              <div>
-                              ...
-                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
-                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
->                                   <button
->                                     type="button"
->                                     role="switch"
->                                     aria-checked={true}
->                                     aria-required={undefined}
->                                     data-state="checked"
->                                     data-disabled={undefined}
->                                     disabled={undefined}
->                                     value="on"
->                                     data-slot="switch"
->                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
->                                     aria-label="Bildirimler"
->                                     onClick={function handleEvent}
->                                     ref={function}
->                                   >
-                                  ...
-                      ...
-                      ...
-                    ...
-            ...
-          ...
-
-[00:25:07.252] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[00:25:08.697] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027031700}
-[00:25:10.015] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027033111}
-[00:25:12.494] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027035576}
-[00:25:13.900] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027036990}
-[00:25:14.791] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027037898}
-[00:25:16.250] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027039328}
-[00:25:18.870] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027041980}
-[00:25:57.699] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027080783}
-[00:25:58.703] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027081811}
-[00:26:01.172] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027084261}
-[00:33:32.644] Server  LOG      ✓ Compiled in 222ms
-[00:37:38.896] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027781964}
-[00:37:40.118] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027783161}
-[00:37:40.905] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027783973}
-[00:37:43.924] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings/phone color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings/phone","o":"http://localhost:3000/profile/settings/phone","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027786895}
-[00:37:49.845] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile/settings color: rgb(120, 120, 120) color: inherit {"dp":"/profile/settings","o":"http://localhost:3000/profile/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027792913}
-[00:37:50.747] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027793793}
-[00:37:51.454] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767027794523}
-[00:41:36.500] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767028019539}
-[01:03:52.795] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767029355866}
+[00:19:43.935] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031995082}
+[00:19:45.530] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031996677}
+[00:19:46.245] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:19:46.245] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:19:48.346] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031999495}
+[00:19:51.759] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032002900}
+[00:19:53.921] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:19:53.921] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:19:56.312] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:19:56.312] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:19:57.939] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032009089}
+[00:19:59.074] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032010223}
+[00:20:00.520] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032011669}
+[00:20:01.854] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032013003}
+[00:21:12.748] Server  LOG      ✓ Compiled in 386ms
+[00:22:01.755] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032132903}
+[00:22:02.596] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032133734}
+[00:22:04.979] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032136126}
+[00:22:06.144] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032137289}
+[00:22:07.199] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032138346}
+[00:22:41.755] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:22:41.758] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:25:24.288] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032335429}
+[00:51:15.626] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767033886752}
+[00:51:17.045] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767033888068}
+[00:51:19.235] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:51:19.236] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.

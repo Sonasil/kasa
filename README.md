@@ -1,36 +1,67 @@
-# Kasa - Shared Expense Tracker
+# 💰 Shared Expense Tracker
 
-Split expenses and settle debts with friends and family. Track group expenses, manage settlements, and keep everyone in sync.
+A modern, real-time expense sharing application built with Next.js and Firebase. Track shared expenses with friends, family, or roommates effortlessly.
 
-![Next.js](https://img.shields.io/badge/Next.js-16.0-black?style=flat-square&logo=next.js)
-![React](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat-square&logo=typescript)
-![Firebase](https://img.shields.io/badge/Firebase-12.4-orange?style=flat-square&logo=firebase)
+---
 
 ## ✨ Features
 
-- 🔐 **Authentication** - Email/password and Google sign-in
-- 👥 **Group Management** - Create groups and invite members via code
-- 💰 **Expense Tracking** - Add expenses and split between members
-- 📊 **Balance Dashboard** - See who owes what at a glance
-- 🌓 **Dark Mode** - System, light, or dark theme
-- 🌍 **Multi-language** - English and Turkish support
-- 💱 **Multi-currency** - TRY, USD, EUR, GBP
-- 📱 **Responsive Design** - Works on mobile, tablet, and desktop
+### Core Functionality
+- **Group Management** - Create and manage expense groups
+- **Real-time Sync** - Instant updates across all devices
+- **Smart Settlements** - Automatically calculates who owes whom
+- **Expense Tracking** - Add, edit, and categorize expenses
+- **Payment Records** - Track settlements and payment history
+- **Mobile-First Design** - Fully responsive, works on any device
+
+### User Experience
+- **Multi-language Support** - Turkish and English
+- **Dark Mode** - System-aware theme switching
+- **Offline Detection** - Visual feedback for connectivity status
+- **Progressive Web App** - Install on mobile devices
+
+### Authentication & Security
+- **Email/Password** - Secure authentication
+- **Google Sign-In** - Quick OAuth login
+- **Email Verification** - Account security
+- **Phone Verification** - Optional SMS verification (reCAPTCHA)
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- [Next.js 16](https://nextjs.org/) - React framework with App Router
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling
+- [shadcn/ui](https://ui.shadcn.com/) - Component library
+- [Lucide Icons](https://lucide.dev/) - Icon system
+
+**Backend & Services:**
+- [Firebase Authentication](https://firebase.google.com/products/auth) - User management
+- [Cloud Firestore](https://firebase.google.com/products/firestore) - NoSQL database
+- [Cloudinary](https://cloudinary.com/) - Image hosting (avatars)
+
+**Development:**
+- Turbopack - Fast bundler
+- ESLint - Code linting
+- Hot Module Replacement - Instant feedback
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-
 - Node.js 18+ and npm
-- Firebase project ([Create one here](https://console.firebase.google.com))
+- Firebase project with Firestore and Authentication enabled
+- (Optional) Cloudinary account for profile pictures
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/kasa.git
-   cd kasa
+   git clone <repository-url>
+   cd <project-directory>
    ```
 
 2. **Install dependencies**
@@ -38,22 +69,21 @@ Split expenses and settle debts with friends and family. Track group expenses, m
    npm install
    ```
 
-3. **Set up environment variables**
+3. **Configure environment variables**
    
-   Copy `.env.example` to `.env.local`:
-   ```bash
-   cp .env.example .env.local
-   ```
-
-   Then edit `.env.local` and add your Firebase credentials:
+   Create a `.env.local` file in the root directory:
    ```env
+   # Firebase Configuration
    NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
    NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-   NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
+   
+   # Optional: Cloudinary (for profile pictures)
+   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+   NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your_preset
    ```
 
 4. **Run the development server**
@@ -65,196 +95,100 @@ Split expenses and settle debts with friends and family. Track group expenses, m
    
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🔥 Firebase Setup
-
-### 1. Create a Firebase Project
-
-1. Go to [Firebase Console](https://console.firebase.google.com)
-2. Click "Add project"
-3. Follow the setup wizard
-
-### 2. Enable Authentication
-
-1. In Firebase Console, go to **Authentication** → **Sign-in method**
-2. Enable **Email/Password**
-3. Enable **Google**
-
-### 3. Create Firestore Database
-
-1. Go to **Firestore Database**
-2. Click **Create database**
-3. Start in **production mode**
-4. Choose a location
-
-### 4. Set up Firestore Security Rules
-
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    // Users collection
-    match /users/{userId} {
-      allow read, write: if request.auth != null && request.auth.uid == userId;
-    }
-    
-    // Groups collection
-    match /groups/{groupId} {
-      allow read: if request.auth != null && 
-                     request.auth.uid in resource.data.memberIds;
-      allow create: if request.auth != null;
-      allow update: if request.auth != null && 
-                       request.auth.uid in resource.data.memberIds;
-      
-      // Group feed subcollection
-      match /feed/{feedId} {
-        allow read: if request.auth != null && 
-                       request.auth.uid in get(/databases/$(database)/documents/groups/$(groupId)).data.memberIds;
-        allow create: if request.auth != null;
-      }
-    }
-    
-    // Group invites
-    match /groupInvites/{inviteCode} {
-      allow read: if request.auth != null;
-      allow create: if request.auth != null;
-    }
-  }
-}
-```
-
-### 5. Get your Firebase config
-
-1. Go to **Project settings** → **General**
-2. Scroll to "Your apps" → **Web app**
-3. Copy the config values to your `.env.local`
+---
 
 ## 📁 Project Structure
 
 ```
-kasa/
-├── app/                      # Next.js app directory
-│   ├── globals.css          # Global styles
-│   ├── layout.tsx           # Root layout
-│   ├── page.tsx             # Dashboard page
-│   ├── login/               # Login page
-│   ├── register/            # Register page
-│   ├── groups/              # Groups pages
-│   │   ├── page.tsx         # Groups list
-│   │   └── [id]/            # Group detail
-│   └── profile/             # Profile pages
-├── components/              # React components
-│   ├── ui/                  # shadcn/ui components
-│   ├── BottomNav.tsx        # Bottom navigation
-│   ├── ErrorBoundary.tsx    # Error boundary
-│   ├── CreateGroupDialog.tsx
-│   └── JoinGroupDialog.tsx
-├── lib/                     # Libraries and utilities
-│   ├── firebase.ts          # Firebase config
-│   ├── settings-context.tsx # Settings provider
-│   ├── user-profile.tsx     # User profile provider
-│   ├── types/
-│   │   └── firestore.ts     # Firestore type definitions
-│   └── utils/
-│       ├── time-utils.ts    # Time formatting
-│       ├── invite-utils.ts  # Invite code utilities
-│       └── logger.ts        # Logging utility
-├── hooks/                   # Custom React hooks
-└── public/                  # Static files
+├── app/                    # Next.js App Router pages
+│   ├── groups/            # Group management & details
+│   ├── profile/           # User profile & settings
+│   ├── settings/          # App settings
+│   ├── login/             # Authentication pages
+│   └── register/
+├── components/            # React components
+│   ├── ui/               # shadcn/ui components
+│   └── *.tsx             # Custom components
+├── lib/                   # Utilities & configuration
+│   ├── firebase.ts       # Firebase initialization
+│   ├── settings-context.tsx  # i18n & app settings
+│   └── groupService.ts   # Business logic
+└── public/               # Static assets
 ```
-
-## 🛠️ Tech Stack
-
-- **Framework**: [Next.js 16](https://nextjs.org/) with App Router
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **UI Library**: [React 19](https://react.dev/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) + [Radix UI](https://www.radix-ui.com/)
-- **Backend**: [Firebase](https://firebase.google.com/)
-  - Authentication
-  - Firestore Database
-  - Cloud Storage
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
-
-## 📝 Available Scripts
-
-```bash
-# Development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-
-# Lint code
-npm run lint
-```
-
-## 🎨 Customization
-
-### Theme
-
-The app supports light, dark, and system themes. Users can change their preference in Settings.
-
-### Currency
-
-Supported currencies:
-- 🇹🇷 Turkish Lira (TRY)
-- 🇺🇸 US Dollar (USD)
-- 🇪🇺 Euro (EUR)
-- 🇬🇧 British Pound (GBP)
-
-### Language
-
-- 🇬🇧 English
-- 🇹🇷 Türkçe
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🐛 Known Issues
-
-- TypeScript build errors may appear due to strict type checking (recently enabled)
-- Environment variables are required - app won't start without proper `.env.local`
-
-## 🔮 Roadmap
-
-- [ ] Add expense categories
-- [ ] Receipt image uploads
-- [ ] Export to CSV/PDF
-- [ ] Push notifications
-- [ ] Offline support (PWA)
-- [ ] Email verification
-- [ ] Password reset
-- [ ] Recurring expenses
-- [ ] Expense comments
-- [ ] Activity filtering
-
-## 💬 Support
-
-If you have any questions or issues, please:
-- Open an issue on GitHub
-- Contact the maintainers
-
-## 🙏 Acknowledgments
-
-- [shadcn/ui](https://ui.shadcn.com/) for the beautiful component library
-- [v0.dev](https://v0.dev/) for design inspiration
-- All contributors who have helped improve this project
 
 ---
 
-Made with ❤️ by the Kasa team
+## 🎨 Key Features Breakdown
+
+### Group Expense Management
+- Create groups with invite codes
+- Archive/unarchive groups
+- View group balance and debts
+- Simplified debt visualization
+
+### Expense Operations
+- Add expenses with custom splits
+- Edit expense details (title, category)
+- Mark payments as settled
+- Real-time balance updates
+
+### User Profile
+- Update display name and avatar
+- Email verification
+- Phone verification (SMS)
+- Password management
+- Multi-currency support (TRY, USD, EUR, GBP)
+
+---
+
+## 🔧 Available Scripts
+
+```bash
+npm run dev          # Start development server (Turbopack)
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+```
+
+---
+
+## 🌍 Internationalization
+
+The app supports multiple languages through a custom context provider:
+- **Turkish** (tr-TR)
+- **English** (en-US)
+
+Add new translations in `lib/settings-context.tsx`
+
+---
+
+## 🔐 Firebase Security Rules
+
+Ensure your Firestore has proper security rules:
+- Users can only access groups they're members of
+- Only group owners can delete groups
+- Expenses are protected by group membership
+
+---
+
+## 🐛 Known Issues & Limitations
+
+- Phone verification UI is disabled (marked as "Coming Soon")
+- Email verification is recommended for account security
+- Profile pictures require Cloudinary configuration
+
+---
+
+## 📝 License
+
+This project is private and not licensed for public use.
+
+---
+
+## 🤝 Contributing
+
+This is a private project. Contributions are not currently accepted.
+
+---
+
+**Built with ❤️ using modern web technologies**

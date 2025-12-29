@@ -326,10 +326,10 @@ export default function SettingsPage() {
               {section.items.map((item, index) => {
                 const Icon = item.icon
                 return (
-                  <button
+                  <div
                     key={index}
                     onClick={item.type !== "toggle" ? item.onClick : undefined}
-                    className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className={`w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors text-left ${item.type !== "toggle" ? "cursor-pointer" : ""}`}
                   >
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                       <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
@@ -341,11 +341,11 @@ export default function SettingsPage() {
                       )}
                     </div>
                     {item.type === "toggle" ? (
-                      <Switch checked={item.checked} onCheckedChange={item.onCheckedChange} aria-label={item.title} />
+                      <Switch checked={item.checked} onCheckedChange={item.onCheckedChange} aria-label={item.title} onClick={(e) => e.stopPropagation()} />
                     ) : (
                       <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground shrink-0" />
                     )}
-                  </button>
+                  </div>
                 )
               })}
             </Card>

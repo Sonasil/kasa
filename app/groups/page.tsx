@@ -16,6 +16,8 @@ import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnio
 import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock, MoreVertical, Archive, RefreshCw } from "lucide-react"
 import { useSettings } from "@/lib/settings-context"
+import { EmptyState } from "@/components/EmptyState"
+import { SkeletonCard } from "@/components/SkeletonCard"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -404,7 +406,11 @@ export default function GroupsPage() {
           </TabsList>
 
           <TabsContent value="active" className="space-y-3 sm:space-y-4">
-            {filteredGroups.length > 0 ? (
+            {loading ? (
+              <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+                {[1, 2, 3, 4].map(i => <SkeletonCard key={i} />)}
+              </div>
+            ) : filteredGroups.length > 0 ? (
               <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
                 {filteredGroups.map((group) => (
                   <Card
@@ -492,28 +498,31 @@ export default function GroupsPage() {
                 ))}
               </div>
             ) : (
-              <Card className="p-8 sm:p-12 text-center">
-                <div className="mx-auto max-w-md space-y-4 sm:space-y-6">
-                  <div className="mx-auto w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-muted flex items-center justify-center">
-                    <Users className="h-8 w-8 sm:h-10 sm:w-10 text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h2 className="text-xl sm:text-2xl font-bold mb-2">{t("noActiveGroups")}</h2>
-                    <p className="text-sm sm:text-base text-muted-foreground">
-                      {t("createGroupDesc")}
-                    </p>
-                  </div>
-                  <Button onClick={() => setCreateGroupOpen(true)} className="h-11 sm:h-10">
+              <EmptyState 
+                icon={Users}
+                title={t("noActiveGroups")}
+                description={t("createGroupDesc")}
+                action={
+                  <Button onClick={() => setCreateGroupOpen(true)}>
                     <Plus className="mr-2 h-4 w-4" />
-                     {t("createFirstGroup")}
+                    {t("createFirstGroup")}
                   </Button>
-                </div>
-              </Card>
+                }
+                secondaryAction={
+                  <Button variant="outline" onClick={() => setJoinGroupOpen(true)}>
+                    {t("joinGroup")}
+                  </Button>
+                }
+              />
             )}
           </TabsContent>
 
           <TabsContent value="archived" className="space-y-3 sm:space-y-4">
-            {filteredGroups.length > 0 ? (
+            {loading ? (
+              <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
+                {[1, 2].map(i => <SkeletonCard key={i} />)}
+              </div>
+            ) : filteredGroups.length > 0 ? (
               <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
                 {filteredGroups.map((group) => (
                   <Card
@@ -579,9 +588,11 @@ export default function GroupsPage() {
                 ))}
               </div>
             ) : (
-              <Card className="p-8 text-center">
-                <p className="text-muted-foreground">{t("noArchivedGroups")}</p>
-              </Card>
+              <EmptyState 
+                icon={Archive}
+                title={t("noArchivedGroups")}
+                description="Arşivlediğin gruplar burada görünecek."
+              />
             )}
           </TabsContent>
         </Tabs>

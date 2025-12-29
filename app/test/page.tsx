@@ -8,7 +8,7 @@ export default function TestPage() {
   useEffect(() => {
     async function fetchData() {
       const snap = await getDocs(collection(db, "groups"))
-      console.log("Groups:", snap.docs.map((d) => d.id))
+      // Groups fetched successfully
     }
     fetchData()
   }, [])
