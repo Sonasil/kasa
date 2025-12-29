@@ -86,7 +86,7 @@ export default function GroupsPage() {
       id: `${Date.now()}`,
       name: groupName,
       memberCount: 1,
-      latestActivity: "Group created",
+      latestActivity: t("groupCreated"),
       latestActivityTime: new Date(),
       balance: 0,
       totalExpenses: 0,

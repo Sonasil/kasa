@@ -319,7 +319,7 @@ export default function ProfilePage() {
                   {initials}
                 </AvatarFallback>
               </Avatar>
-              <h1 className="mt-3 text-xl sm:text-2xl font-bold">{displayName || "(No name)"}</h1>
+              <h1 className="mt-3 text-xl sm:text-2xl font-bold">{displayName || t("noName")}</h1>
               <p className="text-sm text-muted-foreground">{email || ""}</p>
               <div className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
                 <Calendar className="h-3 w-3" />
@@ -419,7 +419,7 @@ export default function ProfilePage() {
             <button
               onClick={() => router.push("/groups")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-              aria-label="Groups"
+              aria-label={t("navGroups")}
             >
               <Wallet className="h-6 w-6 text-muted-foreground" />
             </button>
@@ -427,7 +427,7 @@ export default function ProfilePage() {
             <button
               onClick={() => router.push("/")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-              aria-label="Home"
+              aria-label={t("navHome")}
             >
               <Home className="h-6 w-6 text-muted-foreground" />
             </button>
@@ -435,7 +435,7 @@ export default function ProfilePage() {
             <button
               onClick={() => router.push("/profile")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors"
-              aria-label="Profile"
+              aria-label={t("navProfile")}
             >
               <User className="h-6 w-6 text-green-600" />
             </button>

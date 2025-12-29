@@ -146,6 +146,24 @@ export default function GroupDetailPage() {
     const days = Math.floor(hours / 24)
     return `${days}${t("daysAgo")}`
   }
+
+  // Helper to translate activity titles (handles both legacy hardcoded English and translation keys)
+  const translateActivityTitle = (rawTitle: string | undefined): string => {
+    if (!rawTitle) return ""
+    
+    // Legacy mapping for old hardcoded English titles in database
+    const LEGACY_TITLE_MAP: Record<string, string> = {
+      "Payment received": "paymentReceived",
+      "Member joined": "memberJoined",
+      "Group created": "groupCreated",
+      "Expense added": "expenseAdded",
+      "Settlement recorded": "settlementRecorded",
+    }
+
+    // Try to translate: first check if it's a legacy English title, then try as key, finally return as-is
+    return LEGACY_TITLE_MAP[rawTitle] ? t(LEGACY_TITLE_MAP[rawTitle]) : (t(rawTitle) || rawTitle)
+  }
+
   const groupId = params?.id as string
   const scrollRef = useRef<HTMLDivElement>(null)
   const [autoScroll, setAutoScroll] = useState(true)
@@ -757,7 +775,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
           to: currentUid,
           toName: getUserName(currentUid),
           amountCents,
-          title: "Payment received",
+          title: "paymentReceived",
         })
 
         // Update group balances
@@ -1404,7 +1422,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                         <div className="flex items-center gap-2">
                           <CategoryIcon className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 shrink-0" />
                           <div className="min-w-0">
-                            <p className="font-semibold text-sm sm:text-base truncate">{item.title}</p>
+                            <p className="font-semibold text-sm sm:text-base truncate">{translateActivityTitle(item.title)}</p>
                             <p className="text-xs sm:text-sm text-muted-foreground truncate">
                               {t("paidBy")} {getUserName(item.payerUid || "")}
                             </p>

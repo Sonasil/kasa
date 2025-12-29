@@ -5939,3 +5939,2258 @@ It can also happen if the client has a browser extension installed which messes 
 [09:31:17.214] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
 [09:31:19.507] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951706064}
 [09:31:23.273] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951709789}
+[09:32:18.421] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:18.422] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:22.624] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951769181}
+[09:32:24.700] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951771201}
+[09:32:25.971] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:25.971] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:27.983] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:27.983] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:31.013] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:31.013] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:33.443] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:33.443] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:37.993] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:37.993] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:41.323] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:41.324] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:32:49.185] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951795741}
+[09:33:01.055] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951807611}
+[09:33:02.429] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951808957}
+[09:33:03.734] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:33:03.734] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:33:05.263] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:33:05.263] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[09:33:07.828] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951814385}
+[09:33:10.829] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1766951817386}
+[09:48:34.499] Browser WARN    [2025-12-28T20:12:21.001Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a800 transport errored. Name: undefined Message: undefined
+[09:48:45.771] Browser WARN    [2025-12-28T20:12:32.267Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Write' stream 0x41786049 transport errored. Name: undefined Message: undefined
+[09:48:45.771] Browser WARN    [2025-12-28T20:12:32.276Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786048 transport errored. Name: undefined Message: undefined
+[10:04:05.028] Browser WARN    [2025-12-28T20:27:51.520Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a801 transport errored. Name: undefined Message: undefined
+[10:19:21.069] Browser WARN    [2025-12-28T20:43:07.555Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a802 transport errored. Name: undefined Message: undefined
+[10:19:29.771] Browser WARN    [2025-12-28T20:43:16.273Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178604a transport errored. Name: undefined Message: undefined
+[10:34:52.085] Browser WARN    [2025-12-28T20:58:38.595Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a803 transport errored. Name: undefined Message: undefined
+[10:50:08.081] Browser WARN    [2025-12-28T21:13:54.583Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a804 transport errored. Name: undefined Message: undefined
+[10:50:17.162] Browser WARN    [2025-12-28T21:14:03.668Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178604b transport errored. Name: undefined Message: undefined
+[11:05:39.319] Browser WARN    [2025-12-28T21:29:25.818Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a805 transport errored. Name: undefined Message: undefined
+[11:05:48.475] Browser WARN    [2025-12-28T21:29:34.972Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178604c transport errored. Name: undefined Message: undefined
+[11:20:55.219] Browser WARN    [2025-12-28T21:44:41.704Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a806 transport errored. Name: undefined Message: undefined
+[11:34:29.731] Browser WARN    [2025-12-28T21:58:16.139Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a807 transport errored. Name: undefined Message: undefined
+[11:34:38.961] Browser WARN    [2025-12-28T21:58:25.368Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178604d transport errored. Name: undefined Message: undefined
+[11:49:46.210] Browser WARN    [2025-12-28T22:13:32.595Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a808 transport errored. Name: undefined Message: undefined
+[12:05:17.439] Browser WARN    [2025-12-28T22:29:03.804Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a809 transport errored. Name: undefined Message: undefined
+[12:05:26.160] Browser WARN    [2025-12-28T22:29:12.528Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178604e transport errored. Name: undefined Message: undefined
+[12:20:48.365] Browser WARN    [2025-12-28T22:44:34.713Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a80a transport errored. Name: undefined Message: undefined
+[12:36:04.291] Browser WARN    [2025-12-28T22:59:50.618Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a80b transport errored. Name: undefined Message: undefined
+[12:36:13.176] Browser WARN    [2025-12-28T22:59:59.501Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178604f transport errored. Name: undefined Message: undefined
+[12:51:27.479] Browser WARN    [2025-12-28T23:15:13.781Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786050 transport errored. Name: undefined Message: undefined
+[12:51:35.359] Browser WARN    [2025-12-28T23:15:21.661Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a80c transport errored. Name: undefined Message: undefined
+[13:06:52.259] Browser WARN    [2025-12-28T23:30:38.535Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a80d transport errored. Name: undefined Message: undefined
+[13:22:15.196] Browser WARN    [2025-12-28T23:46:01.439Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786051 transport errored. Name: undefined Message: undefined
+[13:22:23.366] Browser WARN    [2025-12-28T23:46:09.614Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a80e transport errored. Name: undefined Message: undefined
+[13:36:19.339] Browser WARN    [2025-12-29T00:00:05.564Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a80f transport errored. Name: undefined Message: undefined
+[13:36:26.574] Browser WARN    [2025-12-29T00:00:12.799Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786052 transport errored. Name: undefined Message: undefined
+[13:51:34.540] Browser WARN    [2025-12-29T00:15:20.740Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a810 transport errored. Name: undefined Message: undefined
+[14:07:05.695] Browser WARN    [2025-12-29T00:30:51.846Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a811 transport errored. Name: undefined Message: undefined
+[14:07:13.305] Browser WARN    [2025-12-29T00:30:59.447Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786053 transport errored. Name: undefined Message: undefined
+[14:22:21.567] Browser WARN    [2025-12-29T00:46:07.677Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a812 transport errored. Name: undefined Message: undefined
+[14:22:32.501] Browser WARN    [2025-12-29T00:46:18.606Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786054 transport errored. Name: undefined Message: undefined
+[14:37:52.460] Browser WARN    [2025-12-29T01:01:38.524Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a813 transport errored. Name: undefined Message: undefined
+[14:53:08.402] Browser WARN    [2025-12-29T01:16:54.348Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a814 transport errored. Name: undefined Message: undefined
+[14:53:19.453] Browser WARN    [2025-12-29T01:17:05.398Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786055 transport errored. Name: undefined Message: undefined
+[15:08:39.659] Browser WARN    [2025-12-29T01:32:25.574Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a815 transport errored. Name: undefined Message: undefined
+[15:16:21.317] Browser WARN    [2025-12-29T01:40:07.232Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a817 transport errored. Name: undefined Message: undefined
+[15:16:24.828] Browser WARN    [2025-12-29T01:40:10.741Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786056 transport errored. Name: undefined Message: undefined
+[15:31:37.325] Browser WARN    [2025-12-29T01:55:23.203Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a818 transport errored. Name: undefined Message: undefined
+[15:47:08.230] Browser WARN    [2025-12-29T02:10:54.109Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a819 transport errored. Name: undefined Message: undefined
+[15:47:11.803] Browser WARN    [2025-12-29T02:10:57.686Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786057 transport errored. Name: undefined Message: undefined
+[16:02:25.134] Browser WARN    [2025-12-29T02:26:10.994Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a81a transport errored. Name: undefined Message: undefined
+[16:02:27.423] Browser WARN    [2025-12-29T02:26:13.281Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786058 transport errored. Name: undefined Message: undefined
+[16:17:56.029] Browser WARN    [2025-12-29T02:41:41.860Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a81b transport errored. Name: undefined Message: undefined
+[16:33:12.190] Browser WARN    [2025-12-29T02:56:57.999Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a81c transport errored. Name: undefined Message: undefined
+[16:33:14.549] Browser WARN    [2025-12-29T02:57:00.363Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786059 transport errored. Name: undefined Message: undefined
+[16:48:43.135] Browser WARN    [2025-12-29T03:12:28.942Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a81d transport errored. Name: undefined Message: undefined
+[17:03:59.134] Browser WARN    [2025-12-29T03:27:44.918Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a81e transport errored. Name: undefined Message: undefined
+[17:04:01.557] Browser WARN    [2025-12-29T03:27:47.342Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178605a transport errored. Name: undefined Message: undefined
+[17:19:30.030] Browser WARN    [2025-12-29T03:43:15.783Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a81f transport errored. Name: undefined Message: undefined
+[17:34:46.301] Browser WARN    [2025-12-29T03:58:32.010Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a820 transport errored. Name: undefined Message: undefined
+[17:34:48.791] Browser WARN    [2025-12-29T03:58:34.496Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178605b transport errored. Name: undefined Message: undefined
+[17:54:48.941] Browser WARN    [2025-12-29T04:18:34.590Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a821 transport errored. Name: undefined Message: undefined
+[17:54:54.545] Browser WARN    [2025-12-29T04:18:40.190Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178605c transport errored. Name: undefined Message: undefined
+[18:10:19.824] Browser WARN    [2025-12-29T04:34:05.420Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a822 transport errored. Name: undefined Message: undefined
+[18:25:41.453] Browser WARN    [2025-12-29T04:49:26.994Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178605d transport errored. Name: undefined Message: undefined
+[18:25:50.773] Browser WARN    [2025-12-29T04:49:36.323Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a823 transport errored. Name: undefined Message: undefined
+[18:41:07.877] Browser WARN    [2025-12-29T05:04:53.393Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a824 transport errored. Name: undefined Message: undefined
+[18:56:24.745] Browser WARN    [2025-12-29T05:20:10.231Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a825 transport errored. Name: undefined Message: undefined
+[18:56:29.365] Browser WARN    [2025-12-29T05:20:14.847Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178605e transport errored. Name: undefined Message: undefined
+[19:11:55.585] Browser WARN    [2025-12-29T05:35:41.054Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a826 transport errored. Name: undefined Message: undefined
+[19:26:03.294] Browser WARN    [2025-12-29T05:49:48.700Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a827 transport errored. Name: undefined Message: undefined
+[19:26:07.057] Browser WARN    [2025-12-29T05:49:52.479Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x4178605f transport errored. Name: undefined Message: undefined
+[19:41:34.562] Browser WARN    [2025-12-29T06:05:19.949Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a828 transport errored. Name: undefined Message: undefined
+[19:56:51.023] Browser WARN    [2025-12-29T06:20:36.382Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a829 transport errored. Name: undefined Message: undefined
+[19:56:54.463] Browser WARN    [2025-12-29T06:20:39.818Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786060 transport errored. Name: undefined Message: undefined
+[20:12:22.084] Browser WARN    [2025-12-29T06:36:07.411Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a82a transport errored. Name: undefined Message: undefined
+[20:27:37.857] Browser WARN    [2025-12-29T06:51:23.135Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a82b transport errored. Name: undefined Message: undefined
+[20:27:40.742] Browser WARN    [2025-12-29T06:51:26.016Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786061 transport errored. Name: undefined Message: undefined
+[20:43:08.399] Browser WARN    [2025-12-29T07:06:53.649Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a82c transport errored. Name: undefined Message: undefined
+[20:58:24.611] Browser WARN    [2025-12-29T07:22:09.843Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a82d transport errored. Name: undefined Message: undefined
+[20:58:27.250] Browser WARN    [2025-12-29T07:22:12.487Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786062 transport errored. Name: undefined Message: undefined
+[21:13:55.437] Browser WARN    [2025-12-29T07:37:40.658Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a82e transport errored. Name: undefined Message: undefined
+[21:27:05.172] Browser WARN    [2025-12-29T07:50:50.386Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786063 transport errored. Name: undefined Message: undefined
+[21:27:17.334] Browser WARN    [2025-12-29T07:51:02.564Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a82f transport errored. Name: undefined Message: undefined
+[21:42:33.486] Browser WARN    [2025-12-29T08:06:18.705Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a830 transport errored. Name: undefined Message: undefined
+[21:57:51.958] Browser WARN    [2025-12-29T08:21:37.158Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786064 transport errored. Name: undefined Message: undefined
+[21:58:04.419] Browser WARN    [2025-12-29T08:21:49.609Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a831 transport errored. Name: undefined Message: undefined
+[22:13:19.568] Browser WARN    [2025-12-29T08:37:04.731Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a832 transport errored. Name: undefined Message: undefined
+[22:28:05.389] Browser WARN    [2025-12-29T08:51:50.523Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786065 transport errored. Name: undefined Message: undefined
+[22:28:17.206] Browser WARN    [2025-12-29T08:52:02.341Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a833 transport errored. Name: undefined Message: undefined
+[22:43:33.478] Browser WARN    [2025-12-29T09:07:18.589Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a834 transport errored. Name: undefined Message: undefined
+[22:43:34.375] Browser WARN    [2025-12-29T09:07:19.485Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786066 transport errored. Name: undefined Message: undefined
+[23:04:19.807] Browser WARN    [2025-12-29T09:28:04.866Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a835 transport errored. Name: undefined Message: undefined
+[23:04:25.634] Browser WARN    [2025-12-29T09:28:09.776Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786067 transport errored. Name: undefined Message: undefined
+[23:19:35.791] Browser WARN    [2025-12-29T09:43:20.813Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a836 transport errored. Name: undefined Message: undefined
+[23:35:06.746] Browser WARN    [2025-12-29T09:58:51.726Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a837 transport errored. Name: undefined Message: undefined
+[23:35:13.036] Browser WARN    [2025-12-29T09:58:57.085Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786068 transport errored. Name: undefined Message: undefined
+[23:50:22.999] Browser WARN    [2025-12-29T10:14:07.945Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a838 transport errored. Name: undefined Message: undefined
+[24:03:33.837] Browser WARN    [2025-12-29T10:27:18.717Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x2307a839 transport errored. Name: undefined Message: undefined
+[24:03:40.185] Browser WARN    [2025-12-29T10:27:24.560Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x41786069 transport errored. Name: undefined Message: undefined
+[24:07:11.559] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:07:12.605] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:07:12.606] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[24:07:12.606] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004257485}
+[24:07:15.735] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004260612}
+[24:07:16.809] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004261687}
+[24:07:17.146] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[24:07:17.146] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[24:07:18.698] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:07:18.698] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[24:08:52.217] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[24:08:52.224] Server  LOG      ✓ Compiled in 447ms
+[24:08:52.376] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[24:08:57.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:08:58.959] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:09:02.783] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:09:02.797] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[24:09:02.797] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004367231}
+[24:09:04.176] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[24:09:04.176] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[24:09:04.177] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[24:09:04.177] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[24:09:04.177] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:09:04.177] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[24:09:04.177] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004368947}
+[24:11:03.552] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[24:11:03.559] Server  LOG      ✓ Compiled in 161ms
+[24:11:03.568] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[24:11:14.300] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:11:15.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:11:20.505] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:11:20.505] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[24:11:20.505] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004504439}
+[24:11:20.506] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[24:11:25.439] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:11:25.439] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[24:11:25.439] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004505485}
+[24:11:29.291] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[24:11:29.291] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[24:11:33.771] Server  LOG      ✓ Compiled in 1108ms
+[24:11:33.801] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[24:11:33.814] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[24:11:44.099] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:11:48.404] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:11:48.409] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[24:11:48.409] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004531744}
+[24:11:49.439] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[24:11:51.595] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[24:11:51.596] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[24:11:51.596] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767004535205}
+[24:11:51.596] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[24:11:51.596] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[24:12:02.904] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:02.909] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:02.913] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:02.913] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:03.210] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:03.210] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:03.210] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:03.210] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:31.869] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:31.869] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:31.870] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:31.870] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:32.169] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:32.169] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:32.169] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:32.169] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:56.323] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:56.323] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:56.323] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:56.323] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:57.443] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:57.444] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:57.444] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:12:57.444] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:15.658] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:15.658] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:15.658] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:15.658] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:16.169] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:16.169] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:16.169] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:13:16.169] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.246] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.247] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.247] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.247] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:51.377] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:38:10
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |          ^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `loading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:34:9
+Ecmascript file had an error
+  32 |   const router = useRouter()
+  33 |   const { toast } = useToast()
+> 34 |   const router = useRouter()
+     |         ^^^^^^
+  35 |   const { toast } = useToast()
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+
+the name `router` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:38:19
+Ecmascript file had an error
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+> 38 |   const [loading, setLoading] = useState(true)
+     |                   ^^^^^^^^^^
+  39 |   const [groups, setGroups] = useState<Group[]>([])
+  40 |   useEffect(() => {
+  41 |     let unsubGroups: undefined | (() => void)
+
+the name `setLoading` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[24:54:52.171] Browser ERROR   ./app/groups/page.tsx:35:11
+Ecmascript file had an error
+  33 |   const { toast } = useToast()
+  34 |   const router = useRouter()
+> 35 |   const { toast } = useToast()
+     |           ^^^^^
+  36 |   const { formatMoney, t } = useSettings()
+  37 |   const [loading, setLoading] = useState(true)
+  38 |   const [loading, setLoading] = useState(true)
+
+the name `toast` is defined multiple times
+
+Import traces:
+  Client Component Browser:
+    ./app/groups/page.tsx [Client Component Browser]
+    ./app/groups/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/groups/page.tsx [Client Component SSR]
+    ./app/groups/page.tsx [Server Component]
+[25:10:23.242] Browser WARN    [2025-12-29T11:34:07.978Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x5b7749ca transport errored. Name: undefined Message: undefined
+[25:10:36.170] Browser WARN    [2025-12-29T11:34:20.091Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3c3c6f15 transport errored. Name: undefined Message: undefined
+[25:25:54.108] Browser WARN    [2025-12-29T11:49:38.805Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x5b7749cb transport errored. Name: undefined Message: undefined
+[25:41:10.131] Browser WARN    [2025-12-29T12:04:54.804Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x5b7749cc transport errored. Name: undefined Message: undefined
+[25:41:21.406] Browser WARN    [2025-12-29T12:05:05.118Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3c3c6f16 transport errored. Name: undefined Message: undefined
+[25:56:40.815] Browser WARN    [2025-12-29T12:20:25.487Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x5b7749cd transport errored. Name: undefined Message: undefined
+[26:10:47.385] Browser WARN    [2025-12-29T12:34:32.015Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x5b7749ce transport errored. Name: undefined Message: undefined
+[26:10:50.634] Browser WARN    [2025-12-29T12:34:34.792Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3c3c6f17 transport errored. Name: undefined Message: undefined
+[26:16:09.048] Server  LOG      ✓ Compiled in 561ms
+[26:17:43.331] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012087958}
+[26:17:50.136] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012094780}
+[26:17:52.928] Server  LOG      ✓ Compiled in 375ms
+[26:17:52.944] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:17:52.953] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:18:00.936] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:18:01.819] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:18:07.768] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:18:07.768] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[26:18:07.768] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012110211}
+[26:18:08.829] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:18:08.831] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[26:18:08.831] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012113138}
+[26:18:29.045] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012133682}
+[26:18:30.264] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:30.264] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:33.132] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:33.132] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:53.314] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:53.314] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:59.217] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:18:59.217] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:19:01.176] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:19:01.176] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:19:10.789] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:19:10.789] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:19:15.418] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012180058}
+[26:19:17.348] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012181989}
+[26:19:25.024] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012189664}
+[26:19:27.239] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012191880}
+[26:19:27.576] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[26:19:27.576] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[26:19:30.165] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012194801}
+[26:19:34.416] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012199054}
+[26:21:24.732] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:21:24.734] Server  LOG      ✓ Compiled in 430ms
+[26:21:28.556] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:21:46.798] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:21:54.004] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:21:54.249] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:21:54.387] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:21:54.390] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[26:21:54.390] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012337421}
+[26:21:56.064] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:22:01.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:22:09.758] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:22:09.874] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:22:09.879] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012346822}
+[26:22:13.945] Server  LOG      ✓ Compiled in 1532ms
+[26:22:14.043] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:22:14.413] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:22:25.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:22:28.929] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:22:29.355] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:22:29.355] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[26:22:29.355] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012373879}
+[26:22:31.112] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:23:07.837] Server  LOG      ✓ Compiled in 1638ms
+[26:23:33.372] Server  LOG      ✓ Compiled in 1008ms
+[26:24:02.094] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:24:02.096] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:24:02.097] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012380629}
+[26:24:12.975] Server  LOG      ✓ Compiled in 2.6s
+[26:25:11.826] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:25:12.023] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:25:12.023] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:25:12.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012536655}
+[26:25:15.089] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012539715}
+[26:25:16.639] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012541270}
+[26:25:16.966] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[26:25:16.966] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[26:25:18.003] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:25:18.003] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:25:21.128] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012545756}
+[26:25:24.018] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012548520}
+[26:25:25.603] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012550233}
+[26:25:28.334] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012552944}
+[26:25:32.905] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012557534}
+[26:25:34.271] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012558878}
+[26:25:35.399] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:25:35.399] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:25:38.706] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012563330}
+[26:25:42.072] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012566702}
+[26:29:11.686] Server  LOG      ✓ Compiled in 361ms
+[26:29:11.699] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:29:11.701] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:29:16.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:29:18.424] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:29:18.425] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:29:18.425] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:29:18.425] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012783053}
+[26:29:19.919] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:29:20.051] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:29:20.412] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:29:20.412] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:29:20.412] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[26:29:20.412] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012785032}
+[26:30:26.103] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012850730}
+[26:30:27.190] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012851822}
+[26:30:27.527] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[26:30:27.527] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[26:30:30.057] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:30:30.057] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:30:32.465] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012857095}
+[26:30:46.302] Server  LOG      ✓ Compiled in 264ms
+[26:30:49.659] Server  LOG      ✓ Compiled in 188ms
+[26:30:57.176] Server  LOG      ✓ Compiled in 104ms
+[26:31:02.706] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012887333}
+[26:31:04.133] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012888736}
+[26:31:05.462] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:31:05.463] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:31:08.721] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012893351}
+[26:31:11.750] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012896376}
+[26:31:17.159] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:31:18.850] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:31:18.850] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:31:18.850] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012903481}
+[26:31:56.375] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767012940991}
+[26:32:21.987] Server  LOG      ✓ Compiled in 390ms
+[26:35:26.515] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013151098}
+[26:35:28.489] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013153107}
+[26:35:29.955] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013154578}
+[26:35:30.291] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[26:35:30.292] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[26:35:31.738] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:35:31.738] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:35:35.308] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013159929}
+[26:35:36.578] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013161199}
+[26:36:23.004] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:36:23.007] Server  LOG      ✓ Compiled in 274ms
+[26:36:23.017] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[26:36:34.744] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:36:37.628] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[26:36:38.935] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[26:36:38.935] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:36:38.935] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[26:36:38.935] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013222501}
+[26:36:55.970] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[26:36:55.970] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[26:36:55.970] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013229118}
+[26:39:08.850] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013373452}
+[26:39:11.423] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013376039}
+[26:39:11.762] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Notifications"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[26:39:11.762] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[26:39:13.224] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:13.224] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:16.298] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013380913}
+[26:39:18.473] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013383090}
+[26:39:23.020] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013387637}
+[26:39:25.460] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767013390027}
+[26:39:29.103] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[26:39:29.103] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:34:53.721] Server  LOG      ✓ Compiled in 705ms
+[27:35:18.586] Server  LOG      ✓ Compiled in 1362ms
+[27:35:41.907] Server  LOG      ✓ Compiled in 384ms
+[27:36:05.056] Server  LOG      ✓ Compiled in 1351ms
+[27:36:35.068] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767016818629}
+[27:36:36.088] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767016820547}
+[27:36:38.817] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767016823313}
+[27:36:39.712] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767016824173}
+[27:36:41.652] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:36:41.652] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:40:35.969] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:40:35.971] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:40:44.960] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017069448}
+[27:40:47.093] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017071529}
+[27:40:48.700] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:40:48.700] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:01.496] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:01.496] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:13.090] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017097577}
+[27:41:14.442] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017098923}
+[27:41:16.861] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017101346}
+[27:41:18.329] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017102793}
+[27:41:19.430] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:19.430] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:22.059] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017106542}
+[27:41:23.416] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017107904}
+[27:41:24.489] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017108978}
+[27:41:25.484] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017109940}
+[27:41:28.710] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017113197}
+[27:41:30.411] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017114898}
+[27:41:31.478] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017115945}
+[27:41:32.713] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:32.713] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[27:41:35.739] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017120226}
+[27:41:36.905] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017121392}
+[27:41:37.733] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017122221}
+[27:41:38.741] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017123200}
+[27:43:36.570] Server  LOG      ✓ Compiled in 583ms
+[27:44:13.884] Server  LOG      ✓ Compiled in 223ms
+[27:45:19.156] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017343615}
+[27:45:24.777] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017349252}
+[27:45:32.365] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017356839}
+[27:45:34.923] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017359375}
+[27:46:21.912] Server  LOG      ✓ Compiled in 500ms
+[27:47:44.115] Server  LOG      ✓ Compiled in 804ms
+[27:47:44.737] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[27:47:44.746] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[27:47:44.853] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[27:47:44.854] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[27:47:46.754] Server  LOG      ✓ Compiled in 17ms
+[27:47:50.557] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[27:47:51.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[27:47:51.977] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[27:47:52.151] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[27:47:52.355] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[27:47:52.355] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[27:47:52.355] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017496838}
+[27:48:01.077] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[27:48:01.078] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[27:48:01.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017505565}
+[27:48:01.917] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[27:48:01.917] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[27:53:28.415] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[27:53:28.558] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[27:53:28.558] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[27:53:28.558] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017833036}
+[27:53:29.201] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[27:53:29.201] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[27:53:36.750] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017841220}
+[27:53:39.404] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017843880}
+[27:53:41.156] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767017845612}
+[28:00:39.691] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[28:00:39.697] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[28:00:39.700] Server  LOG      ✓ Compiled in 479ms
+[28:00:39.709] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[28:00:42.426] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[28:00:50.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[28:00:53.481] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[28:00:57.985] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[28:00:58.000] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[28:00:58.000] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/nchIlqgoAYTB2zfQJDUs","route":"/groups/[id]"}
+[28:00:58.000] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/nchIlqgoAYTB2zfQJDUs","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767018279950}
+[28:00:58.009] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[28:01:13.624] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[28:01:13.628] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[28:01:13.628] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767018297479}
+[28:01:14.625] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[28:01:14.625] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>
+[28:01:38.324] Server  LOG      ✓ Compiled in 2.5s
+[28:02:08.716] Server  LOG      ✓ Compiled in 996ms
+[28:03:44.409] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[28:03:44.412] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[28:03:46.939] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[28:03:46.939] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[28:03:49.337] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[28:03:49.337] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[28:04:02.339] Server  LOG      ✓ Compiled in 323ms
+[28:04:37.743] Server  LOG      ✓ Compiled in 383ms
+[28:09:03.164] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[28:09:03.606] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[28:09:03.606] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
+[28:09:03.606] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767018767851}
+[28:09:04.808] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <button> button 
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+            <SegmentViewNode type="page" pagePath="settings/p...">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
+                <SettingsPage params={Promise} searchParams={Promise}>
+                  <div className="min-h-scre...">
+                    <div>
+                    <div className="mx-auto ma...">
+                      <div>
+                      <div>
+                        <h2>
+                        <Card className="divide-y">
+                          <div data-slot="card" className="bg-card te...">
+                            <button>
+                            <button>
+                            <button>
+>                           <button
+>                             onClick={undefined}
+>                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
+>                           >
+                              <div>
+                              <div>
+                              ...
+                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
+                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
+>                                   <button
+>                                     type="button"
+>                                     role="switch"
+>                                     aria-checked={true}
+>                                     aria-required={undefined}
+>                                     data-state="checked"
+>                                     data-disabled={undefined}
+>                                     disabled={undefined}
+>                                     value="on"
+>                                     data-slot="switch"
+>                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
+>                                     aria-label="Bildirimler"
+>                                     onClick={function handleEvent}
+>                                     ref={function}
+>                                   >
+                                  ...
+                      ...
+                      ...
+                    ...
+            ...
+          ...
+
+[28:09:04.808] Browser ERROR   <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. button <button>

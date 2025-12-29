@@ -171,10 +171,10 @@ export default function DashboardPage() {
               baseActivities.push({
                 id: `group-${g.id}`,
                 type: "group",
-                title: "Group created",
+                title: t("groupCreated"),
                 timestamp: toDate(g.createdAt),
-                user: { name: g?.createdByName || "Someone" },
-                groupName: g?.name || "Group",
+                user: { name: g?.createdByName || t("someone") },
+                groupName: g?.name || t("groupLabel"),
                 isPositive: true,
               })
             }
@@ -182,7 +182,7 @@ export default function DashboardPage() {
   
           // (1-3) Feed (expense/settlement/join) - her grup için dinle
           for (const g of groups) {
-            const groupName = g?.name || "Group"
+            const groupName = g?.name || t("groupLabel")
             const feedQ = query(
               collection(db, "groups", g.id, "feed"),
               orderBy("createdAt", "desc"),
@@ -255,12 +255,21 @@ export default function DashboardPage() {
     const type: ActivityItem["type"] =
       rawType === "expense" || rawType === "settlement" || rawType === "join" ? rawType : "expense"
   
-    const title =
-      data?.title ||
-      data?.text ||
-      data?.message ||
-      data?.description ||
-      (type === "expense" ? "Expense added" : type === "settlement" ? "Settlement recorded" : "Member joined")
+    // Legacy mapping for old hardcoded English titles in database
+    const LEGACY_TITLE_MAP: Record<string, string> = {
+      "Payment received": "paymentReceived",
+      "Member joined": "memberJoined",
+      "Group created": "groupCreated",
+      "Expense added": "expenseAdded",
+      "Settlement recorded": "settlementRecorded",
+    }
+
+    const rawTitle = data?.title || data?.text || data?.message || data?.description
+    
+    // Try to translate: first check if it's a legacy English title, then try as key, finally fallback
+    const title = rawTitle
+      ? (LEGACY_TITLE_MAP[rawTitle] ? t(LEGACY_TITLE_MAP[rawTitle]) : (t(rawTitle) || rawTitle))
+      : (type === "expense" ? t("expenseAdded") : type === "settlement" ? t("settlementRecorded") : t("memberJoined"))
   
     const amount =
       typeof data?.amount === "number"
@@ -274,7 +283,7 @@ export default function DashboardPage() {
       data?.createdByName ||
       data?.userName ||
       data?.user?.name ||
-      (data?.createdBy && currentUid && data.createdBy === currentUid ? displayName || "You" : "Someone")
+      (data?.createdBy && currentUid && data.createdBy === currentUid ? displayName || t("You") : t("someone"))
   
     const isPositive = type === "settlement" ? Boolean(data?.isPositive) : undefined
   
@@ -337,7 +346,7 @@ export default function DashboardPage() {
         await runTransaction(db, async (tx) => {
           tx.set(feedRef, {
             type: "group",
-            title: "Group created",
+            title: "groupCreated",
             createdAt: serverTimestamp(),
             createdBy: user.uid,
             createdByName: user.displayName || user.email || "",
@@ -405,8 +414,8 @@ export default function DashboardPage() {
       const groupId = invite?.groupId
       if (!groupId || typeof groupId !== "string") {
         toast({
-          title: "Invalid invite",
-          description: "Invite is missing group information.",
+          title: t("invalidCode"),
+          description: t("inviteMissingGroup"),
           variant: "destructive",
         })
         return
@@ -439,7 +448,7 @@ export default function DashboardPage() {
         const feedRef = doc(collection(db, "groups", groupId, "feed"))
         tx.set(feedRef, {
           type: "join",
-          title: "Member joined",
+          title: "memberJoined",
           createdAt: serverTimestamp(),
           createdBy: user.uid,
           createdByName: user.displayName || user.email || "",
@@ -671,7 +680,7 @@ export default function DashboardPage() {
               <button
                 onClick={() => router.push("/groups")}
                 className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-                aria-label="Groups"
+                aria-label={t("navGroups")}
               >
                 <Wallet className="h-6 w-6 text-muted-foreground" />
               </button>
@@ -679,7 +688,7 @@ export default function DashboardPage() {
               <button
                 onClick={() => router.push("/")}
                 className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors"
-                aria-label="Home"
+                aria-label={t("navHome")}
               >
                 <Home className="h-6 w-6 text-green-600" />
               </button>
@@ -687,7 +696,7 @@ export default function DashboardPage() {
               <button
                 onClick={() => router.push("/profile")}
                 className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-                aria-label="Profile"
+                aria-label={t("navProfile")}
               >
                 <User className="h-6 w-6 text-muted-foreground" />
               </button>
@@ -711,7 +720,7 @@ export default function DashboardPage() {
               className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => router.push("/profile")}
             >
-              {photoURL ? <AvatarImage src={photoURL} alt={profileName || profileEmail || "Profile"} /> : null}
+              {photoURL ? <AvatarImage src={photoURL} alt={profileName || profileEmail || t("navProfile")} /> : null}
               <AvatarFallback className="bg-primary text-primary-foreground font-semibold text-sm">
                 {(profileName || profileEmail || "K")[0]?.toUpperCase?.() || "?"}
               </AvatarFallback>
@@ -799,7 +808,7 @@ export default function DashboardPage() {
 
           <Card className="hidden sm:flex mt-1.5 md:mt-3 p-1.5 sm:p-2 md:p-3 bg-muted/50 rounded-md">
             <div className="leading-[1.05] w-full">
-              <p className="text-[10px] md:text-xs text-muted-foreground">Net Balance</p>
+              <p className="text-[10px] md:text-xs text-muted-foreground">{t("netBalance")}</p>
               <div className="mt-0.5 inline-flex items-center gap-1.5">
                 <span
                   className={`text-[13px] md:text-xl font-bold ${netBalance >= 0 ? "text-green-600" : "text-red-600"}`}
@@ -826,13 +835,13 @@ export default function DashboardPage() {
         <Tabs defaultValue="all" className="w-full">
           <TabsList className="w-full sm:w-auto mb-3 sm:mb-4">
             <TabsTrigger value="all" className="flex-1 sm:flex-none">
-              All
+              {t("tabAll")}
             </TabsTrigger>
             <TabsTrigger value="expense" className="flex-1 sm:flex-none">
-              Expenses
+              {t("tabExpenses")}
             </TabsTrigger>
             <TabsTrigger value="settlement" className="flex-1 sm:flex-none">
-              Settlements
+              {t("tabSettlements")}
             </TabsTrigger>
           </TabsList>
 
@@ -843,7 +852,7 @@ export default function DashboardPage() {
               </div>
             ) : (
               <Card className="p-8 text-center col-span-2">
-                <p className="text-muted-foreground">No activity yet</p>
+                <p className="text-muted-foreground">{t("noActivityYet")}</p>
               </Card>
             )}
             {filterActivities("all").length > 6 && (
@@ -856,12 +865,12 @@ export default function DashboardPage() {
                 >
                   {showAllActivities ? (
                     <>
-                      Show Less
+                      {t("showLess")}
                       <ChevronUp className="h-4 w-4" />
                     </>
                   ) : (
                     <>
-                      View All ({filterActivities("all").length})
+                      {t("viewAll")} ({filterActivities("all").length})
                       <ChevronDown className="h-4 w-4" />
                     </>
                   )}
@@ -876,7 +885,7 @@ export default function DashboardPage() {
                 getLimitedActivities(filterActivities("expense")).map(renderActivityItem)
               ) : (
                 <Card className="p-8 text-center col-span-2">
-                  <p className="text-muted-foreground">No expenses yet</p>
+                  <p className="text-muted-foreground">{t("noExpensesYet")}</p>
                 </Card>
               )}
             </div>
@@ -890,12 +899,12 @@ export default function DashboardPage() {
                 >
                   {showAllActivities ? (
                     <>
-                      Show Less
+                      {t("showLess")}
                       <ChevronUp className="h-4 w-4" />
                     </>
                   ) : (
                     <>
-                      View All ({filterActivities("expense").length})
+                      {t("viewAll")} ({filterActivities("expense").length})
                       <ChevronDown className="h-4 w-4" />
                     </>
                   )}
@@ -910,7 +919,7 @@ export default function DashboardPage() {
                 getLimitedActivities(filterActivities("settlement")).map(renderActivityItem)
               ) : (
                 <Card className="p-8 text-center col-span-2">
-                  <p className="text-muted-foreground">No settlements yet</p>
+                  <p className="text-muted-foreground">{t("noSettlementsYet")}</p>
                 </Card>
               )}
             </div>
@@ -924,12 +933,12 @@ export default function DashboardPage() {
                 >
                   {showAllActivities ? (
                     <>
-                      Show Less
+                      {t("showLess")}
                       <ChevronUp className="h-4 w-4" />
                     </>
                   ) : (
                     <>
-                      View All ({filterActivities("settlement").length})
+                      {t("viewAll")} ({filterActivities("settlement").length})
                       <ChevronDown className="h-4 w-4" />
                     </>
                   )}
@@ -943,7 +952,7 @@ export default function DashboardPage() {
       <Dialog open={activityDetailOpen} onOpenChange={setActivityDetailOpen}>
         <DialogContent className="sm:max-w-md animate-in fade-in-0 zoom-in-95 duration-200">
           <DialogHeader>
-            <DialogTitle>Activity Details</DialogTitle>
+            <DialogTitle>{t("activityDetails")}</DialogTitle>
           </DialogHeader>
           {selectedActivity && (
             <div className="space-y-4">
@@ -978,7 +987,7 @@ export default function DashboardPage() {
               <div className="space-y-3 pt-2">
                 {selectedActivity.amount && (
                   <div className="flex items-center justify-between py-2 border-b">
-                    <span className="text-sm text-muted-foreground">Amount</span>
+                    <span className="text-sm text-muted-foreground">{t("amountLabel")}</span>
                     <Badge
                       variant={selectedActivity.isPositive ? "default" : "secondary"}
                       className={`text-base px-3 py-1 ${
@@ -994,19 +1003,19 @@ export default function DashboardPage() {
                 )}
 
                 <div className="flex items-center justify-between py-2 border-b">
-                  <span className="text-sm text-muted-foreground">User</span>
+                  <span className="text-sm text-muted-foreground">{t("userLabel")}</span>
                   <span className="font-medium">{selectedActivity.user.name}</span>
                 </div>
 
                 {selectedActivity.groupName && (
                   <div className="flex items-center justify-between py-2 border-b">
-                    <span className="text-sm text-muted-foreground">Group</span>
+                    <span className="text-sm text-muted-foreground">{t("groupLabel")}</span>
                     <span className="font-medium">{selectedActivity.groupName}</span>
                   </div>
                 )}
 
                 <div className="flex items-center justify-between py-2">
-                  <span className="text-sm text-muted-foreground">Time</span>
+                  <span className="text-sm text-muted-foreground">{t("timeLabel")}</span>
                   <span className="font-medium">{formatTime(selectedActivity.timestamp)}</span>
                 </div>
               </div>
@@ -1021,28 +1030,28 @@ export default function DashboardPage() {
             <button
               onClick={() => router.push("/groups")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-              aria-label="Groups"
+              aria-label={t("navGroups")}
             >
               <Wallet className="h-6 w-6 text-muted-foreground" />
-              <span className="text-[11px] text-muted-foreground">Groups</span>
+              <span className="text-[11px] text-muted-foreground">{t("navGroups")}</span>
             </button>
 
             <button
               onClick={() => router.push("/")}
               className="flex flex-col items-center gap-1 p-2 px-4 rounded-full transition-colors bg-green-100 dark:bg-green-950/30"
-              aria-label="Home"
+              aria-label={t("navHome")}
             >
               <Home className="h-6 w-6 text-green-600" />
-              <span className="text-[11px] text-green-600 font-medium">Home</span>
+              <span className="text-[11px] text-green-600 font-medium">{t("navHome")}</span>
             </button>
 
             <button
               onClick={() => router.push("/profile")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-              aria-label="Profile"
+              aria-label={t("navProfile")}
             >
               <User className="h-6 w-6 text-muted-foreground" />
-              <span className="text-[11px] text-muted-foreground">Profile</span>
+              <span className="text-[11px] text-muted-foreground">{t("navProfile")}</span>
             </button>
           </div>
         </div>

@@ -10,6 +10,7 @@ import { Plus } from "lucide-react"
 import { auth, db } from "@/lib/firebase"
 import { collection, doc, runTransaction, serverTimestamp } from "firebase/firestore"
 import { useToast } from "@/hooks/use-toast"
+import { useSettings } from "@/lib/settings-context"
 
 interface CreateGroupDialogProps {
   open: boolean
@@ -19,6 +20,7 @@ interface CreateGroupDialogProps {
 export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps) {
   const router = useRouter()
   const { toast } = useToast()
+  const { t } = useSettings()
   const [groupName, setGroupName] = useState("")
   const [loading, setLoading] = useState(false)
 
@@ -32,8 +34,8 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
     const name = groupName.trim()
     if (!name) {
       toast({
-        title: "Invalid input",
-        description: "Please enter a group name",
+        title: t("invalidInput"),
+        description: t("enterGroupNameError"),
         variant: "destructive",
       })
       return
@@ -77,8 +79,8 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
       }
 
       toast({
-        title: "Group created",
-        description: `${name} has been created successfully`,
+        title: t("groupCreated"),
+        description: `${name} ${t("groupCreatedDesc")}`,
       })
       
       setGroupName("")
@@ -87,8 +89,8 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
     } catch (e: any) {
       console.error("Failed to create group:", e)
       toast({
-        title: "Create failed",
-        description: e?.message || "Could not create the group.",
+        title: t("createFailed"),
+        description: e?.message || t("couldNotCreate"),
         variant: "destructive",
       })
     } finally {
@@ -100,14 +102,14 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create New Group</DialogTitle>
+          <DialogTitle>{t("createNewGroup")}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div>
-            <Label htmlFor="group-name">Group Name</Label>
+            <Label htmlFor="group-name">{t("groupName")}</Label>
             <Input
               id="group-name"
-              placeholder="Weekend Trip, Apartment 4B, etc."
+              placeholder={t("enterGroupNamePlaceholder")}
               value={groupName}
               onChange={(e) => setGroupName(e.target.value)}
               onKeyDown={(e) => {
@@ -121,10 +123,10 @@ export function CreateGroupDialog({ open, onOpenChange }: CreateGroupDialogProps
             />
           </div>
           <Button onClick={handleCreateGroup} className="w-full" disabled={loading}>
-            {loading ? "Creating..." : (
+            {loading ? t("creating") : (
               <>
                 <Plus className="mr-2 h-4 w-4" />
-                Create Group
+                {t("createNewGroup")}
               </>
             )}
           </Button>

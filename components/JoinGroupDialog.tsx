@@ -11,6 +11,7 @@ import { auth, db } from "@/lib/firebase"
 import { doc, getDoc, runTransaction, serverTimestamp, collection } from "firebase/firestore"
 import { useToast } from "@/hooks/use-toast"
 import { normalizeInviteCode } from "@/lib/utils/invite-utils"
+import { useSettings } from "@/lib/settings-context"
 import type { GroupInviteDoc } from "@/lib/types/firestore"
 
 interface JoinGroupDialogProps {
@@ -21,6 +22,7 @@ interface JoinGroupDialogProps {
 export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
   const router = useRouter()
   const { toast } = useToast()
+  const { t } = useSettings()
   const [joinCode, setJoinCode] = useState("")
   const [loading, setLoading] = useState(false)
 
@@ -34,8 +36,8 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
     const code = normalizeInviteCode(joinCode)
     if (!code) {
       toast({
-        title: "Invalid input",
-        description: "Please enter a join code",
+        title: t("invalidInput"),
+        description: t("enterInviteCodeError"),
         variant: "destructive",
       })
       return
@@ -50,8 +52,8 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
       
       if (!inviteSnap.exists()) {
         toast({
-          title: "Invalid code",
-          description: "This invite code was not found.",
+          title: t("invalidCode"),
+          description: t("inviteNotFound"),
           variant: "destructive",
         })
         return
@@ -62,8 +64,8 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
       
       if (!groupId || typeof groupId !== "string") {
         toast({
-          title: "Invalid invite",
-          description: "Invite is missing group information.",
+          title: t("invalidInput"),
+          description: t("inviteMissingInfo"),
           variant: "destructive",
         })
         return
@@ -107,8 +109,8 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
       })
 
       toast({
-        title: "Joined group",
-        description: "You've successfully joined the group",
+        title: t("joinedGroup"),
+        description: t("joinedGroupDesc"),
       })
       
       setJoinCode("")
@@ -117,8 +119,8 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
     } catch (e: any) {
       console.error("Failed to join group:", e)
       toast({
-        title: "Join failed",
-        description: e?.message || "Could not join the group.",
+        title: t("joinFailed"),
+        description: e?.message || t("couldNotJoin"),
         variant: "destructive",
       })
     } finally {
@@ -130,14 +132,14 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Join Group</DialogTitle>
+          <DialogTitle>{t("joinGroup")}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
           <div>
-            <Label htmlFor="join-code">Invite Code</Label>
+            <Label htmlFor="join-code">{t("inviteCode")}</Label>
             <Input
               id="join-code"
-              placeholder="Enter the group invite code"
+              placeholder={t("enterInviteCodePlaceholder")}
               value={joinCode}
               onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
               onKeyDown={(e) => {
@@ -152,10 +154,10 @@ export function JoinGroupDialog({ open, onOpenChange }: JoinGroupDialogProps) {
             />
           </div>
           <Button onClick={handleJoinGroup} className="w-full" disabled={loading}>
-            {loading ? "Joining..." : (
+            {loading ? t("joining") : (
               <>
                 <Link className="mr-2 h-4 w-4" />
-                Join Group
+                {t("joinGroup")}
               </>
             )}
           </Button>

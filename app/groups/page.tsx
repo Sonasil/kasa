@@ -31,7 +31,7 @@ type Group = {
 export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const { formatMoney } = useSettings()
+  const { formatMoney, t } = useSettings()
   const [loading, setLoading] = useState(true)
   const [groups, setGroups] = useState<Group[]>([])
   useEffect(() => {
@@ -69,11 +69,11 @@ export default function GroupsPage() {
   
             return {
               id: docSnap.id,
-              name: data.name ?? "Unnamed group",
+              name: data.name ?? t("unnamedGroup"),
               memberCount: memberIds.length || 1,
               totalExpenses: 0,
               yourBalance: 0,
-              lastActivity: "Group created",
+              lastActivity: t("groupCreated"),
               lastActivityTime:
                 data.createdAt && typeof data.createdAt.toDate === "function"
                   ? data.createdAt.toDate()
@@ -120,8 +120,8 @@ export default function GroupsPage() {
   const handleCreateGroup = async () => {
     if (!groupName.trim()) {
       toast({
-        title: "Invalid input",
-        description: "Please enter a group name",
+        title: t("invalidInput"),
+        description: t("enterGroupNameError"),
         variant: "destructive",
       })
       return
@@ -134,8 +134,8 @@ export default function GroupsPage() {
       const { groupId } = await createGroup(name)
 
       toast({
-        title: "Group created",
-        description: `${name} has been created successfully`,
+        title: t("groupCreated"),
+        description: `${name} ${t("groupCreatedDesc")}`,
       })
 
       setCreateGroupOpen(false)
@@ -144,8 +144,8 @@ export default function GroupsPage() {
     } catch (error) {
       console.error("Failed to create group:", error)
       toast({
-        title: "Error",
-        description: "Something went wrong while creating the group. Please try again.",
+        title: t("genericErrorTitle"),
+        description: t("genericErrorDesc"),
         variant: "destructive",
       })
     } finally {
@@ -159,8 +159,8 @@ export default function GroupsPage() {
   
     if (!user) {
       toast({
-        title: "Login required",
-        description: "Please sign in to join a group.",
+        title: t("loginRequired"),
+        description: t("loginRequiredDesc"),
         variant: "destructive",
       })
       return
@@ -168,8 +168,8 @@ export default function GroupsPage() {
   
     if (!inviteCode) {
       toast({
-        title: "Enter a code",
-        description: "Please paste the invite code.",
+        title: t("enterCodeTitle"),
+        description: t("enterCodeDesc"),
         variant: "destructive",
       })
       return
@@ -184,8 +184,8 @@ export default function GroupsPage() {
   
       if (!inviteSnap.exists()) {
         toast({
-          title: "Invalid code",
-          description: "No invite found for this code.",
+          title: t("invalidCode"),
+          description: t("inviteNotFound"),
           variant: "destructive",
         })
         return
@@ -194,8 +194,8 @@ export default function GroupsPage() {
       const invite = inviteSnap.data() as any
       if (invite.disabled) {
         toast({
-          title: "Invite disabled",
-          description: "This invite code is no longer active.",
+          title: t("inviteDisabled"),
+          description: t("inviteDisabledDesc"),
           variant: "destructive",
         })
         return
@@ -204,8 +204,8 @@ export default function GroupsPage() {
       const groupId = invite.groupId as string
       if (!groupId) {
         toast({
-          title: "Invite error",
-          description: "Invite is missing group information.",
+          title: t("invalidInput"),
+          description: t("inviteMissingInfo"),
           variant: "destructive",
         })
         return
@@ -221,7 +221,7 @@ export default function GroupsPage() {
       try {
         await addDoc(collection(db, "groups", groupId, "feed"), {
           type: "join",
-          title: "Member joined",
+          title: "memberJoined",
           createdAt: serverTimestamp(),
           createdBy: user.uid,
           createdByName: user.displayName || user.email || "Someone",
@@ -231,8 +231,8 @@ export default function GroupsPage() {
       }
   
       toast({
-        title: "Joined!",
-        description: "You have joined the group.",
+        title: t("joinedTitle"),
+        description: t("joinedDesc"),
       })
   
       setJoinGroupOpen(false)
@@ -241,8 +241,8 @@ export default function GroupsPage() {
     } catch (error: any) {
       console.error("Failed to join group:", error)
       toast({
-        title: "Error",
-        description: "Failed to join group. Please try again.",
+        title: t("genericErrorTitle"),
+        description: t("genericErrorDesc"),
         variant: "destructive",
       })
     } finally {
@@ -285,9 +285,9 @@ export default function GroupsPage() {
         <div className="mx-auto max-w-4xl p-3 sm:p-6">
           <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold">My Groups</h1>
+              <h1 className="text-xl sm:text-2xl font-bold">{t("myGroups")}</h1>
               <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-                {groups.filter((g) => g.isActive).length} active groups
+                {groups.filter((g) => g.isActive).length} {t("activeGroups")}
               </p>
             </div>
           </div>
@@ -297,26 +297,26 @@ export default function GroupsPage() {
               <DialogTrigger asChild>
                 <Button size="sm" className="flex-1 sm:flex-none h-10 sm:h-9">
                   <Plus className="mr-1 h-4 w-4" />
-                  Create Group
+                  {t("createNewGroup")}
                 </Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Create New Group</DialogTitle>
+                  <DialogTitle>{t("createNewGroup")}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="group-name">Group Name</Label>
+                    <Label htmlFor="group-name">{t("groupName")}</Label>
                     <Input
                       id="group-name"
-                      placeholder="Weekend Trip, Apartment 4B, etc."
+                      placeholder={t("enterGroupNamePlaceholder")}
                       value={groupName}
                       onChange={(e) => setGroupName(e.target.value)}
                       className="mt-2"
                     />
                   </div>
                   <Button onClick={handleCreateGroup} className="w-full">
-                    Create Group
+                    {t("createNewGroup")}
                   </Button>
                 </div>
               </DialogContent>
@@ -326,26 +326,26 @@ export default function GroupsPage() {
               <DialogTrigger asChild>
                 <Button size="sm" variant="outline" className="flex-1 sm:flex-none h-10 sm:h-9 bg-transparent">
                   <Link className="mr-1 h-4 w-4" />
-                  Join via Code
+                  {t("joinViaCode")}
                 </Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Join Group</DialogTitle>
+                  <DialogTitle>{t("joinGroup")}</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="join-code">Invite Code</Label>
+                    <Label htmlFor="join-code">{t("inviteCode")}</Label>
                     <Input
                       id="join-code"
-                      placeholder="Enter the group invite code"
+                      placeholder={t("enterInviteCodePlaceholder")}
                       value={joinCode}
                       onChange={(e) => setJoinCode(e.target.value)}
                       className="mt-2"
                     />
                   </div>
                   <Button onClick={handleJoinGroup} className="w-full" disabled={loading || !joinCode.trim()}>
-                  {loading ? "Joining..." : "Join Group"}
+                  {loading ? t("joining") : t("joinGroup")}
                   </Button>
                 </div>
               </DialogContent>
@@ -358,10 +358,10 @@ export default function GroupsPage() {
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full sm:w-auto mb-3 sm:mb-4">
             <TabsTrigger value="active" className="flex-1 sm:flex-none">
-              Active
+              {t("activeTab")}
             </TabsTrigger>
             <TabsTrigger value="archived" className="flex-1 sm:flex-none">
-              Archived
+              {t("archivedTab")}
             </TabsTrigger>
           </TabsList>
 
@@ -432,14 +432,14 @@ export default function GroupsPage() {
                     <Users className="h-8 w-8 sm:h-10 sm:w-10 text-muted-foreground" />
                   </div>
                   <div>
-                    <h2 className="text-xl sm:text-2xl font-bold mb-2">No active groups</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold mb-2">{t("noActiveGroups")}</h2>
                     <p className="text-sm sm:text-base text-muted-foreground">
-                      Create a group to start tracking expenses with friends and family.
+                      {t("createGroupDesc")}
                     </p>
                   </div>
                   <Button onClick={() => setCreateGroupOpen(true)} className="h-11 sm:h-10">
                     <Plus className="mr-2 h-4 w-4" />
-                    Create Your First Group
+                     {t("createFirstGroup")}
                   </Button>
                 </div>
               </Card>
@@ -486,7 +486,7 @@ export default function GroupsPage() {
               </div>
             ) : (
               <Card className="p-8 text-center">
-                <p className="text-muted-foreground">No archived groups</p>
+                <p className="text-muted-foreground">{t("noArchivedGroups")}</p>
               </Card>
             )}
           </TabsContent>
@@ -499,7 +499,7 @@ export default function GroupsPage() {
             <button
               onClick={() => router.push("/groups")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors"
-              aria-label="Groups"
+              aria-label={t("navGroups")}
             >
               <Wallet className="h-6 w-6 text-green-600" />
             </button>
@@ -507,7 +507,7 @@ export default function GroupsPage() {
             <button
               onClick={() => router.push("/")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-              aria-label="Home"
+              aria-label={t("navHome")}
             >
               <Home className="h-6 w-6 text-muted-foreground" />
             </button>
@@ -515,7 +515,7 @@ export default function GroupsPage() {
             <button
               onClick={() => router.push("/profile")}
               className="flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent"
-              aria-label="Profile"
+              aria-label={t("navProfile")}
             >
               <User className="h-6 w-6 text-muted-foreground" />
             </button>

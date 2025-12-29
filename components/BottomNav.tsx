@@ -2,10 +2,12 @@
 
 import { useRouter, usePathname } from "next/navigation"
 import { Home, Wallet, User } from "lucide-react"
+import { useSettings } from "@/lib/settings-context"
 
 export function BottomNav() {
   const router = useRouter()
   const pathname = usePathname()
+  const { t } = useSettings()
 
   const isActive = (path: string) => {
     if (path === "/") return pathname === "/"
@@ -21,7 +23,7 @@ export function BottomNav() {
             className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${
               isActive("/groups") ? "" : "hover:bg-accent"
             }`}
-            aria-label="Groups"
+            aria-label={t("navGroups")}
           >
             <Wallet className={`h-6 w-6 ${isActive("/groups") ? "text-green-600" : "text-muted-foreground"}`} />
           </button>
@@ -31,7 +33,7 @@ export function BottomNav() {
             className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${
               isActive("/") && pathname === "/" ? "" : "hover:bg-accent"
             }`}
-            aria-label="Home"
+            aria-label={t("navHome")}
           >
             <Home className={`h-6 w-6 ${isActive("/") && pathname === "/" ? "text-green-600" : "text-muted-foreground"}`} />
           </button>
@@ -41,7 +43,7 @@ export function BottomNav() {
             className={`flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${
               isActive("/profile") ? "" : "hover:bg-accent"
             }`}
-            aria-label="Profile"
+            aria-label={t("navProfile")}
           >
             <User className={`h-6 w-6 ${isActive("/profile") ? "text-green-600" : "text-muted-foreground"}`} />
           </button>

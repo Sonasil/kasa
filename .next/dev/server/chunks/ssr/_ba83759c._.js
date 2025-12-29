@@ -638,7 +638,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2
 function GroupsPage() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
-    const { formatMoney } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSettings"])();
+    const { formatMoney, t } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$settings$2d$context$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSettings"])();
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     const [groups, setGroups] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -668,11 +668,11 @@ function GroupsPage() {
                     const memberIds = Array.isArray(data.memberIds) ? data.memberIds : [];
                     return {
                         id: docSnap.id,
-                        name: data.name ?? "Unnamed group",
+                        name: data.name ?? t("unnamedGroup"),
                         memberCount: memberIds.length || 1,
                         totalExpenses: 0,
                         yourBalance: 0,
-                        lastActivity: "Group created",
+                        lastActivity: t("groupCreated"),
                         lastActivityTime: data.createdAt && typeof data.createdAt.toDate === "function" ? data.createdAt.toDate() : new Date(),
                         isActive: data.isActive ?? true
                     };
@@ -709,8 +709,8 @@ function GroupsPage() {
     const handleCreateGroup = async ()=>{
         if (!groupName.trim()) {
             toast({
-                title: "Invalid input",
-                description: "Please enter a group name",
+                title: t("invalidInput"),
+                description: t("enterGroupNameError"),
                 variant: "destructive"
             });
             return;
@@ -720,8 +720,8 @@ function GroupsPage() {
         try {
             const { groupId } = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$groupService$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createGroup"])(name);
             toast({
-                title: "Group created",
-                description: `${name} has been created successfully`
+                title: t("groupCreated"),
+                description: `${name} ${t("groupCreatedDesc")}`
             });
             setCreateGroupOpen(false);
             setGroupName("");
@@ -729,8 +729,8 @@ function GroupsPage() {
         } catch (error) {
             console.error("Failed to create group:", error);
             toast({
-                title: "Error",
-                description: "Something went wrong while creating the group. Please try again.",
+                title: t("genericErrorTitle"),
+                description: t("genericErrorDesc"),
                 variant: "destructive"
             });
         } finally{
@@ -742,16 +742,16 @@ function GroupsPage() {
         const inviteCode = joinCode.trim().toUpperCase();
         if (!user) {
             toast({
-                title: "Login required",
-                description: "Please sign in to join a group.",
+                title: t("loginRequired"),
+                description: t("loginRequiredDesc"),
                 variant: "destructive"
             });
             return;
         }
         if (!inviteCode) {
             toast({
-                title: "Enter a code",
-                description: "Please paste the invite code.",
+                title: t("enterCodeTitle"),
+                description: t("enterCodeDesc"),
                 variant: "destructive"
             });
             return;
@@ -763,8 +763,8 @@ function GroupsPage() {
             const inviteSnap = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getDoc"])(inviteRef);
             if (!inviteSnap.exists()) {
                 toast({
-                    title: "Invalid code",
-                    description: "No invite found for this code.",
+                    title: t("invalidCode"),
+                    description: t("inviteNotFound"),
                     variant: "destructive"
                 });
                 return;
@@ -772,8 +772,8 @@ function GroupsPage() {
             const invite = inviteSnap.data();
             if (invite.disabled) {
                 toast({
-                    title: "Invite disabled",
-                    description: "This invite code is no longer active.",
+                    title: t("inviteDisabled"),
+                    description: t("inviteDisabledDesc"),
                     variant: "destructive"
                 });
                 return;
@@ -781,8 +781,8 @@ function GroupsPage() {
             const groupId = invite.groupId;
             if (!groupId) {
                 toast({
-                    title: "Invite error",
-                    description: "Invite is missing group information.",
+                    title: t("invalidInput"),
+                    description: t("inviteMissingInfo"),
                     variant: "destructive"
                 });
                 return;
@@ -795,7 +795,7 @@ function GroupsPage() {
             try {
                 await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["addDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["collection"])(__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$firebase$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["db"], "groups", groupId, "feed"), {
                     type: "join",
-                    title: "Member joined",
+                    title: "memberJoined",
                     createdAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$node$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["serverTimestamp"])(),
                     createdBy: user.uid,
                     createdByName: user.displayName || user.email || "Someone"
@@ -804,8 +804,8 @@ function GroupsPage() {
                 console.warn("Failed to write join activity:", e);
             }
             toast({
-                title: "Joined!",
-                description: "You have joined the group."
+                title: t("joinedTitle"),
+                description: t("joinedDesc")
             });
             setJoinGroupOpen(false);
             setJoinCode("");
@@ -813,8 +813,8 @@ function GroupsPage() {
         } catch (error) {
             console.error("Failed to join group:", error);
             toast({
-                title: "Error",
-                description: "Failed to join group. Please try again.",
+                title: t("genericErrorTitle"),
+                description: t("genericErrorDesc"),
                 variant: "destructive"
             });
         } finally{
@@ -927,7 +927,7 @@ function GroupsPage() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                                         className: "text-xl sm:text-2xl font-bold",
-                                        children: "My Groups"
+                                        children: t("myGroups")
                                     }, void 0, false, {
                                         fileName: "[project]/app/groups/page.tsx",
                                         lineNumber: 288,
@@ -937,7 +937,8 @@ function GroupsPage() {
                                         className: "text-xs sm:text-sm text-muted-foreground mt-0.5",
                                         children: [
                                             groups.filter((g)=>g.isActive).length,
-                                            " active groups"
+                                            " ",
+                                            t("activeGroups")
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/groups/page.tsx",
@@ -975,7 +976,7 @@ function GroupsPage() {
                                                         lineNumber: 299,
                                                         columnNumber: 19
                                                     }, this),
-                                                    "Create Group"
+                                                    t("createNewGroup")
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/groups/page.tsx",
@@ -991,7 +992,7 @@ function GroupsPage() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogHeader"], {
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogTitle"], {
-                                                        children: "Create New Group"
+                                                        children: t("createNewGroup")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/page.tsx",
                                                         lineNumber: 305,
@@ -1009,7 +1010,7 @@ function GroupsPage() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                                                                     htmlFor: "group-name",
-                                                                    children: "Group Name"
+                                                                    children: t("groupName")
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
                                                                     lineNumber: 309,
@@ -1017,7 +1018,7 @@ function GroupsPage() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                                                                     id: "group-name",
-                                                                    placeholder: "Weekend Trip, Apartment 4B, etc.",
+                                                                    placeholder: t("enterGroupNamePlaceholder"),
                                                                     value: groupName,
                                                                     onChange: (e)=>setGroupName(e.target.value),
                                                                     className: "mt-2"
@@ -1035,7 +1036,7 @@ function GroupsPage() {
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                             onClick: handleCreateGroup,
                                                             className: "w-full",
-                                                            children: "Create Group"
+                                                            children: t("createNewGroup")
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/page.tsx",
                                                             lineNumber: 318,
@@ -1077,7 +1078,7 @@ function GroupsPage() {
                                                         lineNumber: 328,
                                                         columnNumber: 19
                                                     }, this),
-                                                    "Join via Code"
+                                                    t("joinViaCode")
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/groups/page.tsx",
@@ -1093,7 +1094,7 @@ function GroupsPage() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogHeader"], {
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DialogTitle"], {
-                                                        children: "Join Group"
+                                                        children: t("joinGroup")
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/groups/page.tsx",
                                                         lineNumber: 334,
@@ -1111,7 +1112,7 @@ function GroupsPage() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Label"], {
                                                                     htmlFor: "join-code",
-                                                                    children: "Invite Code"
+                                                                    children: t("inviteCode")
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/groups/page.tsx",
                                                                     lineNumber: 338,
@@ -1119,7 +1120,7 @@ function GroupsPage() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
                                                                     id: "join-code",
-                                                                    placeholder: "Enter the group invite code",
+                                                                    placeholder: t("enterInviteCodePlaceholder"),
                                                                     value: joinCode,
                                                                     onChange: (e)=>setJoinCode(e.target.value),
                                                                     className: "mt-2"
@@ -1138,7 +1139,7 @@ function GroupsPage() {
                                                             onClick: handleJoinGroup,
                                                             className: "w-full",
                                                             disabled: loading || !joinCode.trim(),
-                                                            children: loading ? "Joining..." : "Join Group"
+                                                            children: loading ? t("joining") : t("joinGroup")
                                                         }, void 0, false, {
                                                             fileName: "[project]/app/groups/page.tsx",
                                                             lineNumber: 347,
@@ -1192,7 +1193,7 @@ function GroupsPage() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
                                     value: "active",
                                     className: "flex-1 sm:flex-none",
-                                    children: "Active"
+                                    children: t("activeTab")
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
                                     lineNumber: 360,
@@ -1201,7 +1202,7 @@ function GroupsPage() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TabsTrigger"], {
                                     value: "archived",
                                     className: "flex-1 sm:flex-none",
-                                    children: "Archived"
+                                    children: t("archivedTab")
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
                                     lineNumber: 363,
@@ -1430,7 +1431,7 @@ function GroupsPage() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                     className: "text-xl sm:text-2xl font-bold mb-2",
-                                                    children: "No active groups"
+                                                    children: t("noActiveGroups")
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
                                                     lineNumber: 435,
@@ -1438,7 +1439,7 @@ function GroupsPage() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                     className: "text-sm sm:text-base text-muted-foreground",
-                                                    children: "Create a group to start tracking expenses with friends and family."
+                                                    children: t("createGroupDesc")
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/groups/page.tsx",
                                                     lineNumber: 436,
@@ -1461,7 +1462,7 @@ function GroupsPage() {
                                                     lineNumber: 441,
                                                     columnNumber: 21
                                                 }, this),
-                                                "Create Your First Group"
+                                                t("createFirstGroup")
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/groups/page.tsx",
@@ -1640,7 +1641,7 @@ function GroupsPage() {
                                 className: "p-8 text-center",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-muted-foreground",
-                                    children: "No archived groups"
+                                    children: t("noArchivedGroups")
                                 }, void 0, false, {
                                     fileName: "[project]/app/groups/page.tsx",
                                     lineNumber: 489,
@@ -1677,7 +1678,7 @@ function GroupsPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>router.push("/groups"),
                                 className: "flex flex-col items-center gap-1 p-2 rounded-lg transition-colors",
-                                "aria-label": "Groups",
+                                "aria-label": t("navGroups"),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wallet$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Wallet$3e$__["Wallet"], {
                                     className: "h-6 w-6 text-green-600"
                                 }, void 0, false, {
@@ -1693,7 +1694,7 @@ function GroupsPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>router.push("/"),
                                 className: "flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent",
-                                "aria-label": "Home",
+                                "aria-label": t("navHome"),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"], {
                                     className: "h-6 w-6 text-muted-foreground"
                                 }, void 0, false, {
@@ -1709,7 +1710,7 @@ function GroupsPage() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>router.push("/profile"),
                                 className: "flex flex-col items-center gap-1 p-2 rounded-lg transition-colors hover:bg-accent",
-                                "aria-label": "Profile",
+                                "aria-label": t("navProfile"),
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$user$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__User$3e$__["User"], {
                                     className: "h-6 w-6 text-muted-foreground"
                                 }, void 0, false, {
