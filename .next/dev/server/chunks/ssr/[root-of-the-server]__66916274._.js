@@ -314,7 +314,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ErrorBoundary$
 ;
 ;
 const metadata = {
-    title: 'Kasa - Shared Expense Tracker',
+    title: 'HesAppcım - Shared Expense Tracker',
     description: 'Split expenses and settle debts with friends and family. Track group expenses, manage settlements, and keep everyone in sync.',
     keywords: [
         'expense tracker',

@@ -354,8 +354,8 @@ export default function SettingsPage() {
 
         {/* App Version */}
         <div className="text-center text-xs text-muted-foreground pt-4">
-          <p>Kasa v1.0.0</p>
-          <p className="mt-1">© 2025 Kasa. {t("allRightsReserved")}</p>
+          <p>HesAppcım v1.0.0</p>
+          <p className="mt-1">© 2025 HesAppcım. {t("allRightsReserved")}</p>
         </div>
       </div>
 

@@ -12,7 +12,7 @@ const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
 export const metadata: Metadata = {
-  title: 'Kasa - Shared Expense Tracker',
+  title: 'HesAppcım - Shared Expense Tracker',
   description: 'Split expenses and settle debts with friends and family. Track group expenses, manage settlements, and keep everyone in sync.',
   keywords: ['expense tracker', 'split bills', 'group expenses', 'debt settlement', 'shared expenses'],
 }

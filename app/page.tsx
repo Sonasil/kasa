@@ -847,33 +847,27 @@ export default function DashboardPage() {
           </TabsList>
 
           <TabsContent value="all" className="space-y-3">
-            <CardHeader>
-              <CardTitle className="text-base sm:text-lg">{t("recentActivity")}</CardTitle>
-              <CardDescription className="text-xs sm:text-sm">{t("latestUpdates")}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              {loading ? (
-                <div className="space-y-3">
-                  {[1, 2, 3].map(i => (
-                    <div key={i} className="flex items-start gap-3">
-                      <Skeleton className="h-10 w-10 rounded-full flex-shrink-0" />
-                      <div className="flex-1 space-y-2">
-                        <Skeleton className="h-4 w-3/4" />
-                        <Skeleton className="h-3 w-1/2" />
-                      </div>
+            {loading ? (
+              <div className="space-y-3">
+                {[1, 2, 3].map(i => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Skeleton className="h-10 w-10 rounded-full flex-shrink-0" />
+                    <div className="flex-1 space-y-2">
+                      <Skeleton className="h-4 w-3/4" />
+                      <Skeleton className="h-3 w-1/2" />
                     </div>
-                  ))}
-                </div>
-              ) : activities.length === 0 ? (
-                <Card className="p-8 text-center col-span-2">
-                  <p className="text-muted-foreground">{t("noActivityYet")}</p>
-                </Card>
-              ) : (
-                <div className="grid grid-cols-2 gap-4">
-                  {getLimitedActivities(filterActivities("all")).map(renderActivityItem)}
-                </div>
-              )}
-            </CardContent>
+                  </div>
+                ))}
+              </div>
+            ) : getLimitedActivities(filterActivities("all")).length > 0 ? (
+              <div className="grid grid-cols-2 gap-4">
+                {getLimitedActivities(filterActivities("all")).map(renderActivityItem)}
+              </div>
+            ) : (
+              <Card className="p-8 text-center col-span-2">
+                <p className="text-muted-foreground">{t("noActivityYet")}</p>
+              </Card>
+            )}
             {filterActivities("all").length > 6 && (
               <div className="flex justify-center pt-2">
                 <Button

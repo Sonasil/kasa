@@ -1,194 +1,120 @@
-# 💰 Shared Expense Tracker
+# 💰 HesAppcım
 
-A modern, real-time expense sharing application built with Next.js and Firebase. Track shared expenses with friends, family, or roommates effortlessly.
+**Arkadaşlarınla harcamaları paylaş, hesapları eşitle.**
 
----
-
-## ✨ Features
-
-### Core Functionality
-- **Group Management** - Create and manage expense groups
-- **Real-time Sync** - Instant updates across all devices
-- **Smart Settlements** - Automatically calculates who owes whom
-- **Expense Tracking** - Add, edit, and categorize expenses
-- **Payment Records** - Track settlements and payment history
-- **Mobile-First Design** - Fully responsive, works on any device
-
-### User Experience
-- **Multi-language Support** - Turkish and English
-- **Dark Mode** - System-aware theme switching
-- **Offline Detection** - Visual feedback for connectivity status
-- **Progressive Web App** - Install on mobile devices
-
-### Authentication & Security
-- **Email/Password** - Secure authentication
-- **Google Sign-In** - Quick OAuth login
-- **Email Verification** - Account security
-- **Phone Verification** - Optional SMS verification (reCAPTCHA)
+HesAppcım, grup harcamalarını takip etmeyi ve borçları dengelemeyi kolaylaştıran modern bir uygulamadır. Arkadaşlarınla tatile çıktığınızda, ev arkadaşlarınızla yaşarken veya ortak alışverişlerde "kim kime ne borçlu?" sorusuna son verin.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Özellikler
 
-**Frontend:**
-- [Next.js 16](https://nextjs.org/) - React framework with App Router
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first styling
-- [shadcn/ui](https://ui.shadcn.com/) - Component library
-- [Lucide Icons](https://lucide.dev/) - Icon system
+### 📊 Akıllı Hesaplama
+- **Otomatik Denge** - Kim kime ne borçlu, tek bakışta gör
+- **Adil Paylaşım** - Harcamaları eşit veya özel olarak böl
+- **Anlık Güncelleme** - Tüm grup üyeleri aynı anda görür
 
-**Backend & Services:**
-- [Firebase Authentication](https://firebase.google.com/products/auth) - User management
-- [Cloud Firestore](https://firebase.google.com/products/firestore) - NoSQL database
-- [Cloudinary](https://cloudinary.com/) - Image hosting (avatars)
+### 👥 Grup Yönetimi
+- **Kolay Grup Oluşturma** - Dakikalar içinde başla
+- **Davet Kodu** - Arkadaşlarını tek tıkla ekle
+- **Arşiv** - Tamamlanan grupları düzenle
 
-**Development:**
-- Turbopack - Fast bundler
-- ESLint - Code linting
-- Hot Module Replacement - Instant feedback
+### 💳 Ödeme Takibi
+- **Masraf Ekleme** - Fotoğraf ve kategori ile kaydet
+- **Ödeme Kaydı** - Borçlar ödendiğinde işaretle
+- **Geçmiş** - Tüm hareketleri görüntüle
 
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ and npm
-- Firebase project with Firestore and Authentication enabled
-- (Optional) Cloudinary account for profile pictures
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd <project-directory>
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   ```env
-   # Firebase Configuration
-   NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_project.appspot.com
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-   NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-   
-   # Optional: Cloudinary (for profile pictures)
-   NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
-   NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET=your_preset
-   ```
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000)
+### 🌍 Kullanıcı Dostu
+- **Türkçe & İngilizce** - Tam dil desteği
+- **Karanlık Mod** - Gözlerine uygun tema
+- **Mobil Uyumlu** - Her cihazda mükemmel çalışır
 
 ---
 
-## 📁 Project Structure
+## � Nasıl Kullanılır?
 
-```
-├── app/                    # Next.js App Router pages
-│   ├── groups/            # Group management & details
-│   ├── profile/           # User profile & settings
-│   ├── settings/          # App settings
-│   ├── login/             # Authentication pages
-│   └── register/
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   └── *.tsx             # Custom components
-├── lib/                   # Utilities & configuration
-│   ├── firebase.ts       # Firebase initialization
-│   ├── settings-context.tsx  # i18n & app settings
-│   └── groupService.ts   # Business logic
-└── public/               # Static assets
-```
+### 1️⃣ **Hesap Oluştur**
+E-posta veya Google hesabınla kolayca kayıt ol.
 
----
+### 2️⃣ **Grup Oluştur**
+"Tatil", "Ev Giderleri", "Arkadaşlar" gibi istediğin isimle grup aç.
 
-## 🎨 Key Features Breakdown
+### 3️⃣ **Arkadaşlarını Davet Et**
+Davet kodu paylaş, arkadaşların tek tıkla katılsın.
 
-### Group Expense Management
-- Create groups with invite codes
-- Archive/unarchive groups
-- View group balance and debts
-- Simplified debt visualization
+### 4️⃣ **Harcama Ekle**
+Kim ödedi? Ne kadar? Kimin payı var? Hepsini kaydet.
 
-### Expense Operations
-- Add expenses with custom splits
-- Edit expense details (title, category)
-- Mark payments as settled
-- Real-time balance updates
+### 5️⃣ **Hesapları Gör**
+HesAppcım otomatik hesaplar. Kim kime ne borçlu, hemen gör.
 
-### User Profile
-- Update display name and avatar
-- Email verification
-- Phone verification (SMS)
-- Password management
-- Multi-currency support (TRY, USD, EUR, GBP)
+### 6️⃣ **Ödeme Yap**
+Borçları ödedikçe işaretle. Bakiyeler güncellenir.
 
 ---
 
-## 🔧 Available Scripts
+## 🎯 Kimler İçin?
 
-```bash
-npm run dev          # Start development server (Turbopack)
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-```
+- **Tatilciler** - Ortak giderleri kolayca paylaş
+- **Ev Arkadaşları** - Kira, fatura, market masraflarını dengele
+- **Arkadaş Grupları** - Restoran, kafe, etkinlik ödemelerini takip et
+- **Aileler** - Ortak alışverişleri kaydet
 
 ---
 
-## 🌍 Internationalization
+## 🔒 Güvenlik & Gizlilik
 
-The app supports multiple languages through a custom context provider:
-- **Turkish** (tr-TR)
-- **English** (en-US)
-
-Add new translations in `lib/settings-context.tsx`
+- **Firebase Güvenliği** - Verileriniz şifreli ve güvende
+- **Sadece Sen** - Sadece grubundaki kişiler verilerini görür
+- **E-posta Doğrulama** - Hesap güvenliği için önerilir
 
 ---
 
-## 🔐 Firebase Security Rules
+## 🌟 Neden HesAppcım?
 
-Ensure your Firestore has proper security rules:
-- Users can only access groups they're members of
-- Only group owners can delete groups
-- Expenses are protected by group membership
-
----
-
-## 🐛 Known Issues & Limitations
-
-- Phone verification UI is disabled (marked as "Coming Soon")
-- Email verification is recommended for account security
-- Profile pictures require Cloudinary configuration
+✅ **Ücretsiz** - Tüm özellikler ücretsiz  
+✅ **Reklamsız** - Kesintisiz deneyim  
+✅ **Basit** - Karmaşık menüler yok  
+✅ **Hızlı** - Anlık senkronizasyon  
+✅ **Güvenilir** - Firebase altyapısı  
 
 ---
 
-## 📝 License
+## � Destek
 
-This project is private and not licensed for public use.
-
----
-
-## 🤝 Contributing
-
-This is a private project. Contributions are not currently accepted.
+Sorularınız veya önerileriniz için:
+- 📧 E-posta: [destek e-postası]
+- 🐛 Hata Bildir: Settings → Report a Problem
 
 ---
 
-**Built with ❤️ using modern web technologies**
+## 📲 İndir
+
+**App Store** - Yakında  
+**Google Play** - Yakında  
+**Web** - [hesappcim.app](https://hesappcim.app)
+
+---
+
+## 🎉 Başlamaya Hazır Mısın?
+
+HesAppcım ile grup harcamalarını yönetmek hiç bu kadar kolay olmamıştı. Şimdi indir, arkadaşlarını davet et ve hesapları dengele!
+
+---
+
+**HesAppcım v1.0.0**  
+© 2025 HesAppcım. Tüm hakları saklıdır.
+
+---
+
+## 🛠️ Teknik Bilgiler
+
+HesAppcım şu teknolojilerle geliştirilmiştir:
+- **Next.js 16** - Modern web framework
+- **React 19** - Kullanıcı arayüzü
+- **Firebase** - Backend ve veritabanı
+- **TypeScript** - Tip güvenliği
+- **Tailwind CSS** - Modern tasarım
+
+---
+
+**Made with ❤️ for effortless expense sharing**
