@@ -7,6 +7,10 @@ dist/
 web-build/
 expo-env.d.ts
 
+# next.js
+/.next/
+/out/
+
 # native
 *.orig.*
 *.jks

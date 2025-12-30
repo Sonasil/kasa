@@ -21,6 +21,7 @@ import { db ,auth } from "@/lib/firebase"
 
 import { useEffect, useState, useRef, useMemo, type FormEvent } from "react"
 import { useParams, useRouter } from "next/navigation"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -44,6 +45,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ImageUpload } from "@/components/ImageUpload"
 import { useSettings } from "@/lib/settings-context"
 import {
   ArrowLeft,
@@ -70,6 +72,9 @@ import {
   UserMinus,
   CheckCircle,
   Wallet,
+  Camera,
+  ZoomIn,
+  X,
 } from "lucide-react"
 
 type GroupDoc = {
@@ -185,6 +190,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [selectedParticipants, setSelectedParticipants] = useState<string[]>([])
   const [splitMode, setSplitMode] = useState<"equal" | "custom">("equal")
   const [customSplitAmounts, setCustomSplitAmounts] = useState<Record<string, string>>({})
+  const [receiptFile, setReceiptFile] = useState<File | null>(null)
 
   const [memberDialogOpen, setMemberDialogOpen] = useState(false)
   const [statusDialogOpen, setStatusDialogOpen] = useState(false)
@@ -192,6 +198,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
   const [expenseDetailOpen, setExpenseDetailOpen] = useState(false)
   const [selectedExpense, setSelectedExpense] = useState<FeedItem | null>(null)
+  const [receiptViewerOpen, setReceiptViewerOpen] = useState(false)
 
   // ✅ Edit expense dialog states
   const [editExpenseOpen, setEditExpenseOpen] = useState(false)
@@ -402,6 +409,23 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     const requestId = addExpenseRequestIdRef.current || `${currentUid}-${Date.now()}`
 
     try {
+      // Upload receipt first if exists
+      let receiptUrl: string | null = null
+      if (receiptFile) {
+        try {
+          const { uploadReceiptToCloudinary } = await import("@/components/ImageUpload")
+          receiptUrl = await uploadReceiptToCloudinary(receiptFile)
+        } catch (uploadError) {
+          console.error("Receipt upload failed:", uploadError)
+          toast({
+            title: "⚠️ Fatura yüklenemedi",
+            description: "Fatura yüklenirken hata oluştu, harcama faturasız kaydedilecek",
+            variant: "destructive",
+          })
+          // Continue without receipt
+        }
+      }
+
       await runTransaction(db, async (tx) => {
         const groupRef = doc(db, "groups", groupId)
         const snap = await tx.get(groupRef)
@@ -430,6 +454,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
           participantIds,
           splitCents,
           category: expenseCategory || null,
+          receiptUrl: receiptUrl || null,
           clientRequestId: requestId,
         })
 
@@ -451,6 +476,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       setSelectedParticipants([])
       setSplitMode("equal")
       setCustomSplitAmounts({})
+      setReceiptFile(null)
       setExpenseDialogOpen(false)
     } catch (err) {
       console.error("Failed to add expense:", err)
@@ -1733,6 +1759,14 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     </div>
                   )}
 
+                  {/* Receipt Upload */}
+                  <ImageUpload 
+                    file={receiptFile}
+                    onChange={setReceiptFile}
+                    label="Fatura (Opsiyonel)"
+                    disabled={addingExpense}
+                  />
+
                   <Button onClick={handleAddExpense} className="w-full" disabled={addingExpense}>
                     {addingExpense ? t("adding") : t("addExpense")}
                   </Button>
@@ -1891,6 +1925,39 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   </div>
                 </div>
 
+
+                {/* Receipt - Compact Mobile-First */}
+                {selectedExpense.receiptUrl && (
+                  <div className="relative group -mx-1">
+                    {/* Minimal Header */}
+                    <div className="flex items-center gap-1.5 mb-2 px-1">
+                      <Camera className="h-3.5 w-3.5 text-muted-foreground" />
+                      <span className="text-xs font-medium text-muted-foreground">Receipt</span>
+                    </div>
+                    
+                    {/* Compact Image - Mobile First */}
+                    <div 
+                      className="relative rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer active:scale-[0.99]"
+                      onClick={() => setReceiptViewerOpen(true)}
+                    >
+                      <div className="relative w-full h-40 sm:h-56">
+                        <Image 
+                          src={selectedExpense.receiptUrl}
+                          alt="Receipt"
+                          fill
+                          className="object-cover"
+                        />
+                        
+                        {/* Zoom Hint - Simple */}
+                        <div className="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors" />
+                        <div className="absolute top-2 right-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-1.5 opacity-60 group-hover:opacity-100 transition-opacity">
+                          <ZoomIn className="h-3.5 w-3.5 text-slate-700 dark:text-slate-300" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Actions */}
                 <div className="flex gap-2 pt-2">
                   <Button
@@ -1920,6 +1987,50 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
               </div>
             )
           })()}
+        </DialogContent>
+      </Dialog>
+
+      {/* Receipt Viewer - Full Screen Mobile-Friendly */}
+      <Dialog open={receiptViewerOpen} onOpenChange={setReceiptViewerOpen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 bg-black/95">
+          <div className="relative w-full h-full flex items-center justify-center">
+            {selectedExpense?.receiptUrl && (
+              <>
+                {/* Full Screen Image - Pinch to Zoom Enabled */}
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={selectedExpense.receiptUrl}
+                    alt="Receipt Full View"
+                    fill
+                    className="object-contain"
+                    quality={100}
+                    priority
+                  />
+                </div>
+                
+                {/* Close Button - Floating */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-4 right-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-full hover:bg-white"
+                  onClick={() => setReceiptViewerOpen(false)}
+                >
+                  <X className="h-5 w-5" />
+                </Button>
+
+                {/* Open in New Tab - Mobile Helper */}
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="absolute bottom-4 right-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-full hover:bg-white text-xs"
+                  onClick={() => window.open(selectedExpense.receiptUrl, '_blank')}
+                >
+                  <ZoomIn className="h-4 w-4 mr-1" />
+                  Open in New Tab
+                </Button>
+              </>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
 

@@ -1,1057 +1,292 @@
-[00:00:02.542] Server  LOG      ✓ Ready in 1379ms
-[00:00:05.723] Server  LOG      ○ Compiling /profile ...
-[00:00:08.314] Server  ERROR    ⨯ ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
+[00:00:00.854] Server  LOG      ✓ Ready in 594ms
+[00:00:07.411] Server  LOG      ○ Compiling /groups ...
+[00:00:12.379] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.455] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.956] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:14.956] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
+[00:00:14.956] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108467608}
+[00:00:15.269] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:15.270] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups","route":"/groups"}
+[00:00:15.271] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108467909}
+[00:00:19.854] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.466] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:21.466] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/groups/ngS3XsGHoqnHAlvTlAZ3","route":"/groups/[id]"}
+[00:00:21.466] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108473677}
+[00:00:21.466] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:21.467] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+[00:00:24.196] Server  LOG      ✓ Compiled in 1184ms
+[00:00:30.939] Server  WARN     ⚠ Cross origin request detected from 172.20.10.3 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:31.136] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-Expected '</', got 'numeric literal (2, 2)'
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-
-[00:00:08.409] Server  ERROR    ⨯ ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-
-
-[00:00:08.438] Server  ERROR    ⨯ ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-
-
-[00:00:13.595] Browser ERROR   uncaughtError: Error: ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-
-
-[00:00:13.763] Browser ERROR   uncaughtError: Error: ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-
-
-[00:00:13.783] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:13.783] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:13.784] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:13.826] Browser ERROR   uncaughtError: Error: ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-
-
-[00:00:14.161] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.161] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.161] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.550] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.552] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.753] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.754] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.754] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:14.754] Browser ERROR   ./components/ErrorBoundary.tsx:44:16
-Parsing ecmascript source code failed
-  42 |               <AlertCircle className="h-8 w-8 sm:h-10 sm:w-10 text-destructive" />
-  43 |             </div>
-> 44 |             <h 2 className="text-xl sm:text-2xl font-bold mb-2">Bir şeyler ters gitti</h2>
-     |                ^
-  45 |             <p className="text-sm text-muted-foreground mb-6">
-  46 |               Üzgünüz, beklenmeyen bir hata oluştu. Lütfen sayfayı yenileyin veya ana sayfaya dönün.
-  47 |             </p>
-
-Expected '</', got 'numeric literal (2, 2)'
-
-Import trace:
-  Server Component:
-    ./components/ErrorBoundary.tsx
-    ./app/layout.tsx
-[00:00:22.046] Server  LOG      ✓ Compiled in 224ms
-[00:00:28.208] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:29.108] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:32.595] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:32.595] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:00:32.595] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767030843505}
-[00:00:33.546] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:33.546] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[00:00:33.546] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767030844634}
-[00:00:34.799] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
+%s%s https://react.dev/link/hydration-mismatch 
 
   ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-            <SegmentViewNode type="page" pagePath="settings/p...">
-              <SegmentTrieNode>
-              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
-                <SettingsPage params={Promise} searchParams={Promise}>
-                  <div className="min-h-scre...">
-                    <div>
-                    <div className="mx-auto ma...">
-                      <div>
-                      <div>
-                        <h2>
-                        <Card className="divide-y">
-                          <div data-slot="card" className="bg-card te...">
-                            <button>
-                            <button>
-                            <button>
->                           <button
->                             onClick={undefined}
->                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
->                           >
-                              <div>
-                              <div>
-                              ...
-                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
-                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
->                                   <button
->                                     type="button"
->                                     role="switch"
->                                     aria-checked={true}
->                                     aria-required={undefined}
->                                     data-state="checked"
->                                     data-disabled={undefined}
->                                     disabled={undefined}
->                                     value="on"
->                                     data-slot="switch"
->                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
->                                     aria-label="Bildirimler"
->                                     onClick={function handleEvent}
->                                     ref={function}
->                                   >
-                                  ...
-                      ...
-                      ...
-                    ...
-            ...
-          ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         __gchrome_remoteframetoken="f5131d62592109ce2dbd3cfd2ea2ed01"
+                        >
+                  ...
 
-[00:00:34.810] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[00:00:37.669] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:39.738] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:39.738] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[00:00:39.738] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767030850508}
-[00:07:05.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:05.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:07.321] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:07:07.323] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[00:07:07.324] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031238425}
-[00:07:08.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:08.240] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:07:08.240] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[00:07:08.240] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031239067}
-[00:07:09.398] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
+[00:00:31.819] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:31.819] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:31.819] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://172.20.10.3:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108484607}
+[00:00:31.819] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://172.20.10.3:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108484666}
+[00:00:33.656] Browser ERROR   Google sign in error: {"code":"auth/unauthorized-domain","customData":{},"name":"FirebaseError"}
+[00:00:43.419] Server  LOG      ✓ Compiled in 219ms
+[00:01:07.528] Server  LOG      ✓ Compiled in 284ms
+[00:01:26.459] Server  LOG      ✓ Compiled in 232ms
+[00:02:15.646] Browser ERROR   Google sign in error: {"code":"auth/unauthorized-domain","customData":{},"name":"FirebaseError"}
+[00:04:33.775] Browser ERROR   Google sign in error: {"code":"auth/unauthorized-domain","customData":{},"name":"FirebaseError"}
+[00:04:38.364] Browser ERROR   Google sign in error: {"code":"auth/unauthorized-domain","customData":{},"name":"FirebaseError"}
+[00:04:46.566] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://172.20.10.3:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108739410}
+[00:05:48.918] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://172.20.10.3:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108801758}
+[00:06:12.220] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://172.20.10.3:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108825062}
+[00:06:41.296] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://172.20.10.3:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108854137}
+[00:07:08.767] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://172.20.10.3:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108881610}
+[00:07:22.069] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://172.20.10.3:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108894910}
+[00:07:23.223] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups/EfcJruJYKH6pHDEf3W1S color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://172.20.10.3:3000/groups/EfcJruJYKH6pHDEf3W1S","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108896066}
+[00:07:23.556] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:23.556] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:27.871] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:27.871] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:51.873] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:51.873] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:53.484] Browser WARN    Image with src "https://res.cloudinary.com/dmqar4nc1/image/upload/v1767108918/lyzevq7y2pbvmf8xdp52.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:07:53.484] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-  ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-            <SegmentViewNode type="page" pagePath="settings/p...">
-              <SegmentTrieNode>
-              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
-                <SettingsPage params={Promise} searchParams={Promise}>
-                  <div className="min-h-scre...">
-                    <div>
-                    <div className="mx-auto ma...">
-                      <div>
-                      <div>
-                        <h2>
-                        <Card className="divide-y">
-                          <div data-slot="card" className="bg-card te...">
-                            <button>
-                            <button>
-                            <button>
->                           <button
->                             onClick={undefined}
->                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
->                           >
-                              <div>
-                              <div>
-                              ...
-                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
-                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
->                                   <button
->                                     type="button"
->                                     role="switch"
->                                     aria-checked={true}
->                                     aria-required={undefined}
->                                     data-state="checked"
->                                     data-disabled={undefined}
->                                     disabled={undefined}
->                                     value="on"
->                                     data-slot="switch"
->                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
->                                     aria-label="Bildirimler"
->                                     onClick={function handleEvent}
->                                     ref={function}
->                                   >
-                                  ...
-                      ...
-                      ...
-                    ...
-            ...
-          ...
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-[00:07:09.407] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[00:07:11.699] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:07:11.699] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[00:07:11.699] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031242574}
-[00:13:36.649] Server  LOG      ✓ Compiled in 954ms
-[00:17:16.857] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:17.040] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:17:17.040] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[00:17:17.040] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031848162}
-[00:17:20.082] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031851193}
-[00:17:21.558] Server  ERROR    ⨯ ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:07:53.484] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:53.484] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:07:53.484] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:07:58.728] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://172.20.10.3:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108931544}
+[00:07:59.932] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups/EfcJruJYKH6pHDEf3W1S color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://172.20.10.3:3000/groups/EfcJruJYKH6pHDEf3W1S","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108932773}
+[00:08:00.527] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:08:00.527] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:08:01.557] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-[00:17:21.659] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-Expected ';', '}' or <eof>
-[00:17:21.660] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:08:01.557] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:08:01.557] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
-[00:17:21.768] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-Expected ';', '}' or <eof>
-[00:17:21.772] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:08:01.557] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:04.763] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:04.764] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:06.863] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767108999556}
+[00:09:07.976] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767109000640}
+[00:09:09.575] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:09.575] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:18.335] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://172.20.10.3:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767109011172}
+[00:09:20.209] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://172.20.10.3:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767109013049}
+[00:09:23.589] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://172.20.10.3:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767109016428}
+[00:09:24.460] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:24.460] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:39.379] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:39.380] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:39.600] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://172.20.10.3:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://172.20.10.3:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767109032440}
+[00:09:41.029] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:41.029] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:45.528] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:45.528] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:47.021] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:47.021] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:51.662] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:51.662] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:52.700] Browser WARN    Image with src "https://res.cloudinary.com/dmqar4nc1/image/upload/v1767107308/lmvtqrkmxt0av69w8tit.jpg" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:09:52.700] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
-[00:17:21.861] Server  ERROR    ⨯ ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-Expected ';', '}' or <eof>
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:09:52.700] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:09:52.700] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-[00:17:21.882] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[00:09:52.700] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:13:51.629] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:13:51.632] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:14:10.925] Browser WARN    Image with src "https://res.cloudinary.com/dmqar4nc1/image/upload/v1767109300/qywb4rmahz1jon9zkyjw.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:14:25.155] Browser WARN    Image with src "https://res.cloudinary.com/dmqar4nc1/image/upload/v1767109316/urn5qlw5avaqdwlygb4j.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:14:30.116] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:14:30.116] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:16:02.474] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:16:02.478] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[00:25:50.116] Browser WARN    [2025-12-30T15:53:22.539Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9cb transport errored. Name: undefined Message: undefined
+[00:25:50.120] Browser WARN    [2025-12-30T15:53:22.626Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9cc transport errored. Name: undefined Message: undefined
+[00:25:50.122] Browser WARN    [2025-12-30T15:53:22.548Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad6e transport errored. Name: undefined Message: undefined
+[00:25:50.122] Browser WARN    [2025-12-30T15:53:22.628Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad6f transport errored. Name: undefined Message: undefined
+[00:25:51.239] Browser WARN    [2025-12-30T15:53:23.909Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9cd transport errored. Name: undefined Message: undefined
+[00:25:51.957] Browser WARN    [2025-12-30T15:53:23.754Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad70 transport errored. Name: undefined Message: undefined
+[00:25:52.837] Browser WARN    [2025-12-30T15:53:25.508Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9ce transport errored. Name: undefined Message: undefined
+[00:25:54.107] Browser WARN    [2025-12-30T15:53:25.760Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad71 transport errored. Name: undefined Message: undefined
+[00:25:54.939] Browser WARN    [2025-12-30T15:53:27.563Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9cf transport errored. Name: undefined Message: undefined
+[00:25:57.967] Browser WARN    [2025-12-30T15:53:29.810Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad72 transport errored. Name: undefined Message: undefined
+[00:25:58.356] Browser WARN    [2025-12-30T15:53:31.025Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d0 transport errored. Name: undefined Message: undefined
+[00:26:02.819] Browser WARN    [2025-12-30T15:53:35.491Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d1 transport errored. Name: undefined Message: undefined
+[00:26:02.956] Browser WARN    [2025-12-30T15:53:34.763Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad73 transport errored. Name: undefined Message: undefined
+[01:30:49.505] Browser WARN    [2025-12-30T16:58:22.042Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d2 transport errored. Name: undefined Message: undefined
+[01:45:49.955] Browser WARN    [2025-12-30T16:58:22.376Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad74 transport errored. Name: undefined Message: undefined
+[02:01:02.250] Browser WARN    [2025-12-30T17:28:34.757Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d3 transport errored. Name: undefined Message: undefined
+[02:01:02.988] Browser WARN    [2025-12-30T17:28:34.788Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad75 transport errored. Name: undefined Message: undefined
+[02:16:04.217] Browser WARN    [2025-12-30T17:43:36.707Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d4 transport errored. Name: undefined Message: undefined
+[02:16:05.021] Browser WARN    [2025-12-30T17:43:36.820Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad76 transport errored. Name: undefined Message: undefined
+[03:19:49.444] Browser WARN    [2025-12-30T18:47:21.819Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d5 transport errored. Name: undefined Message: undefined
+[03:19:50.341] Browser WARN    [2025-12-30T18:47:22.236Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad77 transport errored. Name: undefined Message: undefined
+[04:35:38.665] Browser WARN    [2025-12-30T20:03:10.913Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d6 transport errored. Name: undefined Message: undefined
+[04:35:39.543] Browser WARN    [2025-12-30T20:03:11.782Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad78 transport errored. Name: undefined Message: undefined
+[06:06:27.876] Browser WARN    [2025-12-30T21:33:59.999Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d7 transport errored. Name: undefined Message: undefined
+[06:06:30.985] Browser WARN    [2025-12-30T21:34:02.359Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad79 transport errored. Name: undefined Message: undefined
+[07:22:17.349] Browser WARN    [2025-12-30T22:49:49.291Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d8 transport errored. Name: undefined Message: undefined
+[07:33:41.500] Browser WARN    [2025-12-30T23:01:13.411Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9d9 transport errored. Name: undefined Message: undefined
+[07:33:42.708] Browser WARN    [2025-12-30T23:01:14.121Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad7a transport errored. Name: undefined Message: undefined
+[07:44:14.223] Browser WARN    [2025-12-30T23:11:45.568Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x8dd2c9da transport errored. Name: undefined Message: undefined
+[07:44:15.214] Browser WARN    [2025-12-30T23:11:46.915Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x3d1bad7b transport errored. Name: undefined Message: undefined
+[07:44:38.850] Server  LOG      ✓ Compiled in 1645ms
+[07:45:02.155] Server  LOG      ✓ Compiled in 414ms
+[07:45:02.275] Browser ERROR   Error caught by boundary: {} {"componentStack":"\n    at GroupDetailPage (http://localhost:3000/_next/static/chunks/_7f9c635d._.js?id=%255Bproject%255D%252Fapp%252Fgroups%252F%255Bid%255D%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:96:171)\n    at ClientPageRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:2157:27)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at GroupsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1298:27)\n    at UserProfileProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1145:32)\n    at SettingsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:912:29)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/_933183d7._.js:1781:9)\n    at body (<anonymous>)\n    at html (<anonymous>)\n    at RootLayout [Server] (<anonymous>)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at __next_root_layout_boundary__ (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:1673:64)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at DevRootHTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9754:46)\n    at AppDevOverlayErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3417:9)\n    at HotReload (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10748:22)\n    at Router (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10928:23)\n    at ErrorBoundaryHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:982:9)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at RootErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9434:30)\n    at AppRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:11245:22)\n    at ServerRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12725:23)\n    at Root (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12743:17)"}
+[07:45:27.509] Server  LOG      ✓ Compiled in 287ms
+[07:45:28.276] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767136379483}
+[07:45:28.278] Browser ERROR   Error caught by boundary: {} {"componentStack":"\n    at GroupDetailPage (http://localhost:3000/_next/static/chunks/_7f9c635d._.js?id=%255Bproject%255D%252Fapp%252Fgroups%252F%255Bid%255D%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:96:171)\n    at ClientPageRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:2157:27)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at GroupsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1298:27)\n    at UserProfileProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1145:32)\n    at SettingsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:912:29)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/_933183d7._.js:1781:9)\n    at body (<anonymous>)\n    at html (<anonymous>)\n    at RootLayout [Server] (<anonymous>)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at __next_root_layout_boundary__ (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:1673:64)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at DevRootHTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9754:46)\n    at AppDevOverlayErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3417:9)\n    at HotReload (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10748:22)\n    at Router (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10928:23)\n    at ErrorBoundaryHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:982:9)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at RootErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9434:30)\n    at AppRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:11245:22)\n    at ServerRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12725:23)\n    at Root (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12743:17)"}
+[07:45:30.912] Server  LOG      ✓ Compiled in 226ms
+[07:45:31.221] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767136382937}
+[07:45:31.221] Browser ERROR   Error caught by boundary: {} {"componentStack":"\n    at GroupDetailPage (http://localhost:3000/_next/static/chunks/_7f9c635d._.js?id=%255Bproject%255D%252Fapp%252Fgroups%252F%255Bid%255D%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:96:171)\n    at ClientPageRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:2157:27)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at GroupsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1298:27)\n    at UserProfileProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1145:32)\n    at SettingsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:912:29)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/_933183d7._.js:1781:9)\n    at body (<anonymous>)\n    at html (<anonymous>)\n    at RootLayout [Server] (<anonymous>)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at __next_root_layout_boundary__ (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:1673:64)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at DevRootHTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9754:46)\n    at AppDevOverlayErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3417:9)\n    at HotReload (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10748:22)\n    at Router (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10928:23)\n    at ErrorBoundaryHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:982:9)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at RootErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9434:30)\n    at AppRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:11245:22)\n    at ServerRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12725:23)\n    at Root (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12743:17)"}
+[07:45:47.754] Server  LOG      ✓ Compiled in 138ms
+[07:45:48.213] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767136399717}
+[07:45:48.214] Browser ERROR   Error caught by boundary: {} {"componentStack":"\n    at GroupDetailPage (http://localhost:3000/_next/static/chunks/_7f9c635d._.js?id=%255Bproject%255D%252Fapp%252Fgroups%252F%255Bid%255D%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:96:171)\n    at ClientPageRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:2157:27)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at GroupsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1298:27)\n    at UserProfileProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1145:32)\n    at SettingsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:912:29)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/_933183d7._.js:1781:9)\n    at body (<anonymous>)\n    at html (<anonymous>)\n    at RootLayout [Server] (<anonymous>)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at __next_root_layout_boundary__ (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:1673:64)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at DevRootHTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9754:46)\n    at AppDevOverlayErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3417:9)\n    at HotReload (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10748:22)\n    at Router (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10928:23)\n    at ErrorBoundaryHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:982:9)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at RootErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9434:30)\n    at AppRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:11245:22)\n    at ServerRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12725:23)\n    at Root (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12743:17)"}
+[07:46:05.016] Server  LOG      ✓ Compiled in 225ms
+[07:46:05.213] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767136417028}
+[07:54:30.320] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:54:30.322] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:09.455] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:09.456] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:10.905] Browser WARN    Image with src "https://res.cloudinary.com/dmqar4nc1/image/upload/v1767136958/qq7nxt5stthiindltdbz.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[07:55:11.928] Browser WARN    Image with src "https://res.cloudinary.com/dmqar4nc1/image/upload/v1767136958/qq7nxt5stthiindltdbz.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[07:55:11.928] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
-[00:17:21.882] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-Expected ';', '}' or <eof>
-[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[07:55:11.928] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:11.928] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
-[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-Expected ';', '}' or <eof>
-[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[07:55:11.928] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:15.616] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
-[00:17:22.026] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-Expected ';', '}' or <eof>
-[00:17:23.697] Browser ERROR   uncaughtError: Error: ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[07:55:15.616] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:15.616] Browser ERROR   `DialogContent` requires a `DialogTitle` for the component to be accessible for screen reader users.
 
-Expected ';', '}' or <eof>
+If you want to hide the `DialogTitle`, you can wrap it with our VisuallyHidden component.
 
-
-[00:17:23.902] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:17:23.902] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:17:23.904] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:17:23.904] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:17:47.026] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:17:47.027] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:17:47.667] Browser ERROR   ./app/page.tsx:1:5
-Parsing ecmascript source code failed
-> 1 | use client
-    |     ^^^^^^
-  2 | import { useState, useEffect } from "react"
-  3 | import { useRouter } from "next/navigation"
-  4 | import { Button } from "@/components/ui/button"
-
-Expected ';', '}' or <eof>
-[00:18:05.809] Server  LOG      ✓ Compiled in 377ms
-[00:18:11.660] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:11.927] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:18:11.928] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:18:11.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031903043}
-[00:18:13.099] Browser ERROR   Error caught by boundary: {} {"componentStack":"\n    at DashboardPage (http://localhost:3000/_next/static/chunks/_8a099db0._.js:558:171)\n    at ClientPageRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:2157:27)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at InnerLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:390:34)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at LoadingBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:496:32)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at InnerScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:290:9)\n    at ScrollAndFocusHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:373:34)\n    at RenderFromTemplateContext (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:769:44)\n    at SegmentStateProvider (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3322:33)\n    at OuterLayoutRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_094231d7._.js:532:30)\n    at GroupsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1298:27)\n    at UserProfileProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:1145:32)\n    at SettingsProvider (http://localhost:3000/_next/static/chunks/_933183d7._.js:912:29)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/_933183d7._.js:1781:9)\n    at body (<anonymous>)\n    at html (<anonymous>)\n    at RootLayout [Server] (<anonymous>)\n    at SegmentViewNode (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3306:28)\n    at __next_root_layout_boundary__ (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:1673:64)\n    at RedirectErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9129:9)\n    at RedirectBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9162:29)\n    at HTTPAccessFallbackErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9610:9)\n    at HTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9685:39)\n    at DevRootHTTPAccessFallbackBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9754:46)\n    at AppDevOverlayErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_4b2403f5._.js:3417:9)\n    at HotReload (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10748:22)\n    at Router (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:10928:23)\n    at ErrorBoundaryHandler (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:982:9)\n    at ErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:1048:26)\n    at RootErrorBoundary (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:9434:30)\n    at AppRouter (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:11245:22)\n    at ServerRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12725:23)\n    at Root (http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_a38d7d69._.js:12743:17)"}
-[00:18:45.327] Server  LOG      ✓ Compiled in 1235ms
-[00:19:33.539] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031984260}
-[00:19:33.539] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031984263}
-[00:19:35.322] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:19:35.322] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:19:35.322] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:19:35.322] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031986525}
-[00:19:38.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031989775}
-[00:19:39.816] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031990963}
-[00:19:41.008] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031992156}
-[00:19:42.233] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031993381}
-[00:19:42.564] Browser ERROR   In HTML, %s cannot be a descendant of <%s>.
-This will cause a hydration error.%s <button> button 
-
-  ...
-    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
-      <RedirectBoundary>
-        <RedirectErrorBoundary router={{...}}>
-          <InnerLayoutRouter url="/settings" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
-            <SegmentViewNode type="page" pagePath="settings/p...">
-              <SegmentTrieNode>
-              <ClientPageRoot Component={function SettingsPage} serverProvidedParams={{...}}>
-                <SettingsPage params={Promise} searchParams={Promise}>
-                  <div className="min-h-scre...">
-                    <div>
-                    <div className="mx-auto ma...">
-                      <div>
-                      <div>
-                        <h2>
-                        <Card className="divide-y">
-                          <div data-slot="card" className="bg-card te...">
-                            <button>
-                            <button>
-                            <button>
->                           <button
->                             onClick={undefined}
->                             className="w-full flex items-center gap-3 p-3 sm:p-4 hover:bg-accent transition-colors t..."
->                           >
-                              <div>
-                              <div>
-                              ...
-                                <SwitchProvider scope={undefined} checked={true} disabled={undefined}>
-                                  <Primitive.button type="button" role="switch" aria-checked={true} ...>
->                                   <button
->                                     type="button"
->                                     role="switch"
->                                     aria-checked={true}
->                                     aria-required={undefined}
->                                     data-state="checked"
->                                     data-disabled={undefined}
->                                     disabled={undefined}
->                                     value="on"
->                                     data-slot="switch"
->                                     className="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-input ..."
->                                     aria-label="Bildirimler"
->                                     onClick={function handleEvent}
->                                     ref={function}
->                                   >
-                                  ...
-                      ...
-                      ...
-                    ...
-            ...
-          ...
-
-[00:19:42.564] Browser ERROR   <%s> cannot contain a nested %s.
-See this log for the ancestor stack trace. button <button>
-[00:19:43.935] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031995082}
-[00:19:45.530] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031996677}
-[00:19:46.245] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:19:46.245] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:19:48.346] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767031999495}
-[00:19:51.759] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032002900}
-[00:19:53.921] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:19:53.921] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:19:56.312] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:19:56.312] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:19:57.939] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032009089}
-[00:19:59.074] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032010223}
-[00:20:00.520] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032011669}
-[00:20:01.854] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032013003}
-[00:21:12.748] Server  LOG      ✓ Compiled in 386ms
-[00:22:01.755] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032132903}
-[00:22:02.596] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032133734}
-[00:22:04.979] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032136126}
-[00:22:06.144] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032137289}
-[00:22:07.199] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032138346}
-[00:22:41.755] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:22:41.758] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:25:24.288] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767032335429}
-[00:51:15.626] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767033886752}
-[00:51:17.045] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3 color: rgb(120, 120, 120) color: inherit {"dp":"/groups/[id]","o":"http://localhost:3000/groups/ngS3XsGHoqnHAlvTlAZ3","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767033888068}
-[00:51:19.235] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[00:51:19.236] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
-[01:16:06.444] Browser WARN    [2025-12-29T19:09:37.473Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2957 transport errored. Name: undefined Message: undefined
-[01:16:14.606] Browser WARN    [2025-12-29T19:09:45.631Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f93 transport errored. Name: undefined Message: undefined
-[01:31:45.014] Browser WARN    [2025-12-29T19:25:16.046Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f94 transport errored. Name: undefined Message: undefined
-[01:31:52.530] Browser WARN    [2025-12-29T19:25:23.565Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2958 transport errored. Name: undefined Message: undefined
-[01:47:00.487] Browser WARN    [2025-12-29T19:40:31.506Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f95 transport errored. Name: undefined Message: undefined
-[01:47:04.055] Browser WARN    [2025-12-29T19:40:35.070Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2959 transport errored. Name: undefined Message: undefined
-[01:54:47.117] Browser WARN    [2025-12-29T19:48:18.117Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f96 transport errored. Name: undefined Message: undefined
-[01:55:05.961] Browser WARN    [2025-12-29T19:48:36.967Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a295a transport errored. Name: undefined Message: undefined
-[02:13:17.490] Browser WARN    [2025-12-29T20:06:48.389Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f97 transport errored. Name: undefined Message: undefined
-[02:28:33.735] Browser WARN    [2025-12-29T20:22:04.032Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a295b transport errored. Name: undefined Message: undefined
-[02:43:43.563] Browser WARN    [2025-12-29T20:37:14.453Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f98 transport errored. Name: undefined Message: undefined
-[03:14:00.417] Browser WARN    [2025-12-29T21:07:31.265Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f99 transport errored. Name: undefined Message: undefined
-[03:44:17.057] Browser WARN    [2025-12-29T21:37:47.877Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f9a transport errored. Name: undefined Message: undefined
-[03:44:21.914] Browser WARN    [2025-12-29T21:37:52.146Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a295c transport errored. Name: undefined Message: undefined
-[04:14:05.159] Browser WARN    [2025-12-29T22:07:35.877Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f9b transport errored. Name: undefined Message: undefined
-[04:29:21.605] Browser WARN    [2025-12-29T22:22:52.291Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f9c transport errored. Name: undefined Message: undefined
-[04:44:25.657] Browser WARN    [2025-12-29T22:37:55.414Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a295d transport errored. Name: undefined Message: undefined
-[04:59:38.319] Browser WARN    [2025-12-29T22:53:08.911Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f9d transport errored. Name: undefined Message: undefined
-[05:29:54.837] Browser WARN    [2025-12-29T23:23:25.066Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a295e transport errored. Name: undefined Message: undefined
-[05:29:55.012] Browser WARN    [2025-12-29T23:23:25.594Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f9e transport errored. Name: undefined Message: undefined
-[05:58:39.487] Browser WARN    [2025-12-29T23:52:10.043Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463f9f transport errored. Name: undefined Message: undefined
-[06:13:55.480] Browser WARN    [2025-12-30T00:07:26.007Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa0 transport errored. Name: undefined Message: undefined
-[06:14:02.192] Browser WARN    [2025-12-30T00:07:31.897Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a295f transport errored. Name: undefined Message: undefined
-[06:44:12.322] Browser WARN    [2025-12-30T00:37:42.773Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa1 transport errored. Name: undefined Message: undefined
-[07:14:28.184] Browser WARN    [2025-12-30T01:07:58.508Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa2 transport errored. Name: undefined Message: undefined
-[07:29:46.644] Browser WARN    [2025-12-30T01:23:16.422Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2961 transport errored. Name: undefined Message: undefined
-[07:44:59.300] Browser WARN    [2025-12-30T01:38:29.577Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa3 transport errored. Name: undefined Message: undefined
-[08:15:16.268] Browser WARN    [2025-12-30T02:08:46.530Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa4 transport errored. Name: undefined Message: undefined
-[08:30:33.217] Browser WARN    [2025-12-30T02:24:03.462Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa5 transport errored. Name: undefined Message: undefined
-[08:45:36.291] Browser WARN    [2025-12-30T02:24:04.894Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2962 transport errored. Name: undefined Message: undefined
-[09:00:49.115] Browser WARN    [2025-12-30T02:54:19.324Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa6 transport errored. Name: undefined Message: undefined
-[09:05:30.465] Browser WARN    [2025-12-30T02:59:00.124Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2963 transport errored. Name: undefined Message: undefined
-[09:20:38.561] Browser WARN    [2025-12-30T03:14:08.752Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa7 transport errored. Name: undefined Message: undefined
-[09:50:55.012] Browser WARN    [2025-12-30T03:44:25.152Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa8 transport errored. Name: undefined Message: undefined
-[10:06:06.338] Browser WARN    [2025-12-30T03:59:35.601Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2964 transport errored. Name: undefined Message: undefined
-[10:06:10.180] Browser WARN    [2025-12-30T03:59:40.261Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fa9 transport errored. Name: undefined Message: undefined
-[10:36:27.094] Browser WARN    [2025-12-30T04:29:57.103Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463faa transport errored. Name: undefined Message: undefined
-[11:06:44.534] Browser WARN    [2025-12-30T05:00:14.496Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fab transport errored. Name: undefined Message: undefined
-[11:21:55.966] Browser WARN    [2025-12-30T05:15:25.504Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2965 transport errored. Name: undefined Message: undefined
-[11:37:01.762] Browser WARN    [2025-12-30T05:30:31.685Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fac transport errored. Name: undefined Message: undefined
-[11:59:49.670] Browser WARN    [2025-12-30T05:53:19.565Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fad transport errored. Name: undefined Message: undefined
-[11:59:49.857] Browser WARN    [2025-12-30T05:53:19.694Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2966 transport errored. Name: undefined Message: undefined
-[12:30:10.471] Browser WARN    [2025-12-30T06:23:40.298Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fae transport errored. Name: undefined Message: undefined
-[12:45:18.242] Browser WARN    [2025-12-30T06:38:48.032Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2967 transport errored. Name: undefined Message: undefined
-[13:00:26.633] Browser WARN    [2025-12-30T06:53:56.397Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463faf transport errored. Name: undefined Message: undefined
-[13:30:42.643] Browser WARN    [2025-12-30T07:24:12.351Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb0 transport errored. Name: undefined Message: undefined
-[14:00:54.295] Browser WARN    [2025-12-30T07:54:23.890Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb1 transport errored. Name: undefined Message: undefined
-[14:16:03.485] Browser WARN    [2025-12-30T08:09:32.100Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2968 transport errored. Name: undefined Message: undefined
-[14:23:01.079] Browser WARN    [2025-12-30T08:16:30.567Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb2 transport errored. Name: undefined Message: undefined
-[14:23:06.053] Browser WARN    [2025-12-30T08:16:34.882Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2969 transport errored. Name: undefined Message: undefined
-[14:45:17.358] Browser WARN    [2025-12-30T08:38:46.735Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb3 transport errored. Name: undefined Message: undefined
-[15:00:33.658] Browser WARN    [2025-12-30T08:54:02.990Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb4 transport errored. Name: undefined Message: undefined
-[15:00:45.664] Browser WARN    [2025-12-30T08:54:15.010Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a296a transport errored. Name: undefined Message: undefined
-[15:16:03.915] Browser WARN    [2025-12-30T09:09:33.237Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb5 transport errored. Name: undefined Message: undefined
-[15:31:19.639] Browser WARN    [2025-12-30T09:24:48.995Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a296b transport errored. Name: undefined Message: undefined
-[15:31:19.893] Browser WARN    [2025-12-30T09:24:49.254Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb6 transport errored. Name: undefined Message: undefined
-[15:46:50.806] Browser WARN    [2025-12-30T09:40:20.146Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb7 transport errored. Name: undefined Message: undefined
-[15:47:06.476] Browser WARN    [2025-12-30T09:40:35.828Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a296c transport errored. Name: undefined Message: undefined
-[16:02:22.105] Browser WARN    [2025-12-30T09:55:51.447Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb8 transport errored. Name: undefined Message: undefined
-[16:17:38.161] Browser WARN    [2025-12-30T10:11:07.485Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fb9 transport errored. Name: undefined Message: undefined
-[16:17:53.483] Browser WARN    [2025-12-30T10:11:22.825Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a296d transport errored. Name: undefined Message: undefined
-[16:24:09.858] Browser WARN    [2025-12-30T10:17:39.085Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a296f transport errored. Name: undefined Message: undefined
-[16:24:09.858] Browser WARN    [2025-12-30T10:17:39.179Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2970 transport errored. Name: undefined Message: undefined
-[16:24:09.871] Browser WARN    [2025-12-30T10:17:39.127Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fbb transport errored. Name: undefined Message: undefined
-[16:24:09.871] Browser WARN    [2025-12-30T10:17:39.207Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fbc transport errored. Name: undefined Message: undefined
-[16:24:10.275] Browser WARN    [2025-12-30T10:17:39.613Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2971 transport errored. Name: undefined Message: undefined
-[16:24:10.553] Browser WARN    [2025-12-30T10:17:39.891Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fbd transport errored. Name: undefined Message: undefined
-[16:24:11.684] Browser WARN    [2025-12-30T10:17:41.022Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fbe transport errored. Name: undefined Message: undefined
-[16:24:12.432] Browser WARN    [2025-12-30T10:17:41.765Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2972 transport errored. Name: undefined Message: undefined
-[16:24:13.897] Browser WARN    [2025-12-30T10:17:43.182Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fbf transport errored. Name: undefined Message: undefined
-[16:24:14.758] Browser WARN    [2025-12-30T10:17:44.084Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2973 transport errored. Name: undefined Message: undefined
-[16:24:18.170] Browser WARN    [2025-12-30T10:17:47.505Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2974 transport errored. Name: undefined Message: undefined
-[16:24:18.814] Browser WARN    [2025-12-30T10:17:48.133Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc0 transport errored. Name: undefined Message: undefined
-[16:24:21.270] Browser WARN    [2025-12-30T10:17:50.474Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2975 transport errored. Name: undefined Message: undefined
-[16:30:41.993] Browser WARN    [2025-12-30T10:24:11.324Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc1 transport errored. Name: undefined Message: undefined
-[16:30:42.131] Browser WARN    [2025-12-30T10:24:11.464Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2976 transport errored. Name: undefined Message: undefined
-[16:30:45.941] Browser WARN    [2025-12-30T10:24:15.271Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc2 transport errored. Name: undefined Message: undefined
-[16:31:49.193] Browser WARN    [2025-12-30T10:25:18.335Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc4 transport errored. Name: undefined Message: undefined
-[16:31:49.194] Browser WARN    [2025-12-30T10:25:18.382Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc5 transport errored. Name: undefined Message: undefined
-[16:31:50.418] Browser WARN    [2025-12-30T10:25:19.746Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc6 transport errored. Name: undefined Message: undefined
-[16:31:51.208] Browser WARN    [2025-12-30T10:25:20.539Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc7 transport errored. Name: undefined Message: undefined
-[16:31:52.544] Browser WARN    [2025-12-30T10:25:21.873Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fc8 transport errored. Name: undefined Message: undefined
-[16:32:42.231] Browser WARN    [2025-12-30T10:26:11.512Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2979 transport errored. Name: undefined Message: undefined
-[16:32:42.234] Browser WARN    [2025-12-30T10:26:11.543Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a297a transport errored. Name: undefined Message: undefined
-[16:32:42.239] Browser WARN    [2025-12-30T10:26:11.515Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fca transport errored. Name: undefined Message: undefined
-[16:32:42.239] Browser WARN    [2025-12-30T10:26:11.548Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fcb transport errored. Name: undefined Message: undefined
-[16:32:43.055] Browser WARN    [2025-12-30T10:26:12.379Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a297b transport errored. Name: undefined Message: undefined
-[16:32:43.056] Browser WARN    [2025-12-30T10:26:12.386Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fcc transport errored. Name: undefined Message: undefined
-[16:32:44.216] Browser WARN    [2025-12-30T10:26:13.510Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a297c transport errored. Name: undefined Message: undefined
-[16:32:44.667] Browser WARN    [2025-12-30T10:26:13.999Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fcd transport errored. Name: undefined Message: undefined
-[16:32:46.658] Browser WARN    [2025-12-30T10:26:15.989Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a297d transport errored. Name: undefined Message: undefined
-[16:32:47.675] Browser WARN    [2025-12-30T10:26:17.005Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fce transport errored. Name: undefined Message: undefined
-[16:33:13.830] Browser WARN    [2025-12-30T10:26:43.115Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a297f transport errored. Name: undefined Message: undefined
-[16:33:13.834] Browser WARN    [2025-12-30T10:26:43.136Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2980 transport errored. Name: undefined Message: undefined
-[16:33:13.865] Browser WARN    [2025-12-30T10:26:43.160Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd0 transport errored. Name: undefined Message: undefined
-[16:33:13.866] Browser WARN    [2025-12-30T10:26:43.199Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd1 transport errored. Name: undefined Message: undefined
-[16:33:14.612] Browser WARN    [2025-12-30T10:26:43.946Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2981 transport errored. Name: undefined Message: undefined
-[16:33:15.365] Browser WARN    [2025-12-30T10:26:44.699Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd2 transport errored. Name: undefined Message: undefined
-[16:33:15.974] Browser WARN    [2025-12-30T10:26:45.308Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2982 transport errored. Name: undefined Message: undefined
-[16:33:16.441] Browser WARN    [2025-12-30T10:26:45.774Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd3 transport errored. Name: undefined Message: undefined
-[16:33:17.674] Browser WARN    [2025-12-30T10:26:47.007Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2983 transport errored. Name: undefined Message: undefined
-[16:33:18.046] Browser WARN    [2025-12-30T10:26:47.382Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd4 transport errored. Name: undefined Message: undefined
-[16:36:53.083] Browser WARN    [2025-12-30T10:30:22.282Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2985 transport errored. Name: undefined Message: undefined
-[16:36:53.304] Browser WARN    [2025-12-30T10:30:22.581Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2986 transport errored. Name: undefined Message: undefined
-[16:36:53.331] Browser WARN    [2025-12-30T10:30:22.578Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd6 transport errored. Name: undefined Message: undefined
-[16:36:53.332] Browser WARN    [2025-12-30T10:30:22.658Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd7 transport errored. Name: undefined Message: undefined
-[16:36:53.765] Browser WARN    [2025-12-30T10:30:23.056Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2987 transport errored. Name: undefined Message: undefined
-[16:36:54.361] Browser WARN    [2025-12-30T10:30:23.693Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd8 transport errored. Name: undefined Message: undefined
-[16:36:55.884] Browser WARN    [2025-12-30T10:30:25.214Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fd9 transport errored. Name: undefined Message: undefined
-[16:36:55.925] Browser WARN    [2025-12-30T10:30:25.256Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2988 transport errored. Name: undefined Message: undefined
-[16:36:57.912] Browser WARN    [2025-12-30T10:30:27.242Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fda transport errored. Name: undefined Message: undefined
-[16:36:59.305] Browser WARN    [2025-12-30T10:30:28.637Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2989 transport errored. Name: undefined Message: undefined
-[16:37:02.085] Browser WARN    [2025-12-30T10:30:31.418Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fdb transport errored. Name: undefined Message: undefined
-[16:37:04.172] Browser WARN    [2025-12-30T10:30:33.505Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a298a transport errored. Name: undefined Message: undefined
-[16:37:07.914] Browser WARN    [2025-12-30T10:30:37.246Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fdc transport errored. Name: undefined Message: undefined
-[16:37:11.563] Browser WARN    [2025-12-30T10:30:40.880Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a298b transport errored. Name: undefined Message: undefined
-[16:37:13.512] Browser WARN    [2025-12-30T10:30:42.846Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fdd transport errored. Name: undefined Message: undefined
-[16:37:19.826] Browser WARN    [2025-12-30T10:30:49.153Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a298c transport errored. Name: undefined Message: undefined
-[16:37:22.995] Browser WARN    [2025-12-30T10:30:52.328Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fde transport errored. Name: undefined Message: undefined
-[16:54:04.153] Browser WARN    [2025-12-30T10:47:33.464Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a298d transport errored. Name: undefined Message: undefined
-[17:18:31.747] Browser WARN    [2025-12-30T11:12:01.026Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a298e transport errored. Name: undefined Message: undefined
-[17:25:47.124] Browser WARN    [2025-12-30T11:19:16.160Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fdf transport errored. Name: undefined Message: undefined
-[17:27:02.226] Browser WARN    [2025-12-30T11:20:31.249Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2990 transport errored. Name: undefined Message: undefined
-[17:27:02.227] Browser WARN    [2025-12-30T11:20:31.293Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2991 transport errored. Name: undefined Message: undefined
-[17:27:02.232] Browser WARN    [2025-12-30T11:20:31.241Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe1 transport errored. Name: undefined Message: undefined
-[17:27:02.233] Browser WARN    [2025-12-30T11:20:31.303Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe2 transport errored. Name: undefined Message: undefined
-[17:27:03.263] Browser WARN    [2025-12-30T11:20:32.327Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe3 transport errored. Name: undefined Message: undefined
-[17:27:03.356] Browser WARN    [2025-12-30T11:20:32.429Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2992 transport errored. Name: undefined Message: undefined
-[17:27:04.465] Browser WARN    [2025-12-30T11:20:33.540Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe4 transport errored. Name: undefined Message: undefined
-[17:27:05.427] Browser WARN    [2025-12-30T11:20:34.503Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2993 transport errored. Name: undefined Message: undefined
-[17:27:07.149] Browser WARN    [2025-12-30T11:20:36.220Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe5 transport errored. Name: undefined Message: undefined
-[17:31:42.206] Browser WARN    [2025-12-30T11:25:11.278Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe6 transport errored. Name: undefined Message: undefined
-[17:40:45.437] Browser WARN    [2025-12-30T11:34:14.485Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe7 transport errored. Name: undefined Message: undefined
-[17:49:50.448] Browser WARN    [2025-12-30T11:43:19.440Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe8 transport errored. Name: undefined Message: undefined
-[17:54:21.576] Browser WARN    [2025-12-30T11:47:50.548Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2994 transport errored. Name: undefined Message: undefined
-[17:58:53.518] Browser WARN    [2025-12-30T11:52:22.456Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fe9 transport errored. Name: undefined Message: undefined
-[17:59:39.441] Browser WARN    [2025-12-30T11:53:08.220Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2996 transport errored. Name: undefined Message: undefined
-[17:59:39.442] Browser WARN    [2025-12-30T11:53:08.259Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2997 transport errored. Name: undefined Message: undefined
-[17:59:39.442] Browser WARN    [2025-12-30T11:53:08.275Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463feb transport errored. Name: undefined Message: undefined
-[17:59:39.442] Browser WARN    [2025-12-30T11:53:08.299Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fec transport errored. Name: undefined Message: undefined
-[17:59:40.015] Browser WARN    [2025-12-30T11:53:08.989Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fed transport errored. Name: undefined Message: undefined
-[17:59:40.023] Browser WARN    [2025-12-30T11:53:08.995Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2998 transport errored. Name: undefined Message: undefined
-[17:59:40.974] Browser WARN    [2025-12-30T11:53:09.949Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fee transport errored. Name: undefined Message: undefined
-[17:59:41.236] Browser WARN    [2025-12-30T11:53:10.212Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a2999 transport errored. Name: undefined Message: undefined
-[18:01:53.281] Browser WARN    [2025-12-30T11:55:22.237Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a299a transport errored. Name: undefined Message: undefined
-[18:01:53.677] Browser WARN    [2025-12-30T11:55:22.648Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fef transport errored. Name: undefined Message: undefined
-[18:01:57.135] Browser WARN    [2025-12-30T11:55:26.101Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff0 transport errored. Name: undefined Message: undefined
-[18:01:58.500] Browser WARN    [2025-12-30T11:55:27.040Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a299b transport errored. Name: undefined Message: undefined
-[18:03:18.473] Browser WARN    [2025-12-30T11:56:47.406Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff2 transport errored. Name: undefined Message: undefined
-[18:03:18.474] Browser WARN    [2025-12-30T11:56:47.449Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff3 transport errored. Name: undefined Message: undefined
-[18:03:18.500] Browser WARN    [2025-12-30T11:56:47.459Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a299d transport errored. Name: undefined Message: undefined
-[18:03:18.501] Browser WARN    [2025-12-30T11:56:47.477Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a299e transport errored. Name: undefined Message: undefined
-[18:03:19.695] Browser WARN    [2025-12-30T11:56:48.669Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a299f transport errored. Name: undefined Message: undefined
-[18:03:19.882] Browser WARN    [2025-12-30T11:56:48.858Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff4 transport errored. Name: undefined Message: undefined
-[18:03:20.604] Browser WARN    [2025-12-30T11:56:49.579Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a0 transport errored. Name: undefined Message: undefined
-[18:03:21.992] Browser WARN    [2025-12-30T11:56:50.971Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff5 transport errored. Name: undefined Message: undefined
-[18:04:55.449] Browser WARN    [2025-12-30T11:58:24.384Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff7 transport errored. Name: undefined Message: undefined
-[18:04:55.456] Browser WARN    [2025-12-30T11:58:24.419Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff8 transport errored. Name: undefined Message: undefined
-[18:04:55.552] Browser WARN    [2025-12-30T11:58:24.401Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a2 transport errored. Name: undefined Message: undefined
-[18:04:55.553] Browser WARN    [2025-12-30T11:58:24.522Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a3 transport errored. Name: undefined Message: undefined
-[18:04:56.125] Browser WARN    [2025-12-30T11:58:25.098Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a4 transport errored. Name: undefined Message: undefined
-[18:04:56.454] Browser WARN    [2025-12-30T11:58:25.426Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ff9 transport errored. Name: undefined Message: undefined
-[18:04:58.142] Browser WARN    [2025-12-30T11:58:27.115Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a5 transport errored. Name: undefined Message: undefined
-[18:04:58.311] Browser WARN    [2025-12-30T11:58:27.285Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ffa transport errored. Name: undefined Message: undefined
-[18:04:59.984] Browser WARN    [2025-12-30T11:58:28.958Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ffb transport errored. Name: undefined Message: undefined
-[18:05:00.279] Browser WARN    [2025-12-30T11:58:29.252Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a6 transport errored. Name: undefined Message: undefined
-[18:06:33.253] Browser WARN    [2025-12-30T12:00:02.139Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a8 transport errored. Name: undefined Message: undefined
-[18:06:33.254] Browser WARN    [2025-12-30T12:00:02.218Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29a9 transport errored. Name: undefined Message: undefined
-[18:06:33.274] Browser WARN    [2025-12-30T12:00:02.218Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ffd transport errored. Name: undefined Message: undefined
-[18:06:33.275] Browser WARN    [2025-12-30T12:00:02.243Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463ffe transport errored. Name: undefined Message: undefined
-[18:06:34.240] Browser WARN    [2025-12-30T12:00:03.209Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f463fff transport errored. Name: undefined Message: undefined
-[18:06:34.553] Browser WARN    [2025-12-30T12:00:03.521Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29aa transport errored. Name: undefined Message: undefined
-[18:06:35.618] Browser WARN    [2025-12-30T12:00:04.580Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ab transport errored. Name: undefined Message: undefined
-[18:06:35.926] Browser WARN    [2025-12-30T12:00:04.897Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464000 transport errored. Name: undefined Message: undefined
-[18:06:38.353] Browser WARN    [2025-12-30T12:00:07.322Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ac transport errored. Name: undefined Message: undefined
-[18:06:38.746] Browser WARN    [2025-12-30T12:00:07.705Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464001 transport errored. Name: undefined Message: undefined
-[18:06:41.328] Browser WARN    [2025-12-30T12:00:10.155Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464002 transport errored. Name: undefined Message: undefined
-[18:06:41.374] Browser WARN    [2025-12-30T12:00:10.155Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ad transport errored. Name: undefined Message: undefined
-[18:06:41.381] Browser WARN    [2025-12-30T12:00:10.213Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ae transport errored. Name: undefined Message: undefined
-[18:08:21.581] Browser WARN    [2025-12-30T12:01:50.458Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b0 transport errored. Name: undefined Message: undefined
-[18:08:21.588] Browser WARN    [2025-12-30T12:01:50.502Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b1 transport errored. Name: undefined Message: undefined
-[18:08:21.594] Browser WARN    [2025-12-30T12:01:50.484Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464004 transport errored. Name: undefined Message: undefined
-[18:08:21.594] Browser WARN    [2025-12-30T12:01:50.513Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464005 transport errored. Name: undefined Message: undefined
-[18:08:22.343] Browser WARN    [2025-12-30T12:01:51.306Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b2 transport errored. Name: undefined Message: undefined
-[18:08:22.826] Browser WARN    [2025-12-30T12:01:51.792Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464006 transport errored. Name: undefined Message: undefined
-[18:08:23.799] Browser WARN    [2025-12-30T12:01:52.763Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b3 transport errored. Name: undefined Message: undefined
-[18:08:24.583] Browser WARN    [2025-12-30T12:01:53.548Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464007 transport errored. Name: undefined Message: undefined
-[18:08:25.610] Browser WARN    [2025-12-30T12:01:54.567Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b4 transport errored. Name: undefined Message: undefined
-[18:12:32.381] Browser WARN    [2025-12-30T12:06:01.287Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b6 transport errored. Name: undefined Message: undefined
-[18:12:32.383] Browser WARN    [2025-12-30T12:06:01.314Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b7 transport errored. Name: undefined Message: undefined
-[18:12:32.387] Browser WARN    [2025-12-30T12:06:01.290Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464009 transport errored. Name: undefined Message: undefined
-[18:12:32.387] Browser WARN    [2025-12-30T12:06:01.314Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46400a transport errored. Name: undefined Message: undefined
-[18:12:33.689] Browser WARN    [2025-12-30T12:06:02.651Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46400b transport errored. Name: undefined Message: undefined
-[18:12:33.751] Browser WARN    [2025-12-30T12:06:02.715Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b8 transport errored. Name: undefined Message: undefined
-[18:12:35.105] Browser WARN    [2025-12-30T12:06:04.070Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46400c transport errored. Name: undefined Message: undefined
-[18:12:35.412] Browser WARN    [2025-12-30T12:06:04.377Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29b9 transport errored. Name: undefined Message: undefined
-[18:12:36.547] Browser WARN    [2025-12-30T12:06:05.511Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46400d transport errored. Name: undefined Message: undefined
-[18:12:36.986] Browser WARN    [2025-12-30T12:06:05.954Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ba transport errored. Name: undefined Message: undefined
-[18:12:59.583] Browser WARN    [2025-12-30T12:06:28.534Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46400f transport errored. Name: undefined Message: undefined
-[18:12:59.584] Browser WARN    [2025-12-30T12:06:28.555Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464010 transport errored. Name: undefined Message: undefined
-[18:12:59.671] Browser WARN    [2025-12-30T12:06:28.637Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29bc transport errored. Name: undefined Message: undefined
-[18:12:59.671] Browser WARN    [2025-12-30T12:06:28.645Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29bd transport errored. Name: undefined Message: undefined
-[18:13:00.318] Browser WARN    [2025-12-30T12:06:29.292Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464011 transport errored. Name: undefined Message: undefined
-[18:13:00.518] Browser WARN    [2025-12-30T12:06:29.492Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29be transport errored. Name: undefined Message: undefined
-[18:13:01.391] Browser WARN    [2025-12-30T12:06:30.366Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464012 transport errored. Name: undefined Message: undefined
-[18:13:01.777] Browser WARN    [2025-12-30T12:06:30.751Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29bf transport errored. Name: undefined Message: undefined
-[18:13:02.928] Browser WARN    [2025-12-30T12:06:31.896Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c0 transport errored. Name: undefined Message: undefined
-[18:13:04.612] Browser WARN    [2025-12-30T12:06:33.587Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464013 transport errored. Name: undefined Message: undefined
-[18:14:26.465] Browser WARN    [2025-12-30T12:07:55.406Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c3 transport errored. Name: undefined Message: undefined
-[18:14:26.466] Browser WARN    [2025-12-30T12:07:55.433Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c4 transport errored. Name: undefined Message: undefined
-[18:14:26.468] Browser WARN    [2025-12-30T12:07:55.410Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464015 transport errored. Name: undefined Message: undefined
-[18:14:26.468] Browser WARN    [2025-12-30T12:07:55.436Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464016 transport errored. Name: undefined Message: undefined
-[18:14:27.050] Browser WARN    [2025-12-30T12:07:56.026Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464017 transport errored. Name: undefined Message: undefined
-[18:14:27.822] Browser WARN    [2025-12-30T12:07:56.798Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c5 transport errored. Name: undefined Message: undefined
-[18:14:28.439] Browser WARN    [2025-12-30T12:07:57.414Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464018 transport errored. Name: undefined Message: undefined
-[18:14:29.635] Browser WARN    [2025-12-30T12:07:58.610Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464019 transport errored. Name: undefined Message: undefined
-[18:14:30.024] Browser WARN    [2025-12-30T12:07:58.999Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c6 transport errored. Name: undefined Message: undefined
-[18:14:31.344] Browser WARN    [2025-12-30T12:08:00.321Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c7 transport errored. Name: undefined Message: undefined
-[18:14:32.679] Browser WARN    [2025-12-30T12:08:01.653Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46401a transport errored. Name: undefined Message: undefined
-[18:14:33.509] Browser WARN    [2025-12-30T12:08:02.484Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c8 transport errored. Name: undefined Message: undefined
-[18:14:36.680] Browser WARN    [2025-12-30T12:08:05.656Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46401b transport errored. Name: undefined Message: undefined
-[18:14:36.987] Browser WARN    [2025-12-30T12:08:05.962Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29c9 transport errored. Name: undefined Message: undefined
-[18:14:41.076] Browser WARN    [2025-12-30T12:08:10.049Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46401c transport errored. Name: undefined Message: undefined
-[18:14:43.326] Browser WARN    [2025-12-30T12:08:12.302Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ca transport errored. Name: undefined Message: undefined
-[18:14:46.845] Browser WARN    [2025-12-30T12:08:15.821Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46401d transport errored. Name: undefined Message: undefined
-[18:14:51.667] Browser WARN    [2025-12-30T12:08:20.643Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29cb transport errored. Name: undefined Message: undefined
-[18:15:02.559] Browser WARN    [2025-12-30T12:08:31.526Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46401e transport errored. Name: undefined Message: undefined
-[18:15:55.701] Browser WARN    [2025-12-30T12:09:24.671Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29cc transport errored. Name: undefined Message: undefined
-[18:16:34.432] Browser WARN    [2025-12-30T12:10:03.326Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ce transport errored. Name: undefined Message: undefined
-[18:16:34.433] Browser WARN    [2025-12-30T12:10:03.357Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29cf transport errored. Name: undefined Message: undefined
-[18:16:34.475] Browser WARN    [2025-12-30T12:10:03.326Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464020 transport errored. Name: undefined Message: undefined
-[18:16:34.475] Browser WARN    [2025-12-30T12:10:03.361Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464021 transport errored. Name: undefined Message: undefined
-[18:16:35.752] Browser WARN    [2025-12-30T12:10:04.640Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464022 transport errored. Name: undefined Message: undefined
-[18:16:35.754] Browser WARN    [2025-12-30T12:10:04.703Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d0 transport errored. Name: undefined Message: undefined
-[18:16:37.314] Browser WARN    [2025-12-30T12:10:06.282Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d1 transport errored. Name: undefined Message: undefined
-[18:16:37.325] Browser WARN    [2025-12-30T12:10:06.297Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464023 transport errored. Name: undefined Message: undefined
-[18:16:39.943] Browser WARN    [2025-12-30T12:10:08.914Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464024 transport errored. Name: undefined Message: undefined
-[18:16:40.044] Browser WARN    [2025-12-30T12:10:09.014Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d2 transport errored. Name: undefined Message: undefined
-[18:17:27.313] Browser WARN    [2025-12-30T12:10:56.282Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d3 transport errored. Name: undefined Message: undefined
-[18:17:27.577] Browser WARN    [2025-12-30T12:10:56.547Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464025 transport errored. Name: undefined Message: undefined
-[18:17:32.822] Browser WARN    [2025-12-30T12:11:01.788Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464026 transport errored. Name: undefined Message: undefined
-[18:17:34.524] Browser WARN    [2025-12-30T12:11:03.431Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d4 transport errored. Name: undefined Message: undefined
-[18:26:15.880] Browser WARN    [2025-12-30T12:19:44.450Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464027 transport errored. Name: undefined Message: undefined
-[18:26:46.223] Browser WARN    [2025-12-30T12:20:15.161Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d5 transport errored. Name: undefined Message: undefined
-[18:43:38.567] Browser WARN    [2025-12-30T12:37:07.469Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464029 transport errored. Name: undefined Message: undefined
-[18:44:15.454] Browser WARN    [2025-12-30T12:37:43.484Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d6 transport errored. Name: undefined Message: undefined
-[18:55:27.948] Browser WARN    [2025-12-30T12:48:56.810Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46402b transport errored. Name: undefined Message: undefined
-[18:55:28.312] Browser WARN    [2025-12-30T12:48:57.093Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46402c transport errored. Name: undefined Message: undefined
-[18:55:29.408] Browser WARN    [2025-12-30T12:48:58.144Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46402d transport errored. Name: undefined Message: undefined
-[18:55:30.063] Browser WARN    [2025-12-30T12:48:58.984Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46402e transport errored. Name: undefined Message: undefined
-[18:55:31.467] Browser WARN    [2025-12-30T12:49:00.382Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46402f transport errored. Name: undefined Message: undefined
-[18:55:34.834] Browser WARN    [2025-12-30T12:49:03.612Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464030 transport errored. Name: undefined Message: undefined
-[18:57:23.478] Browser WARN    [2025-12-30T12:50:52.171Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29d9 transport errored. Name: undefined Message: undefined
-[18:57:23.482] Browser WARN    [2025-12-30T12:50:52.279Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29da transport errored. Name: undefined Message: undefined
-[18:57:23.509] Browser WARN    [2025-12-30T12:50:52.364Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464032 transport errored. Name: undefined Message: undefined
-[18:57:23.509] Browser WARN    [2025-12-30T12:50:52.416Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464033 transport errored. Name: undefined Message: undefined
-[18:57:24.132] Browser WARN    [2025-12-30T12:50:52.996Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464034 transport errored. Name: undefined Message: undefined
-[18:57:24.548] Browser WARN    [2025-12-30T12:50:53.456Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29db transport errored. Name: undefined Message: undefined
-[18:57:25.472] Browser WARN    [2025-12-30T12:50:54.378Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29dc transport errored. Name: undefined Message: undefined
-[18:57:25.867] Browser WARN    [2025-12-30T12:50:54.772Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464035 transport errored. Name: undefined Message: undefined
-[18:57:27.364] Browser WARN    [2025-12-30T12:50:56.270Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464036 transport errored. Name: undefined Message: undefined
-[18:57:27.615] Browser WARN    [2025-12-30T12:50:56.521Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29dd transport errored. Name: undefined Message: undefined
-[18:58:39.600] Browser WARN    [2025-12-30T12:52:08.466Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29df transport errored. Name: undefined Message: undefined
-[18:58:39.603] Browser WARN    [2025-12-30T12:52:08.485Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e0 transport errored. Name: undefined Message: undefined
-[18:58:39.816] Browser WARN    [2025-12-30T12:52:08.683Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464038 transport errored. Name: undefined Message: undefined
-[18:58:39.817] Browser WARN    [2025-12-30T12:52:08.717Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464039 transport errored. Name: undefined Message: undefined
-[18:58:40.624] Browser WARN    [2025-12-30T12:52:09.525Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e1 transport errored. Name: undefined Message: undefined
-[18:58:40.663] Browser WARN    [2025-12-30T12:52:09.563Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46403a transport errored. Name: undefined Message: undefined
-[18:58:42.100] Browser WARN    [2025-12-30T12:52:11.004Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e2 transport errored. Name: undefined Message: undefined
-[18:58:42.650] Browser WARN    [2025-12-30T12:52:11.543Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46403b transport errored. Name: undefined Message: undefined
-[18:58:45.235] Browser WARN    [2025-12-30T12:52:14.110Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46403c transport errored. Name: undefined Message: undefined
-[18:58:45.379] Browser WARN    [2025-12-30T12:52:14.281Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e3 transport errored. Name: undefined Message: undefined
-[18:58:47.450] Browser WARN    [2025-12-30T12:52:16.343Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e4 transport errored. Name: undefined Message: undefined
-[18:59:31.178] Browser WARN    [2025-12-30T12:52:59.940Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e6 transport errored. Name: undefined Message: undefined
-[18:59:31.179] Browser WARN    [2025-12-30T12:53:00.040Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e7 transport errored. Name: undefined Message: undefined
-[18:59:31.219] Browser WARN    [2025-12-30T12:53:00.013Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f46403f transport errored. Name: undefined Message: undefined
-[18:59:31.219] Browser WARN    [2025-12-30T12:53:00.048Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464040 transport errored. Name: undefined Message: undefined
-[18:59:31.759] Browser WARN    [2025-12-30T12:53:00.617Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e8 transport errored. Name: undefined Message: undefined
-[18:59:31.854] Browser WARN    [2025-12-30T12:53:00.700Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464041 transport errored. Name: undefined Message: undefined
-[18:59:32.497] Browser WARN    [2025-12-30T12:53:01.398Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29e9 transport errored. Name: undefined Message: undefined
-[18:59:33.789] Browser WARN    [2025-12-30T12:53:02.689Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464042 transport errored. Name: undefined Message: undefined
-[18:59:34.878] Browser WARN    [2025-12-30T12:53:03.779Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29ea transport errored. Name: undefined Message: undefined
-[18:59:35.583] Browser WARN    [2025-12-30T12:53:04.483Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464043 transport errored. Name: undefined Message: undefined
-[18:59:37.389] Browser WARN    [2025-12-30T12:53:06.286Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x500a29eb transport errored. Name: undefined Message: undefined
-[18:59:37.681] Browser WARN    [2025-12-30T12:53:06.568Z]  @firebase/firestore: Firestore (12.4.0): WebChannelConnection RPC 'Listen' stream 0x6f464044 transport errored. Name: undefined Message: undefined
-[19:25:54.094] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767100763060}
-[19:25:56.898] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767100765879}
-[19:25:58.312] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767100767286}
-[19:40:05.067] Server  LOG      ✓ Compiled in 2.8s
-[19:40:05.182] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[19:40:05.186] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[19:40:05.196] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[19:40:05.215] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[19:40:05.487] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[19:40:05.489] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./lib/settings-context.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[19:40:07.356] Server  LOG      ✓ Compiled in 41ms
-[19:40:17.298] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[19:40:17.935] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[19:40:18.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[19:40:22.061] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[19:40:22.063] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[19:40:22.064] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101630701}
-[19:40:23.075] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[19:40:23.075] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/profile","route":"/profile"}
-[19:40:23.075] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/profile color: rgb(120, 120, 120) color: inherit {"dp":"/profile","o":"http://localhost:3000/profile","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101631886}
-[19:40:23.113] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[19:40:23.113] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/settings","route":"/settings"}
-[19:40:23.114] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101632041}
-[19:40:31.602] Server  LOG      ✓ Compiled in 1067ms
-[19:40:35.147] Server  LOG      ✓ Compiled in 15ms
-[19:41:41.492] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101710378}
-[19:41:43.441] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101712370}
-[19:41:44.427] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101713357}
-[19:41:50.643] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[19:41:50.749] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[19:41:50.749] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[19:41:50.749] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101719681}
-[19:42:47.635] Server  LOG      ✓ Compiled in 2.1s
-[19:43:38.200] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101827081}
-[19:45:20.516] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[19:45:20.687] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[19:45:20.687] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/login","route":"/login"}
-[19:45:20.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101929612}
-[19:45:24.849] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/register color: rgb(120, 120, 120) color: inherit {"dp":"/register","o":"http://localhost:3000/register","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101933774}
-[19:45:28.953] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/login color: rgb(120, 120, 120) color: inherit {"dp":"/login","o":"http://localhost:3000/login","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767101937877}
-[19:48:54.326] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/groups color: rgb(120, 120, 120) color: inherit {"dp":"/groups","o":"http://localhost:3000/groups","sdkn":"@vercel/analytics/next","sdkv":"1.5.0","sv":"0.1.3","ts":1767102141970}
+For more information, see https://radix-ui.com/primitives/docs/components/dialog
+[07:55:15.616] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:27.314] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:27.318] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:44.601] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:44.603] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:45.726] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:45.726] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:49.416] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[07:55:49.416] Browser WARN    Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
