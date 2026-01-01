@@ -1,3 +1,0 @@
-module.exports=[78855,a=>{"use strict";var b=a.i(87924),c=a.i(18740);a.i(69387);var d=a.i(60574),e=a.i(72131);function f(){return(0,e.useEffect)(()=>{!async function(){console.log("Groups:",(await (0,d.getDocs)((0,d.collection)(c.db,"groups"))).docs.map(a=>a.id))}()},[]),(0,b.jsx)("div",{children:"✅ Firebase bağlantısı test ediliyor... Console’a bak!"})}a.s(["default",()=>f])}];
-
-//# sourceMappingURL=app_test_page_tsx_bc0b45ea._.js.map
