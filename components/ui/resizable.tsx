@@ -2,45 +2,47 @@
 
 import * as React from 'react'
 import { GripVerticalIcon } from 'lucide-react'
-import * as ResizablePrimitive from 'react-resizable-panels'
-
-type PanelGroupType = typeof ResizablePrimitive.PanelGroup
-type PanelType = typeof ResizablePrimitive.Panel  
-type PanelResizeHandleType = typeof ResizablePrimitive.PanelResizeHandle
 
 import { cn } from '@/lib/utils'
 
+// Note: This component has pnpm compatibility issues and is currently not used in the project.
+// If you need resizable panels, consider using react-resizable-panels directly or an alternative library.
+
 function ResizablePanelGroup({
   className,
+  children,
   ...props
-}: React.ComponentProps<PanelGroupType>) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <ResizablePrimitive.PanelGroup
+    <div
       data-slot="resizable-panel-group"
       className={cn(
         'flex h-full w-full data-[panel-group-direction=vertical]:flex-col',
         className,
       )}
       {...props}
-    />
+    >
+      {children}
+    </div>
   )
 }
 
 function ResizablePanel({
+  children,
   ...props
-}: React.ComponentProps<PanelType>) {
-  return <ResizablePrimitive.Panel data-slot="resizable-panel" {...props} />
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return <div data-slot="resizable-panel" {...props}>{children}</div>
 }
 
 function ResizableHandle({
   withHandle,
   className,
   ...props
-}: React.ComponentProps<PanelResizeHandleType> & {
+}: React.HTMLAttributes<HTMLDivElement> & {
   withHandle?: boolean
 }) {
   return (
-    <ResizablePrimitive.PanelResizeHandle
+    <div
       data-slot="resizable-handle"
       className={cn(
         'bg-border focus-visible:ring-ring relative flex w-px items-center justify-center after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:ring-1 focus-visible:ring-offset-1 focus-visible:outline-hidden data-[panel-group-direction=vertical]:h-px data-[panel-group-direction=vertical]:w-full data-[panel-group-direction=vertical]:after:left-0 data-[panel-group-direction=vertical]:after:h-1 data-[panel-group-direction=vertical]:after:w-full data-[panel-group-direction=vertical]:after:translate-x-0 data-[panel-group-direction=vertical]:after:-translate-y-1/2 [&[data-panel-group-direction=vertical]>div]:rotate-90',
@@ -53,7 +55,7 @@ function ResizableHandle({
           <GripVerticalIcon className="size-2.5" />
         </div>
       )}
-    </ResizablePrimitive.PanelResizeHandle>
+    </div>
   )
 }
 
