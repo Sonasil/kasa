@@ -968,6 +968,25 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   }
 
   const memberIds = group?.memberIds || []
+  const memberIdsKey = JSON.stringify(group?.memberIds || [])
+
+  // Auto-select all group members when expense dialog opens
+  useEffect(() => {
+    if (expenseDialogOpen && memberIds.length > 0) {
+      // Dialog açıldığında tüm üyeleri seç
+      setSelectedParticipants(memberIds)
+    } else if (!expenseDialogOpen) {
+      // Dialog kapandığında state'i temizle
+      setSelectedParticipants([])
+      setExpenseTitle("")
+      setExpenseAmount("")
+      setExpenseCategory("")
+      setCategoryMode("select")
+      setSplitMode("equal")
+      setCustomSplitAmounts({})
+      setReceiptFile(null)
+    }
+  }, [expenseDialogOpen, memberIdsKey])
 
   useEffect(() => {
     let cancelled = false
@@ -1003,7 +1022,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     return () => {
       cancelled = true
     }
-  }, [memberIds])
+  }, [memberIdsKey])
 
   const getUserName = (uid: string) => {
     return userProfiles[uid]?.displayName || userProfiles[uid]?.email || uid.slice(0, 8)

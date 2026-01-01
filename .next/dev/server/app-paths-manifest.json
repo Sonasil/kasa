@@ -2,6 +2,5 @@
   "/groups/[id]/page": "app/groups/[id]/page.js",
   "/groups/page": "app/groups/page.js",
   "/login/page": "app/login/page.js",
-  "/page": "app/page.js",
-  "/register/page": "app/register/page.js"
+  "/page": "app/page.js"
 }
