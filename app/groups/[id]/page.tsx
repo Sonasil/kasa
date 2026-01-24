@@ -17,7 +17,8 @@ import {
   limit,
   deleteDoc, // Added deleteDoc
 } from "firebase/firestore"
-import { db ,auth } from "@/lib/firebase"
+import { db, auth } from "@/lib/firebase"
+import { useGroups } from "@/lib/groups-context"
 
 import { useEffect, useState, useRef, useMemo, type FormEvent } from "react"
 import { useParams, useRouter } from "next/navigation"
@@ -155,7 +156,7 @@ export default function GroupDetailPage() {
   // Helper to translate activity titles (handles both legacy hardcoded English and translation keys)
   const translateActivityTitle = (rawTitle: string | undefined): string => {
     if (!rawTitle) return ""
-    
+
     // Legacy mapping for old hardcoded English titles in database
     const LEGACY_TITLE_MAP: Record<string, string> = {
       "Payment received": "paymentReceived",
@@ -173,10 +174,12 @@ export default function GroupDetailPage() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [autoScroll, setAutoScroll] = useState(true)
 
-  const [loading, setLoading] = useState(true)
-  const [group, setGroup] = useState<GroupDoc | null>(null)
+  const { groups: contextGroups, loading: groupsLoading } = useGroups()
+  const group = useMemo(() => contextGroups.find(g => g.id === groupId), [contextGroups, groupId])
+
   const [feedItems, setFeedItems] = useState<FeedItem[]>([])
-const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({})
+
+  const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({})
   const [messageText, setMessageText] = useState("")
   const [sending, setSending] = useState(false)
 
@@ -200,7 +203,6 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [selectedExpense, setSelectedExpense] = useState<FeedItem | null>(null)
   const [receiptViewerOpen, setReceiptViewerOpen] = useState(false)
 
-  // ✅ Edit expense dialog states
   const [editExpenseOpen, setEditExpenseOpen] = useState(false)
   const [editingExpense, setEditingExpense] = useState(false)
   const [editExpenseId, setEditExpenseId] = useState<string | null>(null)
@@ -223,23 +225,6 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const [paymentToggleLoading, setPaymentToggleLoading] = useState<Record<string, boolean>>({})
 
   const currentUid = auth.currentUser?.uid ?? ""
-
-  useEffect(() => {
-    if (!groupId) return
-  
-    const unsub = onSnapshot(doc(db, "groups", groupId), (snap) => {
-      if (!snap.exists()) {
-        setGroup(null)
-        setLoading(false)
-        return
-      }
-  
-      setGroup(snap.data() as GroupDoc)
-      setLoading(false)
-    })
-  
-    return () => unsub()
-  }, [groupId])
 
   useEffect(() => {
     if (!groupId) return
@@ -274,7 +259,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         .filter((item) => item.type === "message" || item.type === "expense" || item.type === "settlement")
 
       setFeedItems(items)
-      
+
       // Sync paymentStatus state with feed items
       const newPaymentStatus: Record<string, Record<string, boolean>> = {}
       items.forEach(item => {
@@ -491,7 +476,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     }
   }
 
-  
+
   const handleGenerateInviteCode = async () => {
     if (!currentUid || !groupId) {
       toast({
@@ -501,7 +486,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
       })
       return
     }
-  
+
     try {
       let code = ""
       const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -515,7 +500,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         createdBy: currentUid,
         createdAt: serverTimestamp(),
       })
-  
+
       setInviteCode(code)
       toast({
         title: t("inviteCodeGenerated"),
@@ -622,41 +607,41 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
   const handleLeaveGroup = async () => {
     const uid = currentUid
     if (!uid || !group) return
-  
+
     try {
       await runTransaction(db, async (tx) => {
         const ref = doc(db, "groups", groupId)
         const snap = await tx.get(ref)
         if (!snap.exists()) return
-  
+
         const data = snap.data() as GroupDoc
         const memberIds = Array.isArray(data.memberIds) ? data.memberIds : []
-  
+
         if (!memberIds.includes(uid)) return
-  
+
         const remaining = memberIds.filter((m) => m !== uid)
         const isOwner = data.createdBy === uid
-  
+
         // Owner + başka üyeler varsa çıkamaz
         if (isOwner && remaining.length > 0) {
           throw new Error("OWNER_MUST_TRANSFER")
         }
-  
+
         // Son kişi çıkıyorsa → grup silinir
         if (remaining.length === 0) {
           tx.delete(ref)
           return
         }
-  
+
         // Normal leave
         tx.update(ref, { memberIds: remaining })
       })
-  
+
       toast({
         title: t("leftGroup"),
         description: `You have left ${group.name}`,
       })
-  
+
       setLeaveGroupDialog(false)
       router.push("/groups")
     } catch (e: any) {
@@ -670,7 +655,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         setMemberDialogOpen(true)
         return
       }
-  
+
       console.error(e)
       toast({
         title: t("error"),
@@ -748,7 +733,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     // Optimistic update for UI responsiveness
     const currentStatus = paymentStatus[expenseId]?.[userId] || false
     const newStatus = !currentStatus
-    
+
     setPaymentStatus((prev) => ({
       ...prev,
       [expenseId]: {
@@ -771,12 +756,12 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         const groupSnap = await tx.get(groupRef)
         if (!groupSnap.exists()) throw new Error("Group not found")
         const groupData = groupSnap.data() as any
-        
+
         // 3. Validation
         if (expenseData.type !== "expense") throw new Error("Not an expense")
         const payerUid = expenseData.payerUid
         const splitAmount = expenseData.splitCents?.[userId] || 0
-        
+
         if (!payerUid || !splitAmount) return // Should not happen for valid expense
 
         // 4. Calculate Balance Updates
@@ -785,14 +770,14 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
         //   - Debtor balance increases (+), Payer balance decreases (-)
         // If unmarking (newStatus === false):
         //   - Reverse: Debtor balance decreases (-), Payer balance increases (+)
-        
+
         const modifier = newStatus ? 1 : -1
         const currentBalances = groupData.balances || {}
         const nextBalances = { ...currentBalances }
-        
+
         // Update Debtor Balance (userId)
         nextBalances[userId] = (nextBalances[userId] || 0) + (splitAmount * modifier)
-        
+
         // Update Payer Balance (payerUid)
         nextBalances[payerUid] = (nextBalances[payerUid] || 0) - (splitAmount * modifier)
 
@@ -1010,7 +995,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 },
               ] as const
             }
-          } catch {}
+          } catch { }
           return [uid, { displayName: "", email: "", photoURL: "" }] as const
         }),
       )
@@ -1028,7 +1013,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
     return userProfiles[uid]?.displayName || userProfiles[uid]?.email || uid.slice(0, 8)
   }
 
-  if (loading) {
+  if (groupsLoading && !group) {
     return (
       <div className="flex h-screen flex-col">
         <div className="border-b p-4">
@@ -1074,8 +1059,8 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 <p className="text-xs text-muted-foreground sm:text-sm">{memberIds.length} members</p>
               </div>
             </div>
-            
-            
+
+
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -1090,20 +1075,18 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 <DialogHeader className="pb-2">
                   <DialogTitle className="text-xl sm:text-2xl font-bold">{t("groupBalance")}</DialogTitle>
                 </DialogHeader>
-                
+
                 {/* Your Balance Card - Clean & Minimal */}
                 <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-5 sm:p-5 border border-slate-200 dark:border-slate-700/50 mb-5">
                   <div className="flex items-center gap-3.5 sm:gap-4">
-                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0 ${
-                      myBalance >= 0 
-                        ? "bg-green-100 dark:bg-green-900/30" 
-                        : "bg-red-100 dark:bg-red-900/30"
-                    }`}>
-                      <Wallet className={`h-6 w-6 sm:h-7 sm:w-7 ${
-                        myBalance >= 0
-                          ? "text-green-600 dark:text-green-500"
-                          : "text-red-600 dark:text-red-500"
-                      }`} />
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0 ${myBalance >= 0
+                      ? "bg-green-100 dark:bg-green-900/30"
+                      : "bg-red-100 dark:bg-red-900/30"
+                      }`}>
+                      <Wallet className={`h-6 w-6 sm:h-7 sm:w-7 ${myBalance >= 0
+                        ? "text-green-600 dark:text-green-500"
+                        : "text-red-600 dark:text-red-500"
+                        }`} />
                     </div>
                     <div className="flex-1 min-w-0 pl-1 sm:pl-2">
                       <p className={`text-2xl sm:text-3xl md:text-4xl font-bold leading-none mb-1.5 ${myBalance >= 0 ? "text-green-600 dark:text-green-400 dark:[text-shadow:0_0_12px_rgba(34,197,94,0.3)]" : "text-red-600 dark:text-red-400 dark:[text-shadow:0_0_12px_rgba(239,68,68,0.3)]"}`}>
@@ -1154,9 +1137,9 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                                   // Show the other person's avatar (not yours)
                                   const otherPersonId = debt.from === currentUid ? debt.to : debt.from
                                   return userProfiles[otherPersonId]?.photoURL ? (
-                                    <AvatarImage 
-                                      src={userProfiles[otherPersonId]?.photoURL} 
-                                      alt={getUserName(otherPersonId)} 
+                                    <AvatarImage
+                                      src={userProfiles[otherPersonId]?.photoURL}
+                                      alt={getUserName(otherPersonId)}
                                     />
                                   ) : null
                                 })()}
@@ -1179,11 +1162,10 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
 
                             {/* Right: Amount */}
                             <div className="flex-shrink-0">
-                              <p className={`text-xl sm:text-2xl font-bold ${
-                                debt.to === currentUid 
-                                  ? "text-green-600 dark:text-green-400 dark:[text-shadow:0_0_8px_rgba(34,197,94,0.25)]" 
-                                  : "text-red-600 dark:text-red-400 dark:[text-shadow:0_0_8px_rgba(239,68,68,0.25)]"
-                              }`}>
+                              <p className={`text-xl sm:text-2xl font-bold ${debt.to === currentUid
+                                ? "text-green-600 dark:text-green-400 dark:[text-shadow:0_0_8px_rgba(34,197,94,0.25)]"
+                                : "text-red-600 dark:text-red-400 dark:[text-shadow:0_0_8px_rgba(239,68,68,0.25)]"
+                                }`}>
                                 {formatMoney(debt.amount)}
                               </p>
                             </div>
@@ -1200,15 +1182,15 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     <h3 className="text-sm font-bold text-foreground">{t("recordPayment")}</h3>
                     <p className="text-xs text-muted-foreground">{t("trackPayments")}</p>
                   </div>
-                  
+
                   <div className="space-y-3">
                     {/* Member Selection */}
                     <div>
                       <Label className="text-xs font-medium text-muted-foreground mb-1.5 block">
                         {t("member")}
                       </Label>
-                      <Select 
-                        value={paymentMember} 
+                      <Select
+                        value={paymentMember}
                         onValueChange={(value) => {
                           setPaymentMember(value)
                           setPaymentMode("full")
@@ -1305,7 +1287,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                           <Button
                             onClick={handleRecordPayment}
                             disabled={
-                              !paymentMember || 
+                              !paymentMember ||
                               !paymentAmount ||
                               Number(paymentAmount) <= 0 ||
                               recordingPayment
@@ -1405,7 +1387,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     ))}
                   </div>
 
-                    <div className="border-t pt-4">
+                  <div className="border-t pt-4">
                     <Label>{t("inviteCode")}</Label>
                     <p className="text-xs text-muted-foreground mb-2">{t("generateInviteCodeDesc")}</p>
                     {!inviteCode ? (
@@ -1423,7 +1405,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     )}
                   </div>
 
-                  
+
 
                   {isOwner && memberIds.length > 1 && (
                     <div className="border-t pt-4">
@@ -1508,9 +1490,8 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                         <p className="mb-1 px-3 text-xs text-muted-foreground">{getUserName(item.createdBy)}</p>
                       )}
                       <div
-                        className={`rounded-2xl px-3 py-2 sm:px-4 ${
-                          isMe ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
-                        }`}
+                        className={`rounded-2xl px-3 py-2 sm:px-4 ${isMe ? "bg-primary text-primary-foreground" : "bg-muted text-foreground"
+                          }`}
                       >
                         <p className="text-sm sm:text-base whitespace-pre-wrap break-words">{item.text}</p>
                         <p className={`mt-1 text-xs ${isMe ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
@@ -1779,7 +1760,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                   )}
 
                   {/* Receipt Upload */}
-                  <ImageUpload 
+                  <ImageUpload
                     file={receiptFile}
                     onChange={setReceiptFile}
                     label="Fatura (Opsiyonel)"
@@ -1848,7 +1829,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="pt-3 sm:pt-4 border-t border-slate-200 dark:border-slate-700">
                     <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground">
                       {formatMoney(selectedExpense.amountCents || 0)}
@@ -1866,9 +1847,9 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     <div className="flex items-center gap-2.5 sm:gap-3">
                       <Avatar className="h-9 w-9 sm:h-10 sm:w-10">
                         {userProfiles[selectedExpense.payerUid || ""]?.photoURL ? (
-                          <AvatarImage 
-                            src={userProfiles[selectedExpense.payerUid || ""]?.photoURL} 
-                            alt={getUserName(selectedExpense.payerUid || "")} 
+                          <AvatarImage
+                            src={userProfiles[selectedExpense.payerUid || ""]?.photoURL}
+                            alt={getUserName(selectedExpense.payerUid || "")}
                           />
                         ) : null}
                         <AvatarFallback className="bg-slate-700 dark:bg-slate-600 text-white font-medium text-sm">
@@ -1912,9 +1893,8 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                               {userProfiles[uid]?.photoURL ? (
                                 <AvatarImage src={userProfiles[uid]?.photoURL} alt={getUserName(uid)} />
                               ) : null}
-                              <AvatarFallback className={`text-xs sm:text-sm font-medium ${
-                                isPayer ? "bg-slate-700 dark:bg-slate-600 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
-                              }`}>
+                              <AvatarFallback className={`text-xs sm:text-sm font-medium ${isPayer ? "bg-slate-700 dark:bg-slate-600 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300"
+                                }`}>
                                 {getUserName(uid).slice(0, 2).toUpperCase()}
                               </AvatarFallback>
                             </Avatar>
@@ -1931,9 +1911,8 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                               </div>
                             </div>
                             <div className="text-right flex-shrink-0">
-                              <p className={`font-medium text-sm sm:text-base ${
-                                isPayer ? "text-foreground" : "text-red-600 dark:text-red-500"
-                              }`}>
+                              <p className={`font-medium text-sm sm:text-base ${isPayer ? "text-foreground" : "text-red-600 dark:text-red-500"
+                                }`}>
                                 {formatMoney(splitAmount)}
                               </p>
                             </div>
@@ -1953,20 +1932,20 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                       <Camera className="h-3.5 w-3.5 text-muted-foreground" />
                       <span className="text-xs font-medium text-muted-foreground">Receipt</span>
                     </div>
-                    
+
                     {/* Compact Image - Mobile First */}
-                    <div 
+                    <div
                       className="relative rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer active:scale-[0.99]"
                       onClick={() => setReceiptViewerOpen(true)}
                     >
                       <div className="relative w-full h-40 sm:h-56">
-                        <Image 
+                        <Image
                           src={selectedExpense.receiptUrl}
                           alt="Receipt"
                           fill
                           className="object-cover"
                         />
-                        
+
                         {/* Zoom Hint - Simple */}
                         <div className="absolute inset-0 bg-black/0 hover:bg-black/5 transition-colors" />
                         <div className="absolute top-2 right-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-full p-1.5 opacity-60 group-hover:opacity-100 transition-opacity">
@@ -2017,7 +1996,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
               <>
                 {/* Full Screen Image - Pinch to Zoom Enabled */}
                 <div className="relative w-full h-full">
-                  <Image 
+                  <Image
                     src={selectedExpense.receiptUrl}
                     alt="Receipt Full View"
                     fill
@@ -2026,7 +2005,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                     priority
                   />
                 </div>
-                
+
                 {/* Close Button - Floating */}
                 <Button
                   variant="ghost"
@@ -2112,7 +2091,7 @@ const [userProfiles, setUserProfiles] = useState<Record<string, UserProfile>>({}
                 className="mt-2"
               />
             </div>
-            
+
             <div>
               <Label htmlFor="edit-category">Category</Label>
               <Select

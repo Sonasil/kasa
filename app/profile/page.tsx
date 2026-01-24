@@ -38,36 +38,103 @@ import {
   Calendar,
 } from "lucide-react"
 import { useSettings } from "@/lib/settings-context"
+import { useGroups } from "@/lib/groups-context"
 import { useUserProfile } from "@/lib/user-profile"
 
 export default function ProfilePage() {
   const router = useRouter()
   const { formatMoney, t } = useSettings()
-  const { photoURL: globalPhotoURL } = useUserProfile()
+  const { photoURL: globalPhotoURL, displayName: globalName, email: globalEmail, loading: profileLoading } = useUserProfile()
+  const { groups, loading: groupsLoading } = useGroups()
   const { toast } = useToast()
-  const [loading, setLoading] = useState(true)
+
   const [error, setError] = useState<string | null>(null)
   const [signOutDialogOpen, setSignOutDialogOpen] = useState(false)
 
-  const [uid, setUid] = useState<string | null>(null)
-  const [displayName, setDisplayName] = useState<string>("")
-  const [email, setEmail] = useState<string>("")
-  const [photoURL, setPhotoURL] = useState<string>("")
+  // Local state
   const [memberSince, setMemberSince] = useState<string>("")
   const [savingProfile, setSavingProfile] = useState(false)
-
-  const [totalGroups, setTotalGroups] = useState(0)
   const [activeExpenses, setActiveExpenses] = useState(0)
-  const [totalSpent, setTotalSpent] = useState(0) // cents
-  const [balance, setBalance] = useState(0) // cents
+
+  // Derived state
+  const totalGroups = groups.length
+  const { totalSpent, balance } = useMemo(() => {
+    let spent = 0
+    let bal = 0
+    const uid = auth.currentUser?.uid
+    if (!uid) return { totalSpent: 0, balance: 0 }
+
+    for (const g of groups) {
+      const ta = g?.totalAmount
+      if (typeof ta === "number") spent += ta
+      const b = g?.balances
+      const v = b && typeof b === "object" ? b[uid] : undefined
+      if (typeof v === "number") bal += v
+    }
+    return { totalSpent: spent, balance: bal }
+  }, [groups])
+
+  // Local display state (editable)
+  const [displayName, setDisplayName] = useState("")
+  const [photoURL, setPhotoURL] = useState("")
+
+  // Sync local state with global profile
+  useEffect(() => {
+    if (globalName) setDisplayName(globalName)
+    if (globalPhotoURL) setPhotoURL(globalPhotoURL)
+  }, [globalName, globalPhotoURL])
+
+  // Set member since
+  useEffect(() => {
+    const user = auth.currentUser
+    if (user?.metadata?.creationTime) {
+      setMemberSince(
+        new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(new Date(user.metadata.creationTime))
+      )
+    }
+  }, [profileLoading]) // Retry when profile loaded (auth ready)
+
+  // Calculate active expenses (feed listeners)
+  useEffect(() => {
+    if (groups.length === 0) return
+
+    let feedUnsubs: Array<() => void> = []
+    const perGroupExpenseCounts: Record<string, number> = {}
+
+    const recomputeActiveExpenses = () => {
+      const total = Object.values(perGroupExpenseCounts).reduce((a, b) => a + b, 0)
+      setActiveExpenses(total)
+    }
+
+    groups.forEach(g => {
+      const fq = query(
+        collection(db, "groups", g.id, "feed"),
+        orderBy("createdAt", "desc"),
+        limit(50)
+      )
+      const unsub = onSnapshot(fq, (snap) => {
+        let c = 0
+        snap.forEach(d => {
+          if (d.data()?.type === "expense") c++
+        })
+        perGroupExpenseCounts[g.id] = c
+        recomputeActiveExpenses()
+      })
+      feedUnsubs.push(unsub)
+    })
+
+    return () => {
+      feedUnsubs.forEach(u => u())
+    }
+  }, [groups])
 
   const initials = useMemo(() => {
-    const v = (displayName || email || "?").trim()
+    const v = (displayName || globalEmail || "?").trim()
     const parts = v.split(/\s+/).filter(Boolean)
     if (parts.length === 0) return "?"
     if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase()
     return (parts[0][0] + parts[1][0]).toUpperCase()
-  }, [displayName, email])
+  }, [displayName, globalEmail])
 
   const handleSignOut = async () => {
     setSignOutDialogOpen(false)
@@ -84,7 +151,7 @@ export default function ProfilePage() {
     setError(null)
     const user = auth.currentUser
 
-    if (!user || !uid) {
+    if (!user) {
       router.push("/login")
       return
     }
@@ -100,10 +167,10 @@ export default function ProfilePage() {
       })
 
       await setDoc(
-        doc(db, "users", uid),
+        doc(db, "users", user.uid),
         {
           displayName: trimmedName,
-          email,
+          email: globalEmail,
           photoURL: trimmedPhoto,
           updatedAt: serverTimestamp(),
         },
@@ -127,156 +194,11 @@ export default function ProfilePage() {
     }
   }
 
-  useEffect(() => {
-    let unsubGroups: (() => void) | null = null
-    let unsubUser: (() => void) | null = null
-    let feedUnsubs: Array<() => void> = []
 
-    const cleanupFeeds = () => {
-      feedUnsubs.forEach((u) => {
-        try { u() } catch {}
-      })
-      feedUnsubs = []
-    }
 
-    const unsubAuth = onAuthStateChanged(auth, async (user) => {
-      setError(null)
 
-      // cleanup previous listeners
-      if (unsubGroups) {
-        try { unsubGroups() } catch {}
-        unsubGroups = null
-      }
-      cleanupFeeds()
 
-      if (!user) {
-        setUid(null)
-        setLoading(false)
-        router.push("/login")
-        return
-      }
-
-      setUid(user.uid)
-      setEmail(user.email || "")
-      setDisplayName(user.displayName || "")
-      setPhotoURL(user.photoURL || "")
-
-      // Member since: prefer Auth creationTime
-      const created = user.metadata?.creationTime ? new Date(user.metadata.creationTime) : null
-      if (created) {
-        setMemberSince(
-          new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(created)
-        )
-      } else {
-        setMemberSince("")
-      }
-
-      if (unsubUser) {
-        try { unsubUser() } catch {}
-      }
-      const uref = doc(db, "users", user.uid)
-      unsubUser = onSnapshot(
-        uref,
-        (usnap) => {
-          const data: any = usnap.data()
-          if (typeof data?.displayName === "string") setDisplayName(data.displayName)
-          if (typeof data?.email === "string") setEmail(data.email)
-          if (typeof data?.photoURL === "string") setPhotoURL(data.photoURL)
-          if (data?.createdAt?.toDate) {
-            const d = data.createdAt.toDate()
-            setMemberSince(new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(d))
-          }
-        },
-        (err) => {
-          console.warn("Failed to read user profile doc:", err)
-        },
-      )
-
-      // Groups the user is a member of
-      const groupsQ = query(collection(db, "groups"), where("memberIds", "array-contains", user.uid))
-
-      const perGroupExpenseCounts: Record<string, number> = {}
-
-      const recomputeActiveExpenses = () => {
-        const total = Object.values(perGroupExpenseCounts).reduce((a, b) => a + b, 0)
-        setActiveExpenses(total)
-      }
-
-      unsubGroups = onSnapshot(
-        groupsQ,
-        (snap) => {
-          cleanupFeeds()
-
-          const groups = snap.docs.map((d) => ({ id: d.id, ...(d.data() as any) }))
-          setTotalGroups(groups.length)
-
-          // totals
-          let spent = 0
-          let bal = 0
-          for (const g of groups) {
-            const ta = g?.totalAmount
-            if (typeof ta === "number") spent += ta
-            const b = g?.balances
-            const v = b && typeof b === "object" ? b[user.uid] : undefined
-            if (typeof v === "number") bal += v
-          }
-          setTotalSpent(spent)
-          setBalance(bal)
-
-          // active expenses: count recent feed items of type expense (lightweight)
-          for (const g of groups) {
-            const fq = query(
-              collection(db, "groups", g.id, "feed"),
-              orderBy("createdAt", "desc"),
-              limit(50)
-            )
-            const unsubFeed = onSnapshot(
-              fq,
-              (fs) => {
-                let c = 0
-                fs.forEach((docSnap) => {
-                  const data: any = docSnap.data()
-                  if (data?.type === "expense") c += 1
-                })
-                perGroupExpenseCounts[g.id] = c
-                recomputeActiveExpenses()
-              },
-              () => {
-                perGroupExpenseCounts[g.id] = 0
-                recomputeActiveExpenses()
-              }
-            )
-            feedUnsubs.push(unsubFeed)
-          }
-
-          recomputeActiveExpenses()
-          setLoading(false)
-        },
-        (err) => {
-          console.error("Failed to load groups:", err)
-          setError(t("failedToLoad"))
-          setTotalGroups(0)
-          setActiveExpenses(0)
-          setTotalSpent(0)
-          setBalance(0)
-          setLoading(false)
-        }
-      )
-    })
-
-    return () => {
-      try { unsubAuth() } catch {}
-      if (unsubGroups) {
-        try { unsubGroups() } catch {}
-      }
-      if (unsubUser) {
-        try { unsubUser() } catch {}
-      }
-      cleanupFeeds()
-    }
-  }, [router])
-
-  if (loading) {
+  if (profileLoading) {
     return (
       <div className="min-h-screen bg-background pb-20">
         <div className="mx-auto max-w-4xl p-3 sm:p-6">
@@ -313,14 +235,14 @@ export default function ProfilePage() {
             <div className="flex flex-col items-center text-center">
               <Avatar className="h-20 w-20 sm:h-24 sm:w-24 border-4 border-background shadow-lg">
                 {globalPhotoURL ? (
-                  <AvatarImage src={globalPhotoURL} alt={displayName || email || "Avatar"} />
+                  <AvatarImage src={globalPhotoURL} alt={displayName || globalEmail || "Avatar"} />
                 ) : null}
                 <AvatarFallback className="text-2xl sm:text-3xl font-bold bg-primary text-primary-foreground">
                   {initials}
                 </AvatarFallback>
               </Avatar>
               <h1 className="mt-3 text-xl sm:text-2xl font-bold">{displayName || t("noName")}</h1>
-              <p className="text-sm text-muted-foreground">{email || ""}</p>
+              <p className="text-sm text-muted-foreground">{globalEmail || ""}</p>
               <div className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
                 <Calendar className="h-3 w-3" />
                 <span>{t("memberSince")} {memberSince || "—"}</span>

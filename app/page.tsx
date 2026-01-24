@@ -46,6 +46,7 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { useSettings } from "@/lib/settings-context"
+import { useGroups } from "@/lib/groups-context"
 
 type ActivityItem = {
   id: string
@@ -65,12 +66,21 @@ type ActivityItem = {
 export default function DashboardPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const { photoURL, displayName: profileName, email: profileEmail } = useUserProfile()
+  const { photoURL, displayName: profileName, email: profileEmail, loading: profileLoading, uid } = useUserProfile()
+  const { groups, loading: groupsLoading } = useGroups()
   const { formatMoney, t } = useSettings()
-  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    if (!profileLoading && !uid) {
+      router.push("/login")
+    }
+  }, [profileLoading, uid, router])
+
+  // Local state for UI
   const [displayName, setDisplayName] = useState("")
-  const [groupCount, setGroupCount] = useState(0)
   const [activities, setActivities] = useState<ActivityItem[]>([])
+  const [activitiesLoading, setActivitiesLoading] = useState(true)
+
   const [createGroupOpen, setCreateGroupOpen] = useState(false)
   const [joinGroupOpen, setJoinGroupOpen] = useState(false)
   const [createGroupLoading, setCreateGroupLoading] = useState(false)
@@ -82,154 +92,118 @@ export default function DashboardPage() {
   const [activityDetailOpen, setActivityDetailOpen] = useState(false)
   const [youOwe, setYouOwe] = useState(0)
   const [youAreOwed, setYouAreOwed] = useState(0)
+
   const netBalance = youAreOwed - youOwe
+  const groupCount = groups.length
 
   const [mounted, setMounted] = useState(false)
   useEffect(() => { setMounted(true) }, [])
+
+  // 1. Sync Display Name from Profile
   useEffect(() => {
-    let unsubGroups: (() => void) | null = null
-    let feedUnsubs: Array<() => void> = []
-  
-    const cleanupFeeds = () => {
-      feedUnsubs.forEach((u) => {
-        try { u() } catch {}
-      })
-      feedUnsubs = []
+    if (profileName) setDisplayName(profileName)
+    else if (profileEmail) setDisplayName(profileEmail)
+  }, [profileName, profileEmail])
+
+  // 2. Calculate Totals when Groups change
+  useEffect(() => {
+    if (groupsLoading) return
+
+    // Calculate totals directly from context groups
+    let owed = 0
+    let owe = 0
+    const currentUid = auth.currentUser?.uid
+
+    if (currentUid) {
+      for (const g of groups) {
+        const b = g?.balances
+        const v = b && typeof b === "object" ? b[currentUid] : undefined
+        if (typeof v === "number") {
+          if (v > 0) owed += v
+          else if (v < 0) owe += Math.abs(v)
+        }
+      }
     }
-  
-    setLoading(true)
-  
-    const unsubAuth = auth.onAuthStateChanged((user) => {
-      // auth değişince eski listener'ları temizle
-      if (unsubGroups) {
-        try { unsubGroups() } catch {}
-        unsubGroups = null
+    setYouAreOwed(owed)
+    setYouOwe(owe)
+  }, [groups, groupsLoading])
+
+  // 3. Listen to Feeds for each group
+  useEffect(() => {
+    // Wait for groups to be loaded
+    if (groupsLoading) {
+      return
+    }
+
+    if (groups.length === 0) {
+      setActivities([])
+      setActivitiesLoading(false)
+      return
+    }
+
+    setActivitiesLoading(true)
+
+    let feedUnsubs: Array<() => void> = []
+    const perGroup: Record<string, ActivityItem[]> = {}
+    const baseActivities: ActivityItem[] = []
+
+    const recompute = () => {
+      const merged = [...baseActivities, ...Object.values(perGroup).flat()]
+      merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
+      setActivities(merged)
+      setActivitiesLoading(false)
+    }
+
+    // Add "Group Created" activities
+    for (const g of groups) {
+      if (g?.createdAt) {
+        baseActivities.push({
+          id: `group-${g.id}`,
+          type: "group",
+          title: t("groupCreated"),
+          timestamp: toDate(g.createdAt),
+          user: { name: g?.createdByName || t("someone") },
+          groupName: g?.name || t("groupLabel"),
+          isPositive: true,
+        })
       }
-      cleanupFeeds()
-  
-      if (!user) {
-        setDisplayName("")
-        setGroupCount(0)
-        setActivities([])
-        setLoading(false)
-        router.push("/login")
-        return
-      }
-  
-      setDisplayName(user.displayName || user.email || "")
-  
-      const groupsQ = query(
-        collection(db, "groups"),
-        where("memberIds", "array-contains", user.uid)
+    }
+
+    // Listen to feeds for each group
+    for (const g of groups) {
+      const groupName = g?.name || t("groupLabel")
+      const feedQ = query(
+        collection(db, "groups", g.id, "feed"),
+        orderBy("createdAt", "desc"),
+        limit(25)
       )
-  
-      const perGroup: Record<string, ActivityItem[]> = {}
-      const baseActivities: ActivityItem[] = []
-  
-      const recompute = () => {
-        const merged = [...baseActivities, ...Object.values(perGroup).flat()]
-        merged.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
-        setActivities(merged)
-      }
-  
-      unsubGroups = onSnapshot(
-        groupsQ,
-        (snap) => {
-          cleanupFeeds()
 
-          const groups = snap.docs.map((d) => ({ id: d.id, ...(d.data() as any) }))
-          setGroupCount(groups.length)
-
-          // Compute real dashboard totals from group balances
-          // balances[uid] > 0 => user is owed
-          // balances[uid] < 0 => user owes
-          let owed = 0
-          let owe = 0
-          for (const g of groups) {
-            const b = g?.balances
-            const v = b && typeof b === "object" ? b[user.uid] : undefined
-            if (typeof v === "number") {
-              if (v > 0) owed += v
-              else if (v < 0) owe += Math.abs(v)
-            }
-          }
-          setYouAreOwed(owed)
-          setYouOwe(owe)
-
-          // reset caches
-          for (const k of Object.keys(perGroup)) delete perGroup[k]
-          baseActivities.length = 0
-  
-          if (groups.length === 0) {
-            setActivities([])
-            setLoading(false)
-            return
-          }
-  
-          // (4) Group created activity (groups doc içinde createdAt varsa)
-          for (const g of groups) {
-            if (g?.createdAt) {
-              baseActivities.push({
-                id: `group-${g.id}`,
-                type: "group",
-                title: t("groupCreated"),
-                timestamp: toDate(g.createdAt),
-                user: { name: g?.createdByName || t("someone") },
-                groupName: g?.name || t("groupLabel"),
-                isPositive: true,
-              })
-            }
-          }
-  
-          // (1-3) Feed (expense/settlement/join) - her grup için dinle
-          for (const g of groups) {
-            const groupName = g?.name || t("groupLabel")
-            const feedQ = query(
-              collection(db, "groups", g.id, "feed"),
-              orderBy("createdAt", "desc"),
-              limit(25)
-            )
-  
-            const unsubFeed = onSnapshot(
-              feedQ,
-              (feedSnap) => {
-                perGroup[g.id] = feedSnap.docs.map((fd) =>
-                  mapFeedToActivity(groupName, fd.id, fd.data())
-                )
-                recompute()
-                setLoading(false)
-              },
-              (err) => {
-                console.error("Failed to fetch feed:", err)
-                perGroup[g.id] = []
-                recompute()
-                setLoading(false)
-              }
-            )
-  
-            feedUnsubs.push(unsubFeed)
-          }
-  
+      const unsubFeed = onSnapshot(
+        feedQ,
+        (feedSnap) => {
+          perGroup[g.id] = feedSnap.docs.map((fd) =>
+            mapFeedToActivity(groupName, fd.id, fd.data())
+          )
           recompute()
-          setLoading(false)
         },
         (err) => {
-          console.error("Failed to fetch groups:", err)
-          setGroupCount(0)
-          setActivities([])
-          setLoading(false)
+          console.error("Failed to fetch feed:", err)
+          perGroup[g.id] = []
+          recompute()
         }
       )
-    })
-  
-    return () => {
-      try { unsubAuth() } catch {}
-      if (unsubGroups) {
-        try { unsubGroups() } catch {}
-      }
-      cleanupFeeds()
+      feedUnsubs.push(unsubFeed)
     }
-  }, [router])
+
+    // Initial recompute in case snapshots are slow or empty
+    recompute()
+
+    return () => {
+      feedUnsubs.forEach((u) => {
+        try { u() } catch { }
+      })
+    }
+  }, [groups, groupsLoading])
   const formatTime = (date: Date) => {
     const now = new Date()
     const diffMs = now.getTime() - date.getTime()
@@ -250,12 +224,12 @@ export default function DashboardPage() {
     if (typeof v?.seconds === "number") return new Date(v.seconds * 1000)
     return new Date(v)
   }
-  
+
   const mapFeedToActivity = (groupName: string, docId: string, data: any): ActivityItem => {
     const rawType = data?.type
     const type: ActivityItem["type"] =
       rawType === "expense" || rawType === "settlement" || rawType === "join" ? rawType : "expense"
-  
+
     // Legacy mapping for old hardcoded English titles in database
     const LEGACY_TITLE_MAP: Record<string, string> = {
       "Payment received": "paymentReceived",
@@ -266,28 +240,28 @@ export default function DashboardPage() {
     }
 
     const rawTitle = data?.title || data?.text || data?.message || data?.description
-    
+
     // Try to translate: first check if it's a legacy English title, then try as key, finally fallback
     const title = rawTitle
       ? (LEGACY_TITLE_MAP[rawTitle] ? t(LEGACY_TITLE_MAP[rawTitle]) : (t(rawTitle) || rawTitle))
       : (type === "expense" ? t("expenseAdded") : type === "settlement" ? t("settlementRecorded") : t("memberJoined"))
-  
+
     const amount =
       typeof data?.amount === "number"
         ? data.amount
         : typeof data?.amountCents === "number"
           ? data.amountCents
           : undefined
-  
+
     const currentUid = auth.currentUser?.uid
     const userName =
       data?.createdByName ||
       data?.userName ||
       data?.user?.name ||
       (data?.createdBy && currentUid && data.createdBy === currentUid ? displayName || t("You") : t("someone"))
-  
+
     const isPositive = type === "settlement" ? Boolean(data?.isPositive) : undefined
-  
+
     return {
       id: docId,
       type,
@@ -552,11 +526,10 @@ export default function DashboardPage() {
             {activity.amount && (
               <Badge
                 variant={activity.isPositive ? "default" : "secondary"}
-                className={`shrink-0 whitespace-nowrap text-xs px-2.5 py-1 h-6 transition-colors duration-200 ${
-                  activity.isPositive
-                    ? "bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-950/50 dark:text-green-400"
-                    : "bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-950/50 dark:text-red-400"
-                }`}
+                className={`shrink-0 whitespace-nowrap text-xs px-2.5 py-1 h-6 transition-colors duration-200 ${activity.isPositive
+                  ? "bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-950/50 dark:text-green-400"
+                  : "bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-950/50 dark:text-red-400"
+                  }`}
               >
                 {activity.isPositive ? "+" : "-"}
                 {formatMoney(activity.amount)}
@@ -569,27 +542,13 @@ export default function DashboardPage() {
     )
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background p-3 sm:p-6 pb-20">
-        <div className="mx-auto max-w-4xl space-y-4 sm:space-y-6">
-          <Skeleton className="h-8 w-48" />
-          <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
-            <Skeleton className="h-24" />
-            <Skeleton className="h-24" />
-          </div>
-          <div className="grid grid-cols-2 gap-3">
-            <Skeleton className="h-32" />
-            <Skeleton className="h-32" />
-            <Skeleton className="h-32" />
-            <Skeleton className="h-32" />
-          </div>
-        </div>
-      </div>
-    )
+
+
+  if (profileLoading) {
+    return null // Or a loading spinner
   }
 
-  if (groupCount === 0) {
+  if (!groupsLoading && groupCount === 0) {
     return (
       <div className="min-h-screen bg-background p-3 sm:p-6 pb-20">
         <div className="mx-auto max-w-4xl">
@@ -847,7 +806,7 @@ export default function DashboardPage() {
           </TabsList>
 
           <TabsContent value="all" className="space-y-3">
-            {loading ? (
+            {activitiesLoading ? (
               <div className="space-y-3">
                 {[1, 2, 3].map(i => (
                   <div key={i} className="flex items-start gap-3">
@@ -971,15 +930,14 @@ export default function DashboardPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div
-                  className={`rounded-full p-3 ${
-                    selectedActivity.type === "expense"
-                      ? "bg-purple-100 dark:bg-purple-950/30 text-purple-600 dark:text-purple-400"
-                      : selectedActivity.type === "settlement"
-                        ? selectedActivity.isPositive
-                          ? "bg-green-100 dark:bg-green-950/30 text-green-600 dark:text-green-400"
-                          : "bg-orange-100 dark:bg-orange-950/30 text-orange-600 dark:text-orange-400"
-                        : "bg-blue-100 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400"
-                  }`}
+                  className={`rounded-full p-3 ${selectedActivity.type === "expense"
+                    ? "bg-purple-100 dark:bg-purple-950/30 text-purple-600 dark:text-purple-400"
+                    : selectedActivity.type === "settlement"
+                      ? selectedActivity.isPositive
+                        ? "bg-green-100 dark:bg-green-950/30 text-green-600 dark:text-green-400"
+                        : "bg-orange-100 dark:bg-orange-950/30 text-orange-600 dark:text-orange-400"
+                      : "bg-blue-100 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400"
+                    }`}
                 >
                   {selectedActivity.type === "expense" ? (
                     <DollarSign className="h-6 w-6" />
@@ -1003,11 +961,10 @@ export default function DashboardPage() {
                     <span className="text-sm text-muted-foreground">{t("amountLabel")}</span>
                     <Badge
                       variant={selectedActivity.isPositive ? "default" : "secondary"}
-                      className={`text-base px-3 py-1 ${
-                        selectedActivity.isPositive
-                          ? "bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-950/50 dark:text-green-400"
-                          : "bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-950/50 dark:text-red-400"
-                      }`}
+                      className={`text-base px-3 py-1 ${selectedActivity.isPositive
+                        ? "bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-950/50 dark:text-green-400"
+                        : "bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-950/50 dark:text-red-400"
+                        }`}
                     >
                       {selectedActivity.isPositive ? "+" : "-"}
                       {formatMoney(selectedActivity.amount)}

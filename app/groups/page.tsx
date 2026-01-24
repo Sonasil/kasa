@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -16,6 +16,7 @@ import { collection, onSnapshot, query, where, doc, getDoc, updateDoc, arrayUnio
 import { createGroup } from "@/lib/groupService"
 import { Plus, Users, DollarSign, TrendingUp, TrendingDown, Link, Home, Wallet, User, Clock, MoreVertical, Archive, RefreshCw } from "lucide-react"
 import { useSettings } from "@/lib/settings-context"
+import { useGroups } from "@/lib/groups-context"
 import { EmptyState } from "@/components/EmptyState"
 import { SkeletonCard } from "@/components/SkeletonCard"
 import {
@@ -50,77 +51,45 @@ export default function GroupsPage() {
   const router = useRouter()
   const { toast } = useToast()
   const { formatMoney, t } = useSettings()
-  const [loading, setLoading] = useState(true)
-  const [groups, setGroups] = useState<Group[]>([])
-  useEffect(() => {
-    let unsubGroups: undefined | (() => void)
-  
-    const unsubAuth = auth.onAuthStateChanged((user) => {
-      // Logout
-      if (!user) {
-        if (unsubGroups) {
-          unsubGroups()
-          unsubGroups = undefined
-        }
-        setGroups([])
-        setLoading(false)
-        return
-      }
-  
-      setLoading(true)
-  
-      // Listen to groups where the user is a member (created or joined)
-      const q = query(collection(db, "groups"), where("memberIds", "array-contains", user.uid))
-  
-      // Reset previous listener if any
-      if (unsubGroups) {
-        unsubGroups()
-        unsubGroups = undefined
-      }
-  
-      unsubGroups = onSnapshot(
-        q,
-        (snap) => {
-          const fetched: Group[] = snap.docs.map((docSnap) => {
-            const data = docSnap.data() as any
-            const memberIds: string[] = Array.isArray(data.memberIds) ? data.memberIds : []
-  
-            return {
-              id: docSnap.id,
-              name: data.name ?? t("unnamedGroup"),
-              memberCount: memberIds.length || 1,
-              totalExpenses: 0,
-              yourBalance: 0,
-              lastActivity: t("groupCreated"),
-              lastActivityTime:
-                data.createdAt && typeof data.createdAt.toDate === "function"
-                  ? data.createdAt.toDate()
-                  : new Date(),
-              isActive: data.isActive ?? true,
-            }
-          })
-  
-          setGroups(fetched)
-          setLoading(false)
-        },
-        (error) => {
-          console.error("Failed to fetch groups:", error)
-          setGroups([])
-          setLoading(false)
-        },
-      )
-    })
-  
-    return () => {
-      if (unsubGroups) unsubGroups()
-      unsubAuth()
-    }
-  }, [])
+  const { groups: contextGroups, loading: groupsLoading } = useGroups()
+
+  // Local state for UI
   const [createGroupOpen, setCreateGroupOpen] = useState(false)
   const [joinGroupOpen, setJoinGroupOpen] = useState(false)
   const [groupName, setGroupName] = useState("")
   const [joinCode, setJoinCode] = useState("")
   const [activeTab, setActiveTab] = useState("active")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  // Map context groups to view model
+  const groups: Group[] = useMemo(() => {
+    const currentUid = auth.currentUser?.uid
+    return contextGroups.map(g => {
+      const balance = (currentUid && g.balances && typeof g.balances[currentUid] === 'number')
+        ? g.balances[currentUid]
+        : 0
+
+      // Handle timestamps safely
+      let lastActivityTime = new Date()
+      if (g.createdAt?.toDate) {
+        lastActivityTime = g.createdAt.toDate()
+      } else if (g.createdAt instanceof Date) {
+        lastActivityTime = g.createdAt
+      }
+
+      return {
+        id: g.id,
+        name: g.name || t("unnamedGroup"),
+        memberCount: Array.isArray(g.memberIds) ? g.memberIds.length : 1,
+        totalExpenses: g.totalAmount || 0,
+        yourBalance: balance,
+        lastActivity: t("groupCreated"), // Default to creation since we don't fetch feed here
+        lastActivityTime,
+        isActive: g.isActive ?? true
+      }
+    })
+  }, [contextGroups, t])
+
 
   const formatTime = (date: Date) => {
     const now = new Date()
@@ -146,7 +115,7 @@ export default function GroupsPage() {
     }
 
     const name = groupName.trim()
-    setLoading(true)
+    setIsSubmitting(true)
 
     try {
       const { groupId } = await createGroup(name)
@@ -167,14 +136,14 @@ export default function GroupsPage() {
         variant: "destructive",
       })
     } finally {
-      setLoading(false)
+      setIsSubmitting(false)
     }
   }
 
   const handleJoinGroup = async () => {
     const user = auth.currentUser
     const inviteCode = joinCode.trim().toUpperCase()
-  
+
     if (!user) {
       toast({
         title: t("loginRequired"),
@@ -183,7 +152,7 @@ export default function GroupsPage() {
       })
       return
     }
-  
+
     if (!inviteCode) {
       toast({
         title: t("enterCodeTitle"),
@@ -192,14 +161,14 @@ export default function GroupsPage() {
       })
       return
     }
-  
-    setLoading(true)
-  
+
+    setIsSubmitting(true)
+
     try {
       // 1) invite doc oku
       const inviteRef = doc(db, "groupInvites", inviteCode)
       const inviteSnap = await getDoc(inviteRef)
-  
+
       if (!inviteSnap.exists()) {
         toast({
           title: t("invalidCode"),
@@ -208,7 +177,7 @@ export default function GroupsPage() {
         })
         return
       }
-  
+
       const invite = inviteSnap.data() as any
       if (invite.disabled) {
         toast({
@@ -218,7 +187,7 @@ export default function GroupsPage() {
         })
         return
       }
-  
+
       const groupId = invite.groupId as string
       if (!groupId) {
         toast({
@@ -228,8 +197,8 @@ export default function GroupsPage() {
         })
         return
       }
-  
-      
+
+
       // 2) Gruba ekle (group doc'u okumadan). arrayUnion idempotenttir.
       const groupRef = doc(db, "groups", groupId)
       await updateDoc(groupRef, {
@@ -247,12 +216,12 @@ export default function GroupsPage() {
       } catch (e) {
         console.warn("Failed to write join activity:", e)
       }
-  
+
       toast({
         title: t("joinedTitle"),
         description: t("joinedDesc"),
       })
-  
+
       setJoinGroupOpen(false)
       setJoinCode("")
       router.push(`/groups/${groupId}`)
@@ -264,20 +233,20 @@ export default function GroupsPage() {
         variant: "destructive",
       })
     } finally {
-      setLoading(false)
+      setIsSubmitting(false)
     }
   }
 
-  
 
-  
+
+
 
   const handleArchiveGroup = async (group: Group, isActive: boolean) => {
     try {
       await updateDoc(doc(db, "groups", group.id), {
         isActive: isActive
       })
-      
+
       toast({
         title: isActive ? t("unarchiveSuccess") : t("archiveSuccess"),
         description: group.name,
@@ -298,26 +267,7 @@ export default function GroupsPage() {
     return true
   })
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-background pb-20">
-        <div className="border-b bg-card">
-          <div className="mx-auto max-w-4xl p-3 sm:p-6">
-            <Skeleton className="h-8 w-32 mb-4" />
-            <div className="flex gap-2">
-              <Skeleton className="h-10 w-32" />
-              <Skeleton className="h-10 w-32" />
-            </div>
-          </div>
-        </div>
-        <div className="mx-auto max-w-4xl p-3 sm:p-6 space-y-3 sm:space-y-4">
-          <Skeleton className="h-32" />
-          <Skeleton className="h-32" />
-          <Skeleton className="h-32" />
-        </div>
-      </div>
-    )
-  }
+
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -355,8 +305,8 @@ export default function GroupsPage() {
                       className="mt-2"
                     />
                   </div>
-                  <Button onClick={handleCreateGroup} className="w-full">
-                    {t("createNewGroup")}
+                  <Button onClick={handleCreateGroup} className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? t("adding") : t("createNewGroup")}
                   </Button>
                 </div>
               </DialogContent>
@@ -384,8 +334,8 @@ export default function GroupsPage() {
                       className="mt-2"
                     />
                   </div>
-                  <Button onClick={handleJoinGroup} className="w-full" disabled={loading || !joinCode.trim()}>
-                  {loading ? t("joining") : t("joinGroup")}
+                  <Button onClick={handleJoinGroup} className="w-full" disabled={groupsLoading || !joinCode.trim()}>
+                    {groupsLoading ? t("joining") : t("joinGroup")}
                   </Button>
                 </div>
               </DialogContent>
@@ -406,7 +356,7 @@ export default function GroupsPage() {
           </TabsList>
 
           <TabsContent value="active" className="space-y-3 sm:space-y-4">
-            {loading ? (
+            {groupsLoading ? (
               <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
                 {[1, 2, 3, 4].map(i => <SkeletonCard key={i} />)}
               </div>
@@ -437,11 +387,10 @@ export default function GroupsPage() {
                         {group.yourBalance !== 0 && (
                           <Badge
                             variant={group.yourBalance >= 0 ? "default" : "secondary"}
-                            className={`shrink-0 ${
-                              group.yourBalance >= 0
-                                ? "bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-950 dark:text-green-400"
-                                : "bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-950 dark:text-red-400"
-                            }`}
+                            className={`shrink-0 ${group.yourBalance >= 0
+                              ? "bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-950 dark:text-green-400"
+                              : "bg-red-100 text-red-700 hover:bg-red-200 dark:bg-red-950 dark:text-red-400"
+                              }`}
                           >
                             <div className="flex items-center gap-1">
                               {group.yourBalance >= 0 ? (
@@ -458,13 +407,13 @@ export default function GroupsPage() {
                         )}
                       </div>
 
-                       {/* Dropdown Menu for Active Groups */}
-                       <div className="absolute top-2 right-2 z-10 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                      {/* Dropdown Menu for Active Groups */}
+                      <div className="absolute top-2 right-2 z-10 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button 
-                              variant="ghost" 
-                              size="icon" 
+                            <Button
+                              variant="ghost"
+                              size="icon"
                               className="h-8 w-8 hover:bg-background/80"
                               onClick={(e) => e.stopPropagation()}
                               onPointerDown={(e) => e.stopPropagation()}
@@ -498,7 +447,7 @@ export default function GroupsPage() {
                 ))}
               </div>
             ) : (
-              <EmptyState 
+              <EmptyState
                 icon={Users}
                 title={t("noActiveGroups")}
                 description={t("createGroupDesc")}
@@ -518,7 +467,7 @@ export default function GroupsPage() {
           </TabsContent>
 
           <TabsContent value="archived" className="space-y-3 sm:space-y-4">
-            {loading ? (
+            {groupsLoading ? (
               <div className="grid gap-3 sm:gap-4 sm:grid-cols-2">
                 {[1, 2].map(i => <SkeletonCard key={i} />)}
               </div>
@@ -552,9 +501,9 @@ export default function GroupsPage() {
                       <div className="absolute top-2 right-2 z-10 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button 
-                              variant="ghost" 
-                              size="icon" 
+                            <Button
+                              variant="ghost"
+                              size="icon"
                               className="h-8 w-8 hover:bg-background/80"
                               onClick={(e) => e.stopPropagation()}
                               onPointerDown={(e) => e.stopPropagation()}
@@ -588,7 +537,7 @@ export default function GroupsPage() {
                 ))}
               </div>
             ) : (
-              <EmptyState 
+              <EmptyState
                 icon={Archive}
                 title={t("noArchivedGroups")}
                 description="Arşivlediğin gruplar burada görünecek."
