@@ -11,6 +11,7 @@ import { auth, googleProvider } from "@/lib/firebase"
 import { signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, getRedirectResult, sendPasswordResetEmail } from "firebase/auth"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { useSettings } from "@/lib/settings-context"
+import { isMobileOrWebView, getEnvironmentInfo } from "@/lib/detect-mobile"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -25,20 +26,26 @@ export default function LoginPage() {
     return () => unsub()
   }, [router])
 
-  // Handle redirect result (for mobile)
+  // Handle redirect result (for mobile/WebView)
   useEffect(() => {
-    // Check for redirect result on mount
+    console.log('🔄 Checking for redirect result on mount...')
+
     getRedirectResult(auth)
       .then((result) => {
         if (result) {
+          console.log('✅ Redirect sign-in successful:', result.user.email)
           // User signed in via redirect
           router.push("/")
+        } else {
+          console.log('ℹ️ No redirect result found')
         }
       })
       .catch((error) => {
-        console.error("Redirect sign-in error:", error)
+        console.error('❌ Redirect sign-in error:', error)
+        console.error('Error code:', error?.code)
+        console.error('Error message:', error?.message)
         setGoogleLoading(false)
-        if (error?.code !== "auth/popup-closed-by-user") {
+        if (error?.code !== "auth/popup-closed-by-user" && error?.code !== "auth/cancelled-popup-request") {
           // Show explicit error message if possible
           const msg = error?.message || t("googleSignInFailed")
           setFormError(`${t("googleSignInFailed")} (${msg})`)
@@ -108,31 +115,56 @@ export default function LoginPage() {
   const handleGoogleLogin = async () => {
     setGoogleLoading(true)
     setFormError(null)
-    
+
+    // Detect environment
+    const isMobile = isMobileOrWebView()
+    const envInfo = getEnvironmentInfo()
+
+    console.log('🔐 Starting Google Sign-In...')
+    console.log('🌍 Environment:', envInfo)
+    console.log('📱 Is Mobile/WebView:', isMobile)
+
     try {
-      // Desktop & Mobile: Try popup first
-      await signInWithPopup(auth, googleProvider)
-      // Auth state listener will handle redirection
-    } catch (err: any) {
-      console.error("Google sign in error:", err)
-      
-      const errorCode = err?.code
-      if (errorCode === "auth/popup-closed-by-user") {
-        setGoogleLoading(false)
-        return // Ignore if user closed it
+      if (isMobile) {
+        // Mobile/WebView: Use redirect flow directly
+        console.log('📱 Using signInWithRedirect for mobile/WebView')
+        await signInWithRedirect(auth, googleProvider)
+        // Redirect will happen, page will reload
+        // getRedirectResult will handle the response on return
+        return
+      } else {
+        // Desktop: Use popup flow
+        console.log('🖥️ Using signInWithPopup for desktop')
+        await signInWithPopup(auth, googleProvider)
+        console.log('✅ Popup sign-in successful')
+        // Auth state listener will handle redirection
       }
-      
-      // If popup specifically fails due to blocking/support, try redirect
+    } catch (err: any) {
+      console.error('❌ Google sign-in error:', err)
+      console.error('Error code:', err?.code)
+      console.error('Error message:', err?.message)
+
+      const errorCode = err?.code
+
+      // User cancelled the popup
+      if (errorCode === "auth/popup-closed-by-user") {
+        console.log('ℹ️ User closed the popup')
+        setGoogleLoading(false)
+        return
+      }
+
+      // If popup fails due to blocking, try redirect as fallback
       if (errorCode === "auth/popup-blocked" || errorCode === "auth/cancelled-popup-request" || errorCode === "auth/operation-not-supported-in-this-environment") {
+        console.log('⚠️ Popup blocked or not supported, falling back to redirect...')
         try {
           await signInWithRedirect(auth, googleProvider)
           return
         } catch (redirectErr: any) {
-          console.error("Redirect fallback failed", redirectErr)
-           setGoogleLoading(false)
+          console.error('❌ Redirect fallback failed:', redirectErr)
+          setGoogleLoading(false)
         }
       } else {
-         setGoogleLoading(false)
+        setGoogleLoading(false)
       }
 
       setFormError(t("googleSignInFailed"))
@@ -145,7 +177,7 @@ export default function LoginPage() {
 
   const handlePasswordReset = async () => {
     if (!resetEmail.trim()) return
-    
+
     setSendingReset(true)
     try {
       await sendPasswordResetEmail(auth, resetEmail)
@@ -244,16 +276,16 @@ export default function LoginPage() {
                   )}
                 </Button>
               </div>
-            <div className="flex justify-end">
-              <button
-                type="button"
-                onClick={() => setResetDialogOpen(true)}
-                className="text-sm text-primary hover:underline"
-              >
-                {t("forgotPassword")}
-              </button>
-            </div>
-            {errors.password && (
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => setResetDialogOpen(true)}
+                  className="text-sm text-primary hover:underline"
+                >
+                  {t("forgotPassword")}
+                </button>
+              </div>
+              {errors.password && (
                 <p className="text-xs sm:text-sm text-destructive" role="alert">
                   {errors.password}
                 </p>
