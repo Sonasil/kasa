@@ -1,0 +1,29 @@
+{
+    "name": "HesAppcım - Shared Expense Tracker",
+    "short_name": "HesAppcım",
+    "description": "Split expenses and settle debts with friends and family",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#FFFFFF",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "any",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "finance",
+        "productivity"
+    ],
+    "lang": "en-US",
+    "dir": "ltr"
+}

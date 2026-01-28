@@ -15,6 +15,38 @@ export const metadata: Metadata = {
   title: 'HesAppcım - Shared Expense Tracker',
   description: 'Split expenses and settle debts with friends and family. Track group expenses, manage settlements, and keep everyone in sync.',
   keywords: ['expense tracker', 'split bills', 'group expenses', 'debt settlement', 'shared expenses'],
+
+  // Theme color for mobile browsers and Flutter WebView
+  themeColor: '#FFFFFF',
+
+  // Viewport settings for responsive design
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
+
+  // iOS Safari specific settings
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default', // 'default' uses white background
+    title: 'HesAppcım',
+  },
+
+  // Prevent automatic phone number detection
+  formatDetection: {
+    telephone: false,
+  },
+
+  // PWA Manifest
+  manifest: '/manifest.json',
+
+  // Icons for various platforms
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({
