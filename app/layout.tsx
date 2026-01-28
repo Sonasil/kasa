@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SettingsProvider } from "@/lib/settings-context"
@@ -11,21 +11,18 @@ import './globals.css'
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+}
+
 export const metadata: Metadata = {
   title: 'HesAppcım - Shared Expense Tracker',
   description: 'Split expenses and settle debts with friends and family. Track group expenses, manage settlements, and keep everyone in sync.',
   keywords: ['expense tracker', 'split bills', 'group expenses', 'debt settlement', 'shared expenses'],
-
-  // Theme color for mobile browsers and Flutter WebView
-  themeColor: '#FFFFFF',
-
-  // Viewport settings for responsive design
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
 
   // iOS Safari specific settings
   appleWebApp: {
